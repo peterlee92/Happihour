@@ -1,17 +1,20 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 
-function FavItems() {
+function FavItems(name, descr, img, count) {
     return(
         <TouchableOpacity>
             <View style={}>
                 <View>
-                    <Image style={} source={require('')}/>
+                    <Image style={} source={require({img})}/>
                 </View>
                 <View>
-                    <Text style={}>Location Name</Text>
-                    <Text style={}>Location Description</Text>
+                    <Text style={}>{name}</Text>
+                    <Text style={}>{descr}</Text>
+                <View>
                     <Image style={} source={require('')}/>
+                    <Text>{count}</Text>
+                    </View>
                 </View>
             </View>
         </TouchableOpacity>
