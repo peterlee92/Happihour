@@ -1,10 +1,9 @@
 import React from 'react';
 import {Text, Image, TouchableOpacity} from 'react-native';
-import MenuBar from '../MenuBar';
 
 function GetHome(){
     return(
-        <View style={}>
+        <View>
             <View>
                 <TouchableOpacity onPress={}>
                     <Image source={require('')}/>
@@ -24,7 +23,6 @@ function GetHome(){
                 </TouchableOpacity>
             </View>
         </View>
-        <MenuBar />
     )
 }
 
