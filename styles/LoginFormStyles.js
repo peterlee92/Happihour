@@ -7,17 +7,59 @@ var styles = StyleSheet.create({
         flex:1,
         justifyContent:'center'
     },
+    happihourContainer:{
+        alignItems:'center',
+        marginBottom:40
+    }, 
+    happihour:{
+        color:"#ffd96f",
+        fontSize:60
+    },
     input:{
         margin:15,
-        height:40,
-        padding:5,
-        fontSize:16,
+        height:60,
+        padding:20,
+        fontSize:20,
         backgroundColor:'rgba(255,255,255,0.8)',
-        textAlign:'center',
-        fontWeight:'bold'
+        fontWeight:'bold',
+        borderRadius:10
+    },
+    loginContainer:{
+        alignItems:'center',
+        marginTop:20
     },
     login:{
-        height:100
+        backgroundColor:"#f4e664",
+        width:140,
+        padding:10,
+        borderRadius:15        
+    },
+    loginText:{
+        textAlign:'center',
+        fontSize:14
+    },
+    rowsContainer:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    row1:{
+        color:"rgba(255,255,255,0.7)",
+        margin:20,
+        marginTop:40,
+        marginBottom:0,
+        letterSpacing:2.5
+    },
+    row2:{
+        color:"rgba(255,255,255,0.7)",
+        fontSize:18,
+        letterSpacing:2,
+        margin:30
+    },
+    row3:{
+        color:"#ffd96f",
+        letterSpacing:2,
+        fontSize:18
     }
 })
 

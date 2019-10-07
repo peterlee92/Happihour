@@ -6,17 +6,21 @@
  * @flow
  */
 
-import React from 'react';
-import { View, Text, Image} from 'react-native';
-import styles from './styles/AppStyle';
-import LoginForm from './comps/LoginForm';
+import React,{useState} from 'react';
+
+import LoginForm from './screens/LoginForm';
+import Register from './screens/Register';
+import Detail from './screens/Detail';
+
+
+import Route from './Route';
 
 function App() {
+
   return (
-    <View style={styles.container}>
-      <LoginForm />
-    </View>
+      <Route />
   );
 };
 
 export default App;
+
