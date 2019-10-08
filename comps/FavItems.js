@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 
 function FavItems(name, descr, img, count) {
     return(
-        <TouchableOpacity onPress={}>
+        <TouchableOpacity>
             <View style={''}>
                 <View>
                     <Image style={} source={require('')}/>
