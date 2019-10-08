@@ -15,7 +15,7 @@ import FavPage from './comps/Pages/FavPage';
 import Register from './screens/Register';
 import Detail from './screens/Detail';
 
-//Connectore between pages
+//Connector between pages
 import Route from './Route';
 
 function App() {
