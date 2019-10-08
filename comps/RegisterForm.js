@@ -2,9 +2,6 @@ import React from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import styles from '../styles/RegisterFormStyles';
 
-// Actions is a function that links between pages through keys in Route.js
-import {Actions} from 'react-native-router-flux';
-
 function RegisterForm(){
     return(
         <View>
@@ -36,8 +33,7 @@ function RegisterForm(){
             <View style={styles.signupContainer}>
                 <TouchableOpacity
                     style={styles.signup}
-                    //login is a key name in Route.js
-                    onPress={()=> {Actions.login()}}
+                    onPress={()=> {}}
                 >
                     <Text style={styles.signupText}>SIGN UP</Text>
                 </TouchableOpacity>

@@ -3,8 +3,6 @@ import {View, Text, TextInput, ImageBackground, TouchableOpacity} from 'react-na
 import styles from '../styles/LoginStyles';
 import LoginForm from '../comps/LoginForm';
 
-// Actions is a function that links between pages through keys in Route.js
-import {Actions} from 'react-native-router-flux';
 
 function Login() {
 
@@ -26,8 +24,7 @@ function Login() {
             </View>
             <View style={styles.rowsContainer}>
                 <TouchableOpacity
-                    //register is a key name in Route.js
-                    onPress={()=>{Actions.register()}}
+                    onPress={()=>{}}
                 >
                     <Text 
                         style={styles.row3}

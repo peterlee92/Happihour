@@ -15,14 +15,12 @@ import FavPage from './comps/Pages/FavPage';
 import Register from './screens/Register';
 import Detail from './screens/Detail';
 
-//Connector between pages
-import Route from './Route';
+
 
 function App() {
 
   return (
-    //Show the initial page
-    <Route />
+    <Login />
   );
 };
 

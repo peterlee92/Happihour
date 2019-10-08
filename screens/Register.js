@@ -3,7 +3,6 @@ import {View, Text, TextInput, ImageBackground, TouchableOpacity}  from 'react-n
 import styles from '../styles/RegisterStyles';
 import RegisterForm from '../comps/RegisterForm';
 
-import {Actions} from 'react-native-router-flux';
 
 function Register(){
     return(
@@ -13,7 +12,7 @@ function Register(){
         >
             <RegisterForm />
             <TouchableOpacity
-                onPress={()=>{Actions.login()}}
+                onPress={()=>{}}
             >
             <View style={styles.returnContainer}>
                 <Text style={styles.returnText}>RETURN TO LOGIN</Text>
