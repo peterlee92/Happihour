@@ -12,7 +12,7 @@ function FavItems(name, descr, img, count) {
                     <Text style={}>{name}</Text>
                     <Text style={}>{descr}</Text>
                 <View>
-                    <Image style={} source={require('')}/>
+                    <Image style={} source={require('../Mockups + Comps/Icons/Favourite Icons/fav_icon2.png')}/>
                     <Text>{count}</Text>
                     </View>
                 </View>
