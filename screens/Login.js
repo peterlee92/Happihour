@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, ImageBackground, TouchableOpacity} from 'react-native';
-import styles from '../styles/LoginFormStyles';
+import styles from '../styles/LoginStyles';
+import LoginForm from '../comps/LoginForm';
 
+// Actions is a function that links between pages through keys in Route.js
 import {Actions} from 'react-native-router-flux';
 
-function LoginForm() {
+function Login() {
 
     return(
         <ImageBackground 
@@ -14,22 +16,7 @@ function LoginForm() {
             <View style={styles.happihourContainer}>
                 <Text style={styles.happihour}>Happihour</Text>
             </View>
-            <TextInput
-                style={styles.input}
-                placeholder="Username"
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Password"
-                secureTextEntry
-            />
-            <View style={styles.loginContainer}>
-                <TouchableOpacity 
-                style={styles.login}
-                >
-                    <Text style={styles.loginText}>LOGIN</Text>
-                </TouchableOpacity>
-            </View>
+            <LoginForm />
             <View style={styles.rowsContainer}>
                 <Text style={styles.row1}>REMEMBER ME</Text>
                 <Text style={styles.row1}>FORGOT PASSWORD?</Text>
@@ -39,6 +26,7 @@ function LoginForm() {
             </View>
             <View style={styles.rowsContainer}>
                 <TouchableOpacity
+                    //register is a key name in Route.js
                     onPress={()=>{Actions.register()}}
                 >
                     <Text 
@@ -52,4 +40,4 @@ function LoginForm() {
     )
 }
 
-export default LoginForm;
+export default Login;
