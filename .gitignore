@@ -32,6 +32,9 @@ local.properties
 # node.js
 #
 node_modules/
+android/
+ios/
+package-lock.json
 npm-debug.log
 yarn-error.log
 
