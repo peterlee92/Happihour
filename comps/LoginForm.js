@@ -1,13 +1,10 @@
 import React from 'react';
-import {View, TextInput, ImageBackground, Button} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text} from 'react-native';
 import styles from '../styles/LoginFormStyles';
 
-function LoginForm() {
+function LoginForm(){
     return(
-        <ImageBackground 
-            style={styles.background}
-            source={require('../imgs/background1.jpg')}
-        >
+        <View>
             <TextInput
                 style={styles.input}
                 placeholder="Username"
@@ -15,14 +12,16 @@ function LoginForm() {
             <TextInput
                 style={styles.input}
                 placeholder="Password"
+                secureTextEntry
             />
-            <Button 
-                title='Login'
+            <View style={styles.loginContainer}>
+                <TouchableOpacity 
                 style={styles.login}
-                onPress={()=>{}}
-            />
-
-        </ImageBackground>
+                >
+                    <Text style={styles.loginText}>LOGIN</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
     )
 }
 

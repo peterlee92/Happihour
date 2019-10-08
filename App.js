@@ -9,16 +9,22 @@
 import React, {useState} from 'react';
 import { View, Text, Image} from 'react-native';
 import styles from './styles/AppStyle';
-import LoginForm from './comps/LoginForm';
-import GetHome from './comps/Pages/GetHome';
+import Login from './screens/Login';
 import ListPage from './comps/Pages/ListPage';
 import FavPage from './comps/Pages/FavPage';
+import Register from './screens/Register';
+import Detail from './screens/Detail';
+
+//Connector between pages
+import Route from './Route';
 
 function App() {
+
   return (
-    <View>
-    </View>
+    //Show the initial page
+    <Route />
   );
 };
 
 export default App;
+
