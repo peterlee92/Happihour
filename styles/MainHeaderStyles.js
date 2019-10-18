@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
     headerContainer:{
-        backgroundColor:'061a20'
+        backgroundColor:'#061a20'
     },
     logo:{
         width:58,
