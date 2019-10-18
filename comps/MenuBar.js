@@ -1,38 +1,38 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
+import style from '../styles/CompStyles/MenuBarStyle';
 
 function MenuBar(){
     return(
-        // <View style={}>
-        //     <TouchableOpacity onPress={()=>{}}>
-        //         <View style={}>
-        //             <Image style={} source={require('../Mockups + Comps/Icons/Nav Bar Icons/Greyed Icons/location_icon.png')}/>
-        //             <Text style={}>Map</Text>
-        //         </View>
-        //     </TouchableOpacity>
+        <View style={style.barPosition}>
+            <TouchableOpacity>
+                <View style={style.ItemPosition}>
+                    <Image style={style.ImgSize} /*source={require()}*//>
+                    <Text style={style.MenuText}>Map</Text>
+                </View>
+            </TouchableOpacity>
 
-        //     <TouchableOpacity onPress={()=>{}}>
-        //         <View style={}>
-        //             <Image style={""} source={require('../Mockups + Comps/Icons/Nav Bar Icons/Greyed Icons/list_icon.png')}/>
-        //             <Text style={}>List</Text>
-        //         </View>
-        //     </TouchableOpacity>
+            <TouchableOpacity>
+                <View style={style.ItemPosition}>
+                    <Image style={style.ImgSize} /*source={require()}*//>
+                    <Text style={style.MenuText}>Get Home</Text>
+                </View>
+            </TouchableOpacity>
 
-        //     <TouchableOpacity onPress={()=>{}}>
-        //         <View style={}>
-        //             <Image style={""} source={require('../Mockups + Comps/Icons/Nav Bar Icons/Greyed Icons/car_icon.png')}/>
-        //             <Text style={}>Transport</Text>
-        //         </View>
-        //     </TouchableOpacity>
+            <TouchableOpacity>
+                <View style={style.ItemPosition}>
+                    <Image style={style.ImgSize} /*source={require()}*//>
+                    <Text style={style.MenuText}>Favourites</Text>
+                </View>
+            </TouchableOpacity>
 
-        //     <TouchableOpacity onPress={()=>{}}>
-        //         <View style={}>
-        //             <Image style={""} source={require('../Mockups + Comps/Icons/Nav Bar Icons/Greyed Icons/fav_icon.png')}/>
-        //             <Text style={}>Favourites</Text>
-        //         </View>
-        //     </TouchableOpacity>
-        // </View>
-        <View></View>
+            <TouchableOpacity>
+                <View style={style.ItemPosition}>
+                    <Image style={style.ImgSize} /*source={require()}*//>
+                    <Text style={style.MenuText}>Profile</Text>
+                </View>
+            </TouchableOpacity>
+        </View>
     )
 }
 
