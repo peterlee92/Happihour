@@ -1,16 +1,25 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, TouchableOpacity, AsyncStorage} from 'react-native';
 import styles from '../styles/DetailheaderStyles';
+
+import {Actions} from 'react-native-router-flux';
 
 
 function DetailHeader (){
+
+
+    
     return(
         <View>
             <View style={styles.topContainer}>
-                <Image 
-                    source={require('../icons/backbutton.png')}
-                    style={styles.backBut}
-                />
+                <TouchableOpacity
+                    onPress={()=>{}}
+                >
+                    <Image 
+                        source={require('../icons/backbutton.png')}
+                        style={styles.backBut}
+                    />
+                </TouchableOpacity>
                 <Text style={styles.RSname}>Colony</Text>
                 <Image 
                     source={require('../icons/fav_icon2.png')}

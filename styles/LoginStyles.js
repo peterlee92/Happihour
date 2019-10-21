@@ -21,22 +21,22 @@ var styles = StyleSheet.create({
         justifyContent:'center'
     },
     row1:{
-        color:"rgba(255,255,255,0.7)",
+        color:"rgba(255,255,255,0.4)",
         margin:20,
-        marginTop:40,
-        marginBottom:0,
+        marginTop:20,
+        marginBottom:40,
         letterSpacing:2.5
     },
     row2:{
-        color:"rgba(255,255,255,0.7)",
+        color:"rgba(255,255,255,0.4)",
         fontSize:18,
         letterSpacing:2,
-        margin:30
+        margin:10
     },
     row3:{
         color:"#ffd96f",
         letterSpacing:2,
-        fontSize:18
+        fontSize:25
     }
 })
 

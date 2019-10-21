@@ -3,6 +3,7 @@ import {View, Text, TextInput, ImageBackground, TouchableOpacity} from 'react-na
 import styles from '../styles/LoginStyles';
 import LoginForm from '../comps/LoginForm';
 
+import {Actions} from 'react-native-router-flux';
 
 function Login() {
 
@@ -16,7 +17,6 @@ function Login() {
             </View>
             <LoginForm />
             <View style={styles.rowsContainer}>
-                <Text style={styles.row1}>REMEMBER ME</Text>
                 <Text style={styles.row1}>FORGOT PASSWORD?</Text>
             </View>
             <View style={styles.rowsContainer}>
@@ -24,7 +24,7 @@ function Login() {
             </View>
             <View style={styles.rowsContainer}>
                 <TouchableOpacity
-                    onPress={()=>{}}
+                    onPress={()=>{Actions.register()}}
                 >
                     <Text 
                         style={styles.row3}
