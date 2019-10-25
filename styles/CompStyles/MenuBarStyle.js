@@ -23,12 +23,13 @@ const style = StyleSheet.create({
         flexDirection:"column",
     },
     ImgSize:{
-        width:50,
-        height:50
+        // width:50,
+        // height:50,
+        marginBottom:10
     },
     MenuText:{
-        fontSize:16,
-        color:"white"
+        fontSize:14,
+        color:"dimgrey"
     }
 })
 
