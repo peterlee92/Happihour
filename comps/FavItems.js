@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import style from '../styles/CompStyles/FavItemsStyles';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 function FavItems(name, descr, img, count) {
     return(
@@ -8,16 +9,19 @@ function FavItems(name, descr, img, count) {
             <View style={style.container}>
                 <View style={style.imgPosition}>
                     <Image style={style.img}/>
-                    <Image style={style.img}/>
-                </View>
-                <View>
-                    <Text style={style.favTitle}>The Cascade Room</Text>
-                <View >
-                    <View style={style.imgPosition}>
-                        <Text style={style.favDescr}>12</Text>
-                        <Image style={style.favImg} source={require('../DigitalAssets/Icons/FavouriteIcons/fav_icon2.png')}/>
+                    <Image style={style.img2}/>
+                    <View style={style.favImg}>
+                        <Text style={{marginHorizontal:1}}>12</Text>
+                        <FontAwesomeIcon icon='heart' size={12} style={{marginHorizontal:1}}/>
                     </View>
-                    <Text style={style.favDescr}>Happy Hour: Monday - Sunday  •  4pm - 6pm</Text>
+                </View>
+                <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
+                    <View>
+                        <Text style={style.favTitle}>The Cascade Room</Text>
+                        <Text style={style.favDescr}>2616 Main St Vancouver, BC V5T 3E6</Text>
+                    </View>
+                    <View>
+                        <FontAwesomeIcon icon="arrow-right" color={'#ffef86'} size={32} style={{marginRight:12}}/>
                     </View>
                 </View>
             </View>
