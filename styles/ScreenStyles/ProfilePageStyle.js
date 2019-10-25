@@ -3,37 +3,49 @@ import { whileStatement } from '@babel/types';
 
 const style = StyleSheet.create({
     options:{
-        color:"white",
-        fontSize:14,
-        marginLeft:60,
-        marginBottom:10
+        color:"dimgrey",
+        fontSize:16,
+        flex:1,
+        marginLeft:30,
+        fontWeight:'500'
     },
     titles:{
         color:"white",
-        fontSize:16,
-        marginLeft:20,
-        marginBottom:10,
-        marginTop:5
+        fontSize:18,
+        marginLeft:10
+        // marginBottom:10,
+        // marginTop:5,
+    },
+    SignOutTitles:{
+        color:"black",
+        fontSize:18
     },
     container:{
         justifyContent:"center",
         height:"100%",
-        backgroundColor:"#061a20"
+        backgroundColor:"#ffc04d",
+        alignItems:"center",
+        justifyContent:"center"
     },
     name:{
         color:"white",
-        fontSize:24
+        fontSize:36
     },
     settings:{
         flexDirection:"row",
         alignItems:'center',
         justifyContent:'space-between',
-        marginBottom:10
+        margin:10
     },
     avatar:{
         justifyContent:"center",
         alignItems:"center",
-        marginBottom: 25
+        marginBottom: 25,
+        backgroundColor:'#3f5485',
+        width:400,
+        height:200,
+        borderBottomLeftRadius:300,
+        borderBottomRightRadius:300
     },
     icons:{
         width:20,
@@ -47,12 +59,12 @@ const style = StyleSheet.create({
         flexDirection:'row'
     },
     AvatarImg:{
-        width:100,
-        height:100,
-        borderRadius:50,
-        borderWidth:2,
-        borderColor: "#f4e664",
-        marginBottom:20
+        width:120,
+        height:120,
+        borderRadius:60,
+        borderWidth:4,
+        borderColor: "grey",
+        marginBottom:10
     },
     editProfile:{
         color:"white",
@@ -63,6 +75,26 @@ const style = StyleSheet.create({
         padding:4,
         paddingHorizontal:10,
         marginTop:10
+    },
+    SignOutbox:{
+        width:300,
+        height:50,
+        backgroundColor:'rgba(150,150,150,0.5)',
+        // opacity:.5,
+        justifyContent:"center",
+        alignItems:'center',
+        borderRadius:10,
+        margin:10
+    },
+    editBox:{
+        width:300,
+        height:50,
+        backgroundColor:'rgba(0,0,0,0.5)',
+        justifyContent:"space-between",
+        alignItems:"center",
+        borderRadius:10,
+        margin:10,
+        flexDirection:"row"
     }
 
 })

@@ -2,9 +2,9 @@ import {StyleSheet} from 'react-native';
 
 const style = StyleSheet.create({
     container:{
-        backgroundColor:"lightgrey",
+        backgroundColor:"#042a3a",
         width:350,
-        height:200,
+        height:175,
         borderRadius:10
     },
     position:{
@@ -17,24 +17,44 @@ const style = StyleSheet.create({
         fontSize:24,
         marginLeft:10,
         marginTop:10,
-        paddingHorizontal:5
+        paddingHorizontal:5,
+        color:"white"
     },
     favDescr:{
         fontSize:14,
-        marginLeft:10,
+        marginLeft:12,
         paddingHorizontal:5,
-        paddingBottom:10
+        paddingBottom:10,
+        color:"white"
     },
     img:{
-        width:150,
+        width:175,
         height:100,
+        backgroundColor:'red',
+        borderTopLeftRadius:10
+    },
+    img2:{
+        width:175,
+        height:100,
+        backgroundColor:'blue',
+        borderTopRightRadius:10
     },
     imgPosition:{
         flexDirection:"row"
     },
     favImg:{
-        width:20,
-        height:20,
+        position:'absolute',
+        right:0,
+        bottom:0,
+        flexDirection:'row',
+        justifyContent:"center",
+        alignItems:"center",
+        backgroundColor:"white",
+        borderRadius:20,
+        width:40,
+        height:40,
+        marginRight:12,
+        marginBottom:12
     }
 })
 

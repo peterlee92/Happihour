@@ -22,8 +22,21 @@ import Taxi from './screens/Taxi';
 import ProfilePage from './screens/ProfilePage';
 import FavItems from './comps/FavItems';
 
+// import fontawesome for icons
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
+         faHeart, faMapMarkerAlt, faBusAlt, faUserCircle,
+         faClock, faEnvelope, faLock, faUser,
+         faDirections, faPhoneAlt, faTv, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+
+library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
+            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle,
+            faClock, faEnvelope, faLock, faUser,
+            faDirections, faPhoneAlt, faTv, faTimesCircle)
+
 //navigator between pages
 import Route from './Route';
+
 
 
 
