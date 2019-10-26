@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import style from '../styles/CompStyles/MenuBarStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import {Actions} from 'react-native-router-flux';
 
 function MenuBar(){
+
+    const [SelectOption, setSelectOption] = useState('');
+
+    
+
     return(
         <View style={style.barPosition}>
             <TouchableOpacity>
@@ -14,7 +20,9 @@ function MenuBar(){
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+                  onPress={()=>(Actions.getHome())}
+            >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
                     <FontAwesomeIcon icon="bus-alt" color={'dimgrey'} size={32} style={style.ImgSize}/>
@@ -22,7 +30,9 @@ function MenuBar(){
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+                  onPress={()=>(Actions.favPage())}
+            >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
                     <FontAwesomeIcon icon="heart" color={'dimgrey'} size={32} style={style.ImgSize}/>
@@ -30,7 +40,9 @@ function MenuBar(){
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity 
+                onPress={()=>(Actions.profile())}
+            >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
                     <FontAwesomeIcon icon="user-circle" color={'dimgrey'} size={32} style={style.ImgSize}/>
