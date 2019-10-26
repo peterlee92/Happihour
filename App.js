@@ -26,12 +26,12 @@ import FavItems from './comps/FavItems';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
          faHeart, faMapMarkerAlt, faBusAlt, faUserCircle,
-         faClock, faEnvelope, faLock, faUser,
+         faClock, faEnvelope, faLock, faUser, faPen,
          faDirections, faPhoneAlt, faTv, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle,
-            faClock, faEnvelope, faLock, faUser,
+            faClock, faEnvelope, faLock, faUser, faPen,
             faDirections, faPhoneAlt, faTv, faTimesCircle)
 
 //navigator between pages
