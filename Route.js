@@ -20,10 +20,10 @@ function Route(){
             <Scene key="register" component={Register} title="Register" />
             <Scene key="favPage" component={FavPage} title="favPage"  />
             <Scene key="getHome" component={GetHome} title="GetHome"  />
-            <Scene key="profile" component={ProfilePage} title='Profile' />
+            <Scene key="profile" component={ProfilePage} title='Profile' initial={true} />
             <Scene key='editAccount' component={EditAccount} title="EditAccount" />
             <Scene key='contactUs' component={ContactUs} title="ContactUs" />
-            <Scene key='taxi' component={Taxi} title="Taxi" initial={true} />
+            <Scene key='taxi' component={Taxi} title="Taxi" />
         </Stack>
         </Router>
     )
