@@ -8,7 +8,7 @@ function Taxi(){
     return(
         <View>
             <View style={style.header}>
-                    <TouchableOpacity style={style.back} onPress={()=>(Actions.profile())}>
+                    <TouchableOpacity style={style.back} onPress={()=>(Actions.getHome())}>
                         <FontAwesomeIcon icon='arrow-left' size={24} color="#F3D27B" style={{marginLeft:10}}/>
                         <Text style={style.edit}>TAXI</Text>
                     </TouchableOpacity>
