@@ -9,6 +9,7 @@ import FavPage from './screens/FavPage';
 import GetHome from './screens/GetHome';
 import EditAccount from './screens/EditAccount';
 import ContactUs from './screens/ContactUs';
+import Taxi from './screens/Taxi';
 
 
 function Route(){
@@ -21,7 +22,8 @@ function Route(){
             <Scene key="getHome" component={GetHome} title="GetHome"  />
             <Scene key="profile" component={ProfilePage} title='Profile' />
             <Scene key='editAccount' component={EditAccount} title="EditAccount" />
-            <Scene key='contactUs' component={ContactUs} title="ContactUs" initial={true} />
+            <Scene key='contactUs' component={ContactUs} title="ContactUs" />
+            <Scene key='taxi' component={Taxi} title="Taxi" initial={true} />
         </Stack>
         </Router>
     )
