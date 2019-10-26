@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, TextInput, ImageBackground, Image} from 'react-native';
+import AccountChanges from '../comps/AccountChanges-popUp';
 import style from '../styles/ScreenStyles/EditAccount-styles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 
 function EditAccount(){
-    return(
+
+    const[ShowPopUp, setShowPopUp] = useState(false);
+
+    var saveChanges = null;
+
+    if(ShowPopUp === false){
+        saveChanges = null;
+    } else{
+        saveChanges = <View style={{backgroundColor:'rgba(0,0,0,0.5)', width:'100%', height:'80%', position:'absolute', justifyContent:"center", alignItems:"center"}}>
+                         <AccountChanges />
+                     </View>
+    }
+
+
+    return(   
         <View>
             <View style={style.header}>
                 <TouchableOpacity style={style.back} onPress={()=>(Actions.profile())}>
@@ -45,7 +60,7 @@ function EditAccount(){
                 </View>
                 <View style={style.yellowLine}></View>
 
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(true))}>
                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>
                     {/* <FontAwesomeIcon icon="arrow-right" size={24} color="grey" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>
@@ -53,6 +68,9 @@ function EditAccount(){
                 <TouchableOpacity style={style.button}>
                     <Text style={{color:"#9B3F3B", fontWeight:"bold"}}>EMERGENCY CONTACT</Text>
                 </TouchableOpacity>
+
+                {saveChanges}
+                
             </ImageBackground>
         </View>
     )

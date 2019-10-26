@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
 import style from '../styles/CompStyles/AccountChanges-popUp-style';
 
 function AccountChanges(){
     return(
-        <View style={{height:"100%", width:'100%', justifyContent:'center', alignItems:'center'}}>
+        // <View style={{height:"100%", width:'100%', justifyContent:'center', alignItems:'center'}}>
             <View style={style.container}>
                 <View style={style.msgContainer}>
                     <Text style={style.msg}>ARE YOU SURE YOU WANT TO SAVE THESE CHANGES?</Text>
@@ -18,7 +18,7 @@ function AccountChanges(){
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
+        // </View>
     )
 }
 

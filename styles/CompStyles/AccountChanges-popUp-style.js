@@ -8,7 +8,7 @@ const style = StyleSheet.create({
         alignItems:"center",
         flexDirection:'column',
         width:'80%',
-        // height:'100%'
+        height:'80%'
     },
     msg:{
         fontSize:16,
