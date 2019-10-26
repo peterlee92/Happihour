@@ -8,12 +8,12 @@ function DetailHeader (){
         <View>
             <View style={styles.topContainer}>
                 <Image 
-                    source={require('../icons/backbutton.png')}
+                    // source={require('../icons/backbutton.png')}
                     style={styles.backBut}
                 />
                 <Text style={styles.RSname}>Colony</Text>
                 <Image 
-                    source={require('../icons/fav_icon2.png')}
+                    // source={require('../icons/fav_icon2.png')}
                     style={styles.favIcon}
                 />
             </View>
