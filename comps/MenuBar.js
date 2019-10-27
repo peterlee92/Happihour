@@ -12,7 +12,9 @@ function MenuBar(){
 
     return(
         <View style={style.barPosition}>
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress={()=>(Actions.map())}
+            >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
                     <FontAwesomeIcon icon="map-marker-alt" color={'dimgrey'} size={32} style={style.ImgSize}/>

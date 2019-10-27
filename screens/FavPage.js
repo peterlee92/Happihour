@@ -2,7 +2,6 @@ import React from 'react';
 import {View, FlatList, ScrollView, SafeAreaView, Image, ImageBackground} from 'react-native';
 import FavItems from '../comps/FavItems';
 import MenuBar from '../comps/MenuBar';
-import MainHeader from '../comps/MainHeader';
 
 function FavPage(){
     return(
