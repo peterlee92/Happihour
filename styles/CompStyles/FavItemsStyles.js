@@ -11,7 +11,6 @@ const style = StyleSheet.create({
     position:{
         justifyContent:"center",
         alignItems:"center",
-        top:100,
         marginTop:10
     },
     favTitle:{
