@@ -7,15 +7,15 @@ function DetailHeader (){
     return(
         <View>
             <View style={styles.topContainer}>
-                <Image 
+                {/* <Image 
                     source={require('../icons/backbutton.png')}
                     style={styles.backBut}
-                />
+                /> */}
                 <Text style={styles.RSname}>Colony</Text>
-                <Image 
+                {/* <Image 
                     source={require('../icons/fav_icon2.png')}
                     style={styles.favIcon}
-                />
+                /> */}
             </View>
             <Text style={styles.address}>2904 Main Street</Text>
             <View style={styles.HTcontainer}>
