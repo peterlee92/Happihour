@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, ImageBackground, TouchableOpacity} from 'react-native';
-import styles from '../styles/LoginStyles';
+import {View, Text, TextInput, ImageBackground, TouchableOpacity, Image} from 'react-native';
+import styles from '../styles/ScreenStyles/LoginStyles';
 import LoginForm from '../comps/LoginForm';
+import {Actions} from 'react-native-router-flux';
 
 
 function Login() {
@@ -11,25 +12,24 @@ function Login() {
             style={styles.background}
             source={require('../imgs/bg2.png')}
         >
-            <View style={styles.happihourContainer}>
-                <Text style={styles.happihour}>Happihour</Text>
+            <Image 
+                style={styles.header}
+                source={require('../imgs/Flow_Header.png')}
+            />
+            <View style={styles.logoContainer}>
+                <Image 
+                    style={styles.logo}
+                    source={require('../imgs/Happihour_Logo.png')}
+                />
             </View>
             <LoginForm />
-            <View style={styles.rowsContainer}>
-                <Text style={styles.row1}>REMEMBER ME</Text>
-                <Text style={styles.row1}>FORGOT PASSWORD?</Text>
-            </View>
-            <View style={styles.rowsContainer}>
-                <Text style={styles.row2}>DON'T HAVE AN ACCOUNT?</Text>
-            </View>
-            <View style={styles.rowsContainer}>
+            <View style={styles.newaccountContainer}>
+                <Text style={styles.dontTxt}>Don't have an account? Click here to</Text>
                 <TouchableOpacity
                     onPress={()=>{}}
                 >
-                    <Text 
-                        style={styles.row3}
-                    >
-                        SIGN UP HERE
+                    <Text style={styles.createTxt}>
+                        Create a new account
                     </Text>
                 </TouchableOpacity>
             </View>
