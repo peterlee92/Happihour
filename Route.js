@@ -10,6 +10,7 @@ import GetHome from './screens/GetHome';
 import EditAccount from './screens/EditAccount';
 import ContactUs from './screens/ContactUs';
 import Taxi from './screens/Taxi';
+import Transit from './screens/Transit';
 
 
 function Route(){
@@ -24,6 +25,7 @@ function Route(){
             <Scene key='editAccount' component={EditAccount} title="EditAccount" />
             <Scene key='contactUs' component={ContactUs} title="ContactUs" />
             <Scene key='taxi' component={Taxi} title="Taxi" />
+            <Scene key='transit' component={Transit} title="Transit" />
         </Stack>
         </Router>
     )

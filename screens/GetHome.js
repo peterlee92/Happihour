@@ -11,7 +11,7 @@ function GetHome(){
             <ImageBackground source={require('../imgs/popupBG.png')} resizeMode='cover' style={{width:'100%', height:'100%', justifyContent:'center', alignItems:'center'}}>
             <Text style={[style.GHS, {marginBottom:30}]}>Let's Get You Home Safe</Text>
             <View style={style.rows}>
-                <TouchableOpacity style={[style.position, {backgroundColor:'#234378'}]}>
+                <TouchableOpacity style={[style.position, {backgroundColor:'#234378'}]} onPress={()=>(Actions.transit())}>
                     <View style={style.img}>
                         <FontAwesomeIcon icon="bus-alt" size={100} color="white" style={style.Img}/>
                     </View>
