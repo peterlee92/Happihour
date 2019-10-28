@@ -1,12 +1,13 @@
 import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
-    menuContainer:{
-        padding:20
+    bg:{
+        width:'100%',
+        height:'100%',
+        resizeMode:'contain'  
     },
-    menu:{
-        color:"#ffd96f",
-        fontSize:20
+    scroll:{
+        flex:1
     }
 })
 
