@@ -51,7 +51,7 @@ import Route from './Route';
 function App() {
 
   return (
-    <Map />
+    <Route />
   );
 };
 
