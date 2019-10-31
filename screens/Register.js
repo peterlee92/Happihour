@@ -23,19 +23,11 @@ function Register(){
             />
         </View>
             <RegisterForm />
-            <TouchableOpacity
-                
-            >
-            <View style={styles.returnContainer}>
-                <Text style={styles.returnText}>RETURN TO LOGIN</Text>
-            </View>
-            </TouchableOpacity>
-
             <TouchableOpacity 
                 style={styles.backBut}
                 onPress={()=>{Actions.login()}}
             >
-                <FontAwesomeIcon icon="arrow-left" size={28} color={"black"} />
+                <FontAwesomeIcon icon="chevron-left" size={28} color={"black"} />
             </TouchableOpacity>
 
         </ImageBackground>
