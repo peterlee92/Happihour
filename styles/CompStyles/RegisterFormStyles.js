@@ -5,7 +5,9 @@ var styles = StyleSheet.create({
         flex:5
     },
     barTxtContainer:{
-        alignItems:'center'
+        alignItems:'center',
+        marginBottom:20,
+        marginTop:-20
     },
     barTxt:{
         color:'rgba(255,255,255,0.5)',
@@ -33,7 +35,7 @@ var styles = StyleSheet.create({
     },
     signupContainer:{
         alignItems:'center',
-        marginTop:20
+        marginTop:50
     },
     signupBut:{
         backgroundColor:"#f4e664",

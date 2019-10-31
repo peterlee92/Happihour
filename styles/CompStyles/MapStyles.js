@@ -10,6 +10,11 @@ var styles = StyleSheet.create({
     map:{
         width:'100%',
         height:'100%'
+    },
+    calloutView:{
+        backgroundColor:'white',
+        position:'absolute',
+        top:-350
     }
 })
 

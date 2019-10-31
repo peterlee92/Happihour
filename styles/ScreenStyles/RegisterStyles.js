@@ -19,16 +19,7 @@ var styles = StyleSheet.create({
         width:300,
         height:100,
         resizeMode:'contain',
-        marginVertical:10
-    },
-    returnContainer:{
-        alignItems:'center',
-        flex:1
-    },
-    returnText:{
-        textAlign:'center',
-        color:"rgba(255,255,255,0.7)",
-        letterSpacing:2.5
+        marginVertical:5
     },
     backBut:{
         position:'absolute',

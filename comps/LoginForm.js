@@ -84,7 +84,7 @@ function LoginForm(){
             <View style={styles.loginButContainer}>
                 <TouchableOpacity 
                     style={styles.loginBut}
-                    // onPress={()=>{Actions.register()}}
+                    onPress={()=>{Actions.mappage()}}
                 >
                     <Text style={styles.loginTxt}>LOG IN</Text>
                 </TouchableOpacity>

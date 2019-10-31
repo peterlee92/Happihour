@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import styles from '../styles/CompStyles/RegisterFormStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
@@ -7,7 +8,13 @@ function RegisterForm(){
     return(
         <View style={styles.wrapContainer}>
             <View style={styles.barTxtContainer}>
-                <Text style={styles.barTxt}>Are you a bar or restaurant?</Text>
+                <CheckBox
+                    title='Are you a bar or restaurant?'
+                    center
+                    iconRight
+                    containerStyle={{backgroundColor:'transparent', borderWidth:0}}
+                    checked={true}
+                />
             </View>
             <View style={styles.inputContainer}>
                 <FontAwesomeIcon icon="user" size={28} color={"white"} style={styles.inputIcon} />
