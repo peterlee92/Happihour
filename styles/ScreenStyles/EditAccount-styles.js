@@ -18,7 +18,12 @@ const style = StyleSheet.create({
         marginTop:50
     },
     janeTxt:{
-        fontSize:16,
+        fontSize:14,
+        color:"white",
+        letterSpacing:2
+    },
+    janeSubTxt:{
+        fontSize:14,
         color:"white",
         letterSpacing:2
     },
@@ -33,7 +38,8 @@ const style = StyleSheet.create({
     input:{
         flexDirection:'row',
         width:"60%",
-        marginVertical:8
+        alignItems:'center',
+        marginBottom:-4
     },
     inputTxt:{
         fontSize:14,
@@ -46,14 +52,14 @@ const style = StyleSheet.create({
         height:1,
         backgroundColor:"darkgrey",
         opacity:0.5,
-        marginBottom:25
+        marginBottom:10
     },
     yellowLine:{
         width:'60%',
         height:1,
         backgroundColor:"#EDE479",
         opacity:0.5,
-        marginBottom:25
+        marginBottom:50
     },
     header:{
         backgroundColor:'#0D1617',

@@ -6,7 +6,7 @@ import MenuBar from '../comps/MenuBar';
 function FavPage(){
     return(
         <View style={{ height: "100%", backgroundColor:"#0E1617"}}>
-            {/* <Image  style={{height:100, width:'100%', position:"absolute", top:0}} source={require('../imgs/Flow_Header.svg')} /> */}
+            {/* <Image  source={require('../imgs/Flow_Header.svg')} /> */}
             <ImageBackground source={require('../imgs/bg1.png')} style={{width:'100%', height:'100%'}}>
             <SafeAreaView>
             <ScrollView>

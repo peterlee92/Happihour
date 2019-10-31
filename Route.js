@@ -12,6 +12,7 @@ import ContactUs from './screens/ContactUs';
 import Taxi from './screens/Taxi';
 import Transit from './screens/Transit';
 import MapPage from './screens/MapPage';
+import List from './comps/List';
 
 
 function Route(){
@@ -21,13 +22,15 @@ function Route(){
             <Scene key="login" component={Login} title="Login" />
             <Scene key="register" component={Register} title="Register" />
             <Scene key="favPage" component={FavPage} title="favPage"  />
-            <Scene key="getHome" component={GetHome} title="GetHome"  />
+            <Scene key="getHome" component={GetHome} title="GetHome" />
             <Scene key="profile" component={ProfilePage} title='Profile' />
             <Scene key='editAccount' component={EditAccount} title="EditAccount" />
             <Scene key='contactUs' component={ContactUs} title="ContactUs" />
             <Scene key='taxi' component={Taxi} title="Taxi" />
-            <Scene key='transit' component={Transit} title="Transit" />
-            <Scene key='map' component={MapPage} title="map" initial={true}/>
+            <Scene key='transit' component={Transit} title="Transit" nitial={true}/>
+            <Scene key='map' component={MapPage} title="map" />
+            {/* <Scene key='list' component={List} title="List" i /> */}
+
         </Stack>
         </Router>
     )

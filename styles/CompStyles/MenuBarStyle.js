@@ -10,7 +10,7 @@ const style = StyleSheet.create({
         bottom: 0,
         left:0,
         right:0,
-        backgroundColor:'#0C1314',
+        backgroundColor:'#0A191F',
         paddingBottom:10,
         paddingTop:10,
         paddingHorizontal:10,
@@ -21,15 +21,16 @@ const style = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         flexDirection:"column",
+        padding:5
     },
     ImgSize:{
         // width:50,
         // height:50,
-        marginBottom:10
+        marginBottom:3
     },
     MenuText:{
-        fontSize:14,
-        color:"dimgrey"
+        fontSize:10,
+        color:"#74726C"
     }
 })
 

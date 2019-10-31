@@ -9,10 +9,10 @@ function ContactUs(){
         <View>
             <View style={style.header}>
                 <TouchableOpacity style={style.back} onPress={()=>(Actions.profile())}>
-                    <FontAwesomeIcon icon='arrow-left' size={24} color="#F3D27B" style={{marginLeft:10}}/>
+                    <FontAwesomeIcon icon='chevron-left' size={24} color="#F3D27B" style={{marginLeft:10}}/>
                     <Text style={style.edit}>CONTACT US</Text>
                 </TouchableOpacity>
-                <View style={{backgroundColor:'#F3D27B', width:'100%', height:5, position:'absolute', bottom:0}}></View>
+                <Image source={require('../imgs/MenuBarGrad.png')} style={{backgroundColor:'#F3D27B', width:'100%', height:5, position:'absolute', bottom:0}}/>
             </View>
 
             <ImageBackground source={require('../imgs/bg4.png')} style={style.container}>
@@ -29,14 +29,14 @@ function ContactUs(){
                 <View style={style.inputLine}></View>
 
                 <View style={style.input}>
-                    <FontAwesomeIcon icon='envelope' size={24} color='white' />
+                    <FontAwesomeIcon icon='envelope-open' size={24} color='white' />
                     <TextInput placeholder="message" placeholderTextColor='grey' style={style.inputTxt} />
                 </View>
                 <View style={style.inputLine}></View>
 
                 <TouchableOpacity style={style.button}>
-                    <Text style={{color:"#0E1617", fontWeight:"bold"}}>SEND</Text>
-                    {/* <FontAwesomeIcon icon="arrow-right" size={24} color="grey" style={{position:'absolute', right:10}} /> */}
+                    <Text style={{color:"#0E1617", fontWeight:"bold", letterSpacing:2}}>SEND</Text>
+                    <FontAwesomeIcon icon="chevron-right" size={21} color="grey" style={{position:'absolute', right:10}} />
                 </TouchableOpacity>
             </ImageBackground>
         </View>

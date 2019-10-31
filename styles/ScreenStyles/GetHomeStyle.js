@@ -39,7 +39,7 @@ const style = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         flexDirection:"column",
-        width:150,
+        width:"70%",
         height:150,
         margin:10,
         marginBottom:40,

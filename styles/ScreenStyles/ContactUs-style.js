@@ -5,12 +5,14 @@ const style = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         width:'100%',
-        height:'100%'
+        height:'100%',
+        paddingBottom:75
     },
     input:{
         flexDirection:'row',
         width:"60%",
-        marginVertical:8
+        marginVertical:8,
+        alignItems:'center'
     },
     inputTxt:{
         fontSize:14,
@@ -23,7 +25,8 @@ const style = StyleSheet.create({
         height:1,
         backgroundColor:"darkgrey",
         opacity:0.5,
-        marginBottom:25
+        marginBottom:15,
+        marginTop:-15
     },
     yellowLine:{
         width:'60%',

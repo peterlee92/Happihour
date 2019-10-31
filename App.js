@@ -24,13 +24,13 @@ import List from './comps/List';
 
 // import fontawesome for icons
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
-         faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch,
+import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, 
+         faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
-            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch,
+library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
+            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
             faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
             faDirections, faPhoneAlt, faTv, faTimesCircle)
 

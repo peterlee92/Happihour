@@ -17,7 +17,7 @@ function MenuBar(){
             >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
-                    <FontAwesomeIcon icon="map-marker-alt" color={'dimgrey'} size={32} style={style.ImgSize}/>
+                    <FontAwesomeIcon icon="map-marker-alt" color={'#74726C'} size={32} style={style.ImgSize}/>
                     <Text style={style.MenuText}>MAP</Text>
                 </View>
             </TouchableOpacity>
@@ -27,7 +27,7 @@ function MenuBar(){
             >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
-                    <FontAwesomeIcon icon="bus-alt" color={'dimgrey'} size={32} style={style.ImgSize}/>
+                    <FontAwesomeIcon icon="bus-alt" color={'#74726C'} size={32} style={style.ImgSize}/>
                     <Text style={style.MenuText}>GET HOME</Text>
                 </View>
             </TouchableOpacity>
@@ -37,7 +37,7 @@ function MenuBar(){
             >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
-                    <FontAwesomeIcon icon="heart" color={'dimgrey'} size={32} style={style.ImgSize}/>
+                    <FontAwesomeIcon icon="heart" color={'#74726C'} size={32} style={style.ImgSize}/>
                     <Text style={style.MenuText}>FAVOURITES</Text>
                 </View>
             </TouchableOpacity>
@@ -47,7 +47,7 @@ function MenuBar(){
             >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
-                    <FontAwesomeIcon icon="user-circle" color={'dimgrey'} size={32} style={style.ImgSize}/>
+                    <FontAwesomeIcon icon="user-circle" color={'#74726C'} size={32} style={style.ImgSize}/>
                     <Text style={style.MenuText}>PROFILE</Text>
                 </View>
             </TouchableOpacity>
