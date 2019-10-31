@@ -29,7 +29,8 @@ var styles = StyleSheet.create({
         backgroundColor:'orange',
         padding:10,
         borderRadius:10,
-        margin:20
+        margin:20,
+        flexDirection:'row'
     }
 })
 
