@@ -21,18 +21,26 @@ import GetHome from './screens/GetHome';
 import Taxi from './screens/Taxi';
 import ProfilePage from './screens/ProfilePage';
 import FavItems from './comps/FavItems';
+import MapPage from './screens/MapPage';
+import Map from './comps/Map';
+import Popup from './comps/Popup';
 
 // import fontawesome for icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
          faHeart, faMapMarkerAlt, faBusAlt, faUserCircle,
          faClock, faEnvelope, faLock, faUser,
-         faDirections, faPhoneAlt, faTv, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+         faDirections, faPhoneAlt, faTv, faTimesCircle, faChevronRight, 
+         faDesktop, faChevronLeft,
+        } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
-            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle,
-            faClock, faEnvelope, faLock, faUser,
-            faDirections, faPhoneAlt, faTv, faTimesCircle)
+library.add(
+  faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
+  faHeart, faMapMarkerAlt, faBusAlt, faUserCircle,
+  faClock, faEnvelope, faLock, faUser,
+  faDirections, faPhoneAlt, faTv, faTimesCircle, faChevronRight,
+  faDesktop, faChevronLeft
+  )
 
 //navigator between pages
 import Route from './Route';
@@ -43,7 +51,7 @@ import Route from './Route';
 function App() {
 
   return (
-    <Route />
+    <Map />
   );
 };
 
