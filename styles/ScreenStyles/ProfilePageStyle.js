@@ -6,30 +6,41 @@ const style = StyleSheet.create({
         color:"dimgrey",
         fontSize:16,
         flex:1,
-        marginLeft:30,
-        fontWeight:'500'
+        marginLeft:15,
+        fontWeight:'bold',
+        letterSpacing:1
     },
     titles:{
         color:"white",
-        fontSize:18,
+        fontSize:16,
+        letterSpacing:2,
         marginLeft:10
         // marginBottom:10,
         // marginTop:5,
     },
     SignOutTitles:{
         color:"black",
-        fontSize:18
+        fontSize:21,
+        fontWeight:'700',
+        letterSpacing:3
     },
     container:{
         justifyContent:"center",
         height:"100%",
-        backgroundColor:"#ffc04d",
-        alignItems:"center",
-        justifyContent:"center"
+        width:'100%',
+        // backgroundColor:"#E4A664",
+        alignItems:"center"
     },
     name:{
         color:"white",
-        fontSize:36
+        fontSize:40,
+        letterSpacing:5,
+        marginTop:-15
+        // fontWeight:'200'
+    },
+    atName:{
+        color:'#F4B869',
+        fontSize:18
     },
     settings:{
         flexDirection:"row",
@@ -40,10 +51,13 @@ const style = StyleSheet.create({
     avatar:{
         justifyContent:"center",
         alignItems:"center",
-        marginBottom: 25,
+        marginBottom: 10,
+        marginTop:-50,
         backgroundColor:'#3f5485',
-        width:400,
-        height:200,
+        width:500,
+        height:300,
+        borderWidth:10,
+        borderColor:'#404332',
         borderBottomLeftRadius:300,
         borderBottomRightRadius:300
     },
@@ -52,7 +66,6 @@ const style = StyleSheet.create({
         height:20
     },
     swtch:{
-        marginRight:20,
         transform:[{scale:.8}]
     },
     titleIcon:{
@@ -77,9 +90,9 @@ const style = StyleSheet.create({
         marginTop:10
     },
     SignOutbox:{
-        width:300,
+        width:350,
         height:50,
-        backgroundColor:'rgba(150,150,150,0.5)',
+        backgroundColor:'rgba(179,150,106,0.9)',
         // opacity:.5,
         justifyContent:"center",
         alignItems:'center',
@@ -87,7 +100,7 @@ const style = StyleSheet.create({
         margin:10
     },
     editBox:{
-        width:300,
+        width:350,
         height:50,
         backgroundColor:'rgba(0,0,0,0.5)',
         justifyContent:"space-between",

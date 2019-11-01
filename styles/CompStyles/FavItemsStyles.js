@@ -2,27 +2,27 @@ import {StyleSheet} from 'react-native';
 
 const style = StyleSheet.create({
     container:{
-        backgroundColor:"#042a3a",
+        backgroundColor:"#122832",
         width:350,
         height:175,
-        borderRadius:10
+        borderRadius:10,
+        marginVertical:5
     },
     position:{
         justifyContent:"center",
         alignItems:"center",
-        top:100,
         marginTop:10
     },
     favTitle:{
-        fontSize:24,
-        marginLeft:10,
-        marginTop:10,
+        fontSize:16,
+        marginLeft:15,
+        marginTop:20,
         paddingHorizontal:5,
         color:"white"
     },
     favDescr:{
-        fontSize:14,
-        marginLeft:12,
+        fontSize:12,
+        marginLeft:15,
         paddingHorizontal:5,
         paddingBottom:10,
         color:"white"
@@ -30,13 +30,13 @@ const style = StyleSheet.create({
     img:{
         width:175,
         height:100,
-        backgroundColor:'red',
+        // backgroundColor:'red',
         borderTopLeftRadius:10
     },
     img2:{
         width:175,
         height:100,
-        backgroundColor:'blue',
+        // backgroundColor:'blue',
         borderTopRightRadius:10
     },
     imgPosition:{
@@ -49,7 +49,7 @@ const style = StyleSheet.create({
         flexDirection:'row',
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor:"white",
+        backgroundColor:"#F4B96A",
         borderRadius:20,
         width:40,
         height:40,

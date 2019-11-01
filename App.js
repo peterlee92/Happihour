@@ -12,7 +12,6 @@ import styles from './styles/AppStyle';
 
 // pages
 import Login from './screens/Login';
-import ListPage from './screens/ListPage';
 import FavPage from './screens/FavPage';
 import Register from './screens/Register';
 import Detail from './screens/Detail';
@@ -21,23 +20,22 @@ import GetHome from './screens/GetHome';
 import Taxi from './screens/Taxi';
 import ProfilePage from './screens/ProfilePage';
 import FavItems from './comps/FavItems';
+import List from './comps/List';
 
 // import fontawesome for icons
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
-         faHeart, faMapMarkerAlt, faBusAlt, faUserCircle,
-         faClock, faEnvelope, faLock, faUser,
+import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, 
+         faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
+         faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, 
-            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle,
-            faClock, faEnvelope, faLock, faUser,
+library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
+            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
+            faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
             faDirections, faPhoneAlt, faTv, faTimesCircle)
 
 //navigator between pages
 import Route from './Route';
-
-
 
 
 function App() {
