@@ -80,8 +80,9 @@ function Map() {
                         latitude:lati,
                         longitude:longti
                     }}
+                    image={require('../icons/marker.png')}
                 >
-                    <Callout>
+                    <Callout tooltip>
                         <Popup />
                     </Callout>
                 </Marker>
