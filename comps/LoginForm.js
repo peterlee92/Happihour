@@ -1,14 +1,15 @@
 import React,{useState, useEffect } from 'react';
-import {View, TextInput, TouchableOpacity, Text, AsyncStorage} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text, AsyncStorage, KeyboardAvoidingView} from 'react-native';
 
-import styles from '../styles/LoginFormStyles';
+import styles from '../styles/CompStyles/LoginFormStyles';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 import {Actions} from 'react-native-router-flux';
 
 function LoginForm(){
 
-    // const [userName, SetUserName] = useState('');
-    // const [userPassword, SetUserPassword] = useState('');
+    const [userName, SetUserName] = useState('');
+    const [userPassword, SetUserPassword] = useState('');
 
     // useEffect(()=>{
     //     _loadInitialState().done()
@@ -52,27 +53,43 @@ function LoginForm(){
 
 
     return(
-        <View>
+        <KeyboardAvoidingView 
+            style={styles.wrapcontainer}
+            behavior="height"
+        >
+            <View style={{marginBottom:70}}>
+            <View style={styles.inputContainer}>
+            <FontAwesomeIcon icon="user" size={28} color={"white"} style={styles.inputIcon} />
             <TextInput
-                style={styles.input}
+                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                 placeholder="Username"
                 onChangeText={(username)=>{SetUserName(username)}}
+                underlineColorAndroid = "transparent"
+                placeholderTextColor="rgba(255,255,255,0.4)"
             />
+            </View>
+            <View style={styles.inputContainer}>
+            <FontAwesomeIcon icon="lock" size={28} color={"#f4e664"} style={styles.inputIcon} />
             <TextInput
-                style={styles.input}
+                style={[styles.input,{borderBottomColor:"#f4e664"}]}
                 placeholder="Password"
                 secureTextEntry={true}
                 onChangeText={(userpassword)=>{SetUserPassword(userpassword)}}
+                underlineColorAndroid = "transparent"
+                placeholderTextColor="#f4e664"
             />
-            <View style={styles.loginContainer}>
+            </View>
+            </View>
+            
+            <View style={styles.loginButContainer}>
                 <TouchableOpacity 
-                    style={styles.login}
-                    // onPress={()=>{login()}}
+                    style={styles.loginBut}
+                    onPress={()=>{Actions.mappage()}}
                 >
-                    <Text style={styles.loginText}>LOGIN</Text>
+                    <Text style={styles.loginTxt}>LOG IN</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 
