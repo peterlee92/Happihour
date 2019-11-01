@@ -8,7 +8,7 @@ function Popup(){
     return(
         <View style={styles.container}>
             <View>
-                <View style={{flexDirection:'row', marginTop:-50}}>
+                <View style={{flexDirection:'row'}}>
                     <Text>
                         <Image 
                             source={require('../imgs/colony1.png')}
