@@ -13,6 +13,7 @@ import Taxi from './screens/Taxi';
 import Transit from './screens/Transit';
 import MapPage from './screens/MapPage';
 import List from './comps/List';
+import Detail from './screens/Detail';
 
 
 function Route(){
@@ -28,7 +29,8 @@ function Route(){
             <Scene key='contactUs' component={ContactUs} title="ContactUs" />
             <Scene key='taxi' component={Taxi} title="Taxi" />
             <Scene key='transit' component={Transit} title="Transit" nitial={true}/>
-            <Scene key='map' component={MapPage} title="map" />
+            <Scene key="mappage" component={MapPage} title="MapPage" />
+            <Scene key="detail" component={Detail} title="Detail" />
             {/* <Scene key='list' component={List} title="List" i /> */}
 
         </Stack>
