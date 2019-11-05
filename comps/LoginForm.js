@@ -1,54 +1,45 @@
 import React,{useState, useEffect } from 'react';
-import {View, TextInput, TouchableOpacity, Text, AsyncStorage, KeyboardAvoidingView} from 'react-native';
-
+import {View, TextInput, TouchableOpacity, Text, AsyncStorage, KeyboardAvoidingView, Alert} from 'react-native';
 import styles from '../styles/CompStyles/LoginFormStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-
 import {Actions} from 'react-native-router-flux';
 
 function LoginForm(){
 
-    const [userName, SetUserName] = useState('');
-    const [userPassword, SetUserPassword] = useState('');
+    const [username, Setusername] = useState('');
+    const [userpassword, Setuserpassword] = useState('');
 
-    // useEffect(()=>{
-    //     _loadInitialState().done()
-    // });
+    // var CheckUserInfo=()=>{
+    //     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
 
-    // _loadInitialState = async ()=> {
-    //     var value = await AsyncStorage.getItem('user');
-    //         if(value !== null){
-    //             Actions.detail()
-    //         }
-    // } 
-
-    // login = () => {
-
-    //     fetch('http://142.232.154.244:3000/users', {
-    //         method : 'POST',
-    //         headers:{
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({
-    //             username: userName,
-    //             password: userPassword,
+    //     if(username == ''){
+    //         Alert.alert('Please enter your username');
+    //     }else if(reg.test(username)){
+    //         Alert.alert('Username is not correct');
+    //     }else if(userpassword == ''){
+    //         Alert.alert('Please enter your password');
+    //     }else{ 
+    //         fetch('http://142.232.149.175/Happihour/Login.php',{
+    //             method:'POST',
+    //             headers:{
+    //                 'Accept': 'application/json',
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({
+    //                 username: username,
+    //                 password: userpassword
+    //             })
+    //         }).then((response) => response.json())
+    //         .then((responseJson)=>{
+    //             if(responseJson == 'ok'){
+    //                 Alert.alert('welcome!');
+    //             }else{
+    //                 Alert.alert(responseJson);
+    //             }
+    //         }).catch((error) => {
+    //             console.error(error);
     //         })
-    //     })
-
-    //     .then((response) => response.json())
-    //     .then((res)=>{
-
-    //         if(res.success === true){
-    //             AsyncStorage.setItem('user', res.user);
-    //             Actions.detail();
     //         }
-
-    //         else{
-    //             alert(res.message);
-    //         }
-    //     })
-    //     .done();
     // }
 
 
@@ -63,7 +54,7 @@ function LoginForm(){
             <TextInput
                 style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                 placeholder="Username"
-                onChangeText={(username)=>{SetUserName(username)}}
+                onChangeText={(text)=>{Setusername(text)}}
                 underlineColorAndroid = "transparent"
                 placeholderTextColor="rgba(255,255,255,0.4)"
             />
@@ -74,7 +65,7 @@ function LoginForm(){
                 style={[styles.input,{borderBottomColor:"#f4e664"}]}
                 placeholder="Password"
                 secureTextEntry={true}
-                onChangeText={(userpassword)=>{SetUserPassword(userpassword)}}
+                onChangeText={(text)=>{Setuserpassword(text)}}
                 underlineColorAndroid = "transparent"
                 placeholderTextColor="#f4e664"
             />
@@ -84,7 +75,7 @@ function LoginForm(){
             <View style={styles.loginButContainer}>
                 <TouchableOpacity 
                     style={styles.loginBut}
-                    onPress={()=>{Actions.mappage()}}
+                    onPress={()=>{}}
                 >
                     <Text style={styles.loginTxt}>LOG IN</Text>
                 </TouchableOpacity>
