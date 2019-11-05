@@ -21,18 +21,20 @@ import Taxi from './screens/Taxi';
 import ProfilePage from './screens/ProfilePage';
 import FavItems from './comps/FavItems';
 import List from './comps/List';
+import MapPage from './screens/MapPage';
+
 
 // import fontawesome for icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, 
          faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
-         faDirections, faPhoneAlt, faTv, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+         faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
             faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
-            faDirections, faPhoneAlt, faTv, faTimesCircle)
+            faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop)
 
 //navigator between pages
 import Route from './Route';
