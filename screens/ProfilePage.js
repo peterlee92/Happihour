@@ -13,7 +13,46 @@ import {Avatar} from 'react-native-elements';
 //Router api
 import {Actions} from 'react-native-router-flux';
 
+// avatar imge picker
+import ImagePicker from 'react-native-image-picker';
+
 function ProfilePage(){
+
+// // More info on all the options is below in the API Reference... just some common use cases shown here
+// const options = {
+//     title: 'Select Avatar',
+//     customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
+//     storageOptions: {
+//       skipBackup: true,
+//       path: 'images',
+//     },
+//   };
+  
+//   /**
+//    * The first arg is the options object for customization (it can also be null or omitted for default options),
+//    * The second arg is the callback which sends object: response (more info in the API Reference)
+//    */
+//   ImagePicker.showImagePicker(options, (response) => {
+//     console.log('Response = ', response);
+  
+//     if (response.didCancel) {
+//       console.log('User cancelled image picker');
+//     } else if (response.error) {
+//       console.log('ImagePicker Error: ', response.error);
+//     } else if (response.customButton) {
+//       console.log('User tapped custom button: ', response.customButton);
+//     } else {
+//       const source = { uri: response.uri };
+  
+//       // You can also display the image using data:
+//       // const source = { uri: 'data:image/jpeg;base64,' + response.data };
+  
+//       this.setState({
+//         avatarSource: source,
+//       });
+//     }
+//   });
+
     return(
         <View style={style.container}>
             <ImageBackground source={require('../imgs/ProfileGrad.png')} style={style.container}>
@@ -24,6 +63,8 @@ function ProfilePage(){
                     <Text style={style.name}>Jane Doe</Text>
                     <Text style={style.atName}>@JaneDoe</Text>
                 </View>
+
+                <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:80, position:'absolute', top:0}} />
 
             <TouchableOpacity style={style.titleIcon} onPress={()=>(Actions.editAccount())}>
                 <View style={style.editBox}>
