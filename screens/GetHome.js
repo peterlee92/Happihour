@@ -9,6 +9,8 @@ function GetHome(){
     return(
         <View style={style.container}>
             <ImageBackground source={require('../imgs/popupBG2.png')} resizeMode='cover' style={{width:'100%', height:'100%', justifyContent:'center', alignItems:'center'}}>
+            <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:80, position:'absolute', top:0}} />
+
             <Text style={[style.GHS, {marginBottom:30}]}>Let's Get You Home Safe</Text>
             <View style={style.rows}>
                 <TouchableOpacity style={[style.position, {backgroundColor:'#234378'}]} onPress={()=>(Actions.transit())}>

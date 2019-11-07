@@ -28,10 +28,11 @@ function Route(){
             <Scene key='editAccount' component={EditAccount} title="EditAccount" />
             <Scene key='contactUs' component={ContactUs} title="ContactUs" />
             <Scene key='taxi' component={Taxi} title="Taxi" />
+            <Scene key='transit' component={Transit} title="Transit" initial={true}/>
+            <Scene key='map' component={MapPage} title="map" />
             <Scene key='transit' component={Transit} title="Transit" />
             <Scene key="mappage" component={MapPage} title="MapPage" />
             <Scene key="detail" component={Detail} title="Detail" />
-            {/* <Scene key='list' component={List} title="List" i /> */}
 
         </Stack>
         </Router>

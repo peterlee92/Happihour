@@ -65,7 +65,7 @@ function EditAccount(){
 
                 <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(true))}>
                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>
-                    <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} />
+                    {/* <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>
 
                 <TouchableOpacity style={style.button}>

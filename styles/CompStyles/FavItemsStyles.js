@@ -45,16 +45,16 @@ const style = StyleSheet.create({
     favImg:{
         position:'absolute',
         right:0,
-        bottom:0,
+        top:0,
         flexDirection:'row',
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor:"#F4B96A",
-        borderRadius:20,
-        width:40,
-        height:40,
+        // backgroundColor:"#F4B96A",
+        // borderRadius:20,
+        // width:40,
+        // height:40,
         marginRight:12,
-        marginBottom:12
+        marginTop:12
     }
 })
 

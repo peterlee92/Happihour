@@ -36,7 +36,7 @@ function ContactUs(){
 
                 <TouchableOpacity style={style.button}>
                     <Text style={{color:"#0E1617", fontWeight:"bold", letterSpacing:2}}>SEND</Text>
-                    <FontAwesomeIcon icon="chevron-right" size={21} color="grey" style={{position:'absolute', right:10}} />
+                    {/* <FontAwesomeIcon icon="chevron-right" size={21} color="grey" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>
             </ImageBackground>
         </View>
