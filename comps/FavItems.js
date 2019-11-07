@@ -17,7 +17,7 @@ function FavItems(name, descr, img, count) {
     }
 
     return(
-        // <TouchableOpacity style={style.position}>
+        <TouchableOpacity style={style.position}>
         <View style={style.position}>
             <View style={style.container}>
                 <View style={style.imgPosition}>
@@ -27,11 +27,11 @@ function FavItems(name, descr, img, count) {
                     <View style={style.favImg}>
                         {/* <Text style={{marginHorizontal:1}}>12</Text>
                         <FontAwesomeIcon icon='heart' size={12} style={{marginHorizontal:1}}/> */}
-                        <FontAwesomeIcon icon='heart' size={32} color={favColor}/> 
+                        <FontAwesomeIcon icon='heart' size={32} color={favColor} /> 
                     </View>
                 </TouchableOpacity>
                 </View>
-                <TouchableOpacity>
+                {/* <TouchableOpacity> */}
                     <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
                         <View>
                             <Text style={style.favTitle}>The Cascade Room</Text>
@@ -41,10 +41,10 @@ function FavItems(name, descr, img, count) {
                             <FontAwesomeIcon icon="chevron-right" color={'#ffef86'} size={32} style={{marginRight:12}}/>
                         </View>
                     </View>
-                </TouchableOpacity>
+                {/* </TouchableOpacity> */}
             </View>
             </View>
-        // </TouchableOpacity>
+        </TouchableOpacity>
     )
 }
 export default FavItems;
