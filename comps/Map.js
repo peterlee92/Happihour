@@ -82,7 +82,10 @@ function Map() {
                     }}
                     image={require('../icons/marker.png')}
                 >
-                    <Callout tooltip>
+                    <Callout 
+                        tooltip
+                        onPress={()=>{Actions.detail()}}
+                    >
                         <Popup />
                     </Callout>
                 </Marker>

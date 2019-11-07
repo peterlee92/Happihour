@@ -1,10 +1,44 @@
-import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import React,{useState} from 'react';
+import {View, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
 import { CheckBox } from 'react-native-elements';
 import styles from '../styles/CompStyles/RegisterFormStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 function RegisterForm(){
+
+    const [username, Setusername] = useState();
+    const [useremail, Setuseremail] = useState();
+    const [userpassword, Setuserpassword] = useState();
+    const [confirmpassword, Setconfirmpassword] = useState();
+
+   
+    // InsertDataToServer = () =>{
+    //     if(username = ""){
+            
+    //     }
+    //     fetch('http://142.232.149.175/Happihour/Register.php',{
+    //          method:'POST',
+    //          headers:{
+    //             'Accept': 'application/json',
+    //              'Content-Type': 'application/json'
+    //          },
+    //          body: JSON.stringify({
+    //              username: username,
+    //              email: useremail,
+    //              password: userpassword,
+    //              checkpassword: confirmpassword
+    //          })
+    //     }).then((response) => response.json())
+    //     .then((responseJson)=>{
+    //          // Showing response message coming from server after inserting records.
+    //         Alert.alert(responseJson);
+    //     }).catch((error) => {
+    //         console.error(error);
+    //     })
+    // }
+  
+    
+
     return(
         <View style={styles.wrapContainer}>
             <View style={styles.barTxtContainer}>
@@ -23,6 +57,7 @@ function RegisterForm(){
                     style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                     underlineColorAndroid = "transparent"
                     placeholderTextColor="rgba(255,255,255,0.4)"
+                    onChangeText = {(text)=>{Setusername(text)}}
 
                 />
             </View>
@@ -37,6 +72,7 @@ function RegisterForm(){
                     style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                     underlineColorAndroid = "transparent"
                     placeholderTextColor="rgba(255,255,255,0.4)"
+                    onChangeText = {(text)=>{Setuseremail(text)}}
                 />
             </View>
             <View style={styles.inputContainer}>
@@ -48,6 +84,7 @@ function RegisterForm(){
                     style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                     underlineColorAndroid = "transparent"
                     placeholderTextColor="rgba(255,255,255,0.4)"
+                    onChangeText = {(text)=>{Setuserpassword(text)}}
                 />
             </View>
             <View style={styles.inputContainer}>
@@ -58,13 +95,14 @@ function RegisterForm(){
                     style={[styles.input,{borderBottomColor:"#f4e664"}]}
                     underlineColorAndroid = "transparent"
                     placeholderTextColor="#f4e664"
+                    onChangeText = {(text)=>{Setconfirmpassword(text)}}
                 />
            </View>
 
             <View style={styles.signupContainer}>
                 <TouchableOpacity
                     style={styles.signupBut}
-                    onPress={()=> {}}
+                    onPress={()=>{}}
                 >
                     <Text style={styles.signupText}>SIGN UP</Text>
                 </TouchableOpacity>

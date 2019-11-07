@@ -13,13 +13,14 @@ import Taxi from './screens/Taxi';
 import Transit from './screens/Transit';
 import MapPage from './screens/MapPage';
 import List from './comps/List';
+import Detail from './screens/Detail';
 
 
 function Route(){
     return(
         <Router>
             <Stack key="root" hideNavBar={true}>
-            <Scene key="login" component={Login} title="Login" />
+            <Scene key="login" component={Login} title="Login" initial={true} />
             <Scene key="register" component={Register} title="Register" />
             <Scene key="favPage" component={FavPage} title="favPage"  />
             <Scene key="getHome" component={GetHome} title="GetHome" />
@@ -29,7 +30,9 @@ function Route(){
             <Scene key='taxi' component={Taxi} title="Taxi" />
             <Scene key='transit' component={Transit} title="Transit" initial={true}/>
             <Scene key='map' component={MapPage} title="map" />
-            {/* <Scene key='list' component={List} title="List" i /> */}
+            <Scene key='transit' component={Transit} title="Transit" />
+            <Scene key="mappage" component={MapPage} title="MapPage" />
+            <Scene key="detail" component={Detail} title="Detail" />
 
         </Stack>
         </Router>
