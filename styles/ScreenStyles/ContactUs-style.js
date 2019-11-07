@@ -10,7 +10,7 @@ const style = StyleSheet.create({
     },
     input:{
         flexDirection:'row',
-        width:"60%",
+        width:"80%",
         marginVertical:8,
         alignItems:'center'
     },
@@ -21,7 +21,7 @@ const style = StyleSheet.create({
         textAlign:"left"
     },
     inputLine:{
-        width:'60%',
+        width:'80%',
         height:1,
         backgroundColor:"darkgrey",
         opacity:0.5,
@@ -29,7 +29,7 @@ const style = StyleSheet.create({
         marginTop:-15
     },
     yellowLine:{
-        width:'60%',
+        width:'80%',
         height:1,
         backgroundColor:"#EDE479",
         opacity:0.5,
@@ -52,7 +52,7 @@ const style = StyleSheet.create({
         letterSpacing:4
     },
     button:{
-        width:"60%",
+        width:"80%",
         height: 40,
         backgroundColor:"#EDE479",
         borderRadius:10,
