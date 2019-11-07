@@ -19,7 +19,7 @@ function LoginForm(){
     //     }else if(userpassword == ''){
     //         Alert.alert('Please enter your password');
     //     }else{ 
-    //         fetch('http://142.232.149.175/Happihour/Login.php',{
+    //         fetch('http://142.232.145.183/Happihour/Login.php',{
     //             method:'POST',
     //             headers:{
     //                 'Accept': 'application/json',
@@ -34,14 +34,14 @@ function LoginForm(){
     //             if(responseJson == 'ok'){
     //                 Alert.alert('welcome!');
     //             }else{
-    //                 Alert.alert(responseJson);
+    //                 Alert.alert(JSON.stringify(responseJson));
+    //                 console.log(responseJson)
     //             }
     //         }).catch((error) => {
     //             console.error(error);
     //         })
     //         }
     // }
-
 
     return(
         <KeyboardAvoidingView 
