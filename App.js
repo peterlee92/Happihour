@@ -29,16 +29,12 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, 
          faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
-         faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
-         faPlus, faCalendarAlt, faImage,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faMinus} from '@fortawesome/free-solid-svg-icons';
+         faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
             faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
-            faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
-            faPlus, faCalendarAlt,faImage, faMinus,
-            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar)
+            faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop)
 
 //navigator between pages
 import Route from './Route';
