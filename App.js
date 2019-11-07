@@ -22,6 +22,8 @@ import ProfilePage from './screens/ProfilePage';
 import FavItems from './comps/FavItems';
 import List from './comps/List';
 import MapPage from './screens/MapPage';
+import Map from './comps/Map';
+import DetailContent from './comps/DetailContent';
 
 
 // import fontawesome for icons
@@ -42,6 +44,7 @@ library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, fa
 
 //navigator between pages
 import Route from './Route';
+
 
 
 function App() {
