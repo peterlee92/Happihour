@@ -9,7 +9,7 @@ const style = StyleSheet.create({
     },
     jane:{
         height:60,
-        width:'80%',
+        width:'90%',
         backgroundColor:'#878980',
         alignItems:'center',
         flexDirection:'row',
@@ -37,7 +37,7 @@ const style = StyleSheet.create({
     },
     input:{
         flexDirection:'row',
-        width:"60%",
+        width:"80%",
         alignItems:'center',
         marginBottom:-4
     },
@@ -48,14 +48,14 @@ const style = StyleSheet.create({
         textAlign:"left"
     },
     inputLine:{
-        width:'60%',
+        width:'80%',
         height:1,
         backgroundColor:"darkgrey",
         opacity:0.5,
         marginBottom:10
     },
     yellowLine:{
-        width:'60%',
+        width:'80%',
         height:1,
         backgroundColor:"#EDE479",
         opacity:0.5,
@@ -78,7 +78,7 @@ const style = StyleSheet.create({
         letterSpacing:4
     },
     button:{
-        width:"60%",
+        width:"80%",
         height: 40,
         backgroundColor:"#EDE479",
         borderRadius:10,

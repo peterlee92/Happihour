@@ -8,12 +8,14 @@ function MenuBar(){
 
     const [SelectOption, setSelectOption] = useState('');
 
-    
 
     return(
         <View style={style.barPosition}>
             <TouchableOpacity
-                onPress={()=>(Actions.map())}
+                onPress={()=>{
+                    Actions.mappage();
+
+                }}
             >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>

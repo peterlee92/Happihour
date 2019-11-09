@@ -1,13 +1,12 @@
 import React from 'react';
 import {View, Image} from 'react-native';
-import { SearchBar } from 'react-native-elements';
 import Map from '../comps/Map';
 import MenuBar from '../comps/MenuBar'
 import styles from '../styles/ScreenStyles/MapPageStyles';
 
 
 
-function MapPage(){
+function MapPage(props){
     const region = {
         latitude:49.282730,
         longitude:-123.120735,
@@ -27,7 +26,9 @@ function MapPage(){
                     inputContainerStyle={{backgroundColor:'white', height:30,width:'80%',borderWidth:0}}
                 />
             </View> */}
-            <Map />
+            <Map 
+                page={props.page}
+            />
             <MenuBar />
         </View>
     )

@@ -63,8 +63,8 @@ function Map() {
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
                 region={{
-                    latitude:lati,
-                    longitude:longti,
+                    latitude:49.268245,
+                    longitude:-123.0348778,
                     latitudeDelta: 0.0992,
                     longitudeDelta: 0.0421,
                   }}
@@ -77,12 +77,15 @@ function Map() {
             >
                 <Marker
                     coordinate={{
-                        latitude:lati,
-                        longitude:longti
+                        latitude:49.268245,
+                        longitude:-123.0348778,
                     }}
                     image={require('../icons/marker.png')}
-                >
-                    <Callout tooltip>
+                > 
+                    <Callout 
+                        tooltip
+                        onPress={()=>{Actions.detail()}}
+                    >
                         <Popup />
                     </Callout>
                 </Marker>
