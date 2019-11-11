@@ -20,8 +20,7 @@ const style = StyleSheet.create({
         flex:1,
         justifyContent:"center",
         alignItems:"center",
-        flexDirection:"column",
-        padding:5
+        flexDirection:"column"
     },
     ImgSize:{
         // width:50,
