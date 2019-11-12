@@ -24,6 +24,13 @@ import List from './comps/List';
 import MapPage from './screens/MapPage';
 import Map from './comps/Map';
 import DetailContent from './comps/DetailContent';
+import ExecInfo from './screens/ExecInfo';
+import ExecHour from './screens/ExecHour';
+import ExecPhoto from './screens/ExecPhoto';
+import ExecMenu from './screens/ExecMenu';
+import Transit from './screens/Transit';
+import Psa01 from './comps/Psa01';
+
 
 
 // import fontawesome for icons
@@ -44,14 +51,20 @@ library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, fa
 
 //navigator between pages
 import Route from './Route';
+import ContactUs from './screens/ContactUs';
+import EditAccount from './screens/EditAccount';
+import Gethomemap from './comps/Gethomemap';
+
+
 
 
 
 function App() {
 
   return (
-    <Route />
+    <Transit />
   );
 };
 
 export default App;
+// export default from "./storybook";
