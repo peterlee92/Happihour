@@ -27,13 +27,13 @@ import MapPage from './screens/MapPage';
 // import fontawesome for icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, 
-         faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
-         faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
+         faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen, faCheck,
+         faClock, faEnvelope, faLock, faUser, faPen, faTaxi, faMobileAlt, faSubway,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
-            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
-            faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
+            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen, faCheck,
+            faClock, faEnvelope, faLock, faUser, faPen, faTaxi, faMobileAlt, faSubway,
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop)
 
 //navigator between pages
