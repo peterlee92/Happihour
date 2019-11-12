@@ -12,30 +12,30 @@ function RegisterForm(){
     const [confirmpassword, Setconfirmpassword] = useState();
 
    
-    // InsertDataToServer = () =>{
-    //     if(username = ""){
+    InsertDataToServer = () =>{
+        if(username = ""){
             
-    //     }
-    //     fetch('http://142.232.149.175/Happihour/Register.php',{
-    //          method:'POST',
-    //          headers:{
-    //             'Accept': 'application/json',
-    //              'Content-Type': 'application/json'
-    //          },
-    //          body: JSON.stringify({
-    //              username: username,
-    //              email: useremail,
-    //              password: userpassword,
-    //              checkpassword: confirmpassword
-    //          })
-    //     }).then((response) => response.json())
-    //     .then((responseJson)=>{
-    //          // Showing response message coming from server after inserting records.
-    //         Alert.alert(responseJson);
-    //     }).catch((error) => {
-    //         console.error(error);
-    //     })
-    // }
+        }
+        fetch('http://142.232.158.76/Happihour/Register.php',{
+             method:'POST',
+             headers:{
+                'Accept': 'application/json',
+                 'Content-Type': 'application/json'
+             },
+             body: JSON.stringify({
+                 username: username,
+                 email: useremail,
+                 password: userpassword,
+                 checkpassword: confirmpassword
+             })
+        }).then((response) => response.json())
+        .then((responseJson)=>{
+             // Showing response message coming from server after inserting records.
+            Alert.alert(responseJson);
+        }).catch((error) => {
+            console.error(error);
+        })
+    }
   
     
 
