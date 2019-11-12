@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import style from '../styles/CompStyles/FavItemsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
-function FavItems(name, descr, img, count) {
+function FavItems({name, address}) {
 
     const [SelectFav, setSelectFav] = useState(true);
 
@@ -47,8 +47,8 @@ function FavItems(name, descr, img, count) {
                         alignItems:'center'}}
                     >
                         <View>
-                            <Text style={style.favTitle}>The Cascade Room</Text>
-                            <Text style={style.favDescr}>2616 Main St Vancouver, BC V5T 3E6</Text>
+                            <Text style={style.favTitle}>{name}</Text>
+                            <Text style={style.favDescr}>{address}</Text>
                         </View>
                         <View>
                             <FontAwesomeIcon 

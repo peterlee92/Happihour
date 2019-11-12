@@ -14,6 +14,7 @@ function GetHome(){
                 style={{
                     width:'100%', 
                     height:'100%', 
+                    flex:10.5,
                     justifyContent:'center', 
                     alignItems:'center'}}
             >

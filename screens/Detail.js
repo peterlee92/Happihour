@@ -7,15 +7,12 @@ import styles from '../styles/ScreenStyles/DetailStyles';
 function Detail () {
     return(
         <ScrollView style={styles.scroll}>
-        
-            
-            <DetailHeader />
+        <DetailHeader />
         <ImageBackground
             style={styles.bg}
             source={require('../imgs/bg3.png')}
-        >
-            <DetailContent />
-            
+            >
+            <DetailContent />            
         </ImageBackground>
         </ScrollView>
     )

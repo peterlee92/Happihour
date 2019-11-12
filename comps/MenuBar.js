@@ -8,10 +8,12 @@ function MenuBar(){
 
     const [SelectOption, setSelectOption] = useState(0);
 
+
     var mapIcon = '#F4B869';
     var getHomeIcon = '#74726C';
     var favIcon = '#74726C';
     var profileIcon = '#74726C';
+
 
 if(SelectOption === 0 || 1 || 2 || 3 || 4){
     if(Actions.currentScene == 'map'){

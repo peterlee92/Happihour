@@ -22,29 +22,50 @@ import ProfilePage from './screens/ProfilePage';
 import FavItems from './comps/FavItems';
 import List from './comps/List';
 import MapPage from './screens/MapPage';
+import Map from './comps/Map';
+import DetailContent from './comps/DetailContent';
+import ExecInfo from './screens/ExecInfo';
+import ExecHour from './screens/ExecHour';
+import ExecPhoto from './screens/ExecPhoto';
+import ExecMenu from './screens/ExecMenu';
+import Transit from './screens/Transit';
+import Psa01 from './comps/Psa01';
+
 
 
 // import fontawesome for icons
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, 
-         faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen, faCheck,
-         faClock, faEnvelope, faLock, faUser, faPen, faTaxi, faMobileAlt, faSubway,
-         faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
+         faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
+         faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
+         faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
+         faPlus, faCalendarAlt,faImage, faMinus,
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
-            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen, faCheck,
-            faClock, faEnvelope, faLock, faUser, faPen, faTaxi, faMobileAlt, faSubway,
-            faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop)
+            faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
+            faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
+            faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
+            faPlus, faCalendarAlt,faImage, faMinus,
+            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck)
+
 
 //navigator between pages
 import Route from './Route';
+import ContactUs from './screens/ContactUs';
+import EditAccount from './screens/EditAccount';
+import Gethomemap from './comps/Gethomemap';
+
+
+
 
 
 function App() {
 
   return (
-    <Route />
+    <Transit />
   );
 };
 
 export default App;
+// export default from "./storybook";
