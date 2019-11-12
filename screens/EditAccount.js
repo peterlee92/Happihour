@@ -4,6 +4,7 @@ import AccountChanges from '../comps/AccountChanges-popUp';
 import style from '../styles/ScreenStyles/EditAccount-styles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
+import AddContact from '../comps/AddContact-popUp';
 
 function EditAccount(){
 
@@ -14,10 +15,20 @@ function EditAccount(){
     if(ShowPopUp === false){
         saveChanges = null;
     } else{
-        saveChanges = <View style={{backgroundColor:'rgba(0,0,0,0.5)', width:'100%', height:'80%', position:'absolute', justifyContent:"center", alignItems:"center"}}>
-                         <AccountChanges />
-                     </View>
+        saveChanges = <AccountChanges />
     }
+
+
+    const[ShowPopUp2, setShowPopUp2] = useState(false);
+
+    var emergency = null;
+
+    if(ShowPopUp2 === false){
+        emergency = null;
+    } else{
+        emergency = <AddContact />
+    }
+
 
 
     return(   
@@ -68,11 +79,12 @@ function EditAccount(){
                     {/* <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>
 
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp2(true))}>
                     <Text style={{color:"#9B3F3B", fontWeight:"bold"}}>EMERGENCY CONTACT</Text>
                 </TouchableOpacity>
 
                 {saveChanges}
+                {emergency}
                 
             </ImageBackground>
         </View>
