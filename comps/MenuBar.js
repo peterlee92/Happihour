@@ -14,11 +14,9 @@ function MenuBar(){
             <TouchableOpacity
                 onPress={()=>{
                     Actions.mappage();
-
                 }}
             >
                 <View style={style.ItemPosition}>
-                    <Image style={style.ImgSize} /*source={require()}*//>
                     <FontAwesomeIcon icon="map-marker-alt" color={'#74726C'} size={32} style={style.ImgSize}/>
                     <Text style={style.MenuText}>MAP</Text>
                 </View>
@@ -28,7 +26,6 @@ function MenuBar(){
                   onPress={()=>(Actions.getHome())}
             >
                 <View style={style.ItemPosition}>
-                    <Image style={style.ImgSize} /*source={require()}*//>
                     <FontAwesomeIcon icon="bus-alt" color={'#74726C'} size={32} style={style.ImgSize}/>
                     <Text style={style.MenuText}>GET HOME</Text>
                 </View>
@@ -38,7 +35,6 @@ function MenuBar(){
                   onPress={()=>(Actions.favPage())}
             >
                 <View style={style.ItemPosition}>
-                    <Image style={style.ImgSize} /*source={require()}*//>
                     <FontAwesomeIcon icon="heart" color={'#74726C'} size={32} style={style.ImgSize}/>
                     <Text style={style.MenuText}>FAVOURITES</Text>
                 </View>
@@ -48,7 +44,6 @@ function MenuBar(){
                 onPress={()=>(Actions.profile())}
             >
                 <View style={style.ItemPosition}>
-                    <Image style={style.ImgSize} /*source={require()}*//>
                     <FontAwesomeIcon icon="user-circle" color={'#74726C'} size={32} style={style.ImgSize}/>
                     <Text style={style.MenuText}>PROFILE</Text>
                 </View>
