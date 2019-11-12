@@ -6,10 +6,6 @@ import style from '../styles/ScreenStyles/ProfilePageStyle';
 //icons and symbols 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
-//react native elements import for things such as editable avatar, search bars, and checkboxes
-import {Avatar} from 'react-native-elements';
-// import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
 //Router api
 import {Actions} from 'react-native-router-flux';
 
@@ -59,18 +55,15 @@ const options = {
         <View style={style.container}>
             <ImageBackground source={require('../imgs/ProfileGrad.png')} style={style.container}>
                 <View style={style.avatar}>
-                    {/* <ImageBackground source={require('../imgs/profileCurvedImage.png')} resizeMode='cover' style={{width:'100%', height:410, borderBottomLeftRadius:350, borderBottomRightRadius:350, overflow:'hidden'}}> */}
-                    {/* <Avatar source={{uri:'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',}} showEditButton/> */}
                         <Image source={require('../imgs/profileCurvedImage.png')} resizeMode='cover' style={{width:'100%', height:'100%', position:"absolute", borderBottomLeftRadius:350, borderBottomRightRadius:350, overflow:'hidden'}}/>
                         <Image style={style.AvatarImg} source={require('../imgs/Pororo.png')} />
-                        <TouchableOpacity /*onPress={ImgPick}*/ style={{position:'absolute', right:280,  top:200}}>
+                        <TouchableOpacity onPress={ImgPick} style={{position:'absolute', right:280,  top:200}}>
                             <View style={{width:30, height:30, backgroundColor:'#808080', borderRadius:15, justifyContent:'center', alignItems:'center'}}>
                                 <FontAwesomeIcon icon='pen' color='#F4B869'/>
                             </View>
                         </TouchableOpacity>
                         <Text style={style.name}>Jane Doe</Text>
                         <Text style={style.atName}>@JaneDoe</Text>
-                    {/* </ImageBackground> */}
                 </View>
 
                 <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:75, position:'absolute', top:0}} />

@@ -12,8 +12,8 @@ const style = StyleSheet.create({
     },
     GHS:{
         color:"white",
-        fontSize:16,
-        fontWeight:"bold",
+        fontSize:18,
+        // fontWeight:"",
         letterSpacing:3,
         textAlign:'center'
     },
