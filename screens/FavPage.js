@@ -35,8 +35,7 @@ function FavPage(){
         <View style={{ height: "100%", backgroundColor:"#0E1617"}}>
             {/* <Image  source={require('../imgs/Flow_Header.svg')} /> */}
             <ImageBackground source={require('../imgs/bg1.png')} style={{width:'100%', height:'100%'}}>
-                <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:80}} />
-            <View style={{flex:9.5}}>
+                <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:75}} />
             <SafeAreaView>
             <ScrollView>
                 {

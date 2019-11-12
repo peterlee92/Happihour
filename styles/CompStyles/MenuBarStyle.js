@@ -16,17 +16,10 @@ const style = StyleSheet.create({
         flex:1,
         justifyContent:"center",
         alignItems:"center",
-        flexDirection:"column",
-        padding:5
+        flexDirection:"column"
     },
     ImgSize:{
-        // width:50,
-        // height:50,
         marginBottom:3
-    },
-    MenuText:{
-        fontSize:10,
-        color:"#74726C"
     }
 })
 

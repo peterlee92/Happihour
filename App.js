@@ -35,19 +35,20 @@ import Psa01 from './comps/Psa01';
 
 // import fontawesome for icons
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight, 
+import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
          faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
          faPlus, faCalendarAlt,faImage, faMinus,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar} from '@fortawesome/free-solid-svg-icons';
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
             faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
             faPlus, faCalendarAlt,faImage, faMinus,
-            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar)
+            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck)
+
 
 //navigator between pages
 import Route from './Route';
