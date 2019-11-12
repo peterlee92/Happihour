@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, PermissionsAndroid, Text, Image } from 'react-native';
+import { View, TextInput, PermissionsAndroid, Text, Image, Button, TouchableOpacity } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import styles from '../styles/CompStyles/MapStyles';
 import Geolocation from '@react-native-community/geolocation';
+import Geocoder from 'react-native-geocoding';
 import Popup from './Popup';
 import {Actions} from 'react-native-router-flux';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+
 
 function Map() {
 
-    const [lati, setLati] = useState(49.282730);
-    const [longti, setLongti] = useState(-123.120735);
+    const [lati, setLati] = useState();
+    const [longti, setLongti] = useState();
+    const [Tfilter, setTfilter] = useState([{lat:0,lng:0}]);
+    
 
     var region = {
         latitude: lati,
@@ -47,18 +52,76 @@ function Map() {
         }
     }
 
+    var TimeFilter=async()=>{
+
+        var today = new Date();
+        var C_day = today.getUTCDay(),
+            C_hour = today.getHours(),
+            C_minute = today.getMinutes();
+
+        let timeresponse = await fetch('http://142.232.152.245/Happihour/TimeFilter.php',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                C_day:"Mon",
+                C_hour:"16",
+                C_minute:"00"
+            })
+        })
+
+        let timedata = await timeresponse.json()
+        setTfilter(timedata);
+        
+        timedata.map((obj,i)=>{
+            Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
+            Geocoder.from(obj.address)
+                    .then(json => {
+                        var location = json.results[0].geometry.location;
+                        var arr = Tfilter;
+                        arr.push(location);
+                        arr = arr.map((o)=>{
+                            return o;
+                        });
+                        setTfilter(arr);
+                        // console.log(arr);
+
+                    })
+                    .catch(error => console.log(error));
+        })
+        
+        console.log(Tfilter);
+    
+    }
+
+    // var LocationFilter=async()=>{
+
+    // }
+
+    // <Marker
+    //             coordinate={{
+    //                 latitude:
+    //                 longitude:
+    //             }}
+
+    //         >
+    //             <Callout>
+    //                 <Popup />
+    //             </Callout>
+    //         </Marker>
+
+    
+
     useEffect(() => {
         getLoc();
-        /*Geolocation.getCurrentPosition(
-            position => {
-
-                console.log(position)
-            }
-        )*/
+    
     }, []);
 
     return (
         <View style={styles.container}>
+
             <MapView
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
@@ -75,21 +138,32 @@ function Map() {
                 toolbarEnabled={true}
                 showsMyLocationButton={true}
             >
-                <Marker
-                    coordinate={{
-                        latitude:49.268245,
-                        longitude:-123.0348778,
-                    }}
-                    image={require('../icons/marker.png')}
-                > 
-                    <Callout 
-                        tooltip
-                        onPress={()=>{Actions.detail()}}
-                    >
-                        <Popup />
-                    </Callout>
-                </Marker>
+                    
+                
             </MapView>
+
+            <View style={styles.buttonContainer}>
+                
+        <View >
+            <TouchableOpacity 
+                style={styles.timebutton}
+                onPress={()=>{TimeFilter()}}
+            >
+                <FontAwesomeIcon icon="clock" color={"#f4e664"} size={24} style={{marginRight:12}}/>
+                <Text style={styles.buttontxt}>TIME</Text>
+            </TouchableOpacity>
+        </View>
+    
+
+    
+        <View >
+            <TouchableOpacity style={styles.locationbutton}>
+                <FontAwesomeIcon icon="map-marker-alt" color={"#f4e664"} size={24} style={{marginRight:12}}/>
+                <Text style={styles.buttontxt}>LOCATION</Text>
+            </TouchableOpacity>
+        </View>
+
+        </View>
 
         </View>
     )
