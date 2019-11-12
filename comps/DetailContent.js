@@ -20,7 +20,8 @@ function DetailContent(){
                 'Content-Type': 'application/json'
             },
             body:JSON.stringify({
-                rest_name:"Colony"
+                // rest_name:"Colony"
+                rest_name:restaurant_name
             })
         })
         
