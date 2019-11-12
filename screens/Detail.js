@@ -12,8 +12,7 @@ function Detail () {
             style={styles.bg}
             source={require('../imgs/bg3.png')}
             >
-            <DetailContent />
-            
+            <DetailContent />            
         </ImageBackground>
         </ScrollView>
     )

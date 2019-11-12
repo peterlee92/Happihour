@@ -8,7 +8,7 @@ import {Actions} from 'react-native-router-flux';
 function GetHome(){
     return(
         <View style={style.container}>
-            <ImageBackground source={require('../imgs/popupBG2.png')} resizeMode='cover' style={{width:'100%', height:'100%', justifyContent:'center', alignItems:'center'}}>
+            <ImageBackground source={require('../imgs/popupBG2.png')} resizeMode='cover' style={{width:'100%', flex:10.5, justifyContent:'center', alignItems:'center'}}>
             <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:80, position:'absolute', top:0}} />
 
             <Text style={[style.GHS, {marginBottom:30}]}>Let's Get You Home Safe</Text>
