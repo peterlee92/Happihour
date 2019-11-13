@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 const styles =  StyleSheet.create({
     container:{
         justifyContent:"center",
-        alignItems:"flex-start",
+        alignItems:"center",
         flex:1,
     },
     subtitle:{
@@ -11,7 +11,7 @@ const styles =  StyleSheet.create({
         fontSize:16,
         letterSpacing:.15,
         color:"white",
-        marginLeft:10,
+        flex:.5,
     },  
     overline:{
         fontFamily:"Nunito-Regular",
@@ -19,7 +19,13 @@ const styles =  StyleSheet.create({
         letterSpacing:1.5,
         color:"white",
         marginLeft:10,
-    },   
+    },
+    heading4:{
+        fontFamily:"Nunito-Semibold",
+        fontSize:34,
+        letterSpacing:.25,
+        color:"white",
+    },
     heading6:{
         fontFamily:"Nunito-Semibold",
         fontSize:20,
@@ -31,17 +37,15 @@ const styles =  StyleSheet.create({
     input:{
         width:250,
         height: 50,
-        borderColor: 'gray',
-        borderWidth: 1,
         borderRadius:5,
         margin:10,
-        backgroundColor:"white",
-        padding:15
+        backgroundColor:"rgba(255,255,255,.3)",
+        padding:15,
     },
     icon:{
         margin:10,
         color: "#07191E",
-        backgroundColor:"#FBB55A",
+        backgroundColor:"#FFD96F",
         borderRadius:5
     },
     menu:{
@@ -50,18 +54,30 @@ const styles =  StyleSheet.create({
     nav:{
         justifyContent:"center",
         alignItems:"center",
+        flex:.5,
+        position:"absolute",
+        top:10
+    },
+    screen:{
+        flex:2,
+        justifyContent:"center",
+        alignItems:"flex-start",
+        marginTop:20,
     },
     day:{
         flexDirection:"row",
     },
     img:{
-        width:175,
+        width:170,
         height:100,
         resizeMode:'contain',
-        margin:5
+        margin:10
     },
     imgRow:{
         flexDirection:"row",
+    },
+    infoForm:{
+        flex:2
     }
 })
 

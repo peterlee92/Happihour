@@ -33,18 +33,26 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
          faPlus, faCalendarAlt,faImage, faMinus,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar} from '@fortawesome/free-solid-svg-icons';
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faGlassCheers, faHandsHelping, faCaretDown} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
             faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
             faPlus, faCalendarAlt,faImage, faMinus,
-            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar)
+            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faGlassCheers, faHandsHelping,faCaretDown)
 
 //navigator between pages
 import Route from './Route';
 
+import Psa01 from './comps/Psa01';
+import Psa02 from './comps/Psa02';
+import Psa03 from './comps/Psa03';
+import Psa04 from './comps/Psa04';
+import Psa05 from './comps/Psa05';
+import Psa06 from './comps/Psa06';
+import Psa07 from './comps/Psa07';
+import ExecInfo from './screens/ExecInfo';
 
 
 function App() {
