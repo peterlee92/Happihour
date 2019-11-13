@@ -92,8 +92,8 @@ const options = {
                     <Text style={style.SignOutTitles}>Sign Out</Text>
                 </View>
             </TouchableOpacity>
-            <MenuBar />
             </ImageBackground>
+            <MenuBar />
         </View>
     )
 }

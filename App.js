@@ -40,13 +40,13 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
          faPlus, faCalendarAlt,faImage, faMinus,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck} from '@fortawesome/free-solid-svg-icons';
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobileAlt} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
             faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
-            faPlus, faCalendarAlt,faImage, faMinus,
+            faPlus, faCalendarAlt,faImage, faMinus, faMobileAlt,
             faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck)
 
 
@@ -63,7 +63,7 @@ import Gethomemap from './comps/Gethomemap';
 function App() {
 
   return (
-    <Transit />
+    <List />
   );
 };
 

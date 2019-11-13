@@ -62,7 +62,7 @@ const style = StyleSheet.create({
         marginBottom:50
     },
     header:{
-        backgroundColor:'#0D1617',
+        backgroundColor:'#0B1A1F',
         width:'100%',
         height:75,
         justifyContent:"center"
