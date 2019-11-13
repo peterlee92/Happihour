@@ -71,6 +71,7 @@ const btnStyles =  StyleSheet.create({
     },
     timeText:{
         fontSize:16,
+        fontFamily:"Nunito-Regular",        
     },
     caretIcon:{
         position:"absolute",
@@ -89,6 +90,7 @@ const btnStyles =  StyleSheet.create({
         fontSize:14,
         letterSpacing:3,
         color:"#C03B37",
+        fontFamily:"Nunito-Regular",        
     },
     orangeBtn:{
         marginTop:20,
@@ -101,7 +103,8 @@ const btnStyles =  StyleSheet.create({
         textAlign:'center',
         fontSize:14,
         color:"#2E3736",
-        letterSpacing:5
+        letterSpacing:5,
+        fontFamily:"Nunito-Regular",        
     },    
 })
 

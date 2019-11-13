@@ -37,6 +37,7 @@ const style =  StyleSheet.create({
         fontSize:20,
         color:"#f4e664",
         textAlign:"center",
+        fontFamily:"Nunito-Regular",        
     },
     psaRow:{
         flex:3,
@@ -48,7 +49,8 @@ const style =  StyleSheet.create({
         marginTop:10,
         fontSize:16,
         color:"white",
-        lineHeight:30
+        lineHeight:30,
+        fontFamily:"Nunito-Regular",        
     },
     btnRow:{
         flex:1
@@ -65,6 +67,7 @@ const style =  StyleSheet.create({
         fontSize:14,
         letterSpacing:3,
         color:"#C03B37",
+        fontFamily:"Nunito-Regular",        
     },
     orangeBtn:{
         marginTop:20,
@@ -77,7 +80,8 @@ const style =  StyleSheet.create({
         textAlign:'center',
         fontSize:14,
         color:"#2E3736",
-        letterSpacing:5
+        letterSpacing:5,
+        fontFamily:"Nunito-Regular",        
     },
 })
 

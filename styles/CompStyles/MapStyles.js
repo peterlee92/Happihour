@@ -39,7 +39,8 @@ var styles = StyleSheet.create({
     buttontxt:{
         color:"#f4e664",
         fontSize:15,
-        letterSpacing:1
+        letterSpacing:1,
+        fontFamily:"Nunito-Regular",        
     },
     map:{
         width:'100%',

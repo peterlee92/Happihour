@@ -14,12 +14,14 @@ var styles = StyleSheet.create({
         flexDirection:'row'
     },
     txt:{
-        color:'white'
+        color:'white',
+        fontFamily:"Nunito-Regular",        
     },
     price:{
         color:"#ffd96f",
         position:'absolute',
-        right:0
+        right:0,
+        fontFamily:"Nunito-Regular",        
     },
     buttonsContainer:{
         flexDirection:'row',

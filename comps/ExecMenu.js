@@ -1,10 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import {View, TextInput, TouchableOpacity, Text} from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import styles from '../styles/CompStyles/ExecCompStyles';
 import btnStyles from '../styles/CompStyles/BtnStyles';
 
 function ExecMenu(){
+
+    const [foodMenu, SetFoodMenu] = useState([]);
+    const [drinkMenu, SetDrinkMenu] = useState([]);
+
+    var GetMenu = async()=>{
+        let drinkItems = await fetch('http://192.168.0.12/Happihour/execDrinks.php',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify({
+                rest_name:"Colony"
+            })
+        })
+
+        let drinkData = await drinkItems.json();
+        SetDrinkMenu(drinkData);
+
+        let foodItems = await fetch('http://142.232.49.63/Happihour/execFood.php',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify({
+                rest_name:1
+            })
+        })
+        let foodData = await foodItems.json();
+        SetFoodMenu(foodData);
+    }
+
+    useEffect(()=>{
+        GetMenu();
+    },[]);
+
   // Click Edit to display delete button    
     const [del, showDel] = useState(false);
     var delBtn = null;
@@ -56,15 +93,26 @@ function ExecMenu(){
         </View>
 {/* Add Item */}
 
-            <View style={[{flexDirection:"row",alignItems:"center"}]}>
-                <TextInput
-                    style={[styles.input,{width:200}]}
-                    placeholder="Menu Item"/>
-                <TextInput
-                    style={[styles.input,{width:70}]}
-                    placeholder="0.00"/>
-                 {delBtn}                      
-            </View>
+            {
+                drinkMenu.map((obj,i)=>{
+                    return(
+                        <View style={[{flexDirection:"row",alignItems:"center"}]}>
+                        <TextInput
+                            style={[styles.input,{width:200}]}
+                            placeholder="Menu Item"
+                            value={obj.name}/>
+                            
+                        <TextInput
+                            style={[styles.input,{width:70}]}
+                            placeholder="0.00"
+                            value={obj.price}/>
+                         {delBtn}                      
+                    </View>
+                    )
+                })
+            }
+
+
             {drinkItems}
 {/* Add Item Input Row */}
         <TouchableOpacity
@@ -87,16 +135,24 @@ function ExecMenu(){
 
 {/* Add Item */}
 
-<View style={[{flexDirection:"row",alignItems:"center"}]}>
-                <TextInput
-                    style={[styles.input,{width:200}]}
-                    placeholder="Menu Item"/>
-                <TextInput
-                    style={[styles.input,{width:70}]}
-                    placeholder="0.00"/>
-                 {delBtn}                    
-                                      
-            </View>
+{
+                foodMenu.map((obj,i)=>{
+                    return(
+                        <View style={[{flexDirection:"row",alignItems:"center"}]}>
+                        <TextInput
+                            style={[styles.input,{width:200}]}
+                            placeholder="Menu Item"
+                            value={obj.name}/>
+                            
+                        <TextInput
+                            style={[styles.input,{width:70}]}
+                            placeholder="0.00"
+                            value={obj.price}/>
+                         {delBtn}                      
+                    </View>
+                    )
+                })
+            }
 
         <TouchableOpacity>
             <FontAwesomeIcon icon='plus' transform="shrink-5" size={50} color="#FFFFFF" style={btnStyles.addBtn}/>

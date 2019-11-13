@@ -11,26 +11,28 @@ import ExecHour from '../comps/ExecHour';
 import ExecMenu from '../comps/ExecMenu';
 import ExecPhoto from '../comps/ExecPhoto';
 
-function ExecInfo() {
+function ExecInfo(props) {
 
-    var execHour = <ExecHour />;   
+    var execHour = <ExecHour 
+    />;   
     var execMenu = <ExecMenu />;
     var execPhoto = <ExecPhoto />;
              
     const [screen, setScreen] = useState(execHour);
-    const [btnOp, setBtnOp] = useState(false);
+    const [btnSize, setBtnSize] = useState(false);
 
     var selectBtn = null;
-    var bgColor = 'rgba(244, 230, 100, .1)';
+    var size = 50;
 
-    if(btnOp ==true){
-        bgColor = 'rgba(244, 230, 100, 1)';
-    }else{
-        bgColor = 'rgba(244, 230, 100, .1)';
-    }
+    // if(btnSize ==true){
+    //     size=70;
+    // }else{
+    //     size=50;
+    // }
+    var hSize = 70;
+    var mSize = 50;
+    var pSize = 50;
 
-
-    
 
     return(
         <ImageBackground
@@ -52,24 +54,23 @@ function ExecInfo() {
            
             <View style={styles.container}>
                {/** Navigation */}
-               <View style={style.nav}>
+               <View style={[style.nav]}>
                 <Text style={style.overline}>CLICK ON THE ICONS TO NAVIGATE</Text>          
                     <View style={style.menu}>
                         <TouchableOpacity
-                        onPress={()=> 
-                        setBtnOp()}
+                        onPress={()=> setScreen(execHour)}
                         >
-                            <FontAwesomeIcon icon="calendar-alt" transform="shrink-5"  size={70} style={styles.icon}/>
+                            <FontAwesomeIcon icon="calendar-alt" transform="shrink-5"  size={hSize} style={styles.icon}/>
                         </TouchableOpacity>
                         <TouchableOpacity
                         onPress={()=> setScreen(execMenu)}
                         >
-                            <FontAwesomeIcon icon="glass-cheers" transform="shrink-5"  size={70} style={styles.icon}/>
+                            <FontAwesomeIcon icon="glass-cheers" transform="shrink-5"  size={mSize} style={styles.icon}/>
                         </TouchableOpacity>
                         <TouchableOpacity
                         onPress={()=> setScreen(execPhoto)}
                         >
-                            <FontAwesomeIcon icon="image" transform="shrink-5"  size={70} style={styles.icon}/>
+                            <FontAwesomeIcon icon="image" transform="shrink-5"  size={pSize} style={styles.icon}/>
                         </TouchableOpacity>
                     </View>                   
                 </View>      

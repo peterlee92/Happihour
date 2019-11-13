@@ -41,6 +41,10 @@ const styles =  StyleSheet.create({
         margin:10,
         backgroundColor:"rgba(255,255,255,.3)",
         padding:15,
+        fontFamily:"Nunito-Regular",        
+    },
+    inputFocus:{
+        color:"#FFD96F",
     },
     icon:{
         margin:10,
@@ -54,7 +58,7 @@ const styles =  StyleSheet.create({
     nav:{
         justifyContent:"center",
         alignItems:"center",
-        flex:.5,
+        flex:1,
         position:"absolute",
         top:10
     },

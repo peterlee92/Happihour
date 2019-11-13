@@ -23,7 +23,8 @@ var styles = StyleSheet.create({
         paddingLeft:60,
         fontSize:18,
         borderBottomWidth:2,
-        color:'white'
+        color:'white',
+        fontFamily:"Nunito-Regular",        
     },
     loginButContainer:{
         alignItems:'center'
@@ -38,7 +39,8 @@ var styles = StyleSheet.create({
         textAlign:'center',
         fontSize:20,
         letterSpacing:2,
-        fontWeight:'bold'
+        //fontWeight:'bold',
+        fontFamily:"Nunito-Bold",        
     }
 })
 

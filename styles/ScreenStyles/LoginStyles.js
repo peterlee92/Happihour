@@ -28,12 +28,14 @@ var styles = StyleSheet.create({
     dontTxt:{
         color:"rgba(255,255,255,0.4)",
         fontSize:14,
-        letterSpacing:2
+        letterSpacing:2,
+        fontFamily:"Nunito-Regular",
     },
     createTxt:{
         color:"#ffd96f",
         letterSpacing:2,
-        fontSize:18
+        fontSize:18,
+        fontFamily:"Nunito-Regular",
     }
 })
 

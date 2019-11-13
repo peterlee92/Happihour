@@ -7,14 +7,16 @@ const style = StyleSheet.create({
         fontSize:16,
         flex:1,
         marginLeft:15,
-        fontWeight:'bold',
+        //fontWeight:'bold',
+        fontFamily:"Nunito-Bold",
         letterSpacing:1
     },
     titles:{
         color:"white",
         fontSize:14,
         letterSpacing:2,
-        marginLeft:10
+        marginLeft:10,
+        fontFamily:"Nunito-Regular",
         // marginBottom:10,
         // marginTop:5,
     },
@@ -22,6 +24,7 @@ const style = StyleSheet.create({
         color:"black",
         fontSize:18,
         fontWeight:'700',
+        fontFamily:"Nunito-Bold",
         letterSpacing:3
     },
     container:{
@@ -35,12 +38,14 @@ const style = StyleSheet.create({
         color:"white",
         fontSize:40,
         letterSpacing:5,
-        marginTop:-15
+        marginTop:-15,
+        fontFamily:"Nunito-Regular",
         // fontWeight:'200'
     },
     atName:{
         color:'#F4B869',
-        fontSize:18
+        fontSize:18,
+        fontFamily:"Nunito-Regular",
     },
     settings:{
         flexDirection:"row",
@@ -88,7 +93,8 @@ const style = StyleSheet.create({
         borderRadius:10,
         padding:4,
         paddingHorizontal:10,
-        marginTop:5
+        marginTop:5,
+        fontFamily:"Nunito-Regular",
     },
     SignOutbox:{
         width:350,
@@ -112,7 +118,8 @@ const style = StyleSheet.create({
         margin:6,
         marginTop:10,
         flexDirection:"row",
-        paddingVertical:25
+        paddingVertical:25,
+        fontFamily:"Nunito-Regular",
     }
 
 })

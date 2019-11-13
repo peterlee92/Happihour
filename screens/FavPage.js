@@ -49,7 +49,7 @@ function FavPage(){
                 }
             </ScrollView>
             </SafeAreaView>
-            </View>
+            {/* </View> */}
             <MenuBar />
             </ImageBackground>
         </View>

@@ -10,7 +10,8 @@ const style = StyleSheet.create({
         fontSize:18,
         // fontWeight:"",
         letterSpacing:3,
-        textAlign:'center'
+        textAlign:'center',
+        fontFamily:"Nunito-Regular",
     },
     Img:{
         width:300,

@@ -20,7 +20,7 @@ const styles =  StyleSheet.create({
     icon:{
         margin:10,
         color: "#07191E",
-        backgroundColor:"rgba(244, 230, 100, .2)",
+        backgroundColor:"rgba(244, 230, 100, 1)",
         borderRadius:5,
     },
     subtitle:{

@@ -20,12 +20,14 @@ const style = StyleSheet.create({
     janeTxt:{
         fontSize:14,
         color:"white",
-        letterSpacing:2
+        letterSpacing:2,
+        fontFamily:"Nunito-Regular",        
     },
     janeSubTxt:{
         fontSize:14,
         color:"white",
-        letterSpacing:2
+        letterSpacing:2,
+        fontFamily:"Nunito-Regular",        
     },
     janeImg:{
         width:40,
@@ -45,7 +47,8 @@ const style = StyleSheet.create({
         fontSize:14,
         color:"grey",
         marginLeft:10,
-        textAlign:"left"
+        textAlign:"left",
+        fontFamily:"Nunito-Regular",        
     },
     inputLine:{
         width:'80%',
@@ -75,7 +78,8 @@ const style = StyleSheet.create({
         fontSize:18,
         color:"white",
         marginLeft:20,
-        letterSpacing:4
+        letterSpacing:4,        
+        fontFamily:"Nunito-Regular",
     },
     button:{
         width:"80%",

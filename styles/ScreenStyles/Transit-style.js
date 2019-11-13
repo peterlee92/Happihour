@@ -15,7 +15,8 @@ const style = StyleSheet.create({
         fontSize:18,
         color:"white",
         marginLeft:20,
-        letterSpacing:4
+        letterSpacing:4,
+        fontFamily:"Nunito-Regular",
     },
 })
 
