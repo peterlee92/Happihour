@@ -55,6 +55,7 @@ import Route from './Route';
 import ContactUs from './screens/ContactUs';
 import EditAccount from './screens/EditAccount';
 import Gethomemap from './comps/Gethomemap';
+import Loading from './screens/Loading';
 
 
 
@@ -63,7 +64,7 @@ import Gethomemap from './comps/Gethomemap';
 function App() {
 
   return (
-    <List />
+    <Route />
   );
 };
 

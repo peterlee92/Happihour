@@ -4,48 +4,17 @@ import style from '../styles/CompStyles/MenuBarStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 
-function MenuBar(map, getHome, favourites, profile){
+function MenuBar(props){
 
-    const [SelectOption, setSelectOption] = useState(0);
-
-
-    var mapIcon = '#F4B869';
-    var getHomeIcon = '#74726C';
-    var favIcon = '#74726C';
-    var profileIcon = '#74726C';
-
-
-if(SelectOption === 0 || 1 || 2 || 3 || 4){
-    if(Actions.currentScene == 'map'){
-        mapIcon = '#F4B869';
-        getHomeIcon = '#74726C';
-        favIcon = '#74726C';
-        profileIcon = '#74726C';
-    } else
-    if(Actions.currentScene == 'getHome'){
-        mapIcon = '#74726C';
-        getHomeIcon = '#F4B869';
-        favIcon = '#74726C';
-        profileIcon = '#74726C';
-    } else
-    if(Actions.currentScene == 'favPage'){
-        mapIcon = '#74726C';
-        getHomeIcon = '#74726C';
-        favIcon = '#F4B869';
-        profileIcon = '#74726C';
-    } else
-    if(Actions.currentScene == 'profile'){
-        mapIcon = '#74726C';
-        getHomeIcon = '#74726C';
-        favIcon = '#74726C';
-        profileIcon = '#F4B869';
-    }
-}
+    var mapIcon = props.map;
+    var getHomeIcon = props.home;
+    var favIcon = props.fav;
+    var profileIcon = props.profile;
     
     return(
         <View style={style.barPosition}>
             <TouchableOpacity
-                onPress={()=>([Actions.mappage(), setSelectOption(1)])}
+                onPress={()=>(Actions.mappage())}
             >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
@@ -59,7 +28,7 @@ if(SelectOption === 0 || 1 || 2 || 3 || 4){
             </TouchableOpacity>
 
             <TouchableOpacity
-                  onPress={()=>([Actions.getHome(), setSelectOption(2)])}
+                  onPress={()=>(Actions.getHome())}
             >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
@@ -74,7 +43,7 @@ if(SelectOption === 0 || 1 || 2 || 3 || 4){
             </TouchableOpacity>
 
             <TouchableOpacity
-                  onPress={()=>([Actions.favPage(), setSelectOption(3)])}
+                  onPress={()=>(Actions.favPage())}
             >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>
@@ -89,7 +58,7 @@ if(SelectOption === 0 || 1 || 2 || 3 || 4){
             </TouchableOpacity>
 
             <TouchableOpacity 
-                onPress={()=>([Actions.profile(), setSelectOption(4)])}
+                onPress={()=>(Actions.profile())}
             >
                 <View style={style.ItemPosition}>
                     <Image style={style.ImgSize} /*source={require()}*//>

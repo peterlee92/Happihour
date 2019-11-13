@@ -38,7 +38,7 @@ function EditAccount(){
                     <FontAwesomeIcon icon='chevron-left' size={24} color="#F3D27B" style={{marginLeft:10}}/>
                     <Text style={style.edit}>EDIT ACCOUNT</Text>
                 </TouchableOpacity>
-                <Image source={require('../imgs/MenuBarGrad.png')} style={{backgroundColor:'#F3D27B', width:'100%', height:3, position:'absolute', bottom:0}}/>
+                <Image source={require('../imgs/MenuBarGrad.png')} style={{backgroundColor:'#F3D27B', width:'100%', height:1.5, position:'absolute', bottom:0}}/>
             </View>
 
             <ImageBackground source={require('../imgs/bg4.png')} style={style.container}>
