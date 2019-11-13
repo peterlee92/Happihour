@@ -4,7 +4,7 @@ import style from '../styles/CompStyles/MenuBarStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 
-function MenuBar(){
+function MenuBar(map, getHome, favourites, profile){
 
     const [SelectOption, setSelectOption] = useState(0);
 

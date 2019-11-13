@@ -13,7 +13,7 @@ function FavItems({name, address}) {
         favColor = 'black';
     } else
     if(SelectFav === true){
-        favColor = '#F4B96A';
+        favColor = 'red';
     }
 
     return(
@@ -29,7 +29,7 @@ function FavItems({name, address}) {
                         source={require('../imgs/colony2.png')} 
                         style={style.img2}
                     />
-                <TouchableOpacity onPress={()=>(setSelectFav(false))}>
+                <TouchableOpacity onPress={()=>(setSelectFav(false))} style={{zIndex:999}}>
                     <View style={style.favImg}>
                         {/* <Text style={{marginHorizontal:1}}>12</Text>
                         <FontAwesomeIcon icon='heart' size={12} style={{marginHorizontal:1}}/> */}
