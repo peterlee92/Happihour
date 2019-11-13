@@ -40,14 +40,14 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
          faPlus, faCalendarAlt,faImage, faMinus,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck} from '@fortawesome/free-solid-svg-icons';
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, faCheckSquare, faSquare} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
-            faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
+            faClock, faEnvelope, faLock, faUser, faPen, faTaxi, faMobile, faMobileAlt,
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
             faPlus, faCalendarAlt,faImage, faMinus,
-            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck)
+            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faCheckSquare, faSquare)
 
 
 //navigator between pages
@@ -55,6 +55,7 @@ import Route from './Route';
 import ContactUs from './screens/ContactUs';
 import EditAccount from './screens/EditAccount';
 import Gethomemap from './comps/Gethomemap';
+import ForgotPassword from './screens/ForgotPassword';
 
 
 
@@ -63,7 +64,7 @@ import Gethomemap from './comps/Gethomemap';
 function App() {
 
   return (
-    <Transit />
+    <MapPage />
   );
 };
 
