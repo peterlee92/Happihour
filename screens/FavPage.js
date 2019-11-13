@@ -9,7 +9,7 @@ function FavPage(){
 
     var getFavRestaurants=async()=>{
                                     //use ip address
-        let response = await fetch('http://142.232.152.245/Happihour/Favourite.php',{
+        let response = await fetch('http://142.232.154.132/Happihour/Favourite.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -37,22 +37,22 @@ function FavPage(){
             <ImageBackground source={require('../imgs/bg1.png')} style={{width:'100%', height:'100%'}}>
                 <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:75}} />
             <View style={{flex:9}}>
-                <SafeAreaView>
-                <ScrollView>
-                    {
-                        fav_restaurnts.map((obj,i)=>{
-                            return <FavItems 
-                                key={i}
-                                name={obj.name}
-                                address={obj.address}
-                            />
-                        })
-                    }
-                </ScrollView>
-                </SafeAreaView>
-                </View>
-                <MenuBar />
-                </ImageBackground>
+            <SafeAreaView>
+            <ScrollView>
+                {
+                    fav_restaurnts.map((obj,i)=>{
+                        return <FavItems 
+                            key={i}
+                            name={obj.name}
+                            address={obj.address}
+                        />
+                    })
+                }
+            </ScrollView>
+            </SafeAreaView>
+            </View>
+            <MenuBar />
+            </ImageBackground>
         </View>
     )
 }

@@ -26,11 +26,18 @@ function Login() {
             <View style={styles.newaccountContainer}>
                 <Text style={styles.dontTxt}>Don't have an account? Click here to</Text>
                 <TouchableOpacity
-                    onPress={()=>{}}
+                    onPress={()=>{
+                        Actions.register()
+                    }}
                 >
                     <Text style={styles.createTxt}>
-                        Create a new account
+                        create a new account
                     </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={()=>{Actions.forgotPassword()}}
+                >
+                    <Text style={styles.forgottxt}>Forgot Password?</Text>
                 </TouchableOpacity>
             </View>
         </ImageBackground>

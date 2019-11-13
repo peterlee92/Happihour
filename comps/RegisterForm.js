@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
-import { CheckBox } from 'react-native-elements';
+import {CheckBox} from 'react-native-elements';
 import styles from '../styles/CompStyles/RegisterFormStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { Actions } from 'react-native-router-flux';
 
 function RegisterForm(){
 
@@ -12,10 +13,10 @@ function RegisterForm(){
     const [confirmpassword, Setconfirmpassword] = useState();
 
    
-    InsertDataToServer = () =>{
-        if(username = ""){
+    var InsertDataToServer = () =>{
+        // if(username = ""){
             
-        }
+        // }
         fetch('http://142.232.158.76/Happihour/Register.php',{
              method:'POST',
              headers:{
@@ -42,12 +43,14 @@ function RegisterForm(){
     return(
         <View style={styles.wrapContainer}>
             <View style={styles.barTxtContainer}>
-                <CheckBox
-                    title='Are you a bar or restaurant?'
+                <CheckBox 
+                    title="Are you a bar or restaurant?"
                     center
                     iconRight
                     containerStyle={{backgroundColor:'transparent', borderWidth:0}}
                     checked={true}
+                    checkedIcon='square'
+                    uncheckedIcon='square'
                 />
             </View>
             <View style={styles.inputContainer}>
@@ -102,7 +105,10 @@ function RegisterForm(){
             <View style={styles.signupContainer}>
                 <TouchableOpacity
                     style={styles.signupBut}
-                    onPress={()=>{}}
+                    onPress={()=>{
+                        InsertDataToServer()
+                        Actions.login();
+                    }}
                 >
                     <Text style={styles.signupText}>SIGN UP</Text>
                 </TouchableOpacity>
