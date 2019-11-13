@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
     wrapcontainer:{
-        flex:3.5,
+        flex:5,
         justifyContent:'center'
     },
     inputContainer:{

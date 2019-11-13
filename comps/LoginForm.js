@@ -23,7 +23,7 @@ function LoginForm(){
         }else{ 
 
                                         //use ip address
-            let response = await fetch('http://142.232.149.137/Happihour/Login.php',{
+            let response = await fetch('http://142.232.154.132/Happihour/Login.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -40,6 +40,7 @@ function LoginForm(){
 
             if(data == 'ok'){
                 Alert.alert('welcome!');
+                Actions.mappage()
             }else {
                 Alert.alert(data);
             }
@@ -94,7 +95,7 @@ function LoginForm(){
             <View style={styles.loginButContainer}>
                 <TouchableOpacity 
                     style={styles.loginBut}
-                    onPress={()=>{yo()}}
+                    onPress={()=>{CheckUserInfo()}}
                 >
                     <Text style={styles.loginTxt}>LOG IN</Text>
                 </TouchableOpacity>

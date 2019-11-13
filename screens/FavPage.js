@@ -9,7 +9,7 @@ function FavPage(){
 
     var getFavRestaurants=async()=>{
                                     //use ip address
-        let response = await fetch('http://142.232.152.245/Happihour/Favourite.php',{
+        let response = await fetch('http://142.232.154.132/Happihour/Favourite.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -50,13 +50,13 @@ function FavPage(){
                     }
                 </ScrollView>
                 </SafeAreaView>
-                </View>
-                <MenuBar 
+             </View>
+             <MenuBar 
                 map='#74726C'
                 home='#74726C'
                 fav='#F4B869'
                 profile='#74726C'/>
-                </ImageBackground>
+             </ImageBackground>
         </View>
     )
 }

@@ -13,15 +13,15 @@ function DetailContent(){
 
     var GetMenu=async()=>{
                                         //use ip address
-        let drinkresponse = await fetch('http://142.232.152.245/Happihour/Drink.php',{
+        let drinkresponse = await fetch('http://192.168.0.20/Happihour/Drink.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body:JSON.stringify({
-                // rest_name:"Colony"
-                rest_name:restaurant_name
+                rest_name:"Colony"
+                // rest_name:restaurant_name
             })
         })
         
@@ -31,7 +31,7 @@ function DetailContent(){
         Setdrinkmenu(drinkdata);
 
                                         //use ip address
-        let foodresponse = await fetch('http://142.232.152.245/Happihour/Food.php',{
+        let foodresponse = await fetch('http://192.168.0.20/Happihour/Food.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -124,7 +124,7 @@ function DetailContent(){
                         latitude:rest_loc.lat,
                         longitude:rest_loc.lng,
                     }}
-                    image={require('../icons/marker.png')}
+                    image={require('../imgs/pin.png')}
                 />
             </MapView>
         </View>
