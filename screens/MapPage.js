@@ -29,7 +29,11 @@ function MapPage(props){
             <Map 
                 page={props.page}
             />
-            <MenuBar />
+            <MenuBar
+            map='#F4B869'
+            home='#74726C'
+            fav='#74726C'
+            profile='#74726C' /> />
         </View>
     )
 }

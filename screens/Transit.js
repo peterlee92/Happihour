@@ -13,7 +13,7 @@ function Transit(){
                         <FontAwesomeIcon icon='chevron-left' size={24} color="#F3D27B" style={{marginLeft:10}}/>
                         <Text style={style.edit}>Transit</Text>
                     </TouchableOpacity>
-                    <View style={{backgroundColor:'#F3D27B', width:'100%', height:5, position:'absolute', bottom:0}}></View>
+                    <Image source={require('../imgs/MenuBarGrad.png')} style={{backgroundColor:'#F3D27B', width:'100%', height:1.5, position:'absolute', bottom:0}}/> 
             </View>
             <Gethomemap />
         </View>
