@@ -15,7 +15,7 @@ function ForgotPassword(){
     if(ShowPopUp === false){
         saveChanges = null;
     } else{
-        saveChanges = <ThanksEmail />
+        saveChanges = <ThanksEmail setShowPopUp={setShowPopUp}/>
     }
 
 

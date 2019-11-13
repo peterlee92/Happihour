@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
 import style from '../styles/CompStyles/AccountChanges-popUp-style';
 import Confirmation from './Confirmation-popUp';
 
-function AccountChanges(){
+function AccountChanges({setShowPopUp}){
 
     const [popUp, setPopUp] = useState(false);
     const [popUp2, setPopUp2] = useState(false);
@@ -20,7 +20,7 @@ function AccountChanges(){
                                 <TouchableOpacity style={style.yesContainer} onPress={()=>([setPopUp(true), setPopUp2(true)])}>
                                     <Text style={style.yes}>YES</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={style.noContainer} onPress={()=>(setPopUp(true))}>
+                                <TouchableOpacity style={style.noContainer} onPress={()=>{setPopUp(true); setShowPopUp(false)}}>
                                     <Text style={style.no}>NO</Text>
                                 </TouchableOpacity>
                             </View>
@@ -34,7 +34,7 @@ function AccountChanges(){
         saved = null;
     }else
     if(popUp2 === true){
-        saved = <Confirmation />
+        saved = <Confirmation setShowPopUp={setShowPopUp} />
     }
 
     return(

@@ -4,7 +4,7 @@ import style from '../styles/CompStyles/AddContact-popUp-style';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import Confirmation from './Confirmation-popUp';
 
-function AddContact(){
+function AddContact({setShowPopUp2}){
 
     const [popUp, setPopUp] = useState(false);
     const [popUp2, setPopUp2] = useState(false);
@@ -16,7 +16,7 @@ function AddContact(){
         changesPop =  <View style={{backgroundColor:'rgba(0,0,0,0.5)', width:'100%', height:'100%', position:'absolute', justifyContent:"center", alignItems:"center", top:-100}}>
                             <View style={style.msgContainer}>
 
-                                <TouchableOpacity style={{position:'absolute', top:10, right:10}} onPress={()=>(setPopUp(true))}>
+                                <TouchableOpacity style={{position:'absolute', top:10, right:10}} onPress={()=>{setPopUp(true); setShowPopUp2(false)}}>
                                     <FontAwesomeIcon icon={'times-circle'} size={32} color={'#EDE479'} />
                                 </TouchableOpacity>
 
@@ -25,7 +25,7 @@ function AddContact(){
                                 <TextInput placeholder='Last Name' placeholderTextColor='white' style={style.input}/>
                                 <TextInput placeholder='Contact No.' placeholderTextColor='white' style={style.input}/>
                                 
-                                <TouchableOpacity style={style.button} onPress={()=>([setPopUp(true), setPopUp2(true)])}>
+                                <TouchableOpacity style={style.button} onPress={()=>([setPopUp(true), setPopUp2(true), setShowPopUp2(false)])}>
                                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>
                                 </TouchableOpacity>
                             </View>
