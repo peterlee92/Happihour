@@ -13,7 +13,9 @@ var styles = StyleSheet.create({
     },
     logoContainer:{
         alignItems:'center',
-        marginVertical:30
+        marginVertical:50,
+        marginBottom:-10,
+        flex:2
     },
     logo:{
         width:300,
@@ -22,8 +24,9 @@ var styles = StyleSheet.create({
     },
     newaccountContainer:{
         alignItems:'center',
-        justifyContent:'center',
-        flex:1
+        flex:2,
+        // backgroundColor:'yellow'
+        paddingVertical:20
     },
     dontTxt:{
         color:"rgba(255,255,255,0.4)",
@@ -31,8 +34,13 @@ var styles = StyleSheet.create({
         letterSpacing:2
     },
     createTxt:{
-        color:"#ffd96f",
+        color:"#f7aa4b",
         letterSpacing:2,
+        fontSize:18,
+        marginBottom:30
+    },
+    forgottxt:{
+        color:'#ffdd6b',
         fontSize:18
     }
 })
