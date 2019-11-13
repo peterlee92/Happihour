@@ -7,8 +7,9 @@ const style = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         flexDirection:'column',
-        width:'80%',
-        height:'80%'
+        width:'100%',
+        height:'100%',
+        marginTop:-100
     },
     msg:{
         fontSize:16,
@@ -21,7 +22,7 @@ const style = StyleSheet.create({
         justifyContent:'center',
         alignItems:"center",
         height:125,
-        width:'100%',
+        width:'80%',
         padding:15
     },
     yes:{
@@ -47,7 +48,8 @@ const style = StyleSheet.create({
         height:60
     },
     answer:{
-        flexDirection:'row'
+        flexDirection:'row',
+        width:'80%'
     }
 
 })

@@ -12,7 +12,7 @@ const style = StyleSheet.create({
     },
     titles:{
         color:"white",
-        fontSize:16,
+        fontSize:14,
         letterSpacing:2,
         marginLeft:10
         // marginBottom:10,
@@ -20,7 +20,7 @@ const style = StyleSheet.create({
     },
     SignOutTitles:{
         color:"black",
-        fontSize:21,
+        fontSize:18,
         fontWeight:'700',
         letterSpacing:3
     },
@@ -46,20 +46,19 @@ const style = StyleSheet.create({
         flexDirection:"row",
         alignItems:'center',
         justifyContent:'space-between',
-        margin:10
+        marginHorizontal: 10
     },
     avatar:{
         justifyContent:"center",
         alignItems:"center",
-        marginBottom: 10,
         marginTop:-50,
         backgroundColor:'#3f5485',
-        width:500,
-        height:300,
-        borderWidth:10,
+        width:700,
+        height:400,
+        borderWidth:5,
         borderColor:'#404332',
-        borderBottomLeftRadius:300,
-        borderBottomRightRadius:300
+        borderBottomLeftRadius:350,
+        borderBottomRightRadius:350
     },
     icons:{
         width:20,
@@ -77,7 +76,9 @@ const style = StyleSheet.create({
         borderRadius:60,
         borderWidth:4,
         borderColor: "grey",
-        marginBottom:10
+        marginTop:50,
+        marginBottom:10,
+        backgroundColor:'#F4B869'
     },
     editProfile:{
         color:"white",
@@ -87,27 +88,31 @@ const style = StyleSheet.create({
         borderRadius:10,
         padding:4,
         paddingHorizontal:10,
-        marginTop:10
+        marginTop:5
     },
     SignOutbox:{
         width:350,
-        height:50,
+        height:40,
         backgroundColor:'rgba(179,150,106,0.9)',
         // opacity:.5,
         justifyContent:"center",
         alignItems:'center',
         borderRadius:10,
-        margin:10
+        marginBottom:30,
+        marginTop:10,
+        paddingVertical:25
     },
     editBox:{
         width:350,
-        height:50,
+        height:40,
         backgroundColor:'rgba(0,0,0,0.5)',
         justifyContent:"space-between",
         alignItems:"center",
         borderRadius:10,
-        margin:10,
-        flexDirection:"row"
+        margin:6,
+        marginTop:10,
+        flexDirection:"row",
+        paddingVertical:25
     }
 
 })

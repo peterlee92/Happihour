@@ -31,6 +31,10 @@ var styles = StyleSheet.create({
         borderRadius:10,
         margin:20,
         flexDirection:'row'
+    },
+    map:{
+        width:"100%",
+        height:300
     }
 })
 

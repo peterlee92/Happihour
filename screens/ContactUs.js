@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, TextInput, ImageBackground, Image} from 'react-native';
 import style from '../styles/ScreenStyles/ContactUs-style';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
+import ThanksContact from '../comps/ThanksContact-popUp';
 
 function ContactUs(){
+
+    const[ShowPopUp, setShowPopUp] = useState(false);
+
+    var sendMsg = null;
+
+    if(ShowPopUp === false){
+        sendMsg = null;
+    } else{
+        sendMsg = <ThanksContact />
+    }
+
     return(
         <View>
             <View style={style.header}>
@@ -34,10 +46,11 @@ function ContactUs(){
                 </View>
                 <View style={style.inputLine}></View>
 
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(true))}>
                     <Text style={{color:"#0E1617", fontWeight:"bold", letterSpacing:2}}>SEND</Text>
-                    {/* <FontAwesomeIcon icon="chevron-right" size={21} color="grey" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>
+
+                {sendMsg}
             </ImageBackground>
         </View>
     )

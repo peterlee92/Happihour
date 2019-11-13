@@ -26,7 +26,7 @@ function Login() {
             <View style={styles.newaccountContainer}>
                 <Text style={styles.dontTxt}>Don't have an account? Click here to</Text>
                 <TouchableOpacity
-                    onPress={()=>{Actions.register()}}
+                    onPress={()=>{}}
                 >
                     <Text style={styles.createTxt}>
                         Create a new account
