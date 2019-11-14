@@ -15,10 +15,10 @@ function MapPage(props){
     }
     return(
         <View style={{flex:1}}>
-            <Image 
+            {/* <Image 
                 style={styles.header}
                 source={require('../imgs/Flow_Header.png')}
-            />          
+            />           */}
             {/* <View style={{position:'absolute', elevation:100, width:'100%',justifyContent:'center',alignItems:'center'}}>
                 <SearchBar
                     style={styles.searchBar}
@@ -26,10 +26,14 @@ function MapPage(props){
                     inputContainerStyle={{backgroundColor:'white', height:30,width:'80%',borderWidth:0}}
                 />
             </View> */}
-            <Map 
+            {/* <Map 
                 page={props.page}
-            />
-            <MenuBar />
+            /> */}
+            {/* <MenuBar
+            map='#F4B869'
+            home='#74726C'
+            fav='#74726C'
+            profile='#74726C' /> /> */}
         </View>
     )
 }

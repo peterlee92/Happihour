@@ -35,14 +35,15 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
          faPlus, faCalendarAlt,faImage, faMinus,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faGlassCheers, faHandsHelping, faCaretDown, faMobileAlt} from '@fortawesome/free-solid-svg-icons';
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faGlassCheers, faCheckSquare, faSquare, faHandsHelping,faCaretDown,faMobileAlt, faMobile} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
-            faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
+            faClock, faEnvelope, faLock, faUser, faPen, faTaxi, faMobile, faMobileAlt,
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
             faPlus, faCalendarAlt,faImage, faMinus,
-            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faGlassCheers, faHandsHelping,faCaretDown,faMobileAlt)
+            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faGlassCheers, faCheckSquare, faSquare, faHandsHelping,faCaretDown,faMobileAlt, faMobile)
+
 
 
 //navigator between pages
@@ -50,6 +51,12 @@ import Route from './Route';
 import ContactUs from './screens/ContactUs';
 import EditAccount from './screens/EditAccount';
 import Gethomemap from './comps/Gethomemap';
+
+import Loading from './screens/Loading';
+
+import ForgotPassword from './screens/ForgotPassword';
+
+
 
 
 //Psa
@@ -60,12 +67,13 @@ import Psa04 from './comps/Psa04';
 import Psa05 from './comps/Psa05';
 import Psa06 from './comps/Psa06';
 import Psa07 from './comps/Psa07';
+import Exec from './screens/Exec';
 
 
 function App() {
 
   return (
-    <Route />
+    <Route/>
   );
 };
 

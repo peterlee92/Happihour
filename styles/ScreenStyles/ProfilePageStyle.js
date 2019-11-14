@@ -32,7 +32,8 @@ const style = StyleSheet.create({
         height:"100%",
         width:'100%',
         // backgroundColor:"#E4A664",
-        alignItems:"center"
+        alignItems:"center",
+        flex:9
     },
     name:{
         color:"white",

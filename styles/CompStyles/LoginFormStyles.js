@@ -2,12 +2,12 @@ import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
     wrapcontainer:{
-        flex:3.5,
+        flex:5,
         justifyContent:'center'
     },
     inputContainer:{
         width:'100%', 
-        marginVertical:'3%',
+        marginVertical:'2%',
         height:50,
         justifyContent:'center',
         flexDirection:'row',
@@ -21,13 +21,14 @@ var styles = StyleSheet.create({
         width:'80%',
         height:40,
         paddingLeft:60,
-        fontSize:18,
+        fontSize:20,
         borderBottomWidth:2,
         color:'white',
         fontFamily:"Nunito-Regular",        
     },
     loginButContainer:{
-        alignItems:'center'
+        alignItems:'center',
+        marginTop:20
     },
     loginBut:{
         backgroundColor:"#f4e664",
@@ -40,7 +41,13 @@ var styles = StyleSheet.create({
         fontSize:20,
         letterSpacing:2,
         //fontWeight:'bold',
-        fontFamily:"Nunito-Bold",        
+        fontFamily:"Nunito-Bold",  
+          
+    },
+    forgottxt:{
+        color:'rgba(255,255,255,0.4)"',
+        fontSize:18,
+        fontFamily:"Nunito-Regular",
     }
 })
 

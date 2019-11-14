@@ -10,7 +10,7 @@ function ExecMenu(){
     const [drinkMenu, SetDrinkMenu] = useState([]);
 
     var GetMenu = async()=>{
-        let drinkItems = await fetch('http://192.168.0.12/Happihour/execDrinks.php',{
+        let drinkItems = await fetch('http://142.232.63.217/Happihour/execDrinks.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -24,7 +24,7 @@ function ExecMenu(){
         let drinkData = await drinkItems.json();
         SetDrinkMenu(drinkData);
 
-        let foodItems = await fetch('http://142.232.49.63/Happihour/execFood.php',{
+        let foodItems = await fetch('http://142.232.63.217//Happihour/execFood.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

@@ -10,6 +10,7 @@ function DetailHeader (){
             style={styles.container}
             source={require('../imgs/colony.png')}
         >
+            
             <View style={styles.RSContainer}>  
                 <Text style={styles.RSname}>Colony</Text>
                 <FontAwesomeIcon icon='times-circle' color={'#e6dc60'} size={25} style={{position:'absolute', right:10, top:15}}/>
@@ -20,9 +21,8 @@ function DetailHeader (){
                     <FontAwesomeIcon icon='directions' size={20} color={'black'} style={{marginRight:5}}/>
                     <Text>GET DIRECTIONS</Text>
                 </TouchableOpacity>
-                
             </View>
-
+            <FontAwesomeIcon icon='heart' color={'gray'} size={40} style={{position:'absolute', right:20, bottom:70}}/>
             <View style={styles.HTcontainer}>
                 <Text style={styles.HT}>DAILY FROM 3:00PM - 5:00PM</Text>    
             </View>

@@ -13,7 +13,7 @@ function ExecForm(){
    const [restInfo, setRestInfo] = useState([]);
 
    var GetInfo = async()=>{
-       let infoResponse = await fetch('http://142.232.49.63/Happihour/execInfo.php',{
+       let infoResponse = await fetch('http://142.232.63.217/Happihour/execInfo.php',{
         method:'POST',
         headers:{
             'Accept': 'application/json',
@@ -26,7 +26,7 @@ function ExecForm(){
        })
        let restData =  await infoResponse.json();
        setRestInfo(restData);
-
+       console.log('work')
    }
 
    useEffect(()=>{
@@ -52,7 +52,7 @@ function ExecForm(){
                         placeholderTextColor={phColor}  
                         value={obj.name}      
                         selectionColor="#FFD96F"
-                        underlineColorAndroid="#FFD96F"
+                        //underlineColorAndroid="#FFD96F"
                     />
                     <TextInput
                         style={styles.input}
@@ -88,7 +88,9 @@ function ExecForm(){
                 >
                     <TouchableOpacity
                         style={btnStyles.solidBtn}
-                        onPress={()=>{Actions.execInfo()}}
+                        onPress={()=>{
+                            Actions.execInfo()
+                        }}
                     >
                         <Text style={btnStyles.nextText}>NEXT</Text>
                     </TouchableOpacity>

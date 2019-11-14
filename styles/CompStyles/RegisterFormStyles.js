@@ -8,10 +8,11 @@ var styles = StyleSheet.create({
         alignItems:'center',
         marginBottom:20,
         marginTop:-20,
+        
     },
     barTxt:{
         color:'rgba(255,255,255,0.5)',
-        fontSize:16,
+        fontSize:18,
         fontFamily:"Nunito-Regular",        
     },
     inputContainer:{

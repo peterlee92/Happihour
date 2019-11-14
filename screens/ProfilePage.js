@@ -23,7 +23,7 @@ const options = {
       path: 'images',
     },
   };
-  
+
   function ImgPick(){
     /**
    * The first arg is the options object for customization (it can also be null or omitted for default options),
@@ -57,6 +57,8 @@ const options = {
                 <View style={style.avatar}>
                         <Image source={require('../imgs/profileCurvedImage.png')} resizeMode='cover' style={{width:'100%', height:'100%', position:"absolute", borderBottomLeftRadius:350, borderBottomRightRadius:350, overflow:'hidden'}}/>
                         <Image style={style.AvatarImg} source={require('../imgs/Pororo.png')} />
+                        
+                         {/* <Image source={avatarSource} style={style.AvatarImg}/> */}
                         <TouchableOpacity onPress={ImgPick} style={{position:'absolute', right:280,  top:200}}>
                             <View style={{width:30, height:30, backgroundColor:'#808080', borderRadius:15, justifyContent:'center', alignItems:'center'}}>
                                 <FontAwesomeIcon icon='pen' color='#F4B869'/>
@@ -66,7 +68,7 @@ const options = {
                         <Text style={style.atName}>@JaneDoe</Text>
                 </View>
 
-                <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:75, position:'absolute', top:0}} />
+                <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:50, position:'absolute', top:0}} />
 
             <TouchableOpacity style={style.titleIcon} onPress={()=>(Actions.editAccount())}>
                 <View style={style.editBox}>
@@ -92,8 +94,12 @@ const options = {
                     <Text style={style.SignOutTitles}>Sign Out</Text>
                 </View>
             </TouchableOpacity>
-            <MenuBar />
             </ImageBackground>
+            <MenuBar
+            map='#74726C'
+            home='#74726C'
+            fav='#74726C'
+            profile='#F4B869' />
         </View>
     )
 }

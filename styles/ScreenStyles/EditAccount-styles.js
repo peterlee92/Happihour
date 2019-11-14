@@ -44,7 +44,7 @@ const style = StyleSheet.create({
         marginBottom:-4
     },
     inputTxt:{
-        fontSize:14,
+        fontSize:20,
         color:"grey",
         marginLeft:10,
         textAlign:"left",
@@ -65,7 +65,7 @@ const style = StyleSheet.create({
         marginBottom:50
     },
     header:{
-        backgroundColor:'#0D1617',
+        backgroundColor:'#0B1A1F',
         width:'100%',
         height:75,
         justifyContent:"center"
@@ -84,7 +84,7 @@ const style = StyleSheet.create({
     button:{
         width:"80%",
         height: 40,
-        backgroundColor:"#EDE479",
+        backgroundColor:"#f4e664",
         borderRadius:10,
         justifyContent:"center",
         alignItems:"center",

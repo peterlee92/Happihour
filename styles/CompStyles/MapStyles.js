@@ -4,6 +4,23 @@ var styles = StyleSheet.create({
     container:{
         flex:10.5
     },
+    searchContainer:{
+        alignItems:'center',
+        justifyContent:'center',
+        elevation:20,
+        padding:10,
+        flexDirection:'row',
+        position:'absolute',
+        right:0,
+        left:0
+    },
+    searchBar:{
+        backgroundColor:'white',
+        width:'90%',
+        height:35,
+        borderRadius:7,
+        paddingHorizontal:40
+    },
     buttonContainer:{
         flexDirection:'row',
         position:'absolute',

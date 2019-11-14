@@ -13,7 +13,9 @@ var styles = StyleSheet.create({
     },
     logoContainer:{
         alignItems:'center',
-        marginVertical:30
+        marginVertical:50,
+        marginBottom:-10,
+        flex:2
     },
     logo:{
         width:300,
@@ -22,20 +24,23 @@ var styles = StyleSheet.create({
     },
     newaccountContainer:{
         alignItems:'center',
-        justifyContent:'center',
-        flex:1
+        flex:2,
+        // backgroundColor:'yellow'
+        paddingVertical:20,
+        bottom:-40
     },
     dontTxt:{
         color:"rgba(255,255,255,0.4)",
-        fontSize:14,
-        letterSpacing:2,
+        fontSize:20,
+        letterSpacing:1,
         fontFamily:"Nunito-Regular",
     },
     createTxt:{
-        color:"#ffd96f",
-        letterSpacing:2,
-        fontSize:18,
+        color:"#f7aa4b",
+        letterSpacing:1,
+        fontSize:20,
         fontFamily:"Nunito-Regular",
+        marginBottom:30
     }
 })
 

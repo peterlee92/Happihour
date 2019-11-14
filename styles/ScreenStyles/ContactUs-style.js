@@ -8,6 +8,13 @@ const style = StyleSheet.create({
         height:'100%',
         paddingBottom:75
     },
+    txt:{
+        fontSize:16,
+        color:'white',
+        textAlign:'center',
+        width:'75%',
+        marginBottom:50
+    },
     input:{
         flexDirection:'row',
         width:"80%",
@@ -38,7 +45,7 @@ const style = StyleSheet.create({
         marginBottom:25
     },
     header:{
-        backgroundColor:'#0D1617',
+        backgroundColor:'#0B1A1F',
         width:'100%',
         height:75,
         justifyContent:"center"
@@ -61,7 +68,7 @@ const style = StyleSheet.create({
         borderRadius:10,
         justifyContent:"center",
         alignItems:"center",
-        marginVertical:150,
+        marginVertical:100,
         flexDirection:"row"
     }
 })
