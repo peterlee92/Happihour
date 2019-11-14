@@ -12,7 +12,7 @@ function ContactUs(){
     var sendMsg = null;
 
     if(ShowPopUp === true){
-        sendMsg = <ThanksContact />
+        sendMsg = <ThanksContact setShowPopUp={setShowPopUp} />
     } else{
         sendMsg = null;
     }
