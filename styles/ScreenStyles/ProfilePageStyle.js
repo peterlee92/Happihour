@@ -36,7 +36,7 @@ const style = StyleSheet.create({
         color:"white",
         fontSize:40,
         letterSpacing:5,
-        marginTop:-15
+        marginTop:-15,
         // fontWeight:'200'
     },
     atName:{

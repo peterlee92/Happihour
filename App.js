@@ -68,7 +68,7 @@ import ForgotPassword from './screens/ForgotPassword';
 function App() {
 
   return (
-    <Route />
+    <List />
   );
 };
 

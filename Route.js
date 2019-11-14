@@ -19,7 +19,7 @@ import ExecInfo from './screens/ExecInfo';
 import ExecHour from './screens/ExecHour';
 import ExecMenu from './screens/ExecMenu';
 import ExecPhoto from './screens/ExecPhoto';
-
+ 
 
 function Route(){
     return(
