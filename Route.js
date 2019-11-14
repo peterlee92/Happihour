@@ -18,7 +18,6 @@ import ForgotPassword from './screens/ForgotPassword';
 import ExecInfo from './screens/ExecInfo';
 import Exec from './screens/Exec';
 
-
 function Route(){
     return(
         <Router>

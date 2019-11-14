@@ -4,7 +4,7 @@ import styles from '../styles/CompStyles/PopupStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 
-function Popup(){
+function Popup({name, address}){
     return(
         <View style={styles.container}>
             <View>
@@ -24,7 +24,7 @@ function Popup(){
                 </View>
                 
                 <View style={styles.nameContainer}>
-                    <Text style={styles.name}>Colony</Text>
+                    <Text style={styles.name}>{name}</Text>
                 </View>
             </View>
                 <TouchableOpacity onPress={()=>{Actions.detail()}}>

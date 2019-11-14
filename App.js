@@ -55,6 +55,8 @@ import Gethomemap from './comps/Gethomemap';
 import Loading from './screens/Loading';
 
 import ForgotPassword from './screens/ForgotPassword';
+import TimePopup from './comps/TimePopup';
+import LocationPopup from './comps/LocationPopup';
 
 
 

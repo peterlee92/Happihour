@@ -8,12 +8,14 @@ import style from '../styles/CompStyles/List-style';
 
 function List(){
     return(
-        <View style={{position:"absolute", width:'100%', height:'100%', top:'71%'}}>
+        <View style={{position:"absolute", width:'100%', height:'100%', top:710}}>
             <View style={{ height: "100%", backgroundColor:"#0E1617"}}>
-                <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:'100%'}} />
-                <View style={{height:75, justifyContent:'center', alignItems:'center'}}>
-                    <FontAwesomeIcon icon="arrow-up" size={32} color="#ffef86"/>
-                    <Text style={style.tabTxt}>View Map</Text>
+                <View>
+                    <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:100,marginTop:-100}} />
+                    <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', top:-85, right:155}}>
+                        <FontAwesomeIcon icon="arrow-up" size={32} color="#ffef86"/>
+                        <Text style={style.tabTxt}>View Map</Text>
+                    </View>
                 </View>
                 <SafeAreaView>
                 <ScrollView>

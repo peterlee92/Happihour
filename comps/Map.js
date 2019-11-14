@@ -9,13 +9,11 @@ import {Actions} from 'react-native-router-flux';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 
-function Map() {
+function Map(props) {
 
     const [lati, setLati] = useState();
     const [longti, setLongti] = useState();
-    const [R_address, setR_address] = useState();
-    const [Tfilter, setTfilter] = useState([]);
-    const [ATfilter, setATfilter] =useState([]);
+    
     
 
     var region = {
@@ -55,51 +53,57 @@ function Map() {
     }
 
     var markers = null;
-    var TimeFilter=async()=>{
-
-        var today = new Date();
-        var C_day = today.getUTCDay(),
-            C_hour = today.getHours(),
-            C_minute = today.getMinutes();
-
-        let timeresponse =await fetch('http://142.232.154.132/Happihour/TimeFilter.php',{
-            method:'POST',
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                C_day:"Mon",
-                C_hour:"16",
-                C_minute:"00"
-            })
-        })
-
-        let timedata = await timeresponse.json()
-        setTfilter(timedata)
-
-        await timedata.map((obj,i)=>{
-            Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-            Geocoder.from(obj.address)
-                    .then(json => {
-                        var location = json.results[0].geometry.location;
-                        var arr = Tfilter;
-                        arr.push(location);
-                        arr = arr.map((o)=>{
-                            return o;
-                        });
-                        setATfilter(arr);
-                        // console.log(arr);
-                    })
-                    .catch(error => console.log(error));
-        })
-        console.log(ATfilter)
-        
-        
     
+
+    
+
+
+    var markers = [];
+    if(0 < props.Tfilter.length){
+        for(var i = 0; i < props.Tfilter.length; i++){
+            var tmarkers = (
+                <Marker
+                    key={i}
+                    coordinate={{
+                        latitude:props.Tfilter[i].lat,
+                        longitude:props.Tfilter[i].lng
+                    }}
+                    image={require('../imgs/pin.png')}
+                >
+                    <Callout tooltip>
+                        <Popup 
+                            name={props.R_name[i].name}
+                            address={props.R_name[i].address}
+                        />
+                    </Callout>
+                </Marker>
+            )
+            markers.push(tmarkers)
+        }
     }
-
-
+    else if(0 < props.Lfilter.length){
+        for(var i = 0; i < props.Lfilter.length; i++){
+            var tmarkers = (
+                <Marker
+                    key={i}
+                    coordinate={{
+                        latitude:props.Lfilter[i].lat,
+                        longitude:props.Lfilter[i].lng
+                    }}
+                    image={require('../imgs/pin.png')}
+                >
+                    <Callout tooltip>
+                        <Popup 
+                            name={props.R_name[i].name}
+                            address={props.R_name[i].address}
+                        />
+                    </Callout>
+                </Marker>
+            )
+            markers.push(tmarkers)
+        }
+    }
+    
     
 
     useEffect(() => {
@@ -126,26 +130,9 @@ function Map() {
                 toolbarEnabled={true}
                 showsMyLocationButton={true}
             >
-           
-            {
-                ATfilter.map((obj,i)=>{
-                    return(
-                        <Marker
-                        key={i}
-                        coordinate={{
-                            latitude:obj.lat,
-                            longitude:obj.lng
-                        }}
-                        image={require('../imgs/pin.png')}
-                        >
-                            <Callout tooltip>
-                                <Popup 
-                                />
-                            </Callout>
-                        </Marker>
-                    )           
-                })
-            }                      
+           {markers}
+
+                  
                 
             </MapView>
 
@@ -162,15 +149,18 @@ function Map() {
                     <TouchableOpacity 
                         style={styles.timebutton}
                         onPress={()=>{
-                            setTfilter([])
-                            TimeFilter()}}
-                    >
+                            props.setTimepop(true);
+                            }}>
                         <FontAwesomeIcon icon="clock" color={"#f4e664"} size={24} style={{marginRight:12}}/>
                         <Text style={styles.buttontxt}>TIME</Text>
                     </TouchableOpacity>
                 </View>    
                 <View >
-                    <TouchableOpacity style={styles.locationbutton}>
+                    <TouchableOpacity 
+                        style={styles.locationbutton}
+                        onPress={()=>{
+                            props.setLocationpop(true);
+                        }}>
                         <FontAwesomeIcon icon="map-marker-alt" color={"#f4e664"} size={24} style={{marginRight:12}}/>
                         <Text style={styles.buttontxt}>LOCATION</Text>
                     </TouchableOpacity>

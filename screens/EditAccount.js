@@ -13,7 +13,7 @@ function EditAccount(){
     var saveChanges = null;
 
     if(ShowPopUp == true){
-        saveChanges = <AccountChanges />
+        saveChanges = <AccountChanges setShowPopUp={setShowPopUp}/>
     } else{
         saveChanges = null;
     }
@@ -24,7 +24,7 @@ function EditAccount(){
     var emergency = null;
 
     if(ShowPopUp2 == true){
-        emergency = <AddContact />
+        emergency = <AddContact setShowPopUp2={setShowPopUp2}/>
     } else{
         emergency = null;
     }
