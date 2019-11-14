@@ -56,6 +56,8 @@ import ContactUs from './screens/ContactUs';
 import EditAccount from './screens/EditAccount';
 import Gethomemap from './comps/Gethomemap';
 import ForgotPassword from './screens/ForgotPassword';
+import TimePopup from './comps/TimePopup';
+import LocationPopup from './comps/LocationPopup';
 
 
 
