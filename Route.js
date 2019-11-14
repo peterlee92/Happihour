@@ -25,10 +25,10 @@ function Route(){
     return(
         <Router>
             <Stack key="root" hideNavBar={true}>
-            <Scene key="login" component={Login} title="Login" initial={true}/>
+            <Scene key="login" component={Login} title="Login" />
             <Scene key="register" component={Register} title="Register" />
             <Scene key="favPage" component={FavPage} title="favPage"  />
-            <Scene key="getHome" component={GetHome} title="GetHome" />
+            <Scene key="getHome" component={GetHome} title="GetHome" initial={true}/>
             <Scene key="profile" component={ProfilePage} title='Profile' />
             <Scene key='editAccount' component={EditAccount} title="EditAccount" />
             <Scene key='contactUs' component={ContactUs} title="ContactUs" />

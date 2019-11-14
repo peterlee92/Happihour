@@ -12,10 +12,10 @@ function EditAccount(){
 
     var saveChanges = null;
 
-    if(ShowPopUp === false){
-        saveChanges = null;
-    } else{
+    if(ShowPopUp == true){
         saveChanges = <AccountChanges />
+    } else{
+        saveChanges = null;
     }
 
 
@@ -23,10 +23,10 @@ function EditAccount(){
 
     var emergency = null;
 
-    if(ShowPopUp2 === false){
-        emergency = null;
-    } else{
+    if(ShowPopUp2 == true){
         emergency = <AddContact />
+    } else{
+        emergency = null;
     }
 
 
@@ -38,7 +38,7 @@ function EditAccount(){
                     <FontAwesomeIcon icon='chevron-left' size={24} color="#F3D27B" style={{marginLeft:10}}/>
                     <Text style={style.edit}>EDIT ACCOUNT</Text>
                 </TouchableOpacity>
-                <Image source={require('../imgs/MenuBarGrad.png')} style={{backgroundColor:'#F3D27B', width:'100%', height:5, position:'absolute', bottom:0}}/>
+                <Image source={require('../imgs/MenuBarGrad.png')} style={{backgroundColor:'#F3D27B', width:'100%', height:1.5, position:'absolute', bottom:0}}/>
             </View>
 
             <ImageBackground source={require('../imgs/bg4.png')} style={style.container}>
@@ -74,12 +74,12 @@ function EditAccount(){
                 </View>
                 <View style={style.yellowLine}></View>
 
-                <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(true))}>
+                <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(!ShowPopUp))}>
                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>
                     {/* <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>
 
-                <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp2(true))}>
+                <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp2(!ShowPopUp2))}>
                     <Text style={{color:"#9B3F3B", fontWeight:"bold"}}>EMERGENCY CONTACT</Text>
                 </TouchableOpacity>
 

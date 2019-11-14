@@ -40,7 +40,7 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
          faPlus, faCalendarAlt,faImage, faMinus,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, faCheckSquare, faSquare} from '@fortawesome/free-solid-svg-icons';
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, faCheckSquare, faSquare, faMobileAlt} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
@@ -55,6 +55,9 @@ import Route from './Route';
 import ContactUs from './screens/ContactUs';
 import EditAccount from './screens/EditAccount';
 import Gethomemap from './comps/Gethomemap';
+
+import Loading from './screens/Loading';
+
 import ForgotPassword from './screens/ForgotPassword';
 import TimePopup from './comps/TimePopup';
 import LocationPopup from './comps/LocationPopup';
@@ -63,10 +66,11 @@ import LocationPopup from './comps/LocationPopup';
 
 
 
+
 function App() {
 
   return (
-    <MapPage />
+    <Route />
   );
 };
 
