@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
         fontFamily:"Nunito-Bold"
     },
     text:{
-        fontSize: 25
+        fontSize: 25,
+        fontFamily:"Nunito-Regular",
     }
     
 })

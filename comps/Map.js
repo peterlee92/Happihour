@@ -9,21 +9,106 @@ import {Actions} from 'react-native-router-flux';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 
-function Map() {
+function Map(props) {
 
     const [lati, setLati] = useState();
     const [longti, setLongti] = useState();
-    const [R_address, setR_address] = useState();
-    const [Tfilter, setTfilter] = useState([]);
-    const [ATfilter, setATfilter] =useState([]);
-    
+    const [Sfilter, setSfilter] = useState([]);
+    const [Fbutton, setFbutton] = useState(false);
 
+    //filter buttons
+    var FBut = null,
+        Buttons = null;
+
+    //filter button and text colors
+    var Dcolor = "#0b2933",
+        Tcolor = "#0b2933",
+        Lcolor = "#0b2933",
+        Dtxt = 'white',
+        Ttxt = 'white',
+        Ltxt = 'white';
+
+    //button color if statement
+    if(props.Timepop == true){
+        Tcolor = "#fed873";
+        Ttxt = "black"
+    }else if(props.Daypop == true){
+        Dcolor = "#fed873";
+        Dtxt = "black"
+    }else if(props.Locationpop == true){
+        Lcolor = "#fed873";
+        Ltxt = "black";
+    }
+
+    //filter by button
+    if(Fbutton == false){
+        FBut = (
+            <TouchableOpacity
+                style={styles.FGcontainer}
+                onPress={()=>{setFbutton(!Fbutton)}}
+            >
+                <Text style={styles.Ftext}>Filter By</Text>
+            </TouchableOpacity>
+        )
+        Buttons = null;
+    }else {
+        FBut = (
+            <TouchableOpacity
+                style={styles.FRcontainer}
+                onPress={()=>{setFbutton(!Fbutton)}}
+            >
+                <Text style={styles.Ftext}>Close Filter</Text>
+            </TouchableOpacity>
+        )
+        Buttons = (
+            <View style={styles.buttonContainer}>
+                <View >
+                    <TouchableOpacity 
+                        style={[styles.button,{backgroundColor:Dcolor}]}
+                        onPress={()=>{
+                            props.setDaypop(true);
+                            props.setTimepop(false);
+                            props.setLocationpop(false);
+                            }}>
+                        <Text style={[styles.buttontxt,{color:Dtxt}]}>Day</Text>
+                    </TouchableOpacity>
+                </View>                  
+                <View >
+                    <TouchableOpacity 
+                        style={[styles.button,{backgroundColor:Lcolor}]}
+                        onPress={()=>{
+                            props.setDaypop(false);
+                            props.setLocationpop(true);
+                            props.setTimepop(false);
+                            }}>
+                        <Text style={[styles.buttontxt,{color:Ltxt}]}>LOCATION</Text>
+                    </TouchableOpacity>
+                </View>    
+                <View >
+                    <TouchableOpacity 
+                        style={[styles.button,{backgroundColor:Tcolor}]}
+                        onPress={()=>{
+                            props.setDaypop(false);
+                            props.setTimepop(true);
+                            props.setLocationpop(false);
+                        }}>
+                        <Text style={[styles.buttontxt,{color:Ttxt}]}>TIME</Text>
+                    </TouchableOpacity>
+                </View>
+
+            </View>
+        )
+    }
+   
+ 
     var region = {
         latitude: lati,
         longitude: longti,
         latitudeDelta: 0.09222,
         longitudeDelta: 0.0421
     }
+
+    //the function that grabs the current location
     async function getLoc(){
         try {
             const granted = await PermissionsAndroid.request(
@@ -54,52 +139,89 @@ function Map() {
         }
     }
 
-    var markers = null;
-    var TimeFilter=async()=>{
-
-        var today = new Date();
-        var C_day = today.getUTCDay(),
-            C_hour = today.getHours(),
-            C_minute = today.getMinutes();
-
-        let timeresponse =await fetch('http://142.232.154.132/Happihour/TimeFilter.php',{
+    var SearchFilter=async(Svalue)=>{
+        let searchresponse =await fetch('http://192.168.0.20/Happihour/SearchFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                C_day:"Mon",
-                C_hour:"16",
-                C_minute:"00"
+                search:Svalue
             })
         })
 
-        let timedata = await timeresponse.json()
-        setTfilter(timedata)
+        let searchdata = await searchresponse.json();
+        console.log(searchdata)
+        if(searchdata == "wrong"){
+            return setSfilter([]);
+        }
 
-        await timedata.map((obj,i)=>{
-            Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-            Geocoder.from(obj.address)
-                    .then(json => {
-                        var location = json.results[0].geometry.location;
-                        var arr = Tfilter;
-                        arr.push(location);
-                        arr = arr.map((o)=>{
-                            return o;
-                        });
-                        setATfilter(arr);
-                        // console.log(arr);
-                    })
-                    .catch(error => console.log(error));
-        })
-        console.log(ATfilter)
-        
-        
-    
+        Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
+        for(var i = 0; i<searchdata.length; i++){
+            var obj = searchdata[i];
+            var json = await Geocoder.from(obj.address);
+            
+            obj.location=json.results[0].geometry.location;
+        }
+        //console.log(searchdata);
+        setSfilter(searchdata)
+        console.log(Svalue)
+    }   
+
+    var markers = [];
+    if(Sfilter.length <=0 && 0 < props.DLTfilter.length){
+        for(var i = 0; i < props.DLTfilter.length; i++){
+            var nav=(n)=> Actions.detail({text:n})
+            var tmarkers = (
+                <Marker
+                    key={i}
+                    coordinate={{
+                        latitude:props.DLTfilter[i].location.lat,
+                        longitude:props.DLTfilter[i].location.lng
+                    }}
+                    image={require('../imgs/pin.png')}
+                > 
+                    <Callout 
+                        tooltip
+                        onPress={nav.bind(this, props.DLTfilter[i].name)}
+                    >
+                        <Popup 
+                            name={props.DLTfilter[i].name}
+                            address={props.DLTfilter[i].address}
+                        />
+                    </Callout>
+                </Marker>
+            )
+            markers.push(tmarkers)
+        }
+    }else if(props.DLTfilter.length <=0 && 0 < Sfilter.length){
+        for(var i = 0; i < Sfilter.length; i++){
+            var nav=(n)=> Actions.detail({text:n})
+            var smarkers = (
+                <Marker
+                    key={i}
+                    coordinate={{
+                        latitude:Sfilter[i].location.lat,
+                        longitude:Sfilter[i].location.lng
+                    }}
+                    image={require('../imgs/pin.png')}
+                >
+                    <Callout 
+                        tooltip
+                        onPress={nav.bind(this, Sfilter[i].name)}
+                    >
+                        <Popup 
+                            name={Sfilter[i].name}
+                            address={Sfilter[i].address}
+                        />
+                    </Callout>
+                </Marker>
+            )
+            markers.push(smarkers)
     }
-
-
+}
+    
     
 
     useEffect(() => {
@@ -126,57 +248,24 @@ function Map() {
                 toolbarEnabled={true}
                 showsMyLocationButton={true}
             >
-           
-            {
-                ATfilter.map((obj,i)=>{
-                    return(
-                        <Marker
-                        key={i}
-                        coordinate={{
-                            latitude:obj.lat,
-                            longitude:obj.lng
-                        }}
-                        image={require('../imgs/pin.png')}
-                        >
-                            <Callout tooltip>
-                                <Popup 
-                                />
-                            </Callout>
-                        </Marker>
-                    )           
-                })
-            }                      
-                
+
+           {markers}
+               
             </MapView>
 
             <View style={styles.searchContainer}>
-            <FontAwesomeIcon icon="search" color={"rgba(0,0,0,0.6)"} size={20} style={{position:'absolute',left:38,elevation:20}}/>
+            <FontAwesomeIcon icon="search" color={"rgba(0,0,0,0.6)"} size={20} style={{position:'absolute',left:30,elevation:20}}/>
                 <TextInput 
                     placeholder="Bar, Restaurant and Pub"
                     style={styles.searchBar}
+                    onChangeText={(t)=>{SearchFilter(t)}}
                 />
-            </View>
 
-            <View style={styles.buttonContainer}>               
-                <View >
-                    <TouchableOpacity 
-                        style={styles.timebutton}
-                        onPress={()=>{
-                            setTfilter([])
-                            TimeFilter()}}
-                    >
-                        <FontAwesomeIcon icon="clock" color={"#f4e664"} size={24} style={{marginRight:12}}/>
-                        <Text style={styles.buttontxt}>TIME</Text>
-                    </TouchableOpacity>
-                </View>    
-                <View >
-                    <TouchableOpacity style={styles.locationbutton}>
-                        <FontAwesomeIcon icon="map-marker-alt" color={"#f4e664"} size={24} style={{marginRight:12}}/>
-                        <Text style={styles.buttontxt}>LOCATION</Text>
-                    </TouchableOpacity>
-                </View>
+                {FBut}
 
             </View>
+
+            {Buttons}
 
         </View>
     )
