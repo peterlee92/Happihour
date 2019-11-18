@@ -5,7 +5,8 @@ var styles = StyleSheet.create({
         width:'100%',
         height:'100%',
         flex:1,
-        justifyContent:'center'
+        justifyContent:'center',
+        fontFamily:"Nunito-Bold"
     },
     header:{
         width:'100%',
@@ -26,22 +27,21 @@ var styles = StyleSheet.create({
         alignItems:'center',
         flex:2,
         // backgroundColor:'yellow'
-        paddingVertical:20
+        paddingVertical:20,
+        bottom:-40
     },
     dontTxt:{
         color:"rgba(255,255,255,0.4)",
-        fontSize:14,
-        letterSpacing:2
+        fontSize:20,
+        letterSpacing:1,
+        fontFamily:"Nunito-Regular",
     },
     createTxt:{
         color:"#f7aa4b",
-        letterSpacing:2,
-        fontSize:18,
+        letterSpacing:1,
+        fontSize:20,
+        fontFamily:"Nunito-Regular",
         marginBottom:30
-    },
-    forgottxt:{
-        color:'#ffdd6b',
-        fontSize:18
     }
 })
 

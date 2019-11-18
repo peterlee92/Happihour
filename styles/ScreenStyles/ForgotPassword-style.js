@@ -22,7 +22,8 @@ const style = StyleSheet.create({
         fontSize:16,
         color:'white',
         textAlign:'center',
-        opacity:0.8
+        opacity:0.8,
+        fontFamily:"Nunito-Regular",
     },
     input:{
         flexDirection:'row',
@@ -35,7 +36,8 @@ const style = StyleSheet.create({
         color:"grey",
         marginLeft:10,
         textAlign:"left",
-        opacity:0.6
+        opacity:0.6,
+        fontFamily:"Nunito-Regular",
     },
     yellowLine:{
         width:'80%',

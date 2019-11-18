@@ -14,7 +14,8 @@ const style = StyleSheet.create({
         fontSize:16,
         color:'#242927',
         textAlign:'center',
-        fontWeight:'bold',
+        //fontWeight:'bold',
+        fontFamily:"Nunito-Bold",        
         marginBottom:5
     },
     msgContainer:{
@@ -27,7 +28,8 @@ const style = StyleSheet.create({
     },
     thanks:{
         fontSize:36,
-        marginBottom:5
+        marginBottom:5,
+        fontFamily:"Nunito-Regular",        
     }
 })
 

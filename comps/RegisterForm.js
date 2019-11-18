@@ -17,7 +17,7 @@ function RegisterForm(){
         // if(username = ""){
             
         // }
-        fetch('http://142.232.158.76/Happihour/Register.php',{
+        fetch('http://192.168.0.20/Happihour/Register.php',{
              method:'POST',
              headers:{
                 'Accept': 'application/json',
@@ -33,6 +33,7 @@ function RegisterForm(){
         .then((responseJson)=>{
              // Showing response message coming from server after inserting records.
             Alert.alert(responseJson);
+            Actions.login();
         }).catch((error) => {
             console.error(error);
         })
@@ -43,8 +44,9 @@ function RegisterForm(){
     return(
         <View style={styles.wrapContainer}>
             <View style={styles.barTxtContainer}>
-                <CheckBox 
+                <CheckBox textStyle={styles.barTxt}
                     title="Are you a bar or restaurant?"
+                    
                     center
                     iconRight
                     containerStyle={{backgroundColor:'transparent', borderWidth:0}}
@@ -59,7 +61,7 @@ function RegisterForm(){
                     placeholder="Username"
                     style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                     underlineColorAndroid = "transparent"
-                    placeholderTextColor="rgba(255,255,255,0.4)"
+                    placeholderTextColor="#f4e664"
                     onChangeText = {(text)=>{Setusername(text)}}
 
                 />
@@ -68,13 +70,12 @@ function RegisterForm(){
                 <FontAwesomeIcon icon="envelope" size={28} color={"white"} style={styles.inputIcon} />
                 <TextInput 
                     placeholder="Email"
-                    returnKeyType="next"
                     keyboardType="email-address"
                     autoCapitalize ="none"
                     autoCorrect={false}
                     style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                     underlineColorAndroid = "transparent"
-                    placeholderTextColor="rgba(255,255,255,0.4)"
+                    placeholderTextColor="#f4e664"
                     onChangeText = {(text)=>{Setuseremail(text)}}
                 />
             </View>
@@ -86,16 +87,16 @@ function RegisterForm(){
                     secureTextEntry
                     style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                     underlineColorAndroid = "transparent"
-                    placeholderTextColor="rgba(255,255,255,0.4)"
+                    placeholderTextColor="#f4e664"
                     onChangeText = {(text)=>{Setuserpassword(text)}}
                 />
             </View>
             <View style={styles.inputContainer}>
-                <FontAwesomeIcon icon="lock" size={28} color={"#f4e664"} style={styles.inputIcon} />
+                <FontAwesomeIcon icon="lock" size={28} color={"white"} style={styles.inputIcon} />
                 <TextInput 
                     placeholder="Confirm Password"
                     secureTextEntry
-                    style={[styles.input,{borderBottomColor:"#f4e664"}]}
+                    style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                     underlineColorAndroid = "transparent"
                     placeholderTextColor="#f4e664"
                     onChangeText = {(text)=>{Setconfirmpassword(text)}}
@@ -107,7 +108,6 @@ function RegisterForm(){
                     style={styles.signupBut}
                     onPress={()=>{
                         InsertDataToServer()
-                        Actions.login();
                     }}
                 >
                     <Text style={styles.signupText}>SIGN UP</Text>

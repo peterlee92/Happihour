@@ -16,7 +16,8 @@ var styles = StyleSheet.create({
     },
     name:{
         color:'white', 
-        letterSpacing:3
+        letterSpacing:3,
+        fontFamily:"Nunito-Regular",        
     },
     timeContainer:{
         backgroundColor:'black', 

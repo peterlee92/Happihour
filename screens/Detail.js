@@ -4,16 +4,21 @@ import DetailHeader from '../comps/DetailHeader';
 import DetailContent from '../comps/DetailContent';
 import styles from '../styles/ScreenStyles/DetailStyles';
 
-function Detail () {
+function Detail(props){
+    console.log(props.text)
     return(
         <ScrollView style={styles.scroll}>
-        <DetailHeader />
-        <ImageBackground
-            style={styles.bg}
-            source={require('../imgs/bg3.png')}
+            <DetailHeader 
+                text={props.text}
+            />
+            <ImageBackground
+                style={styles.bg}
+                source={require('../imgs/bg3.png')}
             >
-            <DetailContent />            
-        </ImageBackground>
+                <DetailContent 
+                    text={props.text}
+                />            
+            </ImageBackground>
         </ScrollView>
     )
 }

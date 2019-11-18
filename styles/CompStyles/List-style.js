@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
     commonTextStyle: {
       color: '#ffef86', 
       fontSize: 16,
-      fontWeight:'bold'
+      fontWeight:'bold',
+      fontFamily:"Nunito-Bold",    
     },
   });
   

@@ -54,7 +54,7 @@ function GetHome(){
                             style={style.Img}
                         />
                     </View>
-                    <Text style={style.GHS}>GET HOME</Text>
+                    <Text style={style.subGHS}>Get Home</Text>
                 </TouchableOpacity>
 {/* 
                 <TouchableOpacity style={[style.position, {backgroundColor:'#D1C74B'}]} onPress={()=>(Actions.taxi())}>
@@ -79,7 +79,7 @@ function GetHome(){
                             style={style.Img3}
                         />
                     </View>
-                    <Text style={[style.GHS, {marginBottom:-15}]}>EMERGENCY CONTACT</Text>
+                    <Text style={[style.subGHS, {marginBottom:-15}]}>Emergency Contact</Text>
                 </TouchableOpacity>
 
                 {/* <TouchableOpacity style={style.position}>
