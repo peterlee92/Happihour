@@ -4,7 +4,8 @@ const style = StyleSheet.create({
     tabTxt:{
         fontSize:16,
         color:'#ffef86',
-        fontWeight:'bold'
+        //fontWeight:'bold',
+        fontFamily:"Nunito-Bold",        
     }
 })
 export default style;

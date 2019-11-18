@@ -25,13 +25,8 @@ import MapPage from './screens/MapPage';
 import Map from './comps/Map';
 import DetailContent from './comps/DetailContent';
 import ExecInfo from './screens/ExecInfo';
-import ExecHour from './screens/ExecHour';
-import ExecPhoto from './screens/ExecPhoto';
-import ExecMenu from './screens/ExecMenu';
+import ExecMenu from './screens/Exec';
 import Transit from './screens/Transit';
-import Psa01 from './comps/Psa01';
-
-
 
 // import fontawesome for icons
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -49,6 +44,7 @@ library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, fa
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
             faPlus, faCalendarAlt,faImage, faMinus,
             faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faCheckSquare, faSquare, faCalendarDay)
+
 
 
 
@@ -71,12 +67,21 @@ import OnBoarding3 from './comps/OnBoarding3';
 import OnBoarding4 from './comps/OnBoarding4';
 import OnBoardingPage from './screens/OnBoardingPage';
 
+//Psa
+import Psa01 from './comps/Psa01';
+import Psa02 from './comps/Psa02';
+import Psa03 from './comps/Psa03';
+import Psa04 from './comps/Psa04';
+import Psa05 from './comps/Psa05';
+import Psa06 from './comps/Psa06';
+import Psa07 from './comps/Psa07';
+import Exec from './screens/Exec';
 
 
 function App() {
 
   return (
-    <OnBoardingPage />
+    <Route/>
   );
 };
 

@@ -54,28 +54,37 @@ function LoginForm(){
             style={styles.wrapcontainer}
             behavior="height"
         >
-            <View style={{marginBottom:70}}>
+            <View style={{marginBottom:30}}>
             <View style={styles.inputContainer}>
-            <FontAwesomeIcon icon="user" size={28} color={"white"} style={styles.inputIcon} />
+            <FontAwesomeIcon icon="user" size={22} color={"white"} style={styles.inputIcon} />
             <TextInput
                 style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                 placeholder="Username"
                 onChangeText={(text)=>{Setusername(text)}}
                 underlineColorAndroid = "transparent"
-                placeholderTextColor="rgba(255,255,255,0.4)"
+                placeholderTextColor="#f4e664"
             />
             </View>
             <View style={styles.inputContainer}>
-            <FontAwesomeIcon icon="lock" size={28} color={"#f4e664"} style={styles.inputIcon} />
+            <FontAwesomeIcon icon="lock" size={22} color={"white"} style={styles.inputIcon} />
             <TextInput
-                style={[styles.input,{borderBottomColor:"#f4e664"}]}
+                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                 placeholder="Password"
                 secureTextEntry={true}
                 onChangeText={(text)=>{Setuserpassword(text)}}
                 underlineColorAndroid = "transparent"
                 placeholderTextColor="#f4e664"
             />
+             
             </View>
+            <View style={styles.inputContainer}>
+            <TouchableOpacity
+                    onPress={()=>{Actions.forgotPassword()}}
+                >
+                    <Text style={styles.forgottxt}>Forgot Password?</Text>
+                </TouchableOpacity>
+            </View>
+             
             </View>
             
             <View style={styles.loginButContainer}>
@@ -83,6 +92,8 @@ function LoginForm(){
                     style={styles.loginBut}
                     onPress={()=>{CheckUserInfo()}}
                 >
+
+                    
                     <Text style={styles.loginTxt}>LOG IN</Text>
                 </TouchableOpacity>
             </View>

@@ -18,14 +18,16 @@ const style = StyleSheet.create({
         marginLeft:15,
         marginTop:20,
         paddingHorizontal:5,
-        color:"white"
+        color:"white",
+        fontFamily:"Nunito-Regular",        
     },
     favDescr:{
         fontSize:12,
         marginLeft:15,
         paddingHorizontal:5,
         paddingBottom:10,
-        color:"white"
+        color:"white",
+        fontFamily:"Nunito-Regular",        
     },
     img:{
         width:175,

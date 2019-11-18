@@ -19,13 +19,15 @@ const style = StyleSheet.create({
         flexDirection:'row',
         width:"80%",
         marginVertical:8,
-        alignItems:'center'
+        alignItems:'center',
+        fontFamily:"Nunito-Regular",        
     },
     inputTxt:{
         fontSize:14,
         color:"grey",
         marginLeft:10,
-        textAlign:"left"
+        textAlign:"left",
+        fontFamily:"Nunito-Regular",        
     },
     inputLine:{
         width:'80%',
@@ -56,7 +58,8 @@ const style = StyleSheet.create({
         fontSize:18,
         color:"white",
         marginLeft:20,
-        letterSpacing:4
+        letterSpacing:4,
+        fontFamily:"Nunito-Regular",        
     },
     button:{
         width:"80%",
