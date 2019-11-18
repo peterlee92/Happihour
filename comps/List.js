@@ -1,3 +1,7 @@
+import FavItems from './FavItems';
+import MenuBar from './MenuBar';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -8,13 +12,6 @@ import {
   View,
   Dimensions,
 } from 'react-native';
-import FavItems from './FavItems';
-import MenuBar from './MenuBar';
-
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import style from '../styles/CompStyles/List-style';
-
-
 const { width, height } = Dimensions.get('window');
 
 import SlidingPanel from 'react-native-sliding-up-down-panels';
@@ -60,4 +57,33 @@ export default class List extends Component {
       </View>
     );
   }
-};
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  bodyViewStyle: {
+    flex: 9,
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
+  headerLayoutStyle: {
+    width, 
+    height: 100, 
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
+  slidingPanelLayoutStyle: {
+    width, 
+    height, 
+    backgroundColor: '#0E1617', 
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
+  commonTextStyle: {
+    color: '#ffef86', 
+    fontSize: 16,
+    fontWeight:'bold'
+  },
+});
