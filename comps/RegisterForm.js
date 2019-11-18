@@ -17,7 +17,7 @@ function RegisterForm(){
         // if(username = ""){
             
         // }
-        fetch('http://142.232.158.76/Happihour/Register.php',{
+        fetch('http://192.168.0.20/Happihour/Register.php',{
              method:'POST',
              headers:{
                 'Accept': 'application/json',
@@ -33,6 +33,7 @@ function RegisterForm(){
         .then((responseJson)=>{
              // Showing response message coming from server after inserting records.
             Alert.alert(responseJson);
+            Actions.login();
         }).catch((error) => {
             console.error(error);
         })
@@ -69,7 +70,6 @@ function RegisterForm(){
                 <FontAwesomeIcon icon="envelope" size={28} color={"white"} style={styles.inputIcon} />
                 <TextInput 
                     placeholder="Email"
-                    returnKeyType="next"
                     keyboardType="email-address"
                     autoCapitalize ="none"
                     autoCorrect={false}
@@ -108,7 +108,6 @@ function RegisterForm(){
                     style={styles.signupBut}
                     onPress={()=>{
                         InsertDataToServer()
-                        Actions.login();
                     }}
                 >
                     <Text style={styles.signupText}>SIGN UP</Text>

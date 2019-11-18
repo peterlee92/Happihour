@@ -35,14 +35,16 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
          faPlus, faCalendarAlt,faImage, faMinus,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faGlassCheers, faCheckSquare, faSquare, faHandsHelping,faCaretDown,faMobileAlt, faMobile} from '@fortawesome/free-solid-svg-icons';
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, 
+         faCheckSquare, faSquare, faCalendarDay} from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
             faClock, faEnvelope, faLock, faUser, faPen, faTaxi, faMobile, faMobileAlt,
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
             faPlus, faCalendarAlt,faImage, faMinus,
-            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faGlassCheers, faCheckSquare, faSquare, faHandsHelping,faCaretDown,faMobileAlt, faMobile)
+            faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faCheckSquare, faSquare, faCalendarDay)
+
 
 
 
@@ -57,9 +59,13 @@ import Loading from './screens/Loading';
 import ForgotPassword from './screens/ForgotPassword';
 import TimePopup from './comps/TimePopup';
 import LocationPopup from './comps/LocationPopup';
-
-
-
+import DetailHeader from './comps/DetailHeader';
+import DayPopup from './comps/DayPopup';
+import OnBoarding1 from './comps/OnBoarding1';
+import OnBoarding2 from './comps/OnBoarding2';
+import OnBoarding3 from './comps/OnBoarding3';
+import OnBoarding4 from './comps/OnBoarding4';
+import OnBoardingPage from './screens/OnBoardingPage';
 
 //Psa
 import Psa01 from './comps/Psa01';

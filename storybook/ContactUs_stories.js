@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 import ThanksContact from '../comps/ThanksContact-popUp';
 import ContactUs from '../screens/ContactUs';
 
-storiesOf("ContactUs", module)
+storiesOf("ContactUs Page", module)
     .add("ThanksContact", ()=>{
         return <ThanksContact />
     })

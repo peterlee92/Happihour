@@ -5,63 +5,78 @@ import MenuBar from '../comps/MenuBar'
 import styles from '../styles/ScreenStyles/MapPageStyles';
 import TimePopup from '../comps/TimePopup';
 import LocationPopup from '../comps/LocationPopup';
+import DayPopup from '../comps/DayPopup';
 
 
 
 function MapPage(){
 
     const [Timepop, setTimepop] = useState(false);
+    const [Daypop, setDaypop] = useState(false);
     const [Locationpop, setLocationpop] = useState(false);
-    const [R_name, setR_name] = useState();
-    const [Tfilter, setTfilter] = useState([]);
-    const [Lfilter, setLfilter] =useState([]);
+    const [Locationvalue, setLocationvalue] = useState('');
+    const [Timevalue, setTimevalue] = useState('');
+    const [Dayvalue, setDayvalue] = useState('');
+    const [DLTfilter, setDLTfilter] = useState([]);
 
     var showpopup = null;
     if(Timepop == true){
         showpopup = (
             <TimePopup 
                 setTimepop={setTimepop}
-                setTfilter={setTfilter}
-                setR_name={setR_name}
+                setDLTfilter={setDLTfilter}
+                Locationvalue={Locationvalue}
+                Dayvalue={Dayvalue}
+                setTimevalue={setTimevalue}
             />
         )
     }else if(Locationpop == true){
         showpopup=(
             <LocationPopup 
-                setLocationpop={setLocationpop} 
-                setLfilter={setLfilter}
-                setR_name={setR_name}
+                setLocationpop={setLocationpop}
+                setDLTfilter={setDLTfilter}
+                Locationvalue={Locationvalue}
+                Timevalue={Timevalue}
+                Dayvalue={Dayvalue}
+                setLocationvalue={setLocationvalue}
+            />
+        )
+    }else if(Daypop == true){
+        showpopup=(
+            <DayPopup 
+                setTimepop={setTimepop}
+                setDLTfilter={setDLTfilter}
+                setDaypop={setDaypop}
+                setDayvalue={setDayvalue}
+                Locationvalue={Locationvalue}
+                Timevalue={Timevalue}
+                Dayvalue={Dayvalue}
             />
         )
     }else {
         showpopup = null;
     }
 
-
-
     return(
-        <View style={{flex:1}}>
-            {/* <Image 
-                style={styles.header}
-                source={require('../imgs/Flow_Header.png')}
-            />          
+        <View style={{flex:1}}>       
             <Map 
                 setTimepop={setTimepop}
                 setLocationpop={setLocationpop}
-                Tfilter={Tfilter}
-                Lfilter={Lfilter}
-                R_name={R_name}
+                setDaypop={setDaypop}
+                Timepop={Timepop}
+                Daypop={Daypop}
+                Locationpop={Locationpop}
+                DLTfilter={DLTfilter}
+                setDLTfilter={setDLTfilter}
             />
-<<<<<<< HEAD
-            <MenuBar />
-            {showpopup}
-=======
             <MenuBar
             map='#F4B869'
             home='#74726C'
             fav='#74726C'
-            profile='#74726C' /> />
->>>>>>> c82930f2fea27ab89eed68630110edb9142b4933
+            profile='#74726C'/>
+
+            {showpopup}
+
         </View>
     )
 }

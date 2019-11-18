@@ -5,11 +5,12 @@ import MenuBar from '../comps/MenuBar';
 
 function FavPage(){
 
+
     const [fav_restaurnts, Setfav_restaurants] = useState([]);
 
     var getFavRestaurants=async()=>{
                                     //use ip address
-        let response = await fetch('http://142.232.154.132/Happihour/Favourite.php',{
+        let response = await fetch('http://192.168.0.20/Happihour/Favourite.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',

@@ -3,7 +3,7 @@ import {View, TextInput, TouchableOpacity, Text, AsyncStorage, KeyboardAvoidingV
 import styles from '../styles/CompStyles/LoginFormStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
-import Geocoder from 'react-native-geocoding';
+import localdata from '../localstorage.json';
 
 function LoginForm(){
 
@@ -23,7 +23,7 @@ function LoginForm(){
         }else{ 
 
                                         //use ip address
-            let response = await fetch('http://142.232.154.132/Happihour/Login.php',{
+            let response = await fetch('http://192.168.0.20/Happihour/Login.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -47,24 +47,10 @@ function LoginForm(){
 
             }
     }
-    
-    var yo=()=>{
-        Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-        Geocoder.from('3700 Willingdon Ave Vancouver')
-            .then(json => {
-                var location = json.results[0].geometry.location;
-                set
-
-            })
-            .catch(error => console.log(error));
-    }
-    
-
-
-    
+  
 
     return(
-        <KeyboardAvoidingView 
+        <View 
             style={styles.wrapcontainer}
             behavior="height"
         >
@@ -111,7 +97,7 @@ function LoginForm(){
                     <Text style={styles.loginTxt}>LOG IN</Text>
                 </TouchableOpacity>
             </View>
-        </KeyboardAvoidingView>
+        </View>
     )
 }
 
