@@ -1,12 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-// import
+import AccountChanges from '../comps/AccountChanges-popUp';
+import AddContact from '../comps/AddContact-popUp';
+import EditAccount from '../screens/EditAccount';
 
-storiesOf("ContactUs", module)
-    .add("ThanksContact", ()=>{
-        return <ThanksContact />
+storiesOf("EditAccount Page", module)
+    .add("AccountChages", ()=>{
+        return <AccountChanges />
     })
-    .add("ContactUs Page", ()=>{
-        return <ContactUs />
-    });
+    .add("AddContact", ()=>{
+        return <AddContact />
+    })
+    .add("EditAccount Page", ()=>{
+        return <EditAccount />
+    })
