@@ -7,10 +7,20 @@ const style = StyleSheet.create({
     },
     GHS:{
         color:"white",
-        fontSize:18,
+        fontSize:23,
         // fontWeight:"",
         letterSpacing:3,
-        textAlign:'center'
+        textAlign:'center',
+        fontFamily:"Nunito-Regular",
+    },
+
+    subGHS:{
+        color:"white",
+        fontSize:20,
+        // fontWeight:"",
+        letterSpacing:2,
+        textAlign:'center',
+        fontFamily:"Nunito-Regular",
     },
     Img:{
         width:300,
@@ -34,7 +44,7 @@ const style = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         flexDirection:"column",
-        width:"70%",
+        width:"62%",
         height:150,
         margin:10,
         marginBottom:40,

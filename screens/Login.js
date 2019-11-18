@@ -34,11 +34,11 @@ function Login() {
                         create a new account
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity
+                {/* <TouchableOpacity
                     onPress={()=>{Actions.forgotPassword()}}
                 >
                     <Text style={styles.forgottxt}>Forgot Password?</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
         </ImageBackground>
     )

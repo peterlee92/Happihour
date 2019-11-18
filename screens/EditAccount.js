@@ -52,27 +52,27 @@ function EditAccount(){
 
                 <View style={style.input}>
                     <FontAwesomeIcon icon='user' size={24} color='white' />
-                    <TextInput placeholder="username" placeholderTextColor='grey' style={style.inputTxt}/>
+                    <TextInput placeholder="username" placeholderTextColor='#f4e664' style={style.inputTxt}/>
                 </View>
                 <View style={style.inputLine}></View>
 
                 <View style={style.input}>
                     <FontAwesomeIcon icon='envelope' size={24} color='white' />
-                    <TextInput placeholder="email" placeholderTextColor='grey' style={style.inputTxt} />
+                    <TextInput placeholder="email" placeholderTextColor='#f4e664' style={style.inputTxt} />
                 </View>
                 <View style={style.inputLine}></View>
 
                 <View style={style.input}>
                     <FontAwesomeIcon icon='lock' size={24} color='white' />
-                    <TextInput placeholder="password" placeholderTextColor='grey' style={style.inputTxt} />
+                    <TextInput placeholder="password" placeholderTextColor='#f4e664' style={style.inputTxt} />
                 </View>
                 <View style={style.inputLine}></View>
 
                 <View style={style.input}>
-                    <FontAwesomeIcon icon='lock' size={24} color='#EDE479' />
-                    <TextInput placeholder="confirm password" placeholderTextColor='#EDE479' style={style.inputTxt} />
+                    <FontAwesomeIcon icon='lock' size={24} color='white' />
+                    <TextInput placeholder="confirm password" placeholderTextColor='#f4e664' style={style.inputTxt} />
                 </View>
-                <View style={style.yellowLine}></View>
+                <View style={style.inputLine}></View>
 
                 <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(!ShowPopUp))}>
                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>

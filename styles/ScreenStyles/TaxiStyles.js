@@ -23,11 +23,13 @@ const style = StyleSheet.create({
         fontSize:18,
         color:"white",
         marginLeft:20,
-        letterSpacing:4
+        letterSpacing:4,
+        fontFamily:"Nunito-Regular",
     },
     GHS:{
         color:"white",
-        fontSize:18
+        fontSize:18,
+        fontFamily:"Nunito-Regular",
     },
     Img:{
         width:150,
@@ -48,7 +50,8 @@ const style = StyleSheet.create({
     iconTxt:{
         flexDirection:'row',
         marginTop:10,
-        alignItems:"center"
+        alignItems:"center",
+        fontFamily:"Nunito-Regular",
     }
 
 })

@@ -17,7 +17,8 @@ const style = StyleSheet.create({
         marginBottom:5,
         opacity:0.8,
         marginBottom:20,
-        paddingTop:10
+        paddingTop:10,
+        fontFamily:"Nunito-Regular",                
     },
     msgContainer:{
         backgroundColor:"#061A20",
@@ -29,6 +30,7 @@ const style = StyleSheet.create({
         borderRadius:30
     },
     input:{
+        fontFamily:"Nunito-Regular",                
         width:'80%',
         height:40,
         backgroundColor:'#828B82',

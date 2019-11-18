@@ -15,7 +15,8 @@ const style = StyleSheet.create({
         fontSize:16,
         color:'#242927',
         textAlign:'center',
-        fontWeight:'bold'
+        //fontWeight:'bold'
+        fontFamily:"Nunito-Bold",                
     },
     msgContainer:{
         backgroundColor:"white",
@@ -27,7 +28,8 @@ const style = StyleSheet.create({
     },
     yes:{
         fontSize:21,
-        color:"#242927"
+        color:"#242927",
+        fontFamily:"Nunito-Regular",        
     },
     yesContainer:{
         backgroundColor:"#EDE479",
@@ -37,6 +39,7 @@ const style = StyleSheet.create({
         height: 60
     },
     no:{
+        fontFamily:"Nunito-Regular",                
         fontSize:21,
         color:"white"
     },

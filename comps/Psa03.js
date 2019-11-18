@@ -15,23 +15,37 @@ function Psa03(){
         style={style.bg}
         source={require('../imgs/PsaBg2.png')}>
             <View style={style.container}>
-            <Text style={style.helpers}>
-            HELPERS</Text>
-            <FontAwesomeIcon icon="hamburger" transform="shrink-5"  size={120} style={style.icon}/>
-            <Text style={style.heading}>Eat Before &amp; During</Text>
-            <Text style={style.psa}>
-            Never drink alcohol on an empty stomach. Make sure to eat before and during, in order to help your body better absorb alcohol. Also, drink plenty of water.
-                </Text>
-            <TouchableOpacity style={style.solidBtn}>
-                <Text
-                style={style.ecText}>
-                    LEARN MORE</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={style.outlineBtn}>
-                <Text
-                style={style.exitText}
-                >EXIT</Text>
-            </TouchableOpacity>
+            <View style={style.logoRow}>
+                    <Image 
+                        style={{width:250, height:50, margin:20}}
+                        source={require('../imgs/Happihour_Logo.png')}
+                    />
+                    <Text style={style.helpers}>
+                        HELPERS
+                    </Text>                
+                </View>                
+
+                <View style={style.psaRow}>
+                    <FontAwesomeIcon icon="hamburger" transform="shrink-5"  size={120} style={style.icon}/>
+                    <Text style={style.heading}>Eat Before &amp; During</Text>
+                    <Text style={style.psa}>
+                        Never drink alcohol on an empty stomach. Make sure to eat before and during, in order to help your body better absorb alcohol. Also, drink plenty of water.
+                    </Text>
+                </View>
+                <View style={style.btnRow}>
+                    <TouchableOpacity style={style.yellowBtn}>
+                    <Text
+                    style={style.redText}>
+                        LEARN MORE</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={style.orangeBtn}>
+                        <Text
+                        style={style.btnText}>
+                        EXIT
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+
             </View>
         </ImageBackground>
     )

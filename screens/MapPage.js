@@ -41,7 +41,7 @@ function MapPage(){
 
     return(
         <View style={{flex:1}}>
-            <Image 
+            {/* <Image 
                 style={styles.header}
                 source={require('../imgs/Flow_Header.png')}
             />          
