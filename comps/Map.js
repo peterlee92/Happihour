@@ -70,7 +70,7 @@ function Map(props) {
                             props.setTimepop(false);
                             props.setLocationpop(false);
                             }}>
-                        <Text style={[styles.buttontxt,{color:Dtxt}]}>Day</Text>
+                        <Text style={[styles.buttontxt,{color:Dtxt}]}>DAY</Text>
                     </TouchableOpacity>
                 </View>                  
                 <View >
@@ -140,7 +140,7 @@ function Map(props) {
     }
 
     var SearchFilter=async(Svalue)=>{
-        let searchresponse =await fetch('http://192.168.0.20/Happihour/SearchFilter.php',{
+        let searchresponse =await fetch('http://142.232.146.164/Happihour/SearchFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -155,18 +155,20 @@ function Map(props) {
         console.log(searchdata)
         if(searchdata == "wrong"){
             return setSfilter([]);
+        }else{
+            Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
+            for(var i = 0; i<searchdata.length; i++){
+                var obj = searchdata[i];
+                var json = await Geocoder.from(obj.address);
+                
+                obj.location=json.results[0].geometry.location;
+            }
+            //console.log(searchdata);
+            setSfilter(searchdata)
+            console.log(Svalue)
         }
 
-        Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-        for(var i = 0; i<searchdata.length; i++){
-            var obj = searchdata[i];
-            var json = await Geocoder.from(obj.address);
-            
-            obj.location=json.results[0].geometry.location;
-        }
-        //console.log(searchdata);
-        setSfilter(searchdata)
-        console.log(Svalue)
+        
     }   
 
     var markers = [];
