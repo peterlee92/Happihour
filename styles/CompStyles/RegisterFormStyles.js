@@ -6,9 +6,8 @@ var styles = StyleSheet.create({
     },
     barTxtContainer:{
         alignItems:'center',
-        marginBottom:20,
-        marginTop:-20,
-        
+        //marginBottom:20,
+        //marginTop:-20,
     },
     barTxt:{
         color:'rgba(255,255,255,0.5)',
@@ -17,11 +16,11 @@ var styles = StyleSheet.create({
     },
     inputContainer:{
         width:'100%', 
-        marginVertical:'3%',
+        marginVertical:'2%',
         height:50,
         justifyContent:'center',
         flexDirection:'row',
-        paddingHorizontal:20
+        paddingHorizontal:20,
     },
     inputIcon:{
         position:'absolute',

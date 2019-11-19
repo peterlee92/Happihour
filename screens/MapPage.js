@@ -41,7 +41,7 @@ function MapPage(){
 
     return(
         <View style={{flex:1}}>
-            {/* <Image 
+            <Image 
                 style={styles.header}
                 source={require('../imgs/Flow_Header.png')}
             />          
@@ -52,16 +52,15 @@ function MapPage(){
                 Lfilter={Lfilter}
                 R_name={R_name}
             />
-<<<<<<< HEAD
             <MenuBar />
             {showpopup}
-=======
+
             <MenuBar
             map='#F4B869'
             home='#74726C'
             fav='#74726C'
-            profile='#74726C' /> />
->>>>>>> c82930f2fea27ab89eed68630110edb9142b4933
+            profile='#74726C' />
+
         </View>
     )
 }
