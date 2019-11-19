@@ -8,11 +8,6 @@ configure(() => {
 //   require('./stories');
     require('./ContactUs_stories')
     require('./Detail_stories')
-    require('./EditAccount_stories')
-    require('./ExecHour_stories')
-    require('./ExecInfo_stories')
-    require('./ExecMenu_stories')
-    require('./ExecPhoto_stories')
     require('./FavPage_stories')
     require('./ForgotPassword_stories')
     require('./GeHome_stories')

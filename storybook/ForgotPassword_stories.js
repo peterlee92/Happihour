@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
-import ThanksEmail from '../comps/ThanksEmail';
+import ThanksEmail from '../comps/ThanksEmail-popUp';
 import ForgotPassword from '../screens/ForgotPassword';
 
 
