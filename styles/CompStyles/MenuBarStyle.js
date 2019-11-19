@@ -11,7 +11,8 @@ const style = StyleSheet.create({
         paddingTop:10,
         paddingHorizontal:10,
         paddingHorizontal:30,
-        width:'100%'
+        width:'100%',
+        elevation:100
     },
     ItemPosition:{
         flex:1,

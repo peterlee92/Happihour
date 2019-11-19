@@ -82,7 +82,9 @@ import Exec from './screens/Exec';
 function App() {
 
   return (
-    <GetHome/>
+
+    <MapPage/>
+
   );
 };
 
