@@ -6,7 +6,7 @@ import styles from '../styles/ScreenStyles/MapPageStyles';
 import TimePopup from '../comps/TimePopup';
 import LocationPopup from '../comps/LocationPopup';
 import DayPopup from '../comps/DayPopup';
-
+import List from '../comps/List';
 
 
 function MapPage(){
@@ -69,6 +69,9 @@ function MapPage(){
                 DLTfilter={DLTfilter}
                 setDLTfilter={setDLTfilter}
             />
+
+            <List />
+
             <MenuBar
             map='#F4B869'
             home='#74726C'

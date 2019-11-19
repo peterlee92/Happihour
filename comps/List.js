@@ -15,30 +15,28 @@ import {
 const { width, height } = Dimensions.get('window');
 
 import SlidingPanel from 'react-native-sliding-up-down-panels';
+import MapPage from '../screens/MapPage';
 
 
 export default class List extends Component {
   render() {
     return (
       <View style={styles.container}>                      
-        
-        {/* <View style={styles.bodyViewStyle}>
-          <Text>Hello My World</Text>
-        </View> */}
-        
         <SlidingPanel
             headerLayoutHeight = {100}
             headerLayout = { () =>
                 <View style={styles.headerLayoutStyle}>
-                    <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:100, marginBottom:-50}} />
-                    <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:-5, right:155}}>
-                        <FontAwesomeIcon icon="arrow-up" size={32} color="#ffef86"/>
-                        <Text style={styles.commonTextStyle}>View Map</Text>
+                    <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:115, marginBottom:0, elevation:98}} />
+                    <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, right:150, elevation:99}}>
+                        <FontAwesomeIcon icon="chevron-up" size={32} color="#ffef86" style={{marginTop:-15}}/>
+                        <Text style={[styles.commonTextStyle,{marginBottom:3}]}>View List</Text>
+                        {/* <Text style={[styles.commonTextStyle, {marginTop:10, marginBottom:20}]}>View Map</Text>
+                        <FontAwesomeIcon icon="chevron-down" size={32} color="#ffef86" style={{marginBottom:-35, marginTop:-20}}/> */}
                     </View>
                 </View>
             }
             slidingPanelLayout = { () =>
-                <View style={styles.slidingPanelLayoutStyle}>
+                <View style={[styles.slidingPanelLayoutStyle, {marginTop:75, bottom:40, elevation:90}]}>
              <SafeAreaView>
                  <ScrollView>
                      <FavItems />
@@ -61,29 +59,34 @@ export default class List extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
+    
   },
   bodyViewStyle: {
     flex: 9,
     justifyContent: 'center', 
-    alignItems: 'center',
+    alignItems: 'center'
   },
   headerLayoutStyle: {
     width, 
-    height: 100, 
+    height: 120, 
     justifyContent: 'center', 
     alignItems: 'center',
+    marginTop:75,
+    bottom:50
   },
   slidingPanelLayoutStyle: {
     width, 
     height, 
     backgroundColor: '#0E1617', 
     justifyContent: 'center', 
-    alignItems: 'center',
+    alignItems: 'center'
   },
   commonTextStyle: {
     color: '#ffef86', 
-    fontSize: 16,
-    fontWeight:'bold'
+    fontSize: 18,
+    textAlign:'center',
+    fontWeight:'bold',
+    fontFamily:'Nunito-Bold'
   },
 });
