@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {View, TextInput, TouchableOpacity, Text, Picker,Button} from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import DateTimePicker from '@react-native-community/datetimepicker';
-import TimePicker from 'react-native-simple-time-picker';
+// import DateTimePicker from '@react-native-community/datetimepicker';
+// import TimePicker from 'react-native-simple-time-picker';
 
 import styles from '../styles/CompStyles/ExecCompStyles';
 import btnStyles from '../styles/CompStyles/BtnStyles';

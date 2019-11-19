@@ -50,12 +50,6 @@ function FavPage(){
                         })
                     } */}
 
-                    <FavItems/>
-                    <FavItems/>
-                    <FavItems/>
-                    <FavItems/>
-                    <FavItems/>
-                    <FavItems/>
                 </ScrollView>
                 </SafeAreaView>
              </View>

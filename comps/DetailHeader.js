@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View, Text, Image, ImageBackground, TouchableOpacity} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, Image, ImageBackground, TouchableOpacity, Linking} from 'react-native';
 import styles from '../styles/CompStyles/DetailheaderStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
@@ -9,7 +9,7 @@ function DetailHeader (props){
     const [FavStatus, setFavStatus] = useState(false);
 
     var AddFav=async()=>{
-        let Favresponse = await fetch('http://192.168.0.20/Happihour/AddFav.php',{
+        let Favresponse = await fetch('http://142.232.146.164/Happihour/AddFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -23,7 +23,7 @@ function DetailHeader (props){
     }
 
     var DeleteFav=async()=>{
-        let Favresponse = await fetch('http://192.168.0.20/Happihour/DeleteFav.php',{
+        let Favresponse = await fetch('http://142.232.146.164/Happihour/DeleteFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -62,6 +62,8 @@ function DetailHeader (props){
             </TouchableOpacity>
         )
     } 
+
+    
 
     return(
         <ImageBackground 
