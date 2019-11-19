@@ -3,7 +3,7 @@ import {View, TextInput, TouchableOpacity, Text, AsyncStorage, KeyboardAvoidingV
 import styles from '../styles/CompStyles/LoginFormStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
-import Geocoder from 'react-native-geocoding';
+import localdata from '../localstorage.json';
 
 function LoginForm(){
 
@@ -23,7 +23,7 @@ function LoginForm(){
         }else{ 
 
                                         //use ip address
-            let response = await fetch('http://142.232.149.137/Happihour/Login.php',{
+            let response = await fetch('http://192.168.0.20/Happihour/Login.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -40,62 +40,69 @@ function LoginForm(){
 
             if(data == 'ok'){
                 Alert.alert('welcome!');
+                Actions.mappage()
             }else {
                 Alert.alert(data);
             }
 
             }
     }
-    
-    var yo=()=>{
-        Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-        Geocoder.from('3700 Willingdon Ave Vancouver')
-            .then(json => {
-                var location = json.results[0].geometry.location;
-                set
-
-            })
-            .catch(error => console.log(error));
-    }
-    
-
-
-    
+  
 
     return(
         <KeyboardAvoidingView 
-            style={styles.wrapcontainer}
-            behavior="height"
+            style={/**styles.wrapcontainer*/{flex:1,marginBottom:30}}
+            behavior="padding"
+            enabled
         >
-            <View style={{marginBottom:70}}>
-            <View style={styles.inputContainer}>
-            <FontAwesomeIcon icon="user" size={28} color={"white"} style={styles.inputIcon} />
-            <TextInput
-                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
-                placeholder="Username"
-                onChangeText={(text)=>{Setusername(text)}}
-                underlineColorAndroid = "transparent"
-                placeholderTextColor="rgba(255,255,255,0.4)"
-            />
-            </View>
-            <View style={styles.inputContainer}>
-            <FontAwesomeIcon icon="lock" size={28} color={"#f4e664"} style={styles.inputIcon} />
-            <TextInput
-                style={[styles.input,{borderBottomColor:"#f4e664"}]}
-                placeholder="Password"
-                secureTextEntry={true}
-                onChangeText={(text)=>{Setuserpassword(text)}}
-                underlineColorAndroid = "transparent"
-                placeholderTextColor="#f4e664"
-            />
-            </View>
+            <View style={{/**marginBottom:30*/}}>
+                <View style={styles.inputContainer}>
+                    <FontAwesomeIcon icon="user" size={22} color={"white"} style={styles.inputIcon} />
+                    <TextInput
+                        style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
+                        placeholder="Username"
+                        onChangeText={(text)=>{Setusername(text)}}
+                        underlineColorAndroid = "transparent"
+                        placeholderTextColor="#f4e664"
+                        blurOnSubmit={false}                        
+                        returnKeyType={"next"}                    
+                        onSubmitEditing = {()=> refPass.focus()}
+                    />
+                </View>
+                
+                <View style={styles.inputContainer}>
+                    <FontAwesomeIcon icon="lock" size={22} color={"white"} style={styles.inputIcon} />
+                    <TextInput
+                        style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
+                        placeholder="Password"
+                        secureTextEntry={true}
+                        onChangeText={(text)=>{Setuserpassword(text)}}
+                        underlineColorAndroid = "transparent"
+                        placeholderTextColor="#f4e664"
+                        blurOnSubmit={false}
+                        returnKeyType={"done"} 
+                        ref={(i)=>{refPass = i}}
+                        onSubmitEditing = {()=>{CheckUserInfo()}}
+                    />
+                </View>
+
+                <View style={styles.inputContainer}>
+                <TouchableOpacity
+                        onPress={()=>{Actions.forgotPassword()}}
+                    >
+                        <Text style={styles.forgottxt}>Forgot Password?</Text>
+                    </TouchableOpacity>
+                </View>
+             
             </View>
             
             <View style={styles.loginButContainer}>
                 <TouchableOpacity 
                     style={styles.loginBut}
-                    onPress={()=>{yo()}}
+                    onPress={()=>{CheckUserInfo()}}
                 >
+
+                    
                     <Text style={styles.loginTxt}>LOG IN</Text>
                 </TouchableOpacity>
             </View>

@@ -6,20 +6,21 @@ var styles = StyleSheet.create({
     },
     barTxtContainer:{
         alignItems:'center',
-        marginBottom:20,
-        marginTop:-20
+        //marginBottom:20,
+        //marginTop:-20,
     },
     barTxt:{
         color:'rgba(255,255,255,0.5)',
-        fontSize:16
+        fontSize:18,
+        fontFamily:"Nunito-Regular",        
     },
     inputContainer:{
         width:'100%', 
-        marginVertical:'3%',
+        marginVertical:'2%',
         height:50,
         justifyContent:'center',
         flexDirection:'row',
-        paddingHorizontal:20
+        paddingHorizontal:20,
     },
     inputIcon:{
         position:'absolute',
@@ -31,7 +32,8 @@ var styles = StyleSheet.create({
         paddingLeft:60,
         fontSize:18,
         borderBottomWidth:2,
-        color:'white'
+        color:'white',
+        fontFamily:"Nunito-Regular",        
     },
     signupContainer:{
         alignItems:'center',
@@ -47,7 +49,8 @@ var styles = StyleSheet.create({
         textAlign:'center',
         fontSize:20,
         letterSpacing:2,
-        fontWeight:'bold'
+        //fontWeight:'bold',
+        fontFamily:"Nunito-Bold",        
     }
 })
 

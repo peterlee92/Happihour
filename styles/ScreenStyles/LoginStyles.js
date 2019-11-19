@@ -5,35 +5,45 @@ var styles = StyleSheet.create({
         width:'100%',
         height:'100%',
         flex:1,
-        justifyContent:'center'
+        justifyContent:'space-around',
+        fontFamily:"Nunito-Bold"
+
     },
     header:{
         width:'100%',
-        flex:0.8
+        flex:0.3
     },
     logoContainer:{
         alignItems:'center',
-        marginVertical:30
+        //marginVertical:50,
+        //marginBottom:-10,
+        flex:1
     },
     logo:{
         width:300,
         height:100,
-        resizeMode:'contain'
+        resizeMode:'contain',
+        flex:1
     },
     newaccountContainer:{
         alignItems:'center',
-        justifyContent:'center',
-        flex:1
+        flex:1,
+        // backgroundColor:'yellow'
+        //paddingVertical:20,
+        bottom:-125
     },
     dontTxt:{
         color:"rgba(255,255,255,0.4)",
-        fontSize:14,
-        letterSpacing:2
+        fontSize:20,
+        letterSpacing:1,
+        fontFamily:"Nunito-Regular",
     },
     createTxt:{
-        color:"#ffd96f",
-        letterSpacing:2,
-        fontSize:18
+        color:"#f7aa4b",
+        letterSpacing:1,
+        fontSize:20,
+        fontFamily:"Nunito-Regular",
+        marginBottom:30
     }
 })
 

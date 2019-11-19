@@ -23,7 +23,7 @@ const options = {
       path: 'images',
     },
   };
-  
+
   function ImgPick(){
     /**
    * The first arg is the options object for customization (it can also be null or omitted for default options),
@@ -56,44 +56,53 @@ const options = {
             <ImageBackground source={require('../imgs/ProfileGrad.png')} style={style.container}>
                 <View style={style.avatar}>
                         <Image source={require('../imgs/profileCurvedImage.png')} resizeMode='cover' style={{width:'100%', height:'100%', position:"absolute", borderBottomLeftRadius:350, borderBottomRightRadius:350, overflow:'hidden'}}/>
-                        <Image style={style.AvatarImg} source={require('../imgs/Pororo.png')} />
-                        <TouchableOpacity onPress={ImgPick} style={{position:'absolute', right:280,  top:200}}>
-                            <View style={{width:30, height:30, backgroundColor:'#808080', borderRadius:15, justifyContent:'center', alignItems:'center'}}>
-                                <FontAwesomeIcon icon='pen' color='#F4B869'/>
-                            </View>
-                        </TouchableOpacity>
-                        <Text style={style.name}>Jane Doe</Text>
-                        <Text style={style.atName}>@JaneDoe</Text>
+                        <View style={{justifyContent:'center', alignItems:'center', marginTop:-50}}>
+                          <Image style={style.AvatarImg} source={require('../imgs/Pororo.png')} />
+                          
+                          {/* <Image source={avatarSource} style={style.AvatarImg}/> */}
+                          <TouchableOpacity onPress={ImgPick} style={{position:'absolute', right:45,  top:130}}>
+                              <View style={{width:30, height:30, backgroundColor:'#808080', borderRadius:15, justifyContent:'center', alignItems:'center'}}>
+                                  <FontAwesomeIcon icon='pen' color='#F4B869'/>
+                              </View>
+                          </TouchableOpacity>
+                          <Text style={style.name}>Jane Doe</Text>
+                          <Text style={style.atName}>@JaneDoe</Text>
+                        </View>
                 </View>
 
-                <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:75, position:'absolute', top:0}} />
+                <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:50, position:'absolute', top:0}} />
+            <View style={{justifyContent:'center', alignItems:'center', marginBottom:-80}}>
+              <TouchableOpacity style={style.titleIcon} onPress={()=>(Actions.editAccount())}>
+                  <View style={style.editBox}>
+                      <Text style={style.titles}>Edit Account</Text>
+                      <FontAwesomeIcon icon="chevron-right" size={24} color={"white"} style={{marginRight:10}} />
+                  </View>
+              </TouchableOpacity>
 
-            <TouchableOpacity style={style.titleIcon} onPress={()=>(Actions.editAccount())}>
-                <View style={style.editBox}>
-                    <Text style={style.titles}>Edit Account</Text>
-                    <FontAwesomeIcon icon="chevron-right" size={24} color={"white"} style={{marginRight:10}} />
-                </View>
-            </TouchableOpacity>
+              <TouchableOpacity onPress={()=>(Actions.contactUs())}>
+                  <View style={style.editBox}>
+                      <Text style={style.titles}>Contact Us</Text>
+                      <FontAwesomeIcon icon="chevron-right" size={24} color={"white"} style={{marginRight:10}}/>
+                  </View>
+              </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>(Actions.contactUs())}>
-                <View style={style.editBox}>
-                    <Text style={style.titles}>Contact Us</Text>
-                    <FontAwesomeIcon icon="chevron-right" size={24} color={"white"} style={{marginRight:10}}/>
-                </View>
-            </TouchableOpacity>
+              {/* <View style={style.settings}>
+                  <Text style={style.options}>Location</Text>
+                  <Switch style={style.swtch} thumbColor='black' ios_backgroundColor='rgba(0,0,0,0.5)'/>
+              </View> */}
 
-            <View style={style.settings}>
-                <Text style={style.options}>Location</Text>
-                <Switch style={style.swtch} thumbColor='black' ios_backgroundColor='rgba(0,0,0,0.5)'/>
+              <TouchableOpacity style={style.titleIcon}>
+                  <View style={style.SignOutbox}>
+                      <Text style={style.SignOutTitles}>Sign Out</Text>
+                  </View>
+              </TouchableOpacity>
             </View>
-
-            <TouchableOpacity style={style.titleIcon}>
-                <View style={style.SignOutbox}>
-                    <Text style={style.SignOutTitles}>Sign Out</Text>
-                </View>
-            </TouchableOpacity>
-            <MenuBar />
             </ImageBackground>
+            <MenuBar
+            map='#74726C'
+            home='#74726C'
+            fav='#74726C'
+            profile='#F4B869' />
         </View>
     )
 }

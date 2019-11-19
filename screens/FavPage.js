@@ -5,11 +5,12 @@ import MenuBar from '../comps/MenuBar';
 
 function FavPage(){
 
+
     const [fav_restaurnts, Setfav_restaurants] = useState([]);
 
     var getFavRestaurants=async()=>{
                                     //use ip address
-        let response = await fetch('http://142.232.152.245/Happihour/Favourite.php',{
+        let response = await fetch('http://192.168.0.20/Happihour/Favourite.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -35,23 +36,28 @@ function FavPage(){
         <View style={{ height: "100%", backgroundColor:"#0E1617"}}>
             {/* <Image  source={require('../imgs/Flow_Header.svg')} /> */}
             <ImageBackground source={require('../imgs/bg1.png')} style={{width:'100%', height:'100%'}}>
-                <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:75}} />
-            <SafeAreaView>
-            <ScrollView>
-                {
-                    fav_restaurnts.map((obj,i)=>{
-                        return <FavItems 
-                            key={i}
-                            name={obj.name}
-                            address={obj.address}
-                        />
-                    })
-                }
-            </ScrollView>
-            </SafeAreaView>
-            </View>
-            <MenuBar />
-            </ImageBackground>
+                <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:50}} />
+            <View style={{flex:9}}>
+                <SafeAreaView>
+                <ScrollView>
+                    {
+                        fav_restaurnts.map((obj,i)=>{
+                            return <FavItems 
+                                key={i}
+                                name={obj.name}
+                                address={obj.address}
+                            />
+                        })
+                    }
+                </ScrollView>
+                </SafeAreaView>
+             </View>
+             <MenuBar 
+                map='#74726C'
+                home='#74726C'
+                fav='#F4B869'
+                profile='#74726C'/>
+             </ImageBackground>
         </View>
     )
 }

@@ -31,9 +31,10 @@ function GetHome(){
                 source={require('../imgs/Flow_Header.png')}  
                 style={{
                     width:'100%', 
-                    height:75, 
+                    height:50, 
                     position:'absolute', 
-                    top:0}} 
+                    top:0
+                }} 
             />
             
             <Text style={[style.GHS, {marginBottom:30}]}>Let's Get You Home Safe</Text>
@@ -53,10 +54,10 @@ function GetHome(){
                             style={style.Img}
                         />
                     </View>
-                    <Text style={style.GHS}>GET HOME</Text>
+                    <Text style={style.subGHS}>Get Home</Text>
                 </TouchableOpacity>
-
-                {/* <TouchableOpacity style={[style.position, {backgroundColor:'#D1C74B'}]} onPress={()=>(Actions.taxi())}>
+{/* 
+                <TouchableOpacity style={[style.position, {backgroundColor:'#D1C74B'}]} onPress={()=>(Actions.taxi())}>
                     <View style={style.img2}>
                         <FontAwesomeIcon icon="taxi" size={100} color="white" style={style.Img2}/>
                     </View>
@@ -78,7 +79,7 @@ function GetHome(){
                             style={style.Img3}
                         />
                     </View>
-                    <Text style={[style.GHS, {marginBottom:-15}]}>EMERGENCY CONTACT</Text>
+                    <Text style={[style.subGHS, {marginBottom:-15}]}>Emergency Contact</Text>
                 </TouchableOpacity>
 
                 {/* <TouchableOpacity style={style.position}>
@@ -88,7 +89,12 @@ function GetHome(){
             </View>
             </View>
             </ImageBackground>
-            <MenuBar />
+            <MenuBar 
+                map='#74726C'
+                home='#F4B869'
+                fav='#74726C'
+                profile='#74726C'
+            />
         </View>
     )
 }

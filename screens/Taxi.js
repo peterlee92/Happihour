@@ -13,7 +13,7 @@ function Taxi(){
                         <FontAwesomeIcon icon='chevron-left' size={24} color="#F3D27B" style={{marginLeft:10}}/>
                         <Text style={style.edit}>TAXI</Text>
                     </TouchableOpacity>
-                    <Image source={require('../imgs/MenuBarGrad.png')} style={{backgroundColor:'#F3D27B', width:'100%', height:5, position:'absolute', bottom:0}}/>
+                    <Image source={require('../imgs/MenuBarGrad.png')} style={{backgroundColor:'#F3D27B', width:'100%', height:1.5, position:'absolute', bottom:0}}/>
             </View>
                 <View style={style.container}>
                     <View style={style.rows}>

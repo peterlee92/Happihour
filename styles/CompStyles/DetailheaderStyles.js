@@ -18,7 +18,8 @@ var styles = StyleSheet.create({
         color:'white',
         fontSize:25,
         letterSpacing:3,
-        fontWeight:'bold'
+        //fontWeight:'bold'
+        fontFamily:"Nunito-Bold",        
     },
     directionContainer:{
         position:'relative',
@@ -42,7 +43,8 @@ var styles = StyleSheet.create({
     HT:{
         fontSize:25,
         textAlign:'center',
-        padding:10
+        padding:10,
+        fontFamily:"Nunito-Regular",        
     }
 })
 

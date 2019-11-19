@@ -9,7 +9,7 @@ var styles = StyleSheet.create({
         fontFamily:"Nunito-Bold"
     },
     header:{
-        flex:0.8,
+        flex:0.1,
         width:'100%'
     },
     logoContainer:{
@@ -19,7 +19,7 @@ var styles = StyleSheet.create({
         width:300,
         height:100,
         resizeMode:'contain',
-        marginVertical:5
+        marginVertical:15
     },
     backBut:{
         position:'absolute',
