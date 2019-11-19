@@ -18,7 +18,7 @@ function Psa07(){
             <View style={style.container}>
             <View style={style.logoRow}>
                     <Image 
-                        style={{width:250, height:50, margin:20}}
+                        style={{width:200, height:50, margin:0}}
                         source={require('../imgs/Happihour_Logo.png')}
                     />
                     <Text style={style.helpers}>
@@ -26,7 +26,7 @@ function Psa07(){
                     </Text>                
                 </View>                
                 <View style={style.psaRow}>
-                    <FontAwesomeIcon icon="dice" transform="shrink-5"  size={120} style={style.icon}/>
+                    <FontAwesomeIcon icon="dice" transform="shrink-5"  size={80} style={style.icon}/>
                     <Text style={style.heading}>Avoid Drinking Games</Text>
                     <Text style={style.psa}>
                         Drinking games might seem like a good idea, but often times lead to people getting irresponsibly drunk. Avoid drinking games and remember  to set your limit and stay within it.

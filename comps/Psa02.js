@@ -19,7 +19,7 @@ function Psa02(){
 
             <View style={style.logoRow}>
                     <Image 
-                        style={{width:250, height:50, margin:20}}
+                        style={{width:200, height:50, margin:0}}
                         source={require('../imgs/Happihour_Logo.png')}
                     />
                     <Text style={style.helpers}>
@@ -28,7 +28,7 @@ function Psa02(){
                 </View>                
 
             <View style={style.psaRow}>
-                <FontAwesomeIcon icon="taxi" transform="shrink-5"  size={120} style={style.icon}/>
+                <FontAwesomeIcon icon="taxi" transform="shrink-5"  size={80} style={style.icon}/>
                 <Text style={style.heading}>Call a Taxi</Text>
                 <Text style={style.psa}>
                     Taxis are a safeway to get home after consuming alcohol. Make sure to save their numbers in your phone in case of an emergency.

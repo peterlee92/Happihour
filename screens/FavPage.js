@@ -49,6 +49,7 @@ function FavPage(){
                             />
                         })
                     } */}
+
                 </ScrollView>
                 </SafeAreaView>
              </View>

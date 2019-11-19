@@ -2,17 +2,21 @@ import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
     wrapContainer:{
-        flex:5
+        marginTop:10
     },
     barTxtContainer:{
         alignItems:'center',
-        //marginBottom:20,
-        //marginTop:-20,
+        marginBottom:30,
+        marginTop:-20,
     },
     barTxt:{
         color:'rgba(255,255,255,0.5)',
-        fontSize:18,
-        fontFamily:"Nunito-Regular",        
+        fontSize:17,
+        fontFamily:"Nunito-Regular", 
+        fontWeight:"200",
+        letterSpacing:.5,
+        
+
     },
     inputContainer:{
         width:'100%', 

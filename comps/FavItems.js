@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import style from '../styles/CompStyles/FavItemsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import styles from '../styles/AppStyle';
 
 function FavItems({name, address}) {
 
@@ -34,26 +35,24 @@ function FavItems({name, address}) {
                     <TouchableOpacity style={style.favImg} onPress={()=>{DeleteFav()}}>
                         <FontAwesomeIcon 
                             icon='heart' 
-                            size={32} 
+                            size={22} 
                             color='red'
                         /> 
                     </TouchableOpacity>
                 </View>
                     <View 
-                        style={{flexDirection:'row', 
-                        justifyContent:'space-between', 
-                        alignItems:'center'}}
+                        style={style.favContainer}
                     >
                         <View>
-                            <Text style={style.favTitle}>{name}</Text>
-                            <Text style={style.favDescr}>{address}</Text>
+                            <Text style={style.favTitle}>Colony Restaurant</Text>
+                            <Text style={style.favDescr}>5555 Main Street</Text>
                         </View>
                         <View>
                             <FontAwesomeIcon 
                                 icon="chevron-right" 
                                 color={'#ffef86'} 
-                                size={32} 
-                                style={{marginRight:12}}/>
+                                size={22} 
+                                style={{marginRight:10}}/>
                         </View>
                     </View>
             </View>

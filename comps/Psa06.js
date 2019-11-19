@@ -17,7 +17,7 @@ function Psa06(){
             <View style={style.container}>
             <View style={style.logoRow}>
                     <Image 
-                        style={{width:250, height:50, margin:20}}
+                        style={{width:200, height:50, margin:0}}
                         source={require('../imgs/Happihour_Logo.png')}
                     />
                     <Text style={style.helpers}>
@@ -25,7 +25,7 @@ function Psa06(){
                     </Text>                
                 </View>                
                 <View style={style.psaRow}>
-                    <FontAwesomeIcon icon="wine-glass-alt" transform="shrink-5"  size={120} style={style.icon}/>
+                    <FontAwesomeIcon icon="wine-glass-alt" transform="shrink-5"  size={80} style={style.icon}/>
                     <Text style={style.heading}>Drink For Quality, Not Quantity</Text>
                     <Text style={style.psa}>
                         Remember that quality is much better than quantity, especially when it comes to drinking alcohol. Slowly, savour your favourite drink and drink plenty of water as well.

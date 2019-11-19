@@ -28,7 +28,6 @@ function Login(props) {
                     />
                 </View>
                 <LoginForm 
-                style={{flex:1}}
                 refPass
                 refForgot
                 />
