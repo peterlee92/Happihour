@@ -81,7 +81,7 @@ import Exec from './screens/Exec';
 function App() {
 
   return (
-    <Route/>
+    <MapPage/>
   );
 };
 

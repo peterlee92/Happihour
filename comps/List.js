@@ -2,7 +2,7 @@ import FavItems from './FavItems';
 import MenuBar from './MenuBar';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   SafeAreaView,
@@ -18,14 +18,14 @@ import SlidingPanel from 'react-native-sliding-up-down-panels';
 import MapPage from '../screens/MapPage';
 
 
-export default class List extends Component {
-  render() {
+export default function List() {
+  const [mtop, setMTop] = useState(0);
     return (
-      <View style={styles.container}>                      
+      <View style={[styles.container, {marginTop:mtop}]}>                      
         <SlidingPanel
             headerLayoutHeight = {100}
             headerLayout = { () =>
-                <View style={styles.headerLayoutStyle}>
+                <View style={[styles.headerLayoutStyle]}>
                     <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:115, marginBottom:0, elevation:98}} />
                     <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, right:150, elevation:99}}>
                         <FontAwesomeIcon icon="chevron-up" size={32} color="#ffef86" style={{marginTop:-15}}/>
@@ -54,13 +54,11 @@ export default class List extends Component {
         />
       </View>
     );
-  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1
-    
   },
   bodyViewStyle: {
     flex: 9,
@@ -77,7 +75,7 @@ const styles = StyleSheet.create({
   },
   slidingPanelLayoutStyle: {
     width, 
-    height, 
+    height:height, 
     backgroundColor: '#0E1617', 
     justifyContent: 'center', 
     alignItems: 'center'
