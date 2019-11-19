@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ImageBackground, TouchableOpacity, Linking  } from 'react-native';
 import styles from '../styles/CompStyles/DetailContentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
@@ -10,6 +10,7 @@ function DetailContent(props){
     const [foodmenu, Setfoodmenu] = useState([]);
     const [drinkmenu, Setdrinkmenu] = useState([]);
     const [rest_loc, Setrest_loc] = useState({lat:0,lng:0});
+    const [rest_url, Setrest_url] = useState()
 
     var drinklist = [];
     var foodlist = [];
@@ -17,7 +18,7 @@ function DetailContent(props){
     var GetMenu=async()=>{
     
                                         //use ip address
-        let drinkresponse = await fetch('http://192.168.0.20/Happihour/Drink.php',{
+        let drinkresponse = await fetch('http://142.232.146.164/Happihour/Drink.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -44,7 +45,7 @@ function DetailContent(props){
                 .catch(error => console.log(error));
 
                                         //use ip address
-        let foodresponse = await fetch('http://192.168.0.20/Happihour/Food.php',{
+        let foodresponse = await fetch('http://142.232.146.164/Happihour/Food.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -71,10 +72,13 @@ function DetailContent(props){
                 })
                 .catch(error => console.log(error));
 
+
+
+                
                 
     }
     console.log(drinkmenu.length)
-    if(drinkmenu[0].price){
+    if(drinkmenu.length !== 0){
         for(var i = 0; i < drinkmenu.length; i++){
             var drink = (
                 <View 
@@ -91,7 +95,7 @@ function DetailContent(props){
         drinklist = null;
     }
 
-    if(foodmenu[0].price){
+    if(foodmenu.legnth !== 0){
         for(var i = 0; i < foodmenu.length; i++){
             var food = (
                 <View 
@@ -108,15 +112,44 @@ function DetailContent(props){
         foodlist = null;
     }
 
-    
+    //to grab the restaurant url
+    var GrabUrl=async()=>{
+        let Urlresponse = await fetch('http://142.232.146.164/Happihour/Url.php',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id:'1',
+                restaurantname:props.text
+            })
+        })
+
+        let urldata = await Urlresponse.json();
+        Setrest_url(urldata[0].url)
+    }
+
+    //direct to url
+    // var GotoUrl=()=>{
+    //     Linking.canOpenURL("'"+rest_url+"'").then(supported => {
+    //         if(supported){
+    //             Linking.openURL("'"+rest_url+"'");
+    //         }else{
+    //             console.log("Don't know how to open URL")
+    //         }
+    //     })
+    // }
 
     useEffect(()=>{
         GetMenu();
+        GrabUrl();
 
     },[])
 
     return(
         <View style={{flex:5}}>
+    
             <View style={styles.menuContainer}>
                 <Text style={styles.menu}>DRINKS</Text>
 
@@ -130,16 +163,19 @@ function DetailContent(props){
                     
             </View>
             <View style={styles.buttonsContainer}>
-                <View style={styles.buttons}>
+                <TouchableOpacity 
+                    style={styles.buttons}
+                    onPress={()=>{Linking.openURL('https://google.com')}}
+                >
                     <FontAwesomeIcon icon='desktop' size={23} style={{marginRight:10}}/>
                     <Text>VISIT WEBSITE</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={styles.buttons}>
                     <FontAwesomeIcon icon='phone-alt' size={20} style={{marginRight:10}}/>
                     <Text>778-123-4567</Text>
                 </View>
             </View>
-            {/* <MapView
+            <MapView
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
                 region={{
@@ -160,7 +196,7 @@ function DetailContent(props){
                     }}
                     image={require('../imgs/pin.png')}
                 />
-            </MapView> */}
+            </MapView>
         </View>
     )
 }
