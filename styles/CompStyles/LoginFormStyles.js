@@ -46,7 +46,7 @@ var styles = StyleSheet.create({
     },
     forgottxt:{
         color:'rgba(255,255,255,0.4)"',
-        fontSize:18,
+        fontSize:14,
         fontFamily:"Nunito-Regular",
     }
 })

@@ -4,9 +4,15 @@ const style = StyleSheet.create({
     container:{
         backgroundColor:"#122832",
         width:350,
-        height:175,
+        height:150,
         borderRadius:10,
         marginVertical:5
+    },
+    favContainer:{
+        flexDirection:'row', 
+        justifyContent:'space-between', 
+        alignItems:'center',
+        
     },
     position:{
         justifyContent:"center",
@@ -16,16 +22,19 @@ const style = StyleSheet.create({
     favTitle:{
         fontSize:16,
         marginLeft:15,
-        marginTop:20,
+        marginTop:5,
         paddingHorizontal:5,
+        letterSpacing:1,
         color:"white",
-        fontFamily:"Nunito-Regular",        
+        
+        fontFamily:"Nunito-Bold",        
     },
     favDescr:{
-        fontSize:12,
+        fontSize:10,
         marginLeft:15,
         paddingHorizontal:5,
         paddingBottom:10,
+        marginTop:2,
         color:"white",
         fontFamily:"Nunito-Regular",        
     },

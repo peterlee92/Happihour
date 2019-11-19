@@ -17,7 +17,7 @@ function Psa03(){
             <View style={style.container}>
             <View style={style.logoRow}>
                     <Image 
-                        style={{width:250, height:50, margin:20}}
+                        style={{width:200, height:50, margin:0}}
                         source={require('../imgs/Happihour_Logo.png')}
                     />
                     <Text style={style.helpers}>
@@ -26,7 +26,7 @@ function Psa03(){
                 </View>                
 
                 <View style={style.psaRow}>
-                    <FontAwesomeIcon icon="hamburger" transform="shrink-5"  size={120} style={style.icon}/>
+                    <FontAwesomeIcon icon="hamburger" transform="shrink-5"  size={80} style={style.icon}/>
                     <Text style={style.heading}>Eat Before &amp; During</Text>
                     <Text style={style.psa}>
                         Never drink alcohol on an empty stomach. Make sure to eat before and during, in order to help your body better absorb alcohol. Also, drink plenty of water.

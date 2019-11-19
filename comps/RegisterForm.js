@@ -46,7 +46,7 @@ function RegisterForm(){
          style={{flex:1}}
          behavior="padding"
          enabled>
-            <View /*style={styles.wrapContainer}*/>
+            <View style={styles.wrapContainer}>
                         <View style={styles.barTxtContainer}>
                             <CheckBox textStyle={styles.barTxt}
                                 title="Are you a bar or restaurant?"
