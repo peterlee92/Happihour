@@ -2,8 +2,10 @@ import {StyleSheet} from 'react-native';
 
 const styles =  StyleSheet.create({
     bg:{
+        width:'100%',
+        height:'100%',        
         flex:1,
-        justifyContent:"center",
+        justifyContent:"space-around",
     },
     container:{
         justifyContent:"center",
@@ -31,7 +33,7 @@ const styles =  StyleSheet.create({
     },
     flow:{
         width:"100%",
-        flex:0.125,
+        flex:0.1,
     },
     backBtn:{
         margin:10,
