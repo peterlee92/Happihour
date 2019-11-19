@@ -9,6 +9,7 @@ var styles = StyleSheet.create({
         justifyContent:'center',
         elevation:20,
         padding:10,
+        paddingVertical:20,
         flexDirection:'row',
         position:'absolute',
         right:0,
@@ -16,10 +17,30 @@ var styles = StyleSheet.create({
     },
     searchBar:{
         backgroundColor:'white',
-        width:'90%',
+        width:'95%',
         height:35,
         borderRadius:7,
-        paddingHorizontal:40
+        paddingHorizontal:40,
+        borderWidth:0.5
+    },
+    FGcontainer:{
+        backgroundColor:"#417a4f",
+        borderRadius:25,
+        position:'absolute',
+        right:25,
+        padding:3,
+        paddingHorizontal:15
+    },
+    FRcontainer:{
+        backgroundColor:"#cb3a00",
+        borderRadius:25,
+        position:'absolute',
+        right:25,
+        padding:3,
+        paddingHorizontal:15
+    },
+    Ftext:{
+        color:'white'
     },
     buttonContainer:{
         flexDirection:'row',
@@ -28,33 +49,18 @@ var styles = StyleSheet.create({
         left:0,
         right:0,
         elevation:5,
-        marginTop:90
+        marginTop:65
     },
-    timebutton:{
-        backgroundColor: "rgba(0,0,0,0.6)",
+    button:{
         flexDirection:'row',
         alignItems:'center',
         padding:8,
         paddingHorizontal:28,
-        borderRadius:30,
-        marginRight:40,
         elevation:10,
         zIndex:20
 
     },
-    locationbutton:{
-        backgroundColor: "rgba(0,0,0,0.6)",
-        flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'center',
-        padding:8,
-        paddingHorizontal:10,
-        borderRadius:30,
-        elevation:10,
-        zIndex:20
-    },
     buttontxt:{
-        color:"#f4e664",
         fontSize:15,
         letterSpacing:1,
         fontFamily:"Nunito-Regular",        

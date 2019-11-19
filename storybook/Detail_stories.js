@@ -5,13 +5,13 @@ import DetailHeader from '../comps/DetailHeader';
 import DetailContent from '../comps/DetailContent';
 import Detail from '../screens/Detail';
 
-storiesOf("Detail", module)
+storiesOf("Detail Page", module)
     .add("DetailHeader", ()=>{
         return <DetailHeader />
     })
     .add("DetailContent", ()=>{
         return <DetailContent />
     })
-    .add("Deatil", ()=>{
+    .add("Deatil Page", ()=>{
         return <Detail />
     })

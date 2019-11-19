@@ -17,7 +17,7 @@ function RegisterForm(){
         // if(username = ""){
             
         // }
-        fetch('http://142.232.158.76/Happihour/Register.php',{
+        fetch('http://192.168.0.20/Happihour/Register.php',{
              method:'POST',
              headers:{
                 'Accept': 'application/json',
@@ -33,6 +33,7 @@ function RegisterForm(){
         .then((responseJson)=>{
              // Showing response message coming from server after inserting records.
             Alert.alert(responseJson);
+            Actions.login();
         }).catch((error) => {
             console.error(error);
         })

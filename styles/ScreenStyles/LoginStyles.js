@@ -6,6 +6,8 @@ var styles = StyleSheet.create({
         height:'100%',
         flex:1,
         justifyContent:'space-around',
+        fontFamily:"Nunito-Bold"
+
     },
     header:{
         width:'100%',

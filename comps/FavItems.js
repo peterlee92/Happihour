@@ -5,19 +5,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 function FavItems({name, address}) {
 
-    const [SelectFav, setSelectFav] = useState(true);
-
-    var favColor = null;
-
-    if(SelectFav === false){
-        favColor = 'black';
-    } else
-    if(SelectFav === true){
-        favColor = 'red';
+    var DeleteFav=async()=>{
+        let Favresponse = await fetch('http://192.168.0.20/Happihour/DeleteFav.php',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id:'1',
+                restaurantname:{name}
+            })
+        })
     }
 
     return(
-        <TouchableOpacity style={style.position}>
         <View style={style.position}>
             <View style={style.container}>
                 <View style={style.imgPosition}>
@@ -29,17 +31,13 @@ function FavItems({name, address}) {
                         source={require('../imgs/colony2.png')} 
                         style={style.img2}
                     />
-                <TouchableOpacity onPress={()=>(setSelectFav(false))} style={{zIndex:999}}>
-                    <View style={style.favImg}>
-                        {/* <Text style={{marginHorizontal:1}}>12</Text>
-                        <FontAwesomeIcon icon='heart' size={12} style={{marginHorizontal:1}}/> */}
+                    <TouchableOpacity style={style.favImg} onPress={()=>{DeleteFav()}}>
                         <FontAwesomeIcon 
                             icon='heart' 
                             size={32} 
-                            color={favColor}
+                            color='red'
                         /> 
-                    </View>
-                </TouchableOpacity>
+                    </TouchableOpacity>
                 </View>
                     <View 
                         style={{flexDirection:'row', 
@@ -59,8 +57,8 @@ function FavItems({name, address}) {
                         </View>
                     </View>
             </View>
-            </View>
-        </TouchableOpacity>
+            
+        </View>
     )
 }
 export default FavItems;

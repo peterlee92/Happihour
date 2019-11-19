@@ -11,7 +11,9 @@ var styles = StyleSheet.create({
     wrapper:{
         width:"80%",
         height:"40%",
-        borderRadius:15
+        borderRadius:15,
+        borderColor:"#74726B",
+        borderWidth:2
     },
     scroll:{
         width:"100%", 
@@ -26,13 +28,13 @@ var styles = StyleSheet.create({
         borderTopRightRadius:13,
         padding:10,
         backgroundColor:'#071a20',
-        position:"relative"
+        position:'relative'
     },
     title:{
         color:"#f4e664",
         fontSize:20
     },
-    locationwrap:{
+    daywrap:{
         backgroundColor:"#0b2933",
         borderColor:"#74726B",
         borderWidth:0.8,
@@ -40,7 +42,7 @@ var styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center'
     },
-    location:{
+    day:{
         color:"white",
         fontSize:25,
         paddingVertical:5
