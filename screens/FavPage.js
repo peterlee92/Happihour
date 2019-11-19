@@ -40,7 +40,7 @@ function FavPage(){
             <View style={{flex:9}}>
                 <SafeAreaView>
                 <ScrollView>
-                    {
+                    {/* {
                         fav_restaurnts.map((obj,i)=>{
                             return <FavItems 
                                 key={i}
@@ -48,7 +48,7 @@ function FavPage(){
                                 address={obj.address}
                             />
                         })
-                    }
+                    } */}
                 </ScrollView>
                 </SafeAreaView>
              </View>
