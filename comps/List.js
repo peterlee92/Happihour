@@ -1,7 +1,5 @@
-import FavItems from './FavItems';
-import MenuBar from './MenuBar';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-
+import ListItems from './ListItems';
 import React, { useState } from 'react';
 import {
   StyleSheet,
@@ -15,10 +13,9 @@ import {
 const { width, height } = Dimensions.get('window');
 
 import SlidingPanel from 'react-native-sliding-up-down-panels';
-import MapPage from '../screens/MapPage';
 
 
-export default function List() {
+export default function List(props) {
   const [mtop, setMTop] = useState(0);
     return (
       <View style={[styles.container, {marginTop:mtop}]}>                      
@@ -39,14 +36,24 @@ export default function List() {
                 <View style={[styles.slidingPanelLayoutStyle, {marginTop:75, bottom:40, elevation:90}]}>
              <SafeAreaView>
                  <ScrollView>
-                     <FavItems />
-                     <FavItems />
-                     <FavItems />
-                    <FavItems />
-                    <FavItems />
-                    <FavItems />
-                    <FavItems />
-                     <FavItems />
+                    {
+                      props.DLTfilter.map((obj,i)=>{
+                        return <ListItems 
+                          key={i}
+                          name={obj.name}
+                          address={obj.address}
+                        />
+                      })
+                    }
+                    {
+                      props.Sfilter.map((obj,i)=>{
+                        return <ListItems 
+                          key={i}
+                          name={obj.name}
+                          address={obj.address}
+                        />
+                      })
+                    }
                 </ScrollView>
                </SafeAreaView>
                 </View>

@@ -13,7 +13,6 @@ function Map(props) {
 
     const [lati, setLati] = useState();
     const [longti, setLongti] = useState();
-    const [Sfilter, setSfilter] = useState([]);
     const [Fbutton, setFbutton] = useState(false);
 
     //filter buttons
@@ -140,39 +139,45 @@ function Map(props) {
     }
 
     var SearchFilter=async(Svalue)=>{
-        let searchresponse =await fetch('http://142.232.156.7/Happihour/SearchFilter.php',{
-            method:'POST',
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                search:Svalue
-            })
-        })
 
-        let searchdata = await searchresponse.json();
-        console.log(searchdata)
-        if(searchdata == "wrong"){
-            return setSfilter([]);
+        if(Svalue == "" || Svalue == " " || Svalue == "  "){
+            props.setSfilter([]);
         }else{
-            Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-            for(var i = 0; i<searchdata.length; i++){
-                var obj = searchdata[i];
-                var json = await Geocoder.from(obj.address);
-                
-                obj.location=json.results[0].geometry.location;
+            let searchresponse =await fetch('http://142.232.156.7/Happihour/SearchFilter.php',{
+                method:'POST',
+                headers:{
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    search:Svalue
+                })
+            })
+    
+            let searchdata = await searchresponse.json();
+            console.log(searchdata)
+            if(searchdata == "wrong"){
+                return props.setSfilter([]);
+            }else{
+                Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
+                for(var i = 0; i<searchdata.length; i++){
+                    var obj = searchdata[i];
+                    var json = await Geocoder.from(obj.address);
+                    
+                    obj.location=json.results[0].geometry.location;
+                }
+                //console.log(searchdata);
+                props.setSfilter(searchdata)
+                console.log(Svalue)
             }
-            //console.log(searchdata);
-            setSfilter(searchdata)
-            console.log(Svalue)
         }
+        
 
         
     }   
 
     var markers = [];
-    if(Sfilter.length <=0 && 0 < props.DLTfilter.length){
+    if(props.Sfilter.length <=0 && 0 < props.DLTfilter.length){
         for(var i = 0; i < props.DLTfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var tmarkers = (
@@ -197,32 +202,32 @@ function Map(props) {
             )
             markers.push(tmarkers)
         }
-    }else if(props.DLTfilter.length <=0 && 0 < Sfilter.length){
-        for(var i = 0; i < Sfilter.length; i++){
+    }else if(props.DLTfilter.length <=0 && 0 < props.Sfilter.length){
+        for(var i = 0; i < props.Sfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var smarkers = (
                 <Marker
                     key={i}
                     coordinate={{
-                        latitude:Sfilter[i].location.lat,
-                        longitude:Sfilter[i].location.lng
+                        latitude:props.Sfilter[i].location.lat,
+                        longitude:props.Sfilter[i].location.lng
                     }}
                     image={require('../imgs/pin.png')}
                 >
                     <Callout 
                         tooltip
-                        onPress={nav.bind(this, Sfilter[i].name)}
+                        onPress={nav.bind(this, props.Sfilter[i].name)}
                     >
                         <Popup 
-                            name={Sfilter[i].name}
-                            address={Sfilter[i].address}
+                            name={props.Sfilter[i].name}
+                            address={props.Sfilter[i].address}
                         />
                     </Callout>
                 </Marker>
             )
             markers.push(smarkers)
+        }
     }
-}
     
     
 

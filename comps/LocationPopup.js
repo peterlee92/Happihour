@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 function LocationPopup(props){
 
     var LocationFilter=async(location)=>{
-
+        console.log(location)
+        console.log(props.Dayvalue)
         let locationresponse = await fetch('http://142.232.156.7/Happihour/DLTFilter.php',{
             method:'POST',
             headers:{
@@ -35,6 +36,7 @@ function LocationPopup(props){
             }
 
             props.setDLTfilter(locationdata);
+            props.setSfilter([]);
         }
 
    
