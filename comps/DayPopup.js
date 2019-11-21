@@ -9,7 +9,7 @@ function DayPopup(props){
 
     var DayFilter=async(day)=>{
 
-        let dayresponse =await fetch('http://192.168.0.20/Happihour/DLTFilter.php',{
+        let dayresponse =await fetch('http://142.232.156.7/Happihour/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

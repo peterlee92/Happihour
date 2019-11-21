@@ -140,7 +140,7 @@ function Map(props) {
     }
 
     var SearchFilter=async(Svalue)=>{
-        let searchresponse =await fetch('http://142.232.146.164/Happihour/SearchFilter.php',{
+        let searchresponse =await fetch('http://142.232.156.7/Happihour/SearchFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -243,6 +243,7 @@ function Map(props) {
                     latitudeDelta: 0.0992,
                     longitudeDelta: 0.0421,
                   }}
+            
                 showsUserLocation={true}
                 zoomEnabled={true}
                 followsUserLocation={true}

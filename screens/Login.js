@@ -6,7 +6,7 @@ import {Actions} from 'react-native-router-flux';
 
 
 function Login(props) {
-    
+     
     var refPass = props.pass;
 
     return(
