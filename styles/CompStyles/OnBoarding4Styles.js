@@ -24,7 +24,8 @@ var styles = StyleSheet.create({
         resizeMode:'contain',
         width:'100%',
         height:250,
-        marginBottom:20
+        marginBottom:20,
+        marginRight:20
     },
     content:{
        justifyContent:'center',
@@ -32,7 +33,7 @@ var styles = StyleSheet.create({
        padding:30
     },
     contenttxt:{
-        fontSize:20,
+        fontSize:17,
         textAlign:'center',
         lineHeight:40,
         marginBottom:40 

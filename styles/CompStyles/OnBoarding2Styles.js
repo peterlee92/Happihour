@@ -33,7 +33,7 @@ var styles = StyleSheet.create({
        padding:30
     },
     contenttxt:{
-        fontSize:16,
+        fontSize:17,
         textAlign:'center',
         lineHeight:40,
         marginBottom:40 

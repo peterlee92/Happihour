@@ -22,7 +22,7 @@ function Route(){
     return(
         <Router>
             <Stack key="root" hideNavBar={true}>
-            <Scene key="login" component={Login} title="Login" />
+            <Scene key="login" component={Login} title="Login" initial={true}/>
             <Scene key="register" component={Register} title="Register" />
             <Scene key="favPage" component={FavPage} title="favPage"  />
             <Scene key="getHome" component={GetHome} title="GetHome" />

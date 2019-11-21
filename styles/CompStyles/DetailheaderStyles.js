@@ -30,8 +30,10 @@ var styles = StyleSheet.create({
         flexDirection:'row',
         backgroundColor:'#e6dc60',
         borderRadius:5,
-        padding:5
+        padding:5,
+       
     },
+   
     HTcontainer:{
         backgroundColor:"#e6dc60",
         borderTopLeftRadius:20,
@@ -41,10 +43,10 @@ var styles = StyleSheet.create({
         width:'100%'
     },
     HT:{
-        fontSize:25,
+        fontSize:23,
         textAlign:'center',
         padding:10,
-        fontFamily:"Nunito-Regular",        
+        fontFamily:"Nunito-Bold",        
     }
 })
 
