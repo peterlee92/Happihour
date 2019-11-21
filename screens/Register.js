@@ -37,7 +37,7 @@ function Register(props){
                     style={styles.backBut}
                     onPress={()=>{Actions.login()}}
                 >
-                    <FontAwesomeIcon icon="chevron-left" size={19} color={"black"}  />
+                    <FontAwesomeIcon icon="chevron-left" size={17} marginTop={-3} color={"black"}  />
                 </TouchableOpacity>
 
             </ImageBackground>            

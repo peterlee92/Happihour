@@ -15,13 +15,16 @@ var styles = StyleSheet.create({
     },
     txt:{
         color:'white',
-        fontFamily:"Nunito-Regular",        
+        fontFamily:"Nunito-Regular",
+        letterSpacing:2,  
+        fontSize:17      
     },
     price:{
         color:"#ffd96f",
         position:'absolute',
         right:0,
-        fontFamily:"Nunito-Regular",        
+        fontFamily:"Nunito-Regular", 
+        fontSize:17       
     },
     buttonsContainer:{
         flexDirection:'row',
