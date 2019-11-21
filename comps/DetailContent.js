@@ -10,7 +10,8 @@ function DetailContent(props){
     const [foodmenu, Setfoodmenu] = useState([]);
     const [drinkmenu, Setdrinkmenu] = useState([]);
     const [rest_loc, Setrest_loc] = useState({lat:0,lng:0});
-    const [rest_url, Setrest_url] = useState()
+    const [rest_url, Setrest_url] = useState();
+    const [rest_num, Setrest_num] = useState();
 
     var drinklist = [];
     var foodlist = [];
@@ -18,7 +19,7 @@ function DetailContent(props){
     var GetMenu=async()=>{
     
                                         //use ip address
-        let drinkresponse = await fetch('http://142.232.146.164/Happihour/Drink.php',{
+        let drinkresponse = await fetch('http://142.232.156.7/Happihour/Drink.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -45,7 +46,7 @@ function DetailContent(props){
                 .catch(error => console.log(error));
 
                                         //use ip address
-        let foodresponse = await fetch('http://142.232.146.164/Happihour/Food.php',{
+        let foodresponse = await fetch('http://142.232.156.7/Happihour/Food.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -114,32 +115,33 @@ function DetailContent(props){
 
     //to grab the restaurant url
     var GrabUrl=async()=>{
-        let Urlresponse = await fetch('http://142.232.146.164/Happihour/Url.php',{
+        let response = await fetch('http://142.232.156.7/Happihour/Url.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                user_id:'1',
                 restaurantname:props.text
             })
         })
 
-        let urldata = await Urlresponse.json();
-        Setrest_url(urldata[0].url)
+        let data = await response.json();
+        Setrest_url(data.url)
+        Setrest_num(data.contact)
     }
 
     //direct to url
-    // var GotoUrl=()=>{
-    //     Linking.canOpenURL("'"+rest_url+"'").then(supported => {
-    //         if(supported){
-    //             Linking.openURL("'"+rest_url+"'");
-    //         }else{
-    //             console.log("Don't know how to open URL")
-    //         }
-    //     })
-    // }
+    var GotoUrl=()=>{
+        Linking.canOpenURL(rest_url).then(supported => {
+            if(supported){
+                Linking.openURL(rest_url);
+            }else{
+                console.log("Don't know how to open URL")
+            }
+        })
+    }
+
 
     useEffect(()=>{
         GetMenu();
@@ -165,15 +167,18 @@ function DetailContent(props){
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity 
                     style={styles.buttons}
-                    onPress={()=>{Linking.openURL('https://google.com')}}
+                    onPress={()=>{GotoUrl()}}
                 >
                     <FontAwesomeIcon icon='desktop' size={23} style={{marginRight:10}}/>
                     <Text>VISIT WEBSITE</Text>
                 </TouchableOpacity>
-                <View style={styles.buttons}>
+                <TouchableOpacity 
+                    style={styles.buttons}
+                    onPress={()=>{Linking.openURL('tel:'+rest_num)}}
+                >
                     <FontAwesomeIcon icon='phone-alt' size={20} style={{marginRight:10}}/>
-                    <Text>778-123-4567</Text>
-                </View>
+                <Text>{rest_num}</Text>
+                </TouchableOpacity>
             </View>
             <MapView
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
