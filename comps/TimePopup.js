@@ -9,7 +9,7 @@ function TimePopup(props){
 
     var TimeFilter=async(time)=>{
         // console.log(time)
-        let timeresponse =await fetch('http://192.168.0.20/Happihour/DLTFilter.php',{
+        let timeresponse =await fetch('http://142.232.156.7/Happihour/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

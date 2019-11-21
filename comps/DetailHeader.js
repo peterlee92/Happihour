@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, Image, ImageBackground, TouchableOpacity, Linking} from 'react-native';
 import styles from '../styles/CompStyles/DetailheaderStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import {Actions} from 'react-native-router-flux';
 
 
 function DetailHeader (props){
@@ -9,7 +10,27 @@ function DetailHeader (props){
     const [FavStatus, setFavStatus] = useState(false);
 
     var AddFav=async()=>{
-        let Favresponse = await fetch('http://142.232.146.164/Happihour/AddFav.php',{
+        let Favresponse = await fetch('http://142.232.156.7/Happihour/AddFav.php',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id:'1',
+                restaurantname:props.text
+            })
+        })
+        .then(data=>{
+            console.log(data)
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
+
+    var DeleteFav=async()=>{
+        let Deleteresponse = await fetch('http://142.232.156.7/Happihour/DeleteFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -22,8 +43,9 @@ function DetailHeader (props){
         })
     }
 
-    var DeleteFav=async()=>{
-        let Favresponse = await fetch('http://142.232.146.164/Happihour/DeleteFav.php',{
+    //favourtie icon check function
+    var CheckFav=async()=>{
+        let Checkresponse = await fetch('http://142.232.156.7/Happihour/CheckFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -34,6 +56,15 @@ function DetailHeader (props){
                 restaurantname:props.text
             })
         })
+
+        let data = await Checkresponse.json();
+        console.log(data);
+            if(data == 'yes'){
+                setFavStatus(true);
+            }else if(data == 'no'){
+                setFavStatus(false);
+            }
+    
     }
 
     var FavIcon = null;
@@ -63,7 +94,9 @@ function DetailHeader (props){
         )
     } 
 
-    
+    useEffect(()=>{
+        CheckFav();
+    },[])
 
     return(
         <ImageBackground 
@@ -73,7 +106,12 @@ function DetailHeader (props){
             
             <View style={styles.RSContainer}>  
                 <Text style={styles.RSname}>{props.text}</Text>
-                <FontAwesomeIcon icon='times-circle' color={'#e6dc60'} size={25} style={{position:'absolute', right:10, top:15}}/>
+                <TouchableOpacity 
+                    style={{position:'absolute', right:10, top:15}}
+                    onPress={()=>{Actions.pop()}}
+                >
+                <FontAwesomeIcon icon='times-circle' color={'#e6dc60'} size={25} />
+                </TouchableOpacity> 
             </View>
 
             <View style={styles.directionContainer}>

@@ -10,7 +10,7 @@ function FavPage(){
 
     var getFavRestaurants=async()=>{
                                     //use ip address
-        let response = await fetch('http://192.168.0.20/Happihour/Favourite.php',{
+        let response = await fetch('http://142.232.156.7/Happihour/Favourites.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -40,7 +40,7 @@ function FavPage(){
             <View style={{flex:9}}>
                 <SafeAreaView>
                 <ScrollView>
-                    {/* {
+                    {
                         fav_restaurnts.map((obj,i)=>{
                             return <FavItems 
                                 key={i}
@@ -48,7 +48,7 @@ function FavPage(){
                                 address={obj.address}
                             />
                         })
-                    } */}
+                    }
 
                 </ScrollView>
                 </SafeAreaView>

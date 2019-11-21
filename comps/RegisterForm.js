@@ -17,7 +17,7 @@ function RegisterForm(){
         // if(username = ""){
             
         // }
-        fetch('http://192.168.0.20/Happihour/Register.php',{
+        fetch('http://142.232.156.7/Happihour/Register.php',{
              method:'POST',
              headers:{
                 'Accept': 'application/json',

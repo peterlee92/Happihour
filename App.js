@@ -86,8 +86,7 @@ function App() {
 
   return (
 
-    <OnBoardingPage/>
-
+    <Route />
   );
 };
 

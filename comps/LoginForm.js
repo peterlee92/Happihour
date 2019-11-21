@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 import localdata from '../localstorage.json';
 
-function LoginForm(){
-
+function LoginForm(props){
+ 
     const [username, Setusername] = useState('');
     const [userpassword, Setuserpassword] = useState('');
     const [loca, setloca]  = useState([]);
@@ -23,7 +23,7 @@ function LoginForm(){
         }else{ 
 
                                         //use ip address
-            let response = await fetch('http://192.168.0.20/Happihour/Login.php',{
+            let response = await fetch('http://142.232.156.7/Happihour/Login.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
