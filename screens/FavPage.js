@@ -10,7 +10,7 @@ function FavPage(){
 
     var getFavRestaurants=async()=>{
                                     //use ip address
-        let response = await fetch('http://142.232.156.7/Happihour/Favourites.php',{
+        let response = await fetch('http://192.168.0.12/Happihour/Favourites.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
