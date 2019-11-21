@@ -11,7 +11,7 @@ var styles = StyleSheet.create({
     },
     header:{
         width:'100%',
-        flex:0.4
+        flex:0.35
     },
     logoContainer:{
         alignItems:'center',

@@ -46,7 +46,7 @@ function DetailHeader (props){
                     AddFav()
                 }}
             >
-                <FontAwesomeIcon icon='heart' color={'gray'} size={40} />
+                <FontAwesomeIcon icon='heart' color={'white'} opacity={.9} size={40} />
             </TouchableOpacity>
         )
     }else{

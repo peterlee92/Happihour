@@ -26,7 +26,7 @@ export default function List() {
             headerLayoutHeight = {100}
             headerLayout = { () =>
                 <View style={[styles.headerLayoutStyle]}>
-                    <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:115, marginBottom:0, elevation:98}} />
+                    <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:100, marginBottom:0, elevation:98}} />
                     <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, right:150, elevation:99}}>
                         <FontAwesomeIcon icon="chevron-up" size={32} color="#ffef86" style={{marginTop:-15}}/>
                         <Text style={[styles.commonTextStyle,{marginBottom:3}]}>View List</Text>
