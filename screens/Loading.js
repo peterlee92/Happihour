@@ -20,10 +20,11 @@ function Loading(){
             >
                 <Text 
                     style={{
-                        fontSize:21, 
-                        letterSpacing:4, 
+                        fontSize:16, 
+                        letterSpacing:6, 
                         fontWeight:'bold', 
-                        color:'white'
+                        color:'white',
+                        fontFamily:'Nunito-Regular'
                     }}
                 >FIND YOUR PERFECT</Text>
                 <Image 

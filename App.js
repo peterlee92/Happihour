@@ -36,7 +36,8 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
          faPlus, faCalendarAlt,faImage, faMinus,
          faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, 
-         faCheckSquare, faSquare, faCalendarDay, faGlassCheers, faCaretDown} from '@fortawesome/free-solid-svg-icons';
+        
+         faCheckSquare, faSquare, faCalendarDay, faGlassCheers, faCaretDown, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
@@ -44,7 +45,8 @@ library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, fa
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
             faPlus, faCalendarAlt,faImage, faMinus,
             faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faCheckSquare, faSquare, faCalendarDay,
-            faGlassCheers, faCaretDown)
+            faGlassCheers, faCaretDown, faHandsHelping)
+
 
 
 
@@ -76,6 +78,7 @@ import Psa04 from './comps/Psa04';
 import Psa05 from './comps/Psa05';
 import Psa06 from './comps/Psa06';
 import Psa07 from './comps/Psa07';
+import PSAPopUps from './comps/PSA-popUps';
 import Exec from './screens/Exec';
 
 
@@ -83,6 +86,7 @@ function App() {
 
   return (
     <Route />
+
   );
 };
 
