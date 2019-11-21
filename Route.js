@@ -33,11 +33,11 @@ function Route(){
             <Scene key='transit' component={Transit} title="Transit" />
             <Scene key='map' component={MapPage} title="map" />
             <Scene key='transit' component={Transit} title="Transit" />
-            <Scene key="mappage" component={MapPage} title="MapPage" />
+            <Scene key="mappage" component={MapPage} title="MapPage" initial={true}/>
             <Scene key="detail" component={Detail} title="Detail" />
             <Scene key="forgotPassword" component={ForgotPassword} title="ForgotPassword" />
             <Scene key="execInfo" component={ExecInfo} title="ExecInfo" />
-            <Scene key="exec" component={Exec} title="Exec" initial={true}/>
+            <Scene key="exec" component={Exec} title="Exec" />
         </Stack>
         </Router>
     )
