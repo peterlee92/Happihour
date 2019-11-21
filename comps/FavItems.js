@@ -7,7 +7,7 @@ import styles from '../styles/AppStyle';
 function FavItems({name, address}) {
 
     var DeleteFav=async()=>{
-        let Favresponse = await fetch('http://192.168.0.20/Happihour/DeleteFav.php',{
+        let Favresponse = await fetch('http://192.168.0.12/Happihour/DeleteFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
