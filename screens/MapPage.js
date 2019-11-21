@@ -18,6 +18,7 @@ function MapPage(){
     const [Timevalue, setTimevalue] = useState('');
     const [Dayvalue, setDayvalue] = useState('');
     const [DLTfilter, setDLTfilter] = useState([]);
+    const [Sfilter, setSfilter] = useState([]);
 
     var showpopup = null;
     if(Timepop == true){
@@ -28,6 +29,7 @@ function MapPage(){
                 Locationvalue={Locationvalue}
                 Dayvalue={Dayvalue}
                 setTimevalue={setTimevalue}
+                setSfilter={setSfilter}
             />
         )
     }else if(Locationpop == true){
@@ -39,6 +41,7 @@ function MapPage(){
                 Timevalue={Timevalue}
                 Dayvalue={Dayvalue}
                 setLocationvalue={setLocationvalue}
+                setSfilter={setSfilter}
             />
         )
     }else if(Daypop == true){
@@ -51,6 +54,7 @@ function MapPage(){
                 Locationvalue={Locationvalue}
                 Timevalue={Timevalue}
                 Dayvalue={Dayvalue}
+                setSfilter={setSfilter}
             />
         )
     }else {
@@ -68,9 +72,14 @@ function MapPage(){
                 Locationpop={Locationpop}
                 DLTfilter={DLTfilter}
                 setDLTfilter={setDLTfilter}
+                Sfilter={Sfilter}
+                setSfilter={setSfilter}
             />
 
-            <List />
+            <List 
+                DLTfilter={DLTfilter}
+                Sfilter={Sfilter}
+            />
 
             <MenuBar
             map='#F4B869'
