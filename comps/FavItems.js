@@ -14,7 +14,7 @@ function FavItems({name, address}) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                user_id:'1',
+                user_id:$obj['user_id'],
                 restaurantname:{name}
             })
         })
@@ -40,12 +40,12 @@ function FavItems({name, address}) {
                         /> 
                     </TouchableOpacity>
                 </View>
-                    <View 
+                    <TouchableOpacity 
                         style={style.favContainer}
                     >
                         <View>
-                            <Text style={style.favTitle}>Colony Restaurant</Text>
-                            <Text style={style.favDescr}>5555 Main Street</Text>
+                            <Text style={style.favTitle}>{name}</Text>
+                            <Text style={style.favDescr}>{address}</Text>
                         </View>
                         <View>
                             <FontAwesomeIcon 
@@ -54,7 +54,7 @@ function FavItems({name, address}) {
                                 size={22} 
                                 style={{marginRight:10}}/>
                         </View>
-                    </View>
+                    </TouchableOpacity>
             </View>
             
         </View>
