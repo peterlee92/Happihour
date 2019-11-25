@@ -10,7 +10,7 @@ function DetailHeader (props){
     const [FavStatus, setFavStatus] = useState(false);
 
     var AddFav=async()=>{
-        let Favresponse = await fetch('http://142.232.156.7/Happihour/AddFav.php',{
+        let Favresponse = await fetch('http://142.232.152.36/Happihour/AddFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -30,7 +30,7 @@ function DetailHeader (props){
     }
 
     var DeleteFav=async()=>{
-        let Deleteresponse = await fetch('http://142.232.156.7/Happihour/DeleteFav.php',{
+        let Deleteresponse = await fetch('http://142.232.152.36/Happihour/DeleteFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -45,7 +45,7 @@ function DetailHeader (props){
 
     //favourtie icon check function
     var CheckFav=async()=>{
-        let Checkresponse = await fetch('http://142.232.156.7/Happihour/CheckFav.php',{
+        let Checkresponse = await fetch('http://142.232.152.36/Happihour/CheckFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

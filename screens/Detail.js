@@ -11,14 +11,11 @@ function Detail(props){
             <DetailHeader 
                 text={props.text}
             />
-            <ImageBackground
-                style={styles.bg}
-                source={require('../imgs/bg3.png')}
-            >
-                <DetailContent 
-                    text={props.text}
-                />            
-            </ImageBackground>
+
+            <DetailContent 
+                text={props.text}
+            />           
+             
         </ScrollView>
     )
 }
