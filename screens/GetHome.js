@@ -1,9 +1,35 @@
 import React from 'react';
-import {Text, View, Image, TouchableOpacity, ImageBackground} from 'react-native';
+import {Text, View, Image, TouchableOpacity, ImageBackground, Linking} from 'react-native';
 import MenuBar from '../comps/MenuBar';
 import style from '../styles/ScreenStyles/GetHomeStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
+import AddContact from '../comps/AddContact-popUp';
+
+
+var displayPop = null;
+
+var CheckUserInfo=async()=>{
+    let response = await fetch('http://192.168.0.20/Happihour/Contact.php',{
+        method:'GET',
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: 1
+        })
+    })
+
+    let data = await response.json()
+
+    if(data !== 'ok'){
+        displayPop = <AddContact />
+    }else {
+        Linking.openURL(data.contact);
+    }
+};
+
 
 function GetHome(){
     return(
@@ -66,6 +92,7 @@ function GetHome(){
             </View>
             <View style={style.rows}>
                 <TouchableOpacity 
+                    onPress={()=>{CheckUserInfo()}}
                     style={[
                         style.position, 
                         {backgroundColor:'#BF3B37'
@@ -81,14 +108,10 @@ function GetHome(){
                     </View>
                     <Text style={[style.subGHS, {marginBottom:-15}]}>Emergency Contact</Text>
                 </TouchableOpacity>
-
-                {/* <TouchableOpacity style={style.position}>
-                    <Image style={style.Img}/>
-                    <Text style={style.GHS}>911</Text>
-                </TouchableOpacity> */}
             </View>
             </View>
             </ImageBackground>
+            {displayPop}
             <MenuBar 
                 map='#74726C'
                 home='#F4B869'
