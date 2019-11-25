@@ -26,7 +26,7 @@ function ForgotPassword(){
 
             <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:75, position:'absolute', top:0}} />
 
-            <TouchableOpacity style={style.backBtn} onPress={()=>(Actions.login())}>
+            <TouchableOpacity style={style.backBtn} onPress={()=>(Actions.pop())}>
             <FontAwesomeIcon icon={faChevronLeft} size={24} />
             </TouchableOpacity>
 

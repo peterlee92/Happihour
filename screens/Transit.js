@@ -9,7 +9,7 @@ function Transit(){
     return(
         <View style={{flex:1}}>
             <View style={style.header}>
-                    <TouchableOpacity style={style.back} onPress={()=>(Actions.getHome())}>
+                    <TouchableOpacity style={style.back} onPress={()=>(Actions.pop())}>
                         <FontAwesomeIcon icon='chevron-left' size={24} color="#F3D27B" style={{marginLeft:10}}/>
                         <Text style={style.edit}>Transit</Text>
                     </TouchableOpacity>

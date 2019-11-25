@@ -4,6 +4,32 @@ import MenuBar from '../comps/MenuBar';
 import style from '../styles/ScreenStyles/GetHomeStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
+import AddContact from '../comps/AddContact-popUp';
+
+
+var CheckUserInfo=async()=>{
+    let response = await fetch('',{
+        method:'GET',
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            contact: contact,
+        })
+    })
+
+    let data = await response.json()
+
+    if(data == null){
+        return(
+            <AddContact />
+        )
+    }else {
+        
+    }
+};
+
 
 function GetHome(){
     return(
@@ -66,6 +92,7 @@ function GetHome(){
             </View>
             <View style={style.rows}>
                 <TouchableOpacity 
+                    onPress={()=>{CheckUserInfo()}}
                     style={[
                         style.position, 
                         {backgroundColor:'#BF3B37'
@@ -81,11 +108,6 @@ function GetHome(){
                     </View>
                     <Text style={[style.subGHS, {marginBottom:-15}]}>Emergency Contact</Text>
                 </TouchableOpacity>
-
-                {/* <TouchableOpacity style={style.position}>
-                    <Image style={style.Img}/>
-                    <Text style={style.GHS}>911</Text>
-                </TouchableOpacity> */}
             </View>
             </View>
             </ImageBackground>
