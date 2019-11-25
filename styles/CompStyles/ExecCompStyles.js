@@ -2,9 +2,9 @@ import {StyleSheet} from 'react-native';
 
 const styles =  StyleSheet.create({
     container:{
-        justifyContent:"center",
+        justifyContent:"space-around",
         alignItems:"center",
-        flex:1,
+        flex:1.5,
     },
     subtitle:{
         fontFamily:"Nunito-Semibold",
@@ -34,11 +34,19 @@ const styles =  StyleSheet.create({
         marginLeft:10,
         marginTop:15,
     },
+    inputCont:{
+        width:'100%', 
+        marginVertical:'2%',
+        height:60,
+        justifyContent:'center',
+        paddingHorizontal:20
+        
+    },
     input:{
         width:250,
-        height: 50,
+        height: 45,
         borderRadius:5,
-        margin:10,
+        margin:8,
         backgroundColor:"rgba(255,255,255,.3)",
         padding:15,
         fontFamily:"Nunito-Regular",        
@@ -82,6 +90,10 @@ const styles =  StyleSheet.create({
     },
     infoForm:{
         flex:2
+    },
+    label:{
+        fontFamily:"Nunito-Regular",
+        color:"white",
     }
 })
 

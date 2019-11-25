@@ -2,15 +2,15 @@ import {StyleSheet} from 'react-native';
 
 const style =  StyleSheet.create({
     bg:{
-        width:"100%",
-        height:"100%",
-        resizeMode:"cover"
+        width:370,
+        height:480,
+        resizeMode: "contain"
     },
     container:{
         justifyContent:"center",
         alignItems:"center",
         alignContent:"center",
-        padding:50,
+        padding:20,
         flex:1
     },
     flexCenter:{
@@ -25,10 +25,11 @@ const style =  StyleSheet.create({
         color:"#FFB65A",
         textAlign:"center",
         letterSpacing:.25,
+    
     },
     icon:{
-        margin:50,
-        marginLeft:"30%",
+        
+        marginBottom:20,
         color: "#061A20",
         backgroundColor: "#E3EAF4",
         borderRadius:10
@@ -42,24 +43,28 @@ const style =  StyleSheet.create({
     psaRow:{
         flex:3,
         justifyContent:"center",
+        alignItems:"center",
+        marginTop:40
+        
 
     },
     psa:{
         textAlign:"center",
         marginTop:10,
-        fontSize:16,
+        fontSize:14,
         color:"white",
-        lineHeight:30,
+        lineHeight:20,
         fontFamily:"Nunito-Regular",        
     },
     btnRow:{
-        flex:1
+        flex:1,
+        marginBottom:60
     },
     yellowBtn:{
-        marginTop:20,
+        marginTop:25,
         backgroundColor:"#F4E664",
         width:250,
-        padding:10,
+        padding:5,
         borderRadius:10 
     },
     redText:{
@@ -67,13 +72,13 @@ const style =  StyleSheet.create({
         fontSize:14,
         letterSpacing:3,
         color:"#C03B37",
-        fontFamily:"Nunito-Regular",        
+        fontFamily:"Nunito-Bold",        
     },
     orangeBtn:{
         marginTop:20,
         backgroundColor:"#FFB65A",
         width:250,
-        padding:10,
+        padding:5,
         borderRadius:10 
     },
     btnText:{
@@ -81,7 +86,7 @@ const style =  StyleSheet.create({
         fontSize:14,
         color:"#2E3736",
         letterSpacing:5,
-        fontFamily:"Nunito-Regular",        
+        fontFamily:"Nunito-Bold",        
     },
 })
 

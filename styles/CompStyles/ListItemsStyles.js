@@ -52,20 +52,6 @@ const style = StyleSheet.create({
     },
     imgPosition:{
         flexDirection:"row"
-    },
-    favImg:{
-        position:'absolute',
-        right:0,
-        top:0,
-        flexDirection:'row',
-        justifyContent:"center",
-        alignItems:"center",
-        // backgroundColor:"#F4B96A",
-        // borderRadius:20,
-        // width:40,
-        // height:40,
-        marginRight:12,
-        marginTop:12
     }
 })
 

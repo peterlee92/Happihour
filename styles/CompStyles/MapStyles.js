@@ -13,7 +13,8 @@ var styles = StyleSheet.create({
         flexDirection:'row',
         position:'absolute',
         right:0,
-        left:0
+        left:0,
+        backgroundColor:'#061A20'
     },
     searchBar:{
         backgroundColor:'white',
@@ -49,7 +50,7 @@ var styles = StyleSheet.create({
         left:0,
         right:0,
         elevation:5,
-        marginTop:65
+        marginTop:80
     },
     button:{
         flexDirection:'row',

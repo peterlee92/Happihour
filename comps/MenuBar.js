@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 
 function MenuBar(props){
-
+ 
     var mapIcon = props.map;
     var getHomeIcon = props.home;
     var favIcon = props.fav;

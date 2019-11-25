@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Alert, KeyboardAvoidingView} from 'react-native';
 import {CheckBox} from 'react-native-elements';
 import styles from '../styles/CompStyles/RegisterFormStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -17,7 +17,7 @@ function RegisterForm(){
         // if(username = ""){
             
         // }
-        fetch('http://192.168.0.20/Happihour/Register.php',{
+        fetch('http://142.232.156.7/Happihour/Register.php',{
              method:'POST',
              headers:{
                 'Accept': 'application/json',
@@ -42,78 +42,103 @@ function RegisterForm(){
     
 
     return(
-        <View style={styles.wrapContainer}>
-            <View style={styles.barTxtContainer}>
-                <CheckBox textStyle={styles.barTxt}
-                    title="Are you a bar or restaurant?"
-                    
-                    center
-                    iconRight
-                    containerStyle={{backgroundColor:'transparent', borderWidth:0}}
-                    checked={true}
-                    checkedIcon='square'
-                    uncheckedIcon='square'
-                />
-            </View>
-            <View style={styles.inputContainer}>
-                <FontAwesomeIcon icon="user" size={28} color={"white"} style={styles.inputIcon} />
-                <TextInput 
-                    placeholder="Username"
-                    style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
-                    underlineColorAndroid = "transparent"
-                    placeholderTextColor="#f4e664"
-                    onChangeText = {(text)=>{Setusername(text)}}
+        <KeyboardAvoidingView
+         style={{flex:1}}
+         behavior="padding"
+         enabled>
+            <View style={styles.wrapContainer}>
+                        <View style={styles.barTxtContainer}>
+                            <CheckBox textStyle={styles.barTxt}
+                                title="Are you a bar or restaurant?"
+                                center
+                                iconRight
+                                containerStyle={{backgroundColor:'transparent', borderWidth:0}}
+                                checked={false}
+                                checkedIcon='check-square-o'
+                                checkedColor = '#FFAD55'
+                                uncheckedIcon='square-o'
+                                iconType='font-awesome'
+                            />
+                        </View>
+                        <View style={styles.inputContainer}>
+                            <FontAwesomeIcon icon="user" size={28} color={"white"} style={styles.inputIcon} />
+                            <TextInput 
+                                placeholder="Username"
+                                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
+                                underlineColorAndroid = "transparent"
+                                placeholderTextColor="#f4e664"
+                                onChangeText = {(text)=>{Setusername(text)}}
+                                blurOnSubmit={false}
+                                returnKeyType='next'
+                                onSubmitEditing = {()=> refEmail.focus()}
+                            />
+                        </View>
+                        <View style={styles.inputContainer}>
+                            <FontAwesomeIcon icon="envelope" size={28} color={"white"} style={styles.inputIcon} />
+                            <TextInput 
+                                placeholder="Email"
+                                returnKeyType="next"
+                                keyboardType="email-address"
+                                autoCapitalize ="none"
+                                autoCorrect={false}
+                                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
+                                underlineColorAndroid = "transparent"
+                                placeholderTextColor="#f4e664"
+                                onChangeText = {(text)=>{Setuseremail(text)}}
+                                blurOnSubmit={false}
+                                returnKeyType='next'
+                                ref={(i)=>{refEmail = i}}
+                                onSubmitEditing = {()=> refPass.focus()}
+                            />
+                        </View>
+                        <View style={styles.inputContainer}>
+                            <FontAwesomeIcon icon="lock" size={28} color={"white"} style={styles.inputIcon} />
+                            <TextInput 
+                                placeholder="Password"
+                                returnKeyType="next"
+                                secureTextEntry
+                                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
+                                underlineColorAndroid = "transparent"
+                                placeholderTextColor="#f4e664"
+                                onChangeText = {(text)=>{Setuserpassword(text)}}
+                                blurOnSubmit={false}
+                                returnKeyType='next'
+                                ref={(i)=>{refPass = i}}
+                                onSubmitEditing = {()=> refConfPass.focus()}
+                            />
+                        </View>
+                        <View style={styles.inputContainer}>
+                            <FontAwesomeIcon icon="lock" size={28} color={"white"} style={styles.inputIcon} />
+                            <TextInput 
+                                placeholder="Confirm Password"
+                                secureTextEntry
+                                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
+                                underlineColorAndroid = "transparent"
+                                placeholderTextColor="#f4e664"
+                                onChangeText = {(text)=>{Setconfirmpassword(text)}}
+                                blurOnSubmit={false}
+                                returnKeyType='done'
+                                ref={(i)=>{refConfPass = i}}
+                                onSubmitEditing = {()=>{
+                                    InsertDataToServer()
+                                    Actions.login();
+                                }}
+                            />
+                    </View>
 
-                />
-            </View>
-            <View style={styles.inputContainer}>
-                <FontAwesomeIcon icon="envelope" size={28} color={"white"} style={styles.inputIcon} />
-                <TextInput 
-                    placeholder="Email"
-                    keyboardType="email-address"
-                    autoCapitalize ="none"
-                    autoCorrect={false}
-                    style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
-                    underlineColorAndroid = "transparent"
-                    placeholderTextColor="#f4e664"
-                    onChangeText = {(text)=>{Setuseremail(text)}}
-                />
-            </View>
-            <View style={styles.inputContainer}>
-                <FontAwesomeIcon icon="lock" size={28} color={"white"} style={styles.inputIcon} />
-                <TextInput 
-                    placeholder="Password"
-                    returnKeyType="next"
-                    secureTextEntry
-                    style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
-                    underlineColorAndroid = "transparent"
-                    placeholderTextColor="#f4e664"
-                    onChangeText = {(text)=>{Setuserpassword(text)}}
-                />
-            </View>
-            <View style={styles.inputContainer}>
-                <FontAwesomeIcon icon="lock" size={28} color={"white"} style={styles.inputIcon} />
-                <TextInput 
-                    placeholder="Confirm Password"
-                    secureTextEntry
-                    style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
-                    underlineColorAndroid = "transparent"
-                    placeholderTextColor="#f4e664"
-                    onChangeText = {(text)=>{Setconfirmpassword(text)}}
-                />
-           </View>
-
-            <View style={styles.signupContainer}>
-                <TouchableOpacity
-                    style={styles.signupBut}
-                    onPress={()=>{
-                        InsertDataToServer()
-                    }}
-                >
-                    <Text style={styles.signupText}>SIGN UP</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+                        <View style={styles.signupContainer}>
+                            <TouchableOpacity
+                                style={styles.signupBut}
+                                onPress={()=>{
+                                    InsertDataToServer()
+                                    Actions.login();
+                                }}
+                            >
+                                <Text style={styles.signupText}>SIGN UP</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>            
+        </KeyboardAvoidingView>
     )
 }
 

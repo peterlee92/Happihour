@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Image, ImageBackground, TouchableOpacity,ScrollView} from 'react-native';
+import {View, Text, TextInput, Image, ImageBackground, TouchableOpacity,KeyboardAvoidingView} from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 
@@ -35,54 +35,58 @@ function ExecInfo(props) {
 
 
     return(
-        <ImageBackground
-            style={styles.bg}
-            source={require('../imgs/bg1.png')}
-        >
-            {/** Header */}
+      <KeyboardAvoidingView
+      style={{flex:1}}
+        behavior="height">
             <ImageBackground
-                    style ={styles.flow}
-                    source={require('../imgs/Flow_Header.png')}
-                >
-                    <TouchableOpacity
-                        style={styles.backBtn}
-                        onPress={()=>(Actions.exec())}
+                        style={styles.bg}
+                        source={require('../imgs/bg1.png')}
                     >
-                        <FontAwesomeIcon icon='chevron-left' size={24} color="#252E2E" style={{marginLeft:10}}/>
-                    </TouchableOpacity>
-            </ImageBackground>            
-           
-            <View style={styles.container}>
-               {/** Navigation */}
-               <View style={[style.nav]}>
-                <Text style={style.overline}>CLICK ON THE ICONS TO NAVIGATE</Text>          
-                    <View style={style.menu}>
-                        <TouchableOpacity
-                        onPress={()=> setScreen(execHour)}
-                        >
-                            <FontAwesomeIcon icon="calendar-alt" transform="shrink-5"  size={hSize} style={styles.icon}/>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                        onPress={()=> setScreen(execMenu)}
-                        >
-                            <FontAwesomeIcon icon="glass-cheers" transform="shrink-5"  size={mSize} style={styles.icon}/>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                        onPress={()=> setScreen(execPhoto)}
-                        >
-                            <FontAwesomeIcon icon="image" transform="shrink-5"  size={pSize} style={styles.icon}/>
-                        </TouchableOpacity>
-                    </View>                   
-                </View>      
+                        {/** Header */}
+                        <ImageBackground
+                                style ={styles.flow}
+                                source={require('../imgs/Flow_Header.png')}
+                            >
+                                <TouchableOpacity
+                                    style={styles.backBtn}
+                                    onPress={()=>(Actions.exec())}
+                                >
+                                    <FontAwesomeIcon icon='chevron-left' size={24} color="#252E2E" style={{marginLeft:10}}/>
+                                </TouchableOpacity>
+                        </ImageBackground>            
+                    
+                        <View style={styles.container}>
+                        {/** Navigation */}
+                        <View style={[styles.nav]}>
+                            <Text style={style.overline}>CLICK ON THE ICONS TO NAVIGATE</Text>          
+                                <View style={style.menu}>
+                                    <TouchableOpacity
+                                    onPress={()=> setScreen(execHour)}
+                                    >
+                                        <FontAwesomeIcon icon="calendar-alt" transform="shrink-5"  size={hSize} style={styles.icon}/>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity
+                                    onPress={()=> setScreen(execMenu)}
+                                    >
+                                        <FontAwesomeIcon icon="glass-cheers" transform="shrink-5"  size={mSize} style={styles.icon}/>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity
+                                    onPress={()=> setScreen(execPhoto)}
+                                    >
+                                        <FontAwesomeIcon icon="image" transform="shrink-5"  size={pSize} style={styles.icon}/>
+                                    </TouchableOpacity>
+                                </View>                   
+                            </View>      
 
-    
-               {/** Main Screen */}                
-                <View style={style.screen}>
-                    {screen}
-                </View>
-                          
-            </View>
-        </ImageBackground>
+                
+                        {/** Main Screen */}                
+                            <View style={style.screen}>
+                                {screen}
+                            </View>
+                                    
+                        </View>
+                    </ImageBackground>          
+      </KeyboardAvoidingView>
     )
 }
 

@@ -1,7 +1,5 @@
-import FavItems from './FavItems';
-import MenuBar from './MenuBar';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-
+import ListItems from './ListItems';
 import React, { useState } from 'react';
 import {
   StyleSheet,
@@ -15,10 +13,9 @@ import {
 const { width, height } = Dimensions.get('window');
 
 import SlidingPanel from 'react-native-sliding-up-down-panels';
-import MapPage from '../screens/MapPage';
 
 
-export default function List() {
+export default function List(props) {
   const [mtop, setMTop] = useState(0);
     return (
       <View style={[styles.container, {marginTop:mtop}]}>                      
@@ -26,7 +23,7 @@ export default function List() {
             headerLayoutHeight = {100}
             headerLayout = { () =>
                 <View style={[styles.headerLayoutStyle]}>
-                    <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:115, marginBottom:0, elevation:98}} />
+                    <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:100, marginBottom:0, elevation:98}} />
                     <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, right:150, elevation:99}}>
                         <FontAwesomeIcon icon="chevron-up" size={32} color="#ffef86" style={{marginTop:-15}}/>
                         <Text style={[styles.commonTextStyle,{marginBottom:3}]}>View List</Text>
@@ -39,14 +36,24 @@ export default function List() {
                 <View style={[styles.slidingPanelLayoutStyle, {marginTop:75, bottom:40, elevation:90}]}>
              <SafeAreaView>
                  <ScrollView>
-                     <FavItems />
-                     <FavItems />
-                     <FavItems />
-                    <FavItems />
-                    <FavItems />
-                    <FavItems />
-                    <FavItems />
-                     <FavItems />
+                    {
+                      props.DLTfilter.map((obj,i)=>{
+                        return <ListItems 
+                          key={i}
+                          name={obj.name}
+                          address={obj.address}
+                        />
+                      })
+                    }
+                    {
+                      props.Sfilter.map((obj,i)=>{
+                        return <ListItems 
+                          key={i}
+                          name={obj.name}
+                          address={obj.address}
+                        />
+                      })
+                    }
                 </ScrollView>
                </SafeAreaView>
                 </View>

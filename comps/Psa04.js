@@ -17,7 +17,7 @@ function Psa04(){
             <View style={style.container}>
             <View style={style.logoRow}>
                     <Image 
-                        style={{width:250, height:50, margin:20}}
+                        style={{width:200, height:50, margin:0}}
                         source={require('../imgs/Happihour_Logo.png')}
                     />
                     <Text style={style.helpers}>
@@ -26,7 +26,7 @@ function Psa04(){
                 </View>                
 
                 <View style={style.psaRow}>
-                    <FontAwesomeIcon icon="cocktail" transform="shrink-5"  size={120} style={style.icon}/>
+                    <FontAwesomeIcon icon="cocktail" transform="shrink-5"  size={80} style={style.icon}/>
                     <Text style={style.heading}>Count Your Drinks</Text>
                      <Text style={style.psa}>
                         It’s important to know your limits when consuming alcohol. Always be aware  of how much you’ve drank and know when it’s time to stop. Know your limit and stay within it.

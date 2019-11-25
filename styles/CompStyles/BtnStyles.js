@@ -4,7 +4,8 @@ const btnStyles =  StyleSheet.create({
     btnCont:{
         justifyContent:"center",
         alignItems:"center",
-        flex:.5
+        flex:.5,
+        marginTop:20,
     },
     mainCont:{
         justifyContent:"center",
@@ -44,7 +45,21 @@ const btnStyles =  StyleSheet.create({
         margin:10,
         color: "#07191E",
         backgroundColor:"#43B05C",
-        borderRadius:70,        
+        borderRadius:70, 
+
+    },
+    addText:{
+        color:"white",
+        fontFamily:"Nunito-Bold"
+    },
+    addItem:{
+        backgroundColor:"#43B05C",
+        width:40,
+        height:40,
+        borderRadius:80,
+        justifyContent:"center",
+        alignItems:"center",
+        margin: 5,
     },
     removeBtn:{
         margin:10,

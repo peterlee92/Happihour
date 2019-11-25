@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 import localdata from '../localstorage.json';
 
-function LoginForm(){
-
+function LoginForm(props){
+ 
     const [username, Setusername] = useState('');
     const [userpassword, Setuserpassword] = useState('');
     const [loca, setloca]  = useState([]);
@@ -23,7 +23,7 @@ function LoginForm(){
         }else{ 
 
                                         //use ip address
-            let response = await fetch('http://192.168.0.20/Happihour/Login.php',{
+            let response = await fetch('http://142.232.156.7/Happihour/Login.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -50,40 +50,49 @@ function LoginForm(){
   
 
     return(
-        <View 
-            style={styles.wrapcontainer}
-            behavior="height"
+        <KeyboardAvoidingView 
+            style={/**styles.wrapcontainer*/{flex:1,marginBottom:30}}
+            behavior="padding"
+            enabled
         >
-            <View style={{marginBottom:30}}>
-            <View style={styles.inputContainer}>
-            <FontAwesomeIcon icon="user" size={22} color={"white"} style={styles.inputIcon} />
-            <TextInput
-                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
-                placeholder="Username"
-                onChangeText={(text)=>{Setusername(text)}}
-                underlineColorAndroid = "transparent"
-                placeholderTextColor="#f4e664"
-            />
-            </View>
-            <View style={styles.inputContainer}>
-            <FontAwesomeIcon icon="lock" size={22} color={"white"} style={styles.inputIcon} />
-            <TextInput
-                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
-                placeholder="Password"
-                secureTextEntry={true}
-                onChangeText={(text)=>{Setuserpassword(text)}}
-                underlineColorAndroid = "transparent"
-                placeholderTextColor="#f4e664"
-            />
-             
-            </View>
-            <View style={styles.inputContainer}>
-            <TouchableOpacity
-                    onPress={()=>{Actions.forgotPassword()}}
-                >
-                    <Text style={styles.forgottxt}>Forgot Password?</Text>
-                </TouchableOpacity>
-            </View>
+            <View style={{/**marginBottom:30*/}}>
+                <View style={styles.inputContainer}>
+                    <FontAwesomeIcon icon="user" size={22} color={"white"} style={styles.inputIcon} />
+                    <TextInput
+                        style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
+                        placeholder="Username"
+                        onChangeText={(text)=>{Setusername(text)}}
+                        underlineColorAndroid = "transparent"
+                        placeholderTextColor="#f4e664"
+                        blurOnSubmit={false}                        
+                        returnKeyType={"next"}                    
+                        onSubmitEditing = {()=> refPass.focus()}
+                    />
+                </View>
+                
+                <View style={styles.inputContainer}>
+                    <FontAwesomeIcon icon="lock" size={22} color={"white"} style={styles.inputIcon} />
+                    <TextInput
+                        style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
+                        placeholder="Password"
+                        secureTextEntry={true}
+                        onChangeText={(text)=>{Setuserpassword(text)}}
+                        underlineColorAndroid = "transparent"
+                        placeholderTextColor="#f4e664"
+                        blurOnSubmit={false}
+                        returnKeyType={"done"} 
+                        ref={(i)=>{refPass = i}}
+                        onSubmitEditing = {()=>{CheckUserInfo()}}
+                    />
+                </View>
+
+                <View style={styles.inputContainer}>
+                <TouchableOpacity
+                        onPress={()=>{Actions.forgotPassword()}}
+                    >
+                        <Text style={styles.forgottxt}>Forgot Password?</Text>
+                    </TouchableOpacity>
+                </View>
              
             </View>
             
@@ -97,7 +106,7 @@ function LoginForm(){
                     <Text style={styles.loginTxt}>LOG IN</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 

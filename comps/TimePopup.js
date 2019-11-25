@@ -8,8 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 function TimePopup(props){
 
     var TimeFilter=async(time)=>{
-        // console.log(time)
-        let timeresponse =await fetch('http://192.168.0.20/Happihour/DLTFilter.php',{
+        let timeresponse = await fetch('http://142.232.156.7/Happihour/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -21,13 +20,12 @@ function TimePopup(props){
                 C_location:props.Locationvalue
             })
         })
-
+ 
         let timedata = await timeresponse.json()
 
-        if(timedata = "wrong"){
+        if(timedata == "wrong"){
             props.setDLTfilter([]);
         }else{
-
             Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
             for(var i = 0; i<timedata.length; i++){
                 var obj = timedata[i];
@@ -37,11 +35,10 @@ function TimePopup(props){
             }
 
             props.setDLTfilter(timedata);
-            
+            props.setSfilter([]);
         }
 
-        
-        
+   
     }
 
     return(
