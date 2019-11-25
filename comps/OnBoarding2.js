@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding2Styles';
 
-function OnBoarding2({setNextButton}){
+function OnBoarding2({setNextPage}){
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -16,7 +16,7 @@ function OnBoarding2({setNextButton}){
                 <Text style={styles.contenttxt}>Search by day, time of day or location and discover new food and drinks deals in your neighbourhood and beyond!</Text>
                 <TouchableOpacity
                     style={styles.NextBut}
-                    onPress={()=>(setNextButton(2))}
+                    onPress={()=>(setNextPage(2))}
                 >
                     <Text style={styles.NextTxt}>Next</Text>
                 </TouchableOpacity>

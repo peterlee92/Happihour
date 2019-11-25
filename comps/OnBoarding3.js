@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding3Styles';
 
-function OnBoarding3({setNextButton}){
+function OnBoarding3({setNextPage}){
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -16,7 +16,7 @@ function OnBoarding3({setNextButton}){
                 <Text style={styles.contenttxt}>Connect with friends, family and colleagues over affordable food and drinks.</Text>
                 <TouchableOpacity
                     style={styles.NextBut}
-                    onPress={()=>(setNextButton(3))}
+                    onPress={()=>(setNextPage(3))}
                 >
                     <Text style={styles.NextTxt}>Next</Text>
                 </TouchableOpacity>

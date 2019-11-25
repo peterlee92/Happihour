@@ -17,6 +17,10 @@ import Detail from './screens/Detail';
 import ForgotPassword from './screens/ForgotPassword';
 import ExecInfo from './screens/ExecInfo';
 import Exec from './screens/Exec';
+import OnBoarding1 from './comps/OnBoarding1';
+import OnBoarding2 from './comps/OnBoarding2';
+import OnBoarding3 from './comps/OnBoarding3';
+import OnBoarding4 from './comps/OnBoarding4';
 
 function Route(){
     return(
@@ -38,6 +42,10 @@ function Route(){
             <Scene key="forgotPassword" component={ForgotPassword} title="ForgotPassword" />
             <Scene key="execInfo" component={ExecInfo} title="ExecInfo" />
             <Scene key="exec" component={Exec} title="Exec" initial={true}/>
+            <Scene key="board1" component={OnBoarding1} title="Board1" />
+            <Scene key="board2" component={OnBoarding2} title="Board2" />
+            <Scene key="board3" component={OnBoarding3} title="Board3" />
+            <Scene key="board4" component={OnBoarding4} title="Board4" />
         </Stack>
         </Router>
     )
