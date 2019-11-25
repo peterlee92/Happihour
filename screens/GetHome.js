@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Image, TouchableOpacity, ImageBackground} from 'react-native';
+import {Text, View, Image, TouchableOpacity, ImageBackground, Linking} from 'react-native';
 import MenuBar from '../comps/MenuBar';
 import style from '../styles/ScreenStyles/GetHomeStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -7,26 +7,26 @@ import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
 
 
+var displayPop = null;
+
 var CheckUserInfo=async()=>{
-    let response = await fetch('',{
+    let response = await fetch('http://192.168.0.20/Happihour/Contact.php',{
         method:'GET',
         headers:{
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            contact: contact,
+            user_id: 1
         })
     })
 
     let data = await response.json()
 
-    if(data == null){
-        return(
-            <AddContact />
-        )
+    if(data !== 'ok'){
+        displayPop = <AddContact />
     }else {
-        
+        Linking.openURL(data.contact);
     }
 };
 
@@ -111,6 +111,7 @@ function GetHome(){
             </View>
             </View>
             </ImageBackground>
+            {displayPop}
             <MenuBar 
                 map='#74726C'
                 home='#F4B869'

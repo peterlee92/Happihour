@@ -1,24 +1,27 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","Happihour");
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $conn = mysqli_connect("localhost","root","","Happihour");
 
-$json = file_get_contents('php://input');
-$obj = json_decode($json,true);
+    $json = file_get_contents('php://input');
+    $obj = json_decode($json,true);
+    $user_id = $obj['user_id'];
 
-$user_id = $obj['user_id'];
+    $contact = mysqli_query($conn,"SELECT contact FROM contacts WHERE user_id = '$user_id'");
+  } else
+  if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $conn = mysqli_connect("localhost","root","","Happihour");
 
-$contact = mysqli_query($conn,"SELECT contact FROM contacts WHERE user_id = ''");
+    $json = file_get_contents('php://input');
+    $obj = json_decode($json,true);
+    
+    $name = $obj['name'];
+    $contact = $obj['contact'];
+
+    $result = mysqli_query($conn,"INSERT INTO contact(name, contact) VALUES ($name, $contact)");
+  }
 
 
-function get($contact) {
-    $sql = "
-    SELECT albums.name as album_name, release_date, total_tracks, image_url, spotify_url, artists.name as artist_name 
-    FROM albums
-    JOIN artists ON artists.id = artist_id
-    WHERE albums.name like '%$name%' 
-    ORDER BY release_date
-    ";
-  
-    $albums = runQuery($sql);
-  
-    return $albums;
+  if($result->num_rows!==0){
+      echo json_encode('ok');
+  }
