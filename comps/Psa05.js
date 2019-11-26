@@ -15,6 +15,7 @@ function Psa05(){
         style={style.bg}
         source={require('../imgs/PsaBg.png')}>
             <View style={style.container}>
+            <FontAwesomeIcon icon='times-circle' color='#F1E578' size={30} style={{position:'absolute', top:-40, right:10 }}/>
                 <View style={style.logoRow}>
                         <Image 
                             style={{width:200, height:50, marginBottom:0}}
@@ -30,18 +31,6 @@ function Psa05(){
                     <Text style={style.psa}>
                     Drinking and driving is an irresponsible and dangerous act. If you plan to consume alcohol, it’s best to give a sober friend the keys to your vehicle. Never, ever drink and drive.
                     </Text>                
-                </View>
-                <View style={style.btnRow}>
-                    <TouchableOpacity style={style.yellowBtn}>
-                        <Text
-                        style={style.redText}>
-                            LEARN MORE</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={style.orangeBtn}>
-                        <Text
-                        style={style.btnText}
-                        >EXIT</Text>
-                    </TouchableOpacity>               
                 </View>
  
             </View>
