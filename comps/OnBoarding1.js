@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding1Styles';
+import { Actions } from 'react-native-router-flux';
 
 function OnBoarding1({setNextPage}){
     return(
@@ -21,7 +22,9 @@ function OnBoarding1({setNextPage}){
                 >
                     <Text style={styles.NextTxt}>Next</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={()=>{Actions.login()}}
+                >
                     <Text style={styles.SkipTxt}>Skip</Text>
                 </TouchableOpacity>
             </View>
