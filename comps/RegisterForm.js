@@ -65,7 +65,7 @@ function RegisterForm(){
                                 placeholder="Username"
                                 style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                                 underlineColorAndroid = "transparent"
-                                placeholderTextColor="#f4e664"
+                                placeholderTextColor="rgba(255,255,255,0.5)"
                                 onChangeText = {(text)=>{Setusername(text)}}
                                 blurOnSubmit={false}
                                 returnKeyType='next'
@@ -82,7 +82,7 @@ function RegisterForm(){
                                 autoCorrect={false}
                                 style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                                 underlineColorAndroid = "transparent"
-                                placeholderTextColor="#f4e664"
+                                placeholderTextColor="rgba(255,255,255,0.5)"
                                 onChangeText = {(text)=>{Setuseremail(text)}}
                                 blurOnSubmit={false}
                                 returnKeyType='next'
@@ -98,7 +98,7 @@ function RegisterForm(){
                                 secureTextEntry
                                 style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                                 underlineColorAndroid = "transparent"
-                                placeholderTextColor="#f4e664"
+                                placeholderTextColor="rgba(255,255,255,0.5)"
                                 onChangeText = {(text)=>{Setuserpassword(text)}}
                                 blurOnSubmit={false}
                                 returnKeyType='next'
@@ -113,7 +113,7 @@ function RegisterForm(){
                                 secureTextEntry
                                 style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
                                 underlineColorAndroid = "transparent"
-                                placeholderTextColor="#f4e664"
+                                placeholderTextColor="rgba(255,255,255,0.5)"
                                 onChangeText = {(text)=>{Setconfirmpassword(text)}}
                                 blurOnSubmit={false}
                                 returnKeyType='done'
@@ -133,7 +133,7 @@ function RegisterForm(){
                                     Actions.login();
                                 }}
                             >
-                                <Text style={styles.signupText}>SIGN UP</Text>
+                                <Text style={styles.signupText}>Sign Up</Text>
                             </TouchableOpacity>
                         </View>
                     </View>            

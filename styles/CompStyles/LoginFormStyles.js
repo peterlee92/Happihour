@@ -32,16 +32,24 @@ var styles = StyleSheet.create({
     },
     loginBut:{
         backgroundColor:"#f4e664",
+        // width:'80%',
+        // padding:10,
+        // borderRadius:10 
+        padding:5,
         width:'80%',
-        padding:10,
-        borderRadius:10        
+        alignItems: 'center',
+        borderRadius:10,
+        marginBottom:20,
+        width:300
     },
     loginTxt:{
         textAlign:'center',
         fontSize:20,
-        letterSpacing:2,
-        //fontWeight:'bold',
-        fontFamily:"Nunito-Bold",  
+       
+        fontFamily:"Nunito-Bold", 
+        
+        color:'black',
+        
           
     },
     forgottxt:{

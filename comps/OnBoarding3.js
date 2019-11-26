@@ -13,7 +13,7 @@ function OnBoarding3(){
             />
             </View>
             <View style={styles.content}>
-                <Text style={styles.contenttxt}>Connect with friends, family and colleagues over affordable food and drinks.</Text>
+                <Text style={styles.contenttxt}>Connect with friends, family and colleagues over affordable food and drinks. Happihour's are best spent, shared. </Text>
                 <TouchableOpacity
                     style={styles.NextBut}
                 >
