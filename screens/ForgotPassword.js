@@ -29,8 +29,11 @@ function ForgotPassword(){
             <TouchableOpacity style={style.backBtn} onPress={()=>(Actions.pop())}>
             <FontAwesomeIcon icon={faChevronLeft} size={24} />
             </TouchableOpacity>
-
-            <View style={{width:'75%', marginBottom:50}}>
+            <View style={{width:'75%', marginBottom:50, alignItems:'center'}}>
+                <Image
+                    style={{width:100,height:100}}
+                    source={require('../imgs/email.png')}
+                />
                 <Text style={style.txtInfo}>Enter the email address you used to 
                     create your account and we will email
                     you a link to reset your password
