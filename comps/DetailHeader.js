@@ -77,7 +77,16 @@ function DetailHeader (props){
                     AddFav()
                 }}
             >
-                <FontAwesomeIcon icon='heart' color={'white'} opacity={.9} size={40} />
+                <View style={{        
+                    justifyContent:"center",
+                    alignItems:"center",
+                    backgroundColor:'#E03A2F',
+                    borderRadius:25,
+                    width:50,
+                    height:50,
+                    paddingTop:3}}>
+                    <FontAwesomeIcon icon='heart' color={'white'} opacity={.9} size={30} />
+                </View>
             </TouchableOpacity>
         )
     }else{
@@ -89,7 +98,16 @@ function DetailHeader (props){
                     DeleteFav()
                 }}
             >
-                <FontAwesomeIcon icon='heart' color={'red'} size={40} />
+                <View style={{        
+                    justifyContent:"center",
+                    alignItems:"center",
+                    backgroundColor:'#E03A2F',
+                    borderRadius:25,
+                    width:50,
+                    height:50,
+                    paddingTop:3}}>
+                    <FontAwesomeIcon icon='heart' color={'red'} size={40} />
+                </View>
             </TouchableOpacity>
         )
     } 
@@ -103,14 +121,14 @@ function DetailHeader (props){
             style={styles.container}
             source={require('../imgs/colony.png')}
         >
-            
+            <View style={[styles.container, {backgroundColor:'rgba(0,0,0,0.4)'}]}>
             <View style={styles.RSContainer}>  
                 <Text style={styles.RSname}>{props.text}</Text>
                 <TouchableOpacity 
                     style={{position:'absolute', right:10, top:15}}
                     onPress={()=>{Actions.pop()}}
                 >
-                <FontAwesomeIcon icon='times-circle' color={'#e6dc60'} size={25} />
+                <FontAwesomeIcon icon='times-circle' color={'#F8D97E'} size={25} />
                 </TouchableOpacity> 
             </View>
 
@@ -125,6 +143,7 @@ function DetailHeader (props){
         
             <View style={styles.HTcontainer}>
                 <Text style={styles.HT}>DAILY FROM 3:00PM - 5:00PM</Text>    
+            </View>
             </View>
         </ImageBackground>
     )
