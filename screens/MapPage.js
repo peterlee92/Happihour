@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Image} from 'react-native';
+import {View, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import Map from '../comps/Map';
 import MenuBar from '../comps/MenuBar'
 import styles from '../styles/ScreenStyles/MapPageStyles';
@@ -18,6 +18,18 @@ function MapPage(){
     const [Timevalue, setTimevalue] = useState('');
     const [Dayvalue, setDayvalue] = useState('');
     const [DLTfilter, setDLTfilter] = useState([]);
+    const [Sfilter, setSfilter] = useState([]);
+    const [Daytxt,setDaytxt] = useState('Day');
+    const [Timetxt,setTimetxt] = useState('Time');
+    const [Locationtxt,setLocationtxt] = useState('Location');
+    const [Searchvalue, setSearchvalue] = useState();
+
+    const DissmissKeyboard = ({children}) => (
+        <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
+            {children}
+        </TouchableWithoutFeedback>
+    )
+  
 
     var showpopup = null;
     if(Timepop == true){
@@ -28,6 +40,9 @@ function MapPage(){
                 Locationvalue={Locationvalue}
                 Dayvalue={Dayvalue}
                 setTimevalue={setTimevalue}
+                setSfilter={setSfilter}
+                setTimetxt={setTimetxt}
+                setSearchvalue={setSearchvalue}
             />
         )
     }else if(Locationpop == true){
@@ -39,6 +54,9 @@ function MapPage(){
                 Timevalue={Timevalue}
                 Dayvalue={Dayvalue}
                 setLocationvalue={setLocationvalue}
+                setSfilter={setSfilter}
+                setLocationtxt={setLocationtxt}
+                setSearchvalue={setSearchvalue}
             />
         )
     }else if(Daypop == true){
@@ -51,6 +69,9 @@ function MapPage(){
                 Locationvalue={Locationvalue}
                 Timevalue={Timevalue}
                 Dayvalue={Dayvalue}
+                setSfilter={setSfilter}
+                setDaytxt={setDaytxt}
+                setSearchvalue={setSearchvalue}
             />
         )
     }else {
@@ -58,6 +79,7 @@ function MapPage(){
     }
 
     return(
+        <DissmissKeyboard>
         <View style={{flex:1, backgroundColor:'#ECE9E1'}}>       
             <Map 
                 setTimepop={setTimepop}
@@ -68,9 +90,19 @@ function MapPage(){
                 Locationpop={Locationpop}
                 DLTfilter={DLTfilter}
                 setDLTfilter={setDLTfilter}
+                Sfilter={Sfilter}
+                setSfilter={setSfilter}
+                Timetxt={Timetxt}
+                Daytxt={Daytxt}
+                Locationtxt={Locationtxt}
+                setSearchvalue={setSearchvalue}
+                Searchvalue={Searchvalue}
             />
 
-            <List />
+            <List 
+                DLTfilter={DLTfilter}
+                Sfilter={Sfilter}
+            />
 
             <MenuBar
             map='#F4B869'
@@ -81,6 +113,7 @@ function MapPage(){
             {showpopup}
 
         </View>
+        </DissmissKeyboard>
     )
 }
 

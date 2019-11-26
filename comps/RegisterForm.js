@@ -50,13 +50,14 @@ function RegisterForm(){
                         <View style={styles.barTxtContainer}>
                             <CheckBox textStyle={styles.barTxt}
                                 title="Are you a bar or restaurant?"
-                                
                                 center
                                 iconRight
                                 containerStyle={{backgroundColor:'transparent', borderWidth:0}}
-                                checked={true}
-                                checkedIcon='square'
-                                uncheckedIcon='square'
+                                checked={false}
+                                checkedIcon='check-square-o'
+                                checkedColor = '#FFAD55'
+                                uncheckedIcon='square-o'
+                                iconType='font-awesome'
                             />
                         </View>
                         <View style={styles.inputContainer}>

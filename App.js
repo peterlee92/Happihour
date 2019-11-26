@@ -64,6 +64,8 @@ import TimePopup from './comps/TimePopup';
 import LocationPopup from './comps/LocationPopup';
 import DetailHeader from './comps/DetailHeader';
 import DayPopup from './comps/DayPopup';
+
+//onboarding pages
 import OnBoarding1 from './comps/OnBoarding1';
 import OnBoarding2 from './comps/OnBoarding2';
 import OnBoarding3 from './comps/OnBoarding3';
@@ -86,7 +88,8 @@ function App() {
 
   return (
 
-    <GetHome/>
+    <Route />
+
   );
 };
 

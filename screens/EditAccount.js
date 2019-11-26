@@ -34,7 +34,7 @@ function EditAccount(){
     return(   
         <View>
             <View style={style.header}>
-                <TouchableOpacity style={style.back} onPress={()=>(Actions.profile())}>
+                <TouchableOpacity style={style.back} onPress={()=>(Actions.pop())}>
                     <FontAwesomeIcon icon='chevron-left' size={24} color="#F3D27B" style={{marginLeft:10}}/>
                     <Text style={style.edit}>EDIT ACCOUNT</Text>
                 </TouchableOpacity>
@@ -42,13 +42,8 @@ function EditAccount(){
             </View>
 
             <ImageBackground source={require('../imgs/bg4.png')} style={style.container}>
-                <View style={style.jane}>
                     <Image style={style.janeImg} source={require('../imgs/Pororo.png')} />
-                    <View>
                     <Text style={style.janeTxt}>JANE DOE</Text>
-                    <Text style={style.janeSubTxt}>@JANE DOE</Text>
-                    </View>
-                </View>
 
                 <View style={style.input}>
                     <FontAwesomeIcon icon='user' size={24} color='white' />
@@ -74,7 +69,7 @@ function EditAccount(){
                 </View>
                 <View style={style.inputLine}></View>
 
-                <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(!ShowPopUp))}>
+                <TouchableOpacity style={[style.button, {marginTop:30}]} onPress={()=>(setShowPopUp(!ShowPopUp))}>
                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>
                     {/* <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>

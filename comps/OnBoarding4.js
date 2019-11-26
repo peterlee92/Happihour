@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding4Styles';
+import { Actions } from 'react-native-router-flux';
 
 function OnBoarding3(){
     return(
@@ -17,6 +18,7 @@ function OnBoarding3(){
             </View>
             <TouchableOpacity
                     style={styles.letsgoBut}
+                    onPress={()=>{Actions.login()}}
                 >
                     <Text style={styles.letsgoTxt}>LET'S GO!</Text>
             </TouchableOpacity>
