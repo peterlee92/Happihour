@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {View, TextInput, TouchableOpacity, Text, KeyboardAvoidingView} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text, KeyboardAvoidingView, ScrollView} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
 import styles from '../styles/CompStyles/ExecCompStyles';
@@ -24,7 +24,7 @@ function ExecForm(name,address,contact,url,location){
             'Content-Type': 'application/json'
         },
         body:JSON.stringify({
-            rest_name:1
+            rest_name:'Corduroy'
             //rest_name:restaurant_name
         })
        })
@@ -44,6 +44,7 @@ function ExecForm(name,address,contact,url,location){
         behavior="padding"
         enabled
         >
+            <ScrollView>
             <View
                 style={[styles.container,{}]}
                 >
@@ -166,7 +167,8 @@ function ExecForm(name,address,contact,url,location){
                             <Text style={btnStyles.nextText}>NEXT</Text>
                         </TouchableOpacity>
                     </View> */}
-                </View>            
+                </View> 
+            </ScrollView>           
         </KeyboardAvoidingView>
             
     )

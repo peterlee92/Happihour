@@ -5,20 +5,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import styles from '../styles/AppStyle';
 
 function FavItems({name, address}) {
+    
+    async function getInfo(){
+        var data = await AsyncStorage.getItem("userinfo");
+        data = JSON.parse(data);
+        var id = Number(data.info[0]['user_id'])
+        getFavRestaurants(id)
+        console.log("userid",id);
+      }
 
-    var DeleteFav=async()=>{
-        let Favresponse = await fetch('http://192.168.0.12/Happihour/DeleteFav.php',{
+    var DeleteFav=async(id)=>{
+        let Favresponse = await fetch('http://192.168.0.12//Happihour/DeleteFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                user_id:$obj['user_id'],
+                user_id : id,
                 restaurantname:{name}
             })
         })
     }
+
+    useEffect(()=>{      
+        getInfo();
+    },[])
 
     return(
         <View style={style.position}>
