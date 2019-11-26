@@ -3,17 +3,17 @@ import { View, TextInput, PermissionsAndroid, Text, Image, Button, TouchableOpac
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import styles from '../styles/CompStyles/MapStyles';
 import Geolocation from '@react-native-community/geolocation';
-import Geocoder from 'react-native-geocoding';
 import Popup from './Popup';
 import {Actions} from 'react-native-router-flux';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
-
+ 
 function Map(props) {
 
     const [lati, setLati] = useState();
     const [longti, setLongti] = useState();
     const [Fbutton, setFbutton] = useState(false);
+    const [Searchtxt, setSearchtxt] = useState()
 
     //filter buttons
     var FBut = null,
@@ -38,7 +38,7 @@ function Map(props) {
         Lcolor = "#fed873";
         Ltxt = "black";
     }
-
+ 
     //filter by button
     if(Fbutton == false){
         FBut = (
@@ -54,7 +54,10 @@ function Map(props) {
         FBut = (
             <TouchableOpacity
                 style={styles.FRcontainer}
-                onPress={()=>{setFbutton(!Fbutton)}}
+                onPress={()=>{
+                    setFbutton(!Fbutton)
+                    
+                }}
             >
                 <Text style={styles.Ftext}>Close Filter</Text>
             </TouchableOpacity>
@@ -69,7 +72,7 @@ function Map(props) {
                             props.setTimepop(false);
                             props.setLocationpop(false);
                             }}>
-                        <Text style={[styles.buttontxt,{color:Dtxt}]}>DAY</Text>
+                        <Text style={[styles.buttontxt,{color:Dtxt}]}>{props.Daytxt}</Text>
                     </TouchableOpacity>
                 </View>                  
                 <View >
@@ -80,7 +83,7 @@ function Map(props) {
                             props.setLocationpop(true);
                             props.setTimepop(false);
                             }}>
-                        <Text style={[styles.buttontxt,{color:Ltxt}]}>LOCATION</Text>
+                        <Text style={[styles.buttontxt,{color:Ltxt}]}>{props.Locationtxt}</Text>
                     </TouchableOpacity>
                 </View>    
                 <View >
@@ -91,7 +94,7 @@ function Map(props) {
                             props.setTimepop(true);
                             props.setLocationpop(false);
                         }}>
-                        <Text style={[styles.buttontxt,{color:Ttxt}]}>TIME</Text>
+                        <Text style={[styles.buttontxt,{color:Ttxt}]}>{props.Timetxt}</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -143,7 +146,7 @@ function Map(props) {
         if(Svalue == "" || Svalue == " " || Svalue == "  "){
             props.setSfilter([]);
         }else{
-            let searchresponse =await fetch('http://142.232.156.7/Happihour/SearchFilter.php',{
+            let searchresponse =await fetch('http://142.232.152.36/Happihour/SearchFilter.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -158,16 +161,9 @@ function Map(props) {
             console.log(searchdata)
             if(searchdata == "wrong"){
                 return props.setSfilter([]);
-            }else{
-                Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-                for(var i = 0; i<searchdata.length; i++){
-                    var obj = searchdata[i];
-                    var json = await Geocoder.from(obj.address);
-                    
-                    obj.location=json.results[0].geometry.location;
-                }
-                //console.log(searchdata);
+            }else{ 
                 props.setSfilter(searchdata)
+                props.setDLTfilter([]);
                 console.log(Svalue)
             }
         }
@@ -184,8 +180,8 @@ function Map(props) {
                 <Marker
                     key={i}
                     coordinate={{
-                        latitude:props.DLTfilter[i].location.lat,
-                        longitude:props.DLTfilter[i].location.lng
+                        latitude:Number(props.DLTfilter[i].latitude),
+                        longitude:Number(props.DLTfilter[i].longtitude)
                     }}
                     image={require('../imgs/pin.png')}
                 > 
@@ -209,8 +205,8 @@ function Map(props) {
                 <Marker
                     key={i}
                     coordinate={{
-                        latitude:props.Sfilter[i].location.lat,
-                        longitude:props.Sfilter[i].location.lng
+                        latitude:Number(props.Sfilter[i].latitude),
+                        longitude:Number(props.Sfilter[i].longtitude)
                     }}
                     image={require('../imgs/pin.png')}
                 >
@@ -266,7 +262,13 @@ function Map(props) {
                 <TextInput 
                     placeholder="Bar, Restaurant and Pub"
                     style={styles.searchBar}
-                    onChangeText={(t)=>{SearchFilter(t)}}
+                    onChangeText={(t)=>{
+                        setSearchtxt(t)
+                        props.setSearchvalue(t)
+                    }}
+                    value={props.Searchvalue}
+                    returnKeyType="search"
+                    onSubmitEditing={()=>{SearchFilter(Searchtxt)}}
                 />
 
                 {FBut}

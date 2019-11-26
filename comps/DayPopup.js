@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 function DayPopup(props){
 
     var DayFilter=async(day)=>{
-        let dayresponse = await fetch('http://142.232.156.7/Happihour/DLTFilter.php',{
+        let dayresponse = await fetch('http://142.232.152.36/Happihour/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -20,20 +20,12 @@ function DayPopup(props){
                 C_location:props.Locationvalue
             })
         })
- 
+  
         let daydata = await dayresponse.json()
 
         if(daydata == "wrong"){
             props.setDLTfilter([]);
         }else{
-            Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-            for(var i = 0; i<daydata.length; i++){
-                var obj = daydata[i];
-                var json = await Geocoder.from(obj.address);
-                
-                obj.location=json.results[0].geometry.location;
-            }
-
             props.setDLTfilter(daydata);
             props.setSfilter([]);
         }
@@ -42,17 +34,17 @@ function DayPopup(props){
     }
 
     return(
-        <TouchableOpacity 
-            style={styles.container}
-            onPress={()=>{props.setDaypop(false)}}
-        >
+        <View style={styles.container}>
             <View style={styles.wrapper}>
                 <View style={styles.titlewrap}>
                         <FontAwesomeIcon icon="calendar-day" color={"#f4e664"} size={24} style={{position:'absolute', left:10}}/>
                         <Text style={styles.title}>SELECT A DAY</Text>
                         <TouchableOpacity 
                             style={{position:'absolute', right:10}}
-                            onPress={()=>{props.setDaypop(false)}}    
+                            onPress={()=>{
+                                props.setDaypop(false)
+                                props.setSearchvalue('')
+                            }}    
                         >
                         <FontAwesomeIcon icon="times-circle" color={"#f4e664"} size={20} />
                         </TouchableOpacity>
@@ -64,6 +56,7 @@ function DayPopup(props){
                             onPress={()=>{
                                 DayFilter('mon')
                                 props.setDayvalue('mon')   
+                                props.setDaytxt('Monday')   
                                 props.setDaypop(false)                    
                             }}
                             style={styles.daywrap}
@@ -75,6 +68,7 @@ function DayPopup(props){
                             onPress={()=>{
                                 DayFilter('tue')
                                 props.setDayvalue('tue')   
+                                props.setDaytxt('Tuesday')   
                                 props.setDaypop(false)                    
                             }}
                             style={styles.daywrap}
@@ -86,6 +80,7 @@ function DayPopup(props){
                             onPress={()=>{
                                 DayFilter('wed')
                                 props.setDayvalue('wed')   
+                                props.setDaytxt('Wednesday')   
                                 props.setDaypop(false)                    
                             }}
                             style={styles.daywrap}
@@ -97,6 +92,7 @@ function DayPopup(props){
                             onPress={()=>{
                                 DayFilter('thur')
                                 props.setDayvalue('thur')   
+                                props.setDaytxt('Thursday')   
                                 props.setDaypop(false)                    
                             }}
                             style={styles.daywrap}
@@ -108,6 +104,7 @@ function DayPopup(props){
                             onPress={()=>{
                                 DayFilter('fri')
                                 props.setDayvalue('fri')   
+                                props.setDaytxt('Friday')   
                                 props.setDaypop(false)                    
                             }}
                             style={styles.daywrap}
@@ -119,6 +116,7 @@ function DayPopup(props){
                             onPress={()=>{
                                 DayFilter('sat')
                                 props.setDayvalue('sat')   
+                                props.setDaytxt('Saturday')   
                                 props.setDaypop(false)                    
                             }}
                             style={styles.daywrap}
@@ -130,6 +128,7 @@ function DayPopup(props){
                             onPress={()=>{
                                 DayFilter('sun')
                                 props.setDayvalue('sun')   
+                                props.setDaytxt('Sunday')   
                                 props.setDaypop(false)                    
                             }}
                             style={styles.daywrap}
@@ -143,7 +142,7 @@ function DayPopup(props){
                     <FontAwesomeIcon icon="chevron-down" size={28} color={"#f4e664"} />
                 </View>
             </View>
-        </TouchableOpacity>
+        </View>
     )
 }
 

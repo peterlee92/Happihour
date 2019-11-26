@@ -2,8 +2,7 @@ import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
     menuContainer:{
-        paddingVertical:20,
-        paddingHorizontal:30
+        padding:20
     },
     menu:{
         color:"#F8D97E",
