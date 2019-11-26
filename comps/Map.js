@@ -10,8 +10,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
  
 function Map(props) {
 
-    const [lati, setLati] = useState();
-    const [longti, setLongti] = useState();
+    const [lati, setLati] = useState(49.268245);
+    const [longti, setLongti] = useState(-123.0348778);
+    const [lalngti, setlalngit] = useState([49.268245,-123.0348778])
     const [Fbutton, setFbutton] = useState(false);
     const [Searchtxt, setSearchtxt] = useState()
 
@@ -103,7 +104,7 @@ function Map(props) {
     }
    
  
-    var region = {
+    var initialregion = {
         latitude: lati,
         longitude: longti,
         latitudeDelta: 0.09222,
@@ -146,7 +147,7 @@ function Map(props) {
         if(Svalue == "" || Svalue == " " || Svalue == "  "){
             props.setSfilter([]);
         }else{
-            let searchresponse =await fetch('http://142.232.152.36/Happihour/SearchFilter.php',{
+            let searchresponse =await fetch('http://142.232.150.227/Happihour/SearchFilter.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -174,6 +175,7 @@ function Map(props) {
 
     var markers = [];
     if(props.Sfilter.length <=0 && 0 < props.DLTfilter.length){
+        // setlalngit([props.DLTfilter[1].latitude, props.DLTfilter[1].longitude])
         for(var i = 0; i < props.DLTfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var tmarkers = (
@@ -199,6 +201,7 @@ function Map(props) {
             markers.push(tmarkers)
         }
     }else if(props.DLTfilter.length <=0 && 0 < props.Sfilter.length){
+        // setlalngit([propsSfilter[1].latitude, propsSfilter[1].longitude])
         for(var i = 0; i < props.Sfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var smarkers = (
@@ -239,12 +242,12 @@ function Map(props) {
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
                 region={{
-                    latitude:49.268245,
-                    longitude:-123.0348778,
+                    latitude:lalngti[0],
+                    longitude:lalngti[1],
                     latitudeDelta: 0.0992,
                     longitudeDelta: 0.0421,
                   }}
-            
+                
                 showsUserLocation={true}
                 zoomEnabled={true}
                 followsUserLocation={true}
