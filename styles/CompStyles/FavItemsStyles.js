@@ -2,16 +2,21 @@ import {StyleSheet} from 'react-native';
 
 const style = StyleSheet.create({
     container:{
-        backgroundColor:"#122832",
+        backgroundColor:"rgba(18,40,50,1)",
         width:350,
         height:150,
         borderRadius:10,
-        marginVertical:5
+        marginVertical:5,
     },
     favContainer:{
         flexDirection:'row', 
         justifyContent:'space-between', 
         alignItems:'center',
+        position:'absolute',
+        bottom:0,
+        left:0,
+        backgroundColor:"rgba(18,40,50,0.8)",
+        width:'100%'
         
     },
     position:{
@@ -40,13 +45,13 @@ const style = StyleSheet.create({
     },
     img:{
         width:175,
-        height:100,
+        height:150,
         // backgroundColor:'red',
         borderTopLeftRadius:10
     },
     img2:{
         width:175,
-        height:100,
+        height:150,
         // backgroundColor:'blue',
         borderTopRightRadius:10
     },
@@ -60,10 +65,10 @@ const style = StyleSheet.create({
         flexDirection:'row',
         justifyContent:"center",
         alignItems:"center",
-        // backgroundColor:"#F4B96A",
-        // borderRadius:20,
-        // width:40,
-        // height:40,
+        backgroundColor:'#E03A2F',
+        borderRadius:20,
+        width:35,
+        height:35,
         marginRight:12,
         marginTop:12
     }

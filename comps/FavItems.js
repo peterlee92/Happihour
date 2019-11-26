@@ -36,7 +36,7 @@ function FavItems({name, address}) {
                         <FontAwesomeIcon 
                             icon='heart' 
                             size={22} 
-                            color='red'
+                            color='white'
                         /> 
                     </TouchableOpacity>
                 </View>
