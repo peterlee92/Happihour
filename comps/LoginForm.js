@@ -63,7 +63,7 @@ function LoginForm(props){
                         placeholder="Username"
                         onChangeText={(text)=>{Setusername(text)}}
                         underlineColorAndroid = "transparent"
-                        placeholderTextColor="#f4e664"
+                        placeholderTextColor="rgba(255,255,255,0.5)"
                         blurOnSubmit={false}                        
                         returnKeyType={"next"}                    
                         onSubmitEditing = {()=> refPass.focus()}
@@ -78,7 +78,7 @@ function LoginForm(props){
                         secureTextEntry={true}
                         onChangeText={(text)=>{Setuserpassword(text)}}
                         underlineColorAndroid = "transparent"
-                        placeholderTextColor="#f4e664"
+                        placeholderTextColor="rgba(255,255,255,0.5)"
                         blurOnSubmit={false}
                         returnKeyType={"done"} 
                         ref={(i)=>{refPass = i}}
@@ -103,7 +103,7 @@ function LoginForm(props){
                 >
 
                     
-                    <Text style={styles.loginTxt}>LOG IN</Text>
+                    <Text style={styles.loginTxt}>Log In</Text>
                 </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>
