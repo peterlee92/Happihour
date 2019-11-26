@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Button, Switch, Image, TouchableOpacity, ImageBackground} from 'react-native';
 import MenuBar from '../comps/MenuBar';
 import style from '../styles/ScreenStyles/ProfilePageStyle';
@@ -13,6 +13,8 @@ import {Actions} from 'react-native-router-flux';
 import ImagePicker from 'react-native-image-picker';
 
 function ProfilePage(){
+
+  const [Imgurl, setImgurl] = useState();
 
 // More info on all the options is below in the API Reference... just some common use cases shown here
 const options = {
@@ -43,10 +45,8 @@ const options = {
   
       // You can also display the image using data:
       // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-  
-      this.setState({
-        avatarSource: source,
-      });
+      console.log(source)
+      setImgurl(source);
     }
   });   
   }
@@ -57,7 +57,7 @@ const options = {
                 <View style={style.avatar}>
                         <Image source={require('../imgs/profileCurvedImage.png')} resizeMode='cover' style={{width:'100%', height:'100%', position:"absolute", borderBottomLeftRadius:350, borderBottomRightRadius:350, overflow:'hidden'}}/>
                         <View style={{justifyContent:'center', alignItems:'center', marginTop:-50}}>
-                          <Image style={style.AvatarImg} source={require('../imgs/Pororo.png')} />
+                          <Image style={style.AvatarImg} source={Imgurl} />
                           
                           {/* <Image source={avatarSource} style={style.AvatarImg}/> */}
                           <TouchableOpacity onPress={ImgPick} style={{position:'absolute', right:45,  top:130}}>
