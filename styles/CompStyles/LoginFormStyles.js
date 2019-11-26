@@ -2,8 +2,8 @@ import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
     wrapcontainer:{
-        flex:5,
-        justifyContent:'center'
+        flex:1,
+        justifyContent:'center',
     },
     inputContainer:{
         width:'100%', 
@@ -11,7 +11,7 @@ var styles = StyleSheet.create({
         height:50,
         justifyContent:'center',
         flexDirection:'row',
-        paddingHorizontal:20
+        paddingHorizontal:20,
     },
     inputIcon:{
         position:'absolute',
@@ -45,6 +45,7 @@ var styles = StyleSheet.create({
           
     },
     forgottxt:{
+        textAlign:'center',
         color:'rgba(255,255,255,0.4)"',
         fontSize:14,
         fontFamily:"Nunito-Regular",
