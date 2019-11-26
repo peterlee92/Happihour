@@ -8,19 +8,9 @@ function Detail(props){
     console.log(props.text)
     return(
         <ScrollView style={styles.scroll}>
-            <DetailHeader 
-                text={props.text}
-            />
-            {/* <ImageBackground
-                style={styles.bg}
-                source={require('../imgs/bg3.png')}
-            > */}
-            <View style={styles.bg}>
-                <DetailContent 
-                    text={props.text}
-                />            
-            </View>
-            {/* </ImageBackground> */}
+            <DetailHeader text={props.text} />
+            <DetailContent text={props.text} />           
+            
         </ScrollView>
     )
 }

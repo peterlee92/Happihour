@@ -9,7 +9,8 @@ function DetailContent(props){
 
     const [foodmenu, Setfoodmenu] = useState([]);
     const [drinkmenu, Setdrinkmenu] = useState([]);
-    const [rest_loc, Setrest_loc] = useState({lat:0,lng:0});
+    const [rest_lat, Setrest_lat] = useState(0);
+    const [rest_long, Setrest_long] = useState(0);
     const [rest_url, Setrest_url] = useState();
     const [rest_num, Setrest_num] = useState();
 
@@ -19,7 +20,7 @@ function DetailContent(props){
     var GetMenu=async()=>{
     
                                         //use ip address
-        let drinkresponse = await fetch('http://142.232.156.7/Happihour/Drink.php',{
+        let drinkresponse = await fetch('http://142.232.152.36/Happihour/Drink.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -34,19 +35,8 @@ function DetailContent(props){
         let drinkdata = await drinkresponse.json();
         Setdrinkmenu(drinkdata);
 
-        Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-        Geocoder.from(drinkdata[0].address)
-                .then(json => {
-                    var location = json.results[0].geometry.location;
-                    if(location !== ''){
-                        Setrest_loc(location);
-                    }
-                    
-                })
-                .catch(error => console.log(error));
-
                                         //use ip address
-        let foodresponse = await fetch('http://142.232.156.7/Happihour/Food.php',{
+        let foodresponse = await fetch('http://142.232.152.36/Happihour/Food.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -63,23 +53,12 @@ function DetailContent(props){
         Setfoodmenu(fooddata);
         console.log(fooddata)
 
-        Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-        Geocoder.from(fooddata[0].address)
-                .then(json => {
-                    var location = json.results[0].geometry.location;
-                    if(location !== ''){
-                        Setrest_loc(location);
-                    }
-                })
-                .catch(error => console.log(error));
-
-
-
-                
                 
     }
+
+
     console.log(drinkmenu.length)
-    if(drinkmenu.length !== 0){
+    if(drinkmenu !== 'no'){
         for(var i = 0; i < drinkmenu.length; i++){
             var drink = (
                 <View 
@@ -93,10 +72,12 @@ function DetailContent(props){
             drinklist.push(drink);
         } 
     }else {
-        drinklist = null;
+        drinklist = (
+            <Text style={{color:'white'}}>No happy hour menu</Text>
+        );
     }
 
-    if(foodmenu.legnth !== 0){
+    if(foodmenu !== 'no'){
         for(var i = 0; i < foodmenu.length; i++){
             var food = (
                 <View 
@@ -110,12 +91,14 @@ function DetailContent(props){
             foodlist.push(food);
         }
     }else {
-        foodlist = null;
+        foodlist = (
+            <Text style={{color:'white'}}>No happy hour menu</Text>
+        );
     }
 
     //to grab the restaurant url
-    var GrabUrl=async()=>{
-        let response = await fetch('http://142.232.156.7/Happihour/Url.php',{
+    var Grabinfo=async()=>{
+        let response = await fetch('http://142.232.152.36/Happihour/Info.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -127,8 +110,12 @@ function DetailContent(props){
         })
 
         let data = await response.json();
+        console.log(data)
         Setrest_url(data.url)
         Setrest_num(data.contact)
+        Setrest_lat(Number(data.latitude))
+        Setrest_long(Number(data.longtitude))
+
     }
 
     //direct to url
@@ -145,13 +132,13 @@ function DetailContent(props){
 
     useEffect(()=>{
         GetMenu();
-        GrabUrl();
+        Grabinfo();
 
     },[])
 
     return(
         <View style={{flex:5}}>
-    
+            <View style={{backgroundColor:'#0A191F'}}>
             <View style={styles.menuContainer}>
                 <Text style={styles.menu}>DRINKS</Text>
 
@@ -180,12 +167,13 @@ function DetailContent(props){
                 <Text style={{marginLeft:15, fontSize:18, color:'white'}}>{rest_num}</Text>
                 </TouchableOpacity>
             </View>
+            </View>
             <MapView
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
                 region={{
-                    latitude:rest_loc.lat,
-                    longitude:rest_loc.lng,
+                    latitude:rest_lat,
+                    longitude:rest_long,
                     latitudeDelta: 0.00992,
                     longitudeDelta: 0.00421,
                   }}
@@ -196,8 +184,8 @@ function DetailContent(props){
             >
                 <Marker
                     coordinate={{
-                        latitude:rest_loc.lat,
-                        longitude:rest_loc.lng,
+                        latitude:rest_lat,
+                        longitude:rest_long,
                     }}
                     image={require('../imgs/pin.png')}
                 />
