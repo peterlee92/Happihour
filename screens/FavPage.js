@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, FlatList, ScrollView, SafeAreaView, Image, ImageBackground} from 'react-native';
 import FavItems from '../comps/FavItems';
 import MenuBar from '../comps/MenuBar';
+import FavPopup from '../comps/FavPopup';
 
 function FavPage(){
 
@@ -11,7 +12,7 @@ function FavPage(){
 
     var getFavRestaurants=async()=>{
                                     //use ip address
-        let response = await fetch('http://142.232.152.36/Happihour/Favourites.php',{
+        let response = await fetch('http://142.232.150.227/Happihour/Favourites.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -66,6 +67,7 @@ function FavPage(){
                 fav='#F4B869'
                 profile='#74726C'/>
              </ImageBackground>
+             <FavPopup />
         </View>
     )
 }
