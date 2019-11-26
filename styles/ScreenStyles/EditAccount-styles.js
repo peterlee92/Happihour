@@ -18,7 +18,7 @@ const style = StyleSheet.create({
         marginTop:50
     },
     janeTxt:{
-        fontSize:26,
+        fontSize:28,
         color:"white",
         letterSpacing:2,
         fontFamily:"Nunito-Regular",
@@ -44,7 +44,7 @@ const style = StyleSheet.create({
         flexDirection:'row',
         width:"80%",
         alignItems:'center',
-        marginBottom:-4
+        marginBottom:-4,
     },
     inputTxt:{
         fontSize:20,
