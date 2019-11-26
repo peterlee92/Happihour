@@ -8,8 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 function TimePopup(props){
 
     var TimeFilter=async(time)=>{
-        // console.log(time)
-        let timeresponse =await fetch('http://142.232.156.7/Happihour/DLTFilter.php',{
+        let timeresponse = await fetch('http://142.232.152.36/Happihour/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -21,41 +20,31 @@ function TimePopup(props){
                 C_location:props.Locationvalue
             })
         })
-
+ 
         let timedata = await timeresponse.json()
 
-        if(timedata = "wrong"){
+        if(timedata == "wrong"){
             props.setDLTfilter([]);
         }else{
-
-            Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-            for(var i = 0; i<timedata.length; i++){
-                var obj = timedata[i];
-                var json = await Geocoder.from(obj.address);
-                
-                obj.location=json.results[0].geometry.location;
-            }
-
             props.setDLTfilter(timedata);
-            
+            props.setSfilter([]);
         }
 
-        
-        
+   
     }
 
     return(
-        <TouchableOpacity 
-            style={styles.container}
-            onPress={()=>{props.setTimepop(false)}}
-        >
+        <View style={styles.container}>
             <View style={styles.wrapper}>
                 <View style={styles.titlewrap}>
                         <FontAwesomeIcon icon="clock" color={"#f4e664"} size={24} style={{position:'absolute', left:10}}/>
                         <Text style={styles.title}>SELECT A TIME</Text>
                         <TouchableOpacity 
                             style={{position:'absolute', right:10}}
-                            onPress={()=>{props.setTimepop(false)}}    
+                            onPress={()=>{
+                                props.setTimepop(false)
+                                props.setSearchvalue('')
+                            }}    
                         >
                         <FontAwesomeIcon icon="times-circle" color={"#f4e664"} size={20} />
                         </TouchableOpacity>
@@ -66,6 +55,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('10:00')
                                 props.setTimevalue('10:00')   
+                                props.setTimetxt('10:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -76,6 +66,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('11:00')
                                 props.setTimevalue('11:00')   
+                                props.setTimetxt('11:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -86,6 +77,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('12:00')
                                 props.setTimevalue('12:00')   
+                                props.setTimetxt('12:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -96,6 +88,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('13:00')
                                 props.setTimevalue('13:00')   
+                                props.setTimetxt('13:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -106,6 +99,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('14:00')
                                 props.setTimevalue('14:00')   
+                                props.setTimetxt('14:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -116,6 +110,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('15:00')
                                 props.setTimevalue('15:00')   
+                                props.setTimetxt('15:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -126,6 +121,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('16:00')
                                 props.setTimevalue('16:00')   
+                                props.setTimetxt('16:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -136,6 +132,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('17:00')
                                 props.setTimevalue('17:00')   
+                                props.setTimetxt('17:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -146,6 +143,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('18:00')
                                 props.setTimevalue('18:00')   
+                                props.setTimetxt('18:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -156,6 +154,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('19:00')
                                 props.setTimevalue('19:00')   
+                                props.setTimetxt('19:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -166,6 +165,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('20:00')
                                 props.setTimevalue('20:00')   
+                                props.setTimetxt('20:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -176,6 +176,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('21:00')
                                 props.setTimevalue('21:00')   
+                                props.setTimetxt('21:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -186,6 +187,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('22:00')
                                 props.setTimevalue('22:00')   
+                                props.setTimetxt('22:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -196,6 +198,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('23:00')
                                 props.setTimevalue('23:00')   
+                                props.setTimetxt('23:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -206,6 +209,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('00:00')
                                 props.setTimevalue('00:00')   
+                                props.setTimetxt('00:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -216,6 +220,7 @@ function TimePopup(props){
                             onPress={()=>{
                                 TimeFilter('01:00')
                                 props.setTimevalue('01:00')   
+                                props.setTimetxt('01:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -225,7 +230,8 @@ function TimePopup(props){
                         <TouchableOpacity
                             onPress={()=>{
                                 TimeFilter('02:00')
-                                props.setTimevalue()   
+                                props.setTimevalue('02:00')   
+                                props.setTimetxt('02:00')   
                                 props.setTimepop(false)                    
                             }}
                             style={styles.timewrap}
@@ -238,7 +244,7 @@ function TimePopup(props){
                     <FontAwesomeIcon icon="chevron-down" size={28} color={"#f4e664"} />
                 </View>
             </View>
-        </TouchableOpacity>
+        </View>
     )
 }
 

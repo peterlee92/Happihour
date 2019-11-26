@@ -2,11 +2,10 @@ import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
     menuContainer:{
-        paddingVertical:20,
-        paddingHorizontal:30
+        padding:20
     },
     menu:{
-        color:"#ffd96f",
+        color:"#F8D97E",
         fontSize:20,
         marginBottom:20
     },
@@ -20,7 +19,7 @@ var styles = StyleSheet.create({
         fontSize:17      
     },
     price:{
-        color:"#ffd96f",
+        color:"#F8D97E",
         position:'absolute',
         right:0,
         fontFamily:"Nunito-Regular", 
@@ -30,12 +29,19 @@ var styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center'    
     },
-    buttons:{
-        backgroundColor:'orange',
+    button1:{
+        backgroundColor:'#F8D97E',
         padding:10,
-        borderRadius:10,
-        margin:20,
-        flexDirection:'row'
+        flexDirection:'row',
+        width:'50%',
+        alignItems:'center'
+    },
+    button2:{
+        backgroundColor:'#132932',
+        padding:10,
+        flexDirection:'row',
+        width:'50%',
+        alignItems:'center'
     },
     map:{
         width:"100%",

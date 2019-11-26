@@ -57,14 +57,14 @@ const style = StyleSheet.create({
     avatar:{
         justifyContent:"center",
         alignItems:"center",
-        marginTop:-50,
+        marginTop:10,
         backgroundColor:'#3f5485',
         width:700,
         height:400,
-        borderWidth:0,
+        borderWidth:0
         // borderColor:'#404332',
-        borderBottomLeftRadius:350,
-        borderBottomRightRadius:350
+        // borderBottomLeftRadius:350,
+        // borderBottomRightRadius:350
     },
     icons:{
         width:20,
@@ -98,8 +98,8 @@ const style = StyleSheet.create({
         fontFamily:"Nunito-Regular",
     },
     SignOutbox:{
-        width:350,
-        height:40,
+        width:300,
+        height:30,
         backgroundColor:'rgba(179,150,106,0.9)',
         // opacity:.5,
         justifyContent:"center",

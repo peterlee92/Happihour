@@ -12,6 +12,7 @@ const style = StyleSheet.create({
         letterSpacing:3,
         textAlign:'center',
         fontFamily:"Nunito-Regular",
+        marginTop:30
     },
 
     subGHS:{
@@ -44,14 +45,13 @@ const style = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         flexDirection:"column",
-        width:"62%",
+        width:250,
         height:150,
         margin:10,
-        marginBottom:40,
         borderRadius:10
     },
     rows:{
-        flexDirection:"row"
+        flexDirection:'column'
     }
 
 })

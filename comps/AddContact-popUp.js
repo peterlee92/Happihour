@@ -8,9 +8,29 @@ function AddContact({setShowPopUp2}){
 
     const [popUp, setPopUp] = useState(false);
     const [popUp2, setPopUp2] = useState(false);
+    const [saveName, setSaveName] = useState('');
+    const [saveContact, setSaveContact] = useState('');
 
     var changesPop = null;
     var saved = null;
+
+    var CheckUserInfo=async()=>{
+        let response = await fetch('http://192.168.0.20/Happihour/Contact.php',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: saveName,
+                contact: saveContact
+            })
+        })
+
+        // data echoed out in php
+        let data = await response.json()
+
+    };
 
     if(popUp === false){
         changesPop =  <View style={{backgroundColor:'rgba(0,0,0,0.5)', width:'100%', height:'100%', position:'absolute', justifyContent:"center", alignItems:"center", top:-100}}>
@@ -21,9 +41,9 @@ function AddContact({setShowPopUp2}){
                                 </TouchableOpacity>
 
                                 <Text style={style.msg}>ENTER YOUR EMERGENCY CONTACT</Text>
-                                <TextInput placeholder='First Name' placeholderTextColor='white' style={style.input}/>
-                                <TextInput placeholder='Last Name' placeholderTextColor='white' style={style.input}/>
-                                <TextInput placeholder='Contact No.' placeholderTextColor='white' style={style.input}/>
+                                <TextInput placeholder='First Name' placeholderTextColor='white' style={style.input} onChangeText={(text)=>{setSaveName(text)}}/>
+                                {/* <TextInput placeholder='Last Name' placeholderTextColor='white' style={style.input}/> */}
+                                <TextInput placeholder='Contact No.' placeholderTextColor='white' style={style.input} onChangeText={(text)=>{setSaveContact(text)}}/>
                                 
                                 <TouchableOpacity style={style.button} onPress={()=>([setPopUp(true), setPopUp2(true), setShowPopUp2(false)])}>
                                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>
