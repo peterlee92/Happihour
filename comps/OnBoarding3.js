@@ -5,13 +5,12 @@ import styles from '../styles/CompStyles/OnBoarding3Styles';
 function OnBoarding3({setNextPage}){
     return(
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.signuptxt}>CONNECT</Text>
+
                 <Image 
-                source={require('../icons/connect.png')}
+                source={require('../imgs/connect.png')}
                 style={styles.connect}
             />
-            </View>
+
             <View style={styles.content}>
                 <Text style={styles.contenttxt}>Connect with friends, family and colleagues over affordable food and drinks.</Text>
                 <TouchableOpacity

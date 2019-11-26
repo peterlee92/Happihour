@@ -6,13 +6,12 @@ function OnBoarding1({setNextPage}){
     return(
         // <View style={{justifyContent:'center',alignItems:'center'}}>
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.signuptxt}>SIGN UP</Text>
+        
                 <Image 
-                source={require('../icons/signIn.png')}
-                style={styles.phone}
+                source={require('../imgs/signUp.png')}
+                style={styles.signUp}
             />
-            </View>
+
             <View style={styles.content}>
                 <Text style={styles.contenttxt}>Sign up with Happihour to view all the best deals at your favourite restaurant, pub or bar.</Text>
                 <TouchableOpacity
