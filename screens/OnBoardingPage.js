@@ -11,23 +11,32 @@ function OnBoardingPage(){
 
     const [nextPage, setNextPage] = useState(0);
 
+    var pref = React.createRef();
     var page = null;
     var scrn = (        
         <Pages 
             indicatorColor='#F7A957'
             startPage={nextPage}
+            ref={pref}
         >
-            <OnBoarding1 setNextPage={setNextPage} />
-            <OnBoarding2 setNextPage={setNextPage}/>
-            <OnBoarding3 setNextPage={setNextPage}/>
+            <OnBoarding1 setNextPage={()=>{
+                pref.current.scrollToPage(1, true)
+            }} />
+            <OnBoarding2 setNextPage={()=>{
+                pref.current.scrollToPage(2, true)
+            }}/>
+            <OnBoarding3 setNextPage={()=>{
+                pref.current.scrollToPage(3, true)
+            }}/>
             <OnBoarding4 />
         </Pages>
     )
 
-
+/*
  var showPage=()=>{
     if(nextPage == 0){
         page = 0;
+        ref={pref}
         console.log(page);
         console.log(nextPage);
         scrn = (        
@@ -35,7 +44,7 @@ function OnBoardingPage(){
                 indicatorColor='#F7A957'
                 startPage={nextPage}
             >
-                <OnBoarding1 setNextPage={setNextPage} />
+                <OnBoarding1 setNextPage={pref.current.scrollToPage} />
                 <OnBoarding2 setNextPage={setNextPage}/>
                 <OnBoarding3 setNextPage={setNextPage}/>
                 <OnBoarding4 />
@@ -100,7 +109,7 @@ function OnBoardingPage(){
         showPage();
         console.log('work');
     },[nextPage])
-
+*/
     return(
        scrn
     )
