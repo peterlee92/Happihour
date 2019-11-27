@@ -16,7 +16,7 @@ function Psa02(){
         style={style.bg}
         source={require('../imgs/PsaBg2.png')}>
             <View style={style.container}>
-
+                <FontAwesomeIcon icon='times-circle' color='#F1E578' size={30} style={{position:'absolute', top:-40, right:10}}/>
             <View style={style.logoRow}>
                     <Image 
                         style={{width:200, height:50, margin:0}}
@@ -33,18 +33,6 @@ function Psa02(){
                 <Text style={style.psa}>
                     Taxis are a safeway to get home after consuming alcohol. Make sure to save their numbers in your phone in case of an emergency.
                 </Text>
-            </View>
-            <View style={style.btnRow}>
-                <TouchableOpacity style={style.yellowBtn}>
-                    <Text
-                    style={style.redText}>
-                        CALL A TAXI</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={style.orangeBtn}>
-                    <Text
-                    style={style.btnText}
-                    >EXIT</Text>
-                </TouchableOpacity>
             </View>
             </View>
         </ImageBackground>

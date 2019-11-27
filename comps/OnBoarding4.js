@@ -3,6 +3,7 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding4Styles';
 import {Actions} from 'react-native-router-flux';
 
+
 function OnBoarding3(){
     return(
         <View style={styles.container}>

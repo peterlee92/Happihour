@@ -153,18 +153,18 @@ function DetailContent(props){
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity 
-                    style={styles.buttons}
+                    style={styles.button1}
                     onPress={()=>{GotoUrl()}}
                 >
-                    <FontAwesomeIcon icon='desktop' size={23} style={{marginRight:10}}/>
-                    <Text>VISIT WEBSITE</Text>
+                    <FontAwesomeIcon icon='globe' size={23} style={{marginRight:10}}/>
+                    <Text style={{marginLeft:15, fontSize:18}}>WEBSITE</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    style={styles.buttons}
+                    style={styles.button2}
                     onPress={()=>{Linking.openURL('tel:'+rest_num)}}
                 >
-                    <FontAwesomeIcon icon='phone-alt' size={20} style={{marginRight:10}}/>
-                <Text>{rest_num}</Text>
+                    <FontAwesomeIcon icon='phone-alt' color='white' size={20} style={{marginRight:10}}/>
+                <Text style={{marginLeft:15, fontSize:18, color:'white'}}>{rest_num}</Text>
                 </TouchableOpacity>
             </View>
             </View>

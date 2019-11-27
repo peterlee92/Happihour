@@ -8,14 +8,9 @@ function Detail(props){
     console.log(props.text)
     return(
         <ScrollView style={styles.scroll}>
-            <DetailHeader 
-                text={props.text}
-            />
-
-            <DetailContent 
-                text={props.text}
-            />           
-             
+            <DetailHeader text={props.text} />
+            <DetailContent text={props.text} />           
+            
         </ScrollView>
     )
 }

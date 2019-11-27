@@ -7,18 +7,19 @@ const style = StyleSheet.create({
     },
     GHS:{
         color:"white",
-        fontSize:23,
+        fontSize:21,
         // fontWeight:"",
-        letterSpacing:3,
+        letterSpacing:1,
         textAlign:'center',
         fontFamily:"Nunito-Regular",
+        marginTop:30
     },
 
     subGHS:{
         color:"white",
-        fontSize:20,
+        fontSize:18,
         // fontWeight:"",
-        letterSpacing:2,
+        letterSpacing:1,
         textAlign:'center',
         fontFamily:"Nunito-Regular",
     },
@@ -44,14 +45,13 @@ const style = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         flexDirection:"column",
-        width:"62%",
+        width:250,
         height:150,
         margin:10,
-        marginBottom:40,
         borderRadius:10
     },
     rows:{
-        flexDirection:"row"
+        flexDirection:'column'
     }
 
 })

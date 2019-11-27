@@ -2,8 +2,8 @@ import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
     wrapcontainer:{
-        flex:5,
-        justifyContent:'center'
+        flex:1,
+        justifyContent:'center',
     },
     inputContainer:{
         width:'100%', 
@@ -11,7 +11,7 @@ var styles = StyleSheet.create({
         height:50,
         justifyContent:'center',
         flexDirection:'row',
-        paddingHorizontal:20
+        paddingHorizontal:20,
     },
     inputIcon:{
         position:'absolute',
@@ -32,19 +32,26 @@ var styles = StyleSheet.create({
     },
     loginBut:{
         backgroundColor:"#f4e664",
+        // width:'80%',
+        // padding:10,
+        // borderRadius:10 
+        padding:5,
         width:'80%',
-        padding:10,
-        borderRadius:10        
+        alignItems: 'center',
+        borderRadius:10,
+        marginBottom:20,
+        width:300
     },
     loginTxt:{
         textAlign:'center',
         fontSize:20,
-        letterSpacing:2,
-        //fontWeight:'bold',
-        fontFamily:"Nunito-Bold",  
+        fontFamily:"Nunito-Bold", 
+        color:'black',
+        
           
     },
     forgottxt:{
+        textAlign:'center',
         color:'rgba(255,255,255,0.4)"',
         fontSize:14,
         fontFamily:"Nunito-Regular",

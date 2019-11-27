@@ -1,7 +1,16 @@
-import React from 'react';
-import {ImageBackground, Image, Text, View} from 'react-native';
+import React, {Component} from 'react';
+import {ImageBackground, Image, Text, View, ActivityIndicator} from 'react-native';
+import {Actions} from "react-native-router-flux";
 
-function Loading(){
+export default class Loading extends Component {
+
+    componentDidMount(){
+        setTimeout(() => {
+        Actions.onboarding();
+        }, 3000);
+    }
+
+    render(){
     return(
         <View 
             style={{
@@ -35,9 +44,9 @@ function Loading(){
                         height:140
                         }}
                 />
+                <ActivityIndicator size="large" color="orange" />
             </ImageBackground>
         </View>
     )
 }
-
-export default Loading;
+}
