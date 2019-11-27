@@ -15,7 +15,6 @@ function FavPage(){
       console.log("userid",id);
     }
 
-    const [fav_restaurants, Setfav_restaurants] = useState([]);
     const [Refresh, SetRefresh] = useState(false);
 
     var getFavRestaurants=async(id)=>{
@@ -41,8 +40,6 @@ function FavPage(){
         }
          
                     
-    }
-               
     }
 
     useEffect(()=>{
@@ -82,5 +79,4 @@ function FavPage(){
         </View>
     )
 }
-
 export default FavPage;

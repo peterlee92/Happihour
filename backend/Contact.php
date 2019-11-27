@@ -1,15 +1,21 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","Happihour");
+require_once('./Database.php');
+
+$conn = mysqli_connect("localhost","root","root","Happihour");
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-    $json = file_get_contents('php://input');
-    $obj = json_decode($json,true);
+    $sql = "SELECT contact FROM contacts WHERE user_id = '1'";
 
-    $user_id = $obj['user_id'];
+    $result = runQuery($sql);
 
-    $result = mysqli_query($conn,"SELECT contact FROM contacts WHERE user_id = '$user_id'");
+    if($result ->num_rows==0){
+      echo json_encode('none');
+    } else{
+      echo json_encode($result);
+    }
+
   } else
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -20,9 +26,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $contact = $obj['contact'];
 
     $result = mysqli_query($conn,"INSERT INTO contact(name, contact) VALUES ($name, $contact)");
-  }
-
-
-  if($result->num_rows!==0){
-      echo json_encode('ok');
   }

@@ -33,7 +33,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
          faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
-         faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop, faGlobe,
+         faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
          faPlus, faCalendarAlt,faImage, faMinus,
          faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, 
          faCheckSquare, faSquare, faCalendarDay, faGlassCheers, faCaretDown, faHandsHelping, faEnvelopeOpenText, faGlobe} from '@fortawesome/free-solid-svg-icons';
@@ -42,7 +42,7 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
             faClock, faEnvelope, faLock, faUser, faPen, faTaxi, faMobile, faMobileAlt,
-            faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop, faGlobe,
+            faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
             faPlus, faCalendarAlt,faImage, faMinus,
             faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faCheckSquare, faSquare, faCalendarDay,
             faGlassCheers, faCaretDown, faHandsHelping, faEnvelopeOpenText, faGlobe)

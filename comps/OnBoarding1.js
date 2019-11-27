@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding1Styles';
 import { Actions } from 'react-native-router-flux';
+import LottieView from 'lottie-react-native';
 
 function OnBoarding1({setNextPage}){
     return(

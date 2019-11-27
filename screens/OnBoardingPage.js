@@ -7,6 +7,7 @@ import OnBoarding3 from '../comps/OnBoarding3';
 import OnBoarding4 from '../comps/OnBoarding4';
 import Loading from './Loading';
 import Actions from 'react-native-router-flux';
+import LottieView from 'lottie-react-native';
 
 function OnBoardingPage(){
 
