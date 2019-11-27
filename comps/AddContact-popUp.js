@@ -15,7 +15,7 @@ function AddContact({setShowPopUp2}){
     var saved = null;
 
     var CheckUserInfo=async()=>{
-        let response = await fetch('http://192.168.0.20/Happihour/Contact.php',{
+        let response = await fetch('http://142.232.52.8:8888/Happihour/backend/Contact.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -29,6 +29,10 @@ function AddContact({setShowPopUp2}){
 
         // data echoed out in php
         let data = await response.json()
+
+        if(data == 'success'){
+           // confirmation pop up
+        }
 
     };
 
@@ -45,7 +49,7 @@ function AddContact({setShowPopUp2}){
                                 {/* <TextInput placeholder='Last Name' placeholderTextColor='white' style={style.input}/> */}
                                 <TextInput placeholder='Contact No.' placeholderTextColor='white' style={style.input} onChangeText={(text)=>{setSaveContact(text)}}/>
                                 
-                                <TouchableOpacity style={style.button} onPress={()=>([setPopUp(true), setPopUp2(true), setShowPopUp2(false)])}>
+                                <TouchableOpacity style={style.button} onPress={()=>([setPopUp(true), setPopUp2(true), setShowPopUp2(false), CheckUserInfo()])}>
                                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>
                                 </TouchableOpacity>
                             </View>

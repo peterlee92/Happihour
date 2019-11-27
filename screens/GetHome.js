@@ -12,6 +12,7 @@ import AddContact from '../comps/AddContact-popUp';
 function GetHome(){
 
     const [contactPop, setContactPop] = useState(false);
+    const [confirmPop, setConfirmPop] = useState(true);
 
 
     var CheckUserInfo=async()=>{
@@ -24,7 +25,7 @@ function GetHome(){
         })
     
         let data = await response.json()
-        console.log(data);
+
         if(data == 'none'){
             setContactPop(true);
         }else {
@@ -37,7 +38,7 @@ function GetHome(){
     if(contactPop == true){
         displayPop = 
         <View style={{width:'100%', height:'100%', position:'absolute',marginTop:100}}>
-            <AddContact />
+            <AddContact setConfirmPop={setConfirmPop}/>
         </View>
     } else {
         displayPop = null;

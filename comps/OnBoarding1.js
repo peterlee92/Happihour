@@ -8,7 +8,12 @@ function OnBoarding1({setNextPage}){
     return(
         // <View style={{justifyContent:'center',alignItems:'center'}}>
         <View style={styles.container}>
-        
+{/*         
+                <LottieView 
+                    source={require('../animations/foodIconAnimation.json')}
+                    autoPlay
+                    loop
+                /> */}
                 <Image 
                 source={require('../imgs/signUp.png')}
                 style={styles.signUp}
