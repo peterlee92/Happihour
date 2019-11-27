@@ -17,6 +17,7 @@ function OnBoardingPage(){
     var scrn = (        
         <Pages 
             indicatorColor='#F7A957'
+            indicatorPosition='none'
             startPage={nextPage}
             ref={pref}
         >
