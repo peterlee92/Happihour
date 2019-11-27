@@ -47,7 +47,7 @@ function ForgotPassword(){
                 <View style={style.yellowLine}></View>
 
                 <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(true))}>
-                    <Text style={{color:"#0E1617", fontWeight:"bold", letterSpacing:3, fontSize:16}}>SEND EMAIL</Text>
+                    <Text style={{color:"#0E1617", fontWeight:"bold", letterSpacing:3, fontSize:16}}>Send Email</Text>
                 </TouchableOpacity>
 
                 {saveChanges}
