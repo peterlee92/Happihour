@@ -37,15 +37,6 @@ export default function List(props) {
              <SafeAreaView>
                  <ScrollView>
                     {
-                      props.DLTfilter.map((obj,i)=>{
-                        return <ListItems 
-                          key={i}
-                          name={obj.name}
-                          address={obj.address}
-                        />
-                      })
-                    }
-                    {
                       props.Sfilter.map((obj,i)=>{
                         return <ListItems 
                           key={i}
@@ -54,6 +45,16 @@ export default function List(props) {
                         />
                       })
                     }
+                    {
+                      props.DLTfilter.map((obj,i)=>{
+                        return <ListItems 
+                          key={i}
+                          name={obj.name}
+                          address={obj.address}
+                        />
+                      })
+                    }
+                    
                 </ScrollView>
                </SafeAreaView>
                 </View>

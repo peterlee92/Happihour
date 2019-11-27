@@ -4,17 +4,8 @@ var styles = StyleSheet.create({
     container:{
         justifyContent:'center',
         alignItems:'center',
-        overflow:'hidden'
-    },
-    header:{
-        justifyContent:'center',
-        alignItems:'center',
-        backgroundColor:'#F7A957',
-        borderBottomEndRadius:400,
-        borderBottomStartRadius:400,
-        padding:30,
-        width:800,
-        overflow:'hidden'
+        overflow:'hidden',
+        flex:1
     },
     signuptxt:{
         color:'white',
@@ -22,10 +13,8 @@ var styles = StyleSheet.create({
         marginBottom:20
     },
     discover:{
-        resizeMode:'contain',
         width:'100%',
-        height:250,
-        marginBottom:20
+        flex:3
     },
     content:{
        justifyContent:'center',

@@ -35,9 +35,9 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop, faGlobe,
          faPlus, faCalendarAlt,faImage, faMinus,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, faGlobe,
-        
-         faCheckSquare, faSquare, faCalendarDay, faGlassCheers, faCaretDown, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, 
+         faCheckSquare, faSquare, faCalendarDay, faGlassCheers, faCaretDown, faHandsHelping, faEnvelopeOpenText, faGlobe} from '@fortawesome/free-solid-svg-icons';
+
 
 library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChevronUp, faChevronLeft, faChevronRight,
             faHeart, faMapMarkerAlt, faBusAlt, faUserCircle, faSearch, faEnvelopeOpen,
@@ -45,7 +45,7 @@ library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, fa
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop, faGlobe,
             faPlus, faCalendarAlt,faImage, faMinus,
             faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faCheckSquare, faSquare, faCalendarDay,
-            faGlassCheers, faCaretDown, faHandsHelping, faGlobe)
+            faGlassCheers, faCaretDown, faHandsHelping, faEnvelopeOpenText, faGlobe)
 
 
 
@@ -80,15 +80,16 @@ import Psa04 from './comps/Psa04';
 import Psa05 from './comps/Psa05';
 import Psa06 from './comps/Psa06';
 import Psa07 from './comps/Psa07';
-import PSAPopUps from './comps/PSA-popUps';
+import PSAPopUps from './comps/PSAPopUps';
 import Exec from './screens/Exec';
+import FavPopup from './comps/FavPopup';
 
 
 function App() {
 
   return (
 
-    <EditAccount/>
+    <Route />
 
   );
 };
