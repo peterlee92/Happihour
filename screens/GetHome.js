@@ -17,7 +17,7 @@ var CheckUserInfo=async()=>{
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            user_id: 1
+            user_id: '1'
         })
     })
 

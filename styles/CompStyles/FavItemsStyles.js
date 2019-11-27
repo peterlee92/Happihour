@@ -16,7 +16,9 @@ const style = StyleSheet.create({
         bottom:0,
         left:0,
         backgroundColor:"rgba(18,40,50,0.8)",
-        width:'100%'
+        width:'100%',
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10
         
     },
     position:{
@@ -47,13 +49,15 @@ const style = StyleSheet.create({
         width:175,
         height:150,
         // backgroundColor:'red',
-        borderTopLeftRadius:10
+        borderTopLeftRadius:10,
+        borderBottomLeftRadius: 10
     },
     img2:{
         width:175,
         height:150,
         // backgroundColor:'blue',
-        borderTopRightRadius:10
+        borderTopRightRadius:10,
+        borderBottomRightRadius: 10
     },
     imgPosition:{
         flexDirection:"row"
@@ -65,8 +69,8 @@ const style = StyleSheet.create({
         flexDirection:'row',
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor:'#E03A2F',
-        borderRadius:20,
+        // backgroundColor:'#E03A2F',
+        // borderRadius:20,
         width:35,
         height:35,
         marginRight:12,
