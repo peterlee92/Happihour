@@ -6,13 +6,12 @@ import { Actions } from 'react-native-router-flux';
 function OnBoarding3({setNextPage}){
     return(
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.signuptxt}>CONNECT</Text>
+
                 <Image 
-                source={require('../icons/connect.png')}
+                source={require('../imgs/connect.png')}
                 style={styles.connect}
             />
-            </View>
+
             <View style={styles.content}>
                 <Text style={styles.contenttxt}>Connect with friends, family and colleagues over affordable food and drinks. Happihour's are best spent, shared. </Text>
                 <TouchableOpacity

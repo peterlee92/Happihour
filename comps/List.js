@@ -23,28 +23,19 @@ export default function List(props) {
             headerLayoutHeight = {100}
             headerLayout = { () =>
                 <View style={[styles.headerLayoutStyle]}>
-                    <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:100, marginBottom:0, elevation:98}} />
-                    <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, right:150, elevation:99}}>
-                        <FontAwesomeIcon icon="chevron-up" size={32} color="#ffef86" style={{marginTop:-15}}/>
-                        <Text style={[styles.commonTextStyle,{marginBottom:3}]}>View List</Text>
+                    <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:60, marginBottom:0, elevation:98}} />
+                    <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, right:170, elevation:99}}>
+                        <FontAwesomeIcon icon="chevron-up" size={30} color="#ffef86" style={{marginTop:0}}/>
+                        {/* <Text style={[styles.commonTextStyle,{marginBottom:3}]}>View List</Text> */}
                         {/* <Text style={[styles.commonTextStyle, {marginTop:10, marginBottom:20}]}>View Map</Text>
                         <FontAwesomeIcon icon="chevron-down" size={32} color="#ffef86" style={{marginBottom:-35, marginTop:-20}}/> */}
                     </View>
                 </View>
             }
             slidingPanelLayout = { () =>
-                <View style={[styles.slidingPanelLayoutStyle, {marginTop:75, bottom:40, elevation:90}]}>
+                <View style={[styles.slidingPanelLayoutStyle, {marginTop:50, bottom:40, elevation:90}]}>
              <SafeAreaView>
                  <ScrollView>
-                    {
-                      props.DLTfilter.map((obj,i)=>{
-                        return <ListItems 
-                          key={i}
-                          name={obj.name}
-                          address={obj.address}
-                        />
-                      })
-                    }
                     {
                       props.Sfilter.map((obj,i)=>{
                         return <ListItems 
@@ -54,6 +45,16 @@ export default function List(props) {
                         />
                       })
                     }
+                    {
+                      props.DLTfilter.map((obj,i)=>{
+                        return <ListItems 
+                          key={i}
+                          name={obj.name}
+                          address={obj.address}
+                        />
+                      })
+                    }
+                    
                 </ScrollView>
                </SafeAreaView>
                 </View>

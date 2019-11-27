@@ -8,7 +8,7 @@ function LocationPopup(props){
     var LocationFilter=async(location)=>{
         console.log(location)
         console.log(props.Dayvalue)
-        let locationresponse = await fetch('http://142.232.152.36/Happihour/DLTFilter.php',{
+        let locationresponse = await fetch('http://142.232.150.227/Happihour/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -29,7 +29,7 @@ function LocationPopup(props){
             props.setDLTfilter(locationdata);
             props.setSfilter([]);
         }
-
+        console.log(locationdata);
    
     }
 

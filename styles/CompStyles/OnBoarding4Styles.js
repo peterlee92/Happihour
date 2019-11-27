@@ -6,31 +6,15 @@ var styles = StyleSheet.create({
         flex:1,
         overflow:'hidden'
     },
-    header:{
-        justifyContent:'center',
-        alignItems:'center',
-        backgroundColor:'#F7A957',
-        borderBottomEndRadius:400,
-        borderBottomStartRadius:400,
-        padding:30,
-        width:800
-    },
-    signuptxt:{
-        color:'white',
-        fontSize:30,
-        marginBottom:20
-    },
     behappy:{
-        resizeMode:'contain',
         width:'100%',
-        height:250,
-        marginBottom:20,
-        marginRight:20
+        flex:1
     },
     content:{
        justifyContent:'center',
        alignItems:'center',
-       padding:30
+       padding:30,
+       flex:0.6
     },
     contenttxt:{
         fontSize:17,

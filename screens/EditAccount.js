@@ -46,36 +46,36 @@ function EditAccount(){
                     <Text style={style.janeTxt}>JANE DOE</Text>
 
                 <View style={style.input}>
-                    <FontAwesomeIcon icon='user' size={24} color='white' />
-                    <TextInput placeholder="username" placeholderTextColor='#f4e664' style={style.inputTxt}/>
+                    <FontAwesomeIcon icon='user' size={22} color='white' />
+                    <TextInput placeholder="username" placeholderTextColor='grey' style={style.inputTxt}/>
                 </View>
                 <View style={style.inputLine}></View>
 
                 <View style={style.input}>
-                    <FontAwesomeIcon icon='envelope' size={24} color='white' />
-                    <TextInput placeholder="email" placeholderTextColor='#f4e664' style={style.inputTxt} />
+                    <FontAwesomeIcon icon='envelope' size={22} color='white' />
+                    <TextInput placeholder="email" placeholderTextColor='grey' style={style.inputTxt} />
                 </View>
                 <View style={style.inputLine}></View>
 
                 <View style={style.input}>
-                    <FontAwesomeIcon icon='lock' size={24} color='white' />
-                    <TextInput placeholder="password" placeholderTextColor='#f4e664' style={style.inputTxt} />
+                    <FontAwesomeIcon icon='lock' size={22} color='white' />
+                    <TextInput placeholder="password" placeholderTextColor='grey' style={style.inputTxt} />
                 </View>
                 <View style={style.inputLine}></View>
 
                 <View style={style.input}>
-                    <FontAwesomeIcon icon='lock' size={24} color='white' />
-                    <TextInput placeholder="confirm password" placeholderTextColor='#f4e664' style={style.inputTxt} />
+                    <FontAwesomeIcon icon='lock' size={22} color='white' />
+                    <TextInput placeholder="confirm password" placeholderTextColor='grey' style={style.inputTxt} />
                 </View>
                 <View style={style.inputLine}></View>
 
                 <TouchableOpacity style={[style.button, {marginTop:30}]} onPress={()=>(setShowPopUp(!ShowPopUp))}>
-                    <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>
+                    <Text style={{color:"#0E1617", fontWeight:"bold"}}>Save</Text>
                     {/* <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>
 
                 <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp2(!ShowPopUp2))}>
-                    <Text style={{color:"#9B3F3B", fontWeight:"bold"}}>EMERGENCY CONTACT</Text>
+                    <Text style={{color:"#9B3F3B", fontWeight:"bold"}}>Add Emergency Contact</Text>
                 </TouchableOpacity>
 
                 {saveChanges}

@@ -45,9 +45,7 @@ var styles = StyleSheet.create({
     loginTxt:{
         textAlign:'center',
         fontSize:20,
-       
         fontFamily:"Nunito-Bold", 
-        
         color:'black',
         
           

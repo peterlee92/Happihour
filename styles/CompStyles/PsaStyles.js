@@ -11,7 +11,8 @@ const style =  StyleSheet.create({
         alignItems:"center",
         alignContent:"center",
         padding:20,
-        flex:1
+        flex:1,
+        marginTop:50
     },
     flexCenter:{
         justifyContent:"center",
@@ -19,12 +20,13 @@ const style =  StyleSheet.create({
     },
     logoRow:{
         flex:1,
+        marginTop:-30
     },
     helpers:{
         fontSize:34,
         color:"#FFB65A",
         textAlign:"center",
-        letterSpacing:.25,
+        letterSpacing:.25
     
     },
     icon:{
@@ -32,11 +34,12 @@ const style =  StyleSheet.create({
         marginBottom:20,
         color: "#061A20",
         backgroundColor: "#E3EAF4",
-        borderRadius:10
+        borderRadius:10,
+        marginTop:-40
     },
     heading:{
-        fontSize:20,
-        color:"#f4e664",
+        fontSize:21,
+        color:"#F1E578",
         textAlign:"center",
         fontFamily:"Nunito-Regular",        
     },
@@ -51,9 +54,9 @@ const style =  StyleSheet.create({
     psa:{
         textAlign:"center",
         marginTop:10,
-        fontSize:14,
+        fontSize:18,
         color:"white",
-        lineHeight:20,
+        lineHeight:30,
         fontFamily:"Nunito-Regular",        
     },
     btnRow:{
