@@ -45,15 +45,15 @@ var styles = StyleSheet.create({
     },
     signupBut:{
         backgroundColor:"#f4e664",
-        width:'80%',
-        padding:10,
-        borderRadius:10 
+        padding:5,
+        width:300,
+        alignItems:'center',
+        borderRadius:10,
+        marginBottom:20
     },
     signupText:{
         textAlign:'center',
         fontSize:20,
-        letterSpacing:2,
-        //fontWeight:'bold',
         fontFamily:"Nunito-Bold",        
     }
 })

@@ -7,7 +7,7 @@ var styles = StyleSheet.create({
     },
     RSContainer:{
         padding:10,
-        flexDirection:'row'
+        flexDirection:'row',
     },
     backBut:{
         width:30,
@@ -28,16 +28,14 @@ var styles = StyleSheet.create({
     },
     directionBut:{
         flexDirection:'row',
-        backgroundColor:'#e6dc60',
+        backgroundColor:'#F8D97E',
         borderRadius:5,
         padding:5,
        
     },
    
     HTcontainer:{
-        backgroundColor:"#e6dc60",
-        borderTopLeftRadius:20,
-        borderTopRightRadius:20,
+        backgroundColor:"#F8D97E",
         position:'absolute',
         bottom:0,
         width:'100%'
