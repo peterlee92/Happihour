@@ -44,7 +44,7 @@ const options = {
    * The second arg is the callback which sends object: response (more info in the API Reference)
    */
   ImagePicker.showImagePicker(options, (response) => {
-    console.log('Response = ', response);
+    // console.log('Response = ', response);
   
     if (response.didCancel) {
       console.log('User cancelled image picker');
@@ -57,7 +57,7 @@ const options = {
   
       // You can also display the image using data:
       // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-      console.log(source)
+      console.log("work",source)
       setImgurl(source);
     }
   });   

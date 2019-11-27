@@ -24,11 +24,11 @@ function MapPage(){
     const [Locationtxt,setLocationtxt] = useState('Location');
     const [Searchvalue, setSearchvalue] = useState();
 
-    const DissmissKeyboard = ({children}) => (
-        <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
-            {children}
-        </TouchableWithoutFeedback>
-    )
+    // const DissmissKeyboard = ({children}) => (
+    //     <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
+    //         {children}
+    //     </TouchableWithoutFeedback>
+    // )
   
 
     var showpopup = null;
@@ -79,7 +79,6 @@ function MapPage(){
     }
 
     return(
-        <DissmissKeyboard>
         <View style={{flex:1, backgroundColor:'#ECE9E1'}}>       
             <Map 
                 setTimepop={setTimepop}
@@ -113,7 +112,7 @@ function MapPage(){
             {showpopup}
 
         </View>
-        </DissmissKeyboard>
+
     )
 }
 
