@@ -67,9 +67,8 @@ const options = {
     },[]);
     return(
         <View style={style.container}>
-            <ImageBackground source={require('../imgs/ProfileGrad.png')} style={style.container}>
                 <View style={style.avatar}>
-                        <Image source={require('../imgs/profileCurvedImage.png')} resizeMode='cover' style={{width:'100%', height:'100%', position:"absolute", borderBottomLeftRadius:350, borderBottomRightRadius:350, overflow:'hidden'}}/>
+                        <Image source={require('../imgs/profileCurvedImage.png')} resizeMode='cover' style={{width:'100%', height:'100%', position:"absolute", overflow:'hidden'}}/>
                         <View style={{justifyContent:'center', alignItems:'center', marginTop:-50}}>
                           <Image style={style.AvatarImg} source={require('../imgs/Pororo.png')} />
                           
@@ -83,11 +82,13 @@ const options = {
                             {username}
                           </Text>
                           <Text style={style.atName}>@{username}</Text>
+
                         </View>
                 </View>
 
                 <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:50, position:'absolute', top:0}} />
-            <View style={{justifyContent:'center', alignItems:'center', marginBottom:-80}}>
+            <Image source={require('../imgs/profile_flowBG.png')} style={{width:'100%', flex:6, height:400, position:'absolute', bottom:-50}} />
+            <View style={{justifyContent:'center', alignItems:'center', flex:4}}>
               <TouchableOpacity style={style.titleIcon} onPress={()=>(Actions.editAccount())}>
                   <View style={style.editBox}>
                       <Text style={style.titles}>Edit Account</Text>
@@ -102,18 +103,13 @@ const options = {
                   </View>
               </TouchableOpacity>
 
-              {/* <View style={style.settings}>
-                  <Text style={style.options}>Location</Text>
-                  <Switch style={style.swtch} thumbColor='black' ios_backgroundColor='rgba(0,0,0,0.5)'/>
-              </View> */}
-
               <TouchableOpacity style={style.titleIcon}>
                   <View style={style.SignOutbox}>
                       <Text style={style.SignOutTitles}>Sign Out</Text>
                   </View>
               </TouchableOpacity>
             </View>
-            </ImageBackground>
+            {/* </ImageBackground> */}
             <MenuBar
             map='#74726C'
             home='#74726C'

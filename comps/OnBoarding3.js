@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding3Styles';
+import { Actions } from 'react-native-router-flux';
 
-function OnBoarding3(){
+function OnBoarding3({setNextPage}){
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -13,13 +14,16 @@ function OnBoarding3(){
             />
             </View>
             <View style={styles.content}>
-                <Text style={styles.contenttxt}>Connect with friends, family and colleagues over affordable food and drinks.</Text>
+                <Text style={styles.contenttxt}>Connect with friends, family and colleagues over affordable food and drinks. Happihour's are best spent, shared. </Text>
                 <TouchableOpacity
                     style={styles.NextBut}
+                    onPress={()=>(setNextPage(3))}
                 >
                     <Text style={styles.NextTxt}>Next</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={()=>{Actions.login()}}
+                >
                     <Text style={styles.SkipTxt}>Skip</Text>
                 </TouchableOpacity>
             </View>

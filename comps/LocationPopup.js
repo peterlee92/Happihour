@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/LocationPopupStyles';
-import Geocoder from 'react-native-geocoding';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 function LocationPopup(props){
@@ -9,7 +8,7 @@ function LocationPopup(props){
     var LocationFilter=async(location)=>{
         console.log(location)
         console.log(props.Dayvalue)
-        let locationresponse = await fetch('http://142.232.156.7/Happihour/DLTFilter.php',{
+        let locationresponse = await fetch('http://142.232.152.36/Happihour/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -27,14 +26,6 @@ function LocationPopup(props){
         if(locationdata == "wrong"){
             props.setDLTfilter([]);
         }else{
-            Geocoder.init("AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw");
-            for(var i = 0; i<locationdata.length; i++){
-                var obj = locationdata[i];
-                var json = await Geocoder.from(obj.address);
-                
-                obj.location=json.results[0].geometry.location;
-            }
-
             props.setDLTfilter(locationdata);
             props.setSfilter([]);
         }
@@ -43,17 +34,17 @@ function LocationPopup(props){
     }
 
     return(
-        <TouchableOpacity 
-            style={styles.container}
-            onPress={()=>{props.setLocationpop(false)}}
-        >
+        <View style={styles.container}>
             <View style={styles.wrapper}>
                 <View style={styles.titlewrap}>
                     <FontAwesomeIcon icon="map-marker-alt" color={"#f4e664"} size={24} style={{position:'absolute', left:10}}/>
                     <Text style={styles.title}>SELECT A LOCATION</Text>
                     <TouchableOpacity 
                             style={{position:'absolute', right:10}}
-                            onPress={()=>{props.setLocationpop(false)}}    
+                            onPress={()=>{
+                                props.setLocationpop(false)
+                                props.setSearchvalue('')
+                            }}    
                         >
                         <FontAwesomeIcon icon="times-circle" color={"#f4e664"} size={20} />
                     </TouchableOpacity>
@@ -64,6 +55,7 @@ function LocationPopup(props){
                             onPress={()=>{
                                 props.setLocationpop(false)
                                 props.setLocationvalue('West-End')
+                                props.setLocationtxt('West-End')
                                 LocationFilter('West-End')
                              
                             }}
@@ -75,6 +67,7 @@ function LocationPopup(props){
                             onPress={()=>{
                                 props.setLocationpop(false)
                                 props.setLocationvalue('East-Van')
+                                props.setLocationtxt('East-Van')
                                 LocationFilter('East-Van')
                             
                             }}
@@ -86,6 +79,7 @@ function LocationPopup(props){
                             onPress={()=>{
                                 props.setLocationpop(false)
                                 props.setLocationvalue('Kitsilano')
+                                props.setLocationtxt('Kitsilano')
                                 LocationFilter('Kitsilano')
                             
                             }}
@@ -93,13 +87,61 @@ function LocationPopup(props){
                         >
                         <Text style={styles.location}>Kitsilano</Text>
                         </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={()=>{
+                                props.setLocationpop(false)
+                                props.setLocationvalue('Downtown')
+                                props.setLocationtxt('Downtown')
+                                LocationFilter('Downtown')
+                            
+                            }}
+                            style={styles.locationwrap}
+                        >
+                        <Text style={styles.location}>Downtown</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={()=>{
+                                props.setLocationpop(false)
+                                props.setLocationvalue('Yaletown')
+                                props.setLocationtxt('Yaletown')
+                                LocationFilter('Yaletown')
+                            
+                            }}
+                            style={styles.locationwrap}
+                        >
+                        <Text style={styles.location}>Yaletown</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={()=>{
+                                props.setLocationpop(false)
+                                props.setLocationvalue('Gastown')
+                                props.setLocationtxt('Gastown')
+                                LocationFilter('Gastown')
+                            
+                            }}
+                            style={styles.locationwrap}
+                        >
+                        <Text style={styles.location}>Gastown</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={()=>{
+                                props.setLocationpop(false)
+                                props.setLocationvalue('Chinatown')
+                                props.setLocationtxt('Chinatown')
+                                LocationFilter('Chinatown')
+                            
+                            }}
+                            style={styles.locationwrap}
+                        >
+                        <Text style={styles.location}>Chinatown</Text>
+                        </TouchableOpacity>
                     </View>
                 </ScrollView>
                 <View style={styles.arrowwrap}>
                     <FontAwesomeIcon icon="chevron-down" size={28} color={"#f4e664"} />
                 </View>
             </View>
-        </TouchableOpacity>
+        </View>
     )
 }
 

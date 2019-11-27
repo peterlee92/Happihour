@@ -18,10 +18,11 @@ const style = StyleSheet.create({
         marginTop:50
     },
     janeTxt:{
-        fontSize:14,
+        fontSize:26,
         color:"white",
         letterSpacing:2,
-        fontFamily:"Nunito-Regular",        
+        fontFamily:"Nunito-Regular",
+        marginBottom:30        
     },
     janeSubTxt:{
         fontSize:14,
@@ -30,12 +31,14 @@ const style = StyleSheet.create({
         fontFamily:"Nunito-Regular",        
     },
     janeImg:{
-        width:40,
-        height:40,
-        borderRadius:20,
-        borderWidth:2,
+        width:120,
+        height:120,
+        borderRadius:60,
+        borderWidth:5,
         borderColor:"#6b6b6b",
-        marginHorizontal:10
+        marginHorizontal:10,
+        marginTop:30,
+        marginBottom:20
     },
     input:{
         flexDirection:'row',

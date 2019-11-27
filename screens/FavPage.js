@@ -4,8 +4,6 @@ import FavItems from '../comps/FavItems';
 import MenuBar from '../comps/MenuBar';
 
 function FavPage(){
-
-
     const [fav_restaurnts, Setfav_restaurants] = useState([]);
   
     async function getInfo(){
@@ -16,9 +14,13 @@ function FavPage(){
       console.log("userid",id);
     }
 
+    const [fav_restaurants, Setfav_restaurants] = useState([]);
+    const [Refresh, SetRefresh] = useState(false);
+
+
     var getFavRestaurants=async(id)=>{
-                                    //use ip address
-        let response = await fetch('http://142.232.63.126//Happihour/Favourites.php',{
+//use ip addres
+        let response = await fetch('http://142.232.152.36/Happihour/Favourites.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -39,10 +41,12 @@ function FavPage(){
          
                     
     }
+               
+    }
 
-    useEffect(()=>{      
-        getInfo();
-    },[])
+    useEffect(()=>{
+        getFavRestaurants()
+    },[Refresh])
 
     return(
         <View style={{ height: "100%", backgroundColor:"#0E1617"}}>
@@ -53,11 +57,13 @@ function FavPage(){
                 <SafeAreaView>
                 <ScrollView>
                     {
-                        fav_restaurnts.map((obj,i)=>{
+                        fav_restaurants.map((obj,i)=>{
                             return <FavItems 
                                 key={i}
                                 name={obj.name}
                                 address={obj.address}
+                                SetRefresh={SetRefresh}
+                                Refresh={Refresh}
                             />
                         })
                     }

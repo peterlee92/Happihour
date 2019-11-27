@@ -111,6 +111,7 @@ function LoginForm(props){
                     ref={(i)=>{refPass = i}}
                     onSubmitEditing = {()=>{CheckUserInfo()}}
                 />
+
             </View>
 
             <View style={[styles.inputContainer,]}>
@@ -126,7 +127,9 @@ function LoginForm(props){
                     style={styles.loginBut}
                     onPress={()=>{CheckUserInfo()}}
                 >                        
-                    <Text style={styles.loginTxt}>LOG IN</Text>
+ 
+                    <Text style={styles.loginTxt}>Log In</Text>
+
                 </TouchableOpacity>
             </View>             
         </View>
