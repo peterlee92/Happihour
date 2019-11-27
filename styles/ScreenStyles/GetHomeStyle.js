@@ -7,9 +7,9 @@ const style = StyleSheet.create({
     },
     GHS:{
         color:"white",
-        fontSize:23,
+        fontSize:21,
         // fontWeight:"",
-        letterSpacing:3,
+        letterSpacing:1,
         textAlign:'center',
         fontFamily:"Nunito-Regular",
         marginTop:30
@@ -17,9 +17,9 @@ const style = StyleSheet.create({
 
     subGHS:{
         color:"white",
-        fontSize:20,
+        fontSize:18,
         // fontWeight:"",
-        letterSpacing:2,
+        letterSpacing:1,
         textAlign:'center',
         fontFamily:"Nunito-Regular",
     },

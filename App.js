@@ -35,7 +35,7 @@ import { faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, faChe
          faClock, faEnvelope, faLock, faUser, faPen, faTaxi,
          faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop, faGlobe,
          faPlus, faCalendarAlt,faImage, faMinus,
-         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, 
+         faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faMobile, faMobileAlt, faGlobe,
         
          faCheckSquare, faSquare, faCalendarDay, faGlassCheers, faCaretDown, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
 
@@ -45,7 +45,7 @@ library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, fa
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop, faGlobe,
             faPlus, faCalendarAlt,faImage, faMinus,
             faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faCheckSquare, faSquare, faCalendarDay,
-            faGlassCheers, faCaretDown, faHandsHelping)
+            faGlassCheers, faCaretDown, faHandsHelping, faGlobe)
 
 
 
@@ -88,7 +88,7 @@ function App() {
 
   return (
 
-    <Route />
+    <EditAccount/>
 
   );
 };
