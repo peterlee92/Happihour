@@ -15,7 +15,7 @@ function GetHome(){
 
 
     var CheckUserInfo=async()=>{
-        let response = await fetch('http://142.232.52.8/Happihour/Contact.php',{
+        let response = await fetch('http://142.232.52.8:8888/Happihour/backend/Contact.php',{
             method:'GET',
             headers:{
                 'Accept': 'application/json',
@@ -25,7 +25,7 @@ function GetHome(){
     
         let data = await response.json()
         console.log(data);
-        if(JSON.stringify(data) == 'none'){
+        if(data == 'none'){
             setContactPop(true);
         }else {
             Linking.openURL(data);
@@ -35,7 +35,10 @@ function GetHome(){
     var displayPop = null;
 
     if(contactPop == true){
-        displayPop = <AddContact />
+        displayPop = 
+        <View style={{width:'100%', height:'100%', position:'absolute',marginTop:100}}>
+            <AddContact />
+        </View>
     } else {
         displayPop = null;
     }
