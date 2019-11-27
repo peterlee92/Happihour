@@ -1,37 +1,48 @@
 import React, {useState, useEffect} from 'react';
-import {View, FlatList, ScrollView, SafeAreaView, Image, ImageBackground} from 'react-native';
+import {View, FlatList, ScrollView, SafeAreaView, Image, ImageBackground, AsyncStorage} from 'react-native';
 import FavItems from '../comps/FavItems';
 import MenuBar from '../comps/MenuBar';
 import FavPopup from '../comps/FavPopup';
 
 function FavPage(){
-
+    const [fav_restaurnts, Setfav_restaurants] = useState([]);
+  
+    async function getInfo(){
+      var data = await AsyncStorage.getItem("userinfo");
+      data = JSON.parse(data);
+      var id = Number(data.info[0]['user_id'])
+      getFavRestaurants(id)
+      console.log("userid",id);
+    }
 
     const [fav_restaurants, Setfav_restaurants] = useState([]);
     const [Refresh, SetRefresh] = useState(false);
 
-    var getFavRestaurants=async()=>{
-                                    //use ip address
-        let response = await fetch('http://142.232.150.227/Happihour/Favourites.php',{
+    var getFavRestaurants=async(id)=>{
+//use ip addres
+        let response = await fetch('http://142.232.152.36/Happihour/Favourites.php',{
+
             method:'POST',
             headers:{
             'Accept': 'application/json',
             'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                user_id : 1
+                user_id : id
             })
         })
                                     
         // data echoed out in php
         let data = await response.json();
-        if(data == "empty"){
-            Setfav_restaurants([]);
+        if(data == "wrong"){
+          Setfav_restaurants([])
         }else{
-            Setfav_restaurants(data);  
+            Setfav_restaurants(data);   
         }
-          
+         
                     
+    }
+               
     }
 
     useEffect(()=>{

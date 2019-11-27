@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import {View, Text, Button, Switch, Image, TouchableOpacity, ImageBackground} from 'react-native';
+
+import React, {useEffect, useState} from 'react';
+import {View, Text, Button, Switch, Image, TouchableOpacity, ImageBackground, AsyncStorage} from 'react-native';
 import MenuBar from '../comps/MenuBar';
 import style from '../styles/ScreenStyles/ProfilePageStyle';
 
@@ -12,7 +13,18 @@ import {Actions} from 'react-native-router-flux';
 // avatar imge picker
 import ImagePicker from 'react-native-image-picker';
 
+import localdata from '../localstorage.json';
+
 function ProfilePage(){
+  const [username, setUsername] = useState();
+  const [userid, setUserid] = useState();
+
+  async function getInfo(id, name){
+    var data = await AsyncStorage.getItem("userinfo");
+    data = JSON.parse(data);
+    setUserid(data.info[0]['user_id']);
+    setUsername(data.info[0]['user_name']);
+  }
 
   const [Imgurl, setImgurl] = useState();
 
@@ -51,6 +63,9 @@ const options = {
   });   
   }
 
+    useEffect(()=>{
+        getInfo();
+    },[]);
     return(
         <View style={style.container}>
                 <View style={style.avatar}>
@@ -64,7 +79,11 @@ const options = {
                                   <FontAwesomeIcon icon='pen' color='#F4B869'/>
                               </View>
                           </TouchableOpacity>
-                          <Text style={style.name}>Jane Doe</Text>
+                          <Text style={style.name}>
+                            {username}
+                          </Text>
+                          <Text style={style.atName}>@{username}</Text>
+
                         </View>
                 </View>
 

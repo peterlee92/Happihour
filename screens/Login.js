@@ -12,7 +12,8 @@ function Login(props) {
     return(
         <KeyboardAvoidingView
         style={{flex:1}}
-        behavior="height">
+        behavior="height"
+        >
             <ImageBackground 
                 style={styles.background}
                 source={require('../imgs/bg2.png')}
@@ -27,7 +28,7 @@ function Login(props) {
                         source={require('../imgs/Happihour_Logo.png')}
                     />
                 </View>
-                <LoginForm 
+                <LoginForm
                 refPass
                 refForgot
                 />
