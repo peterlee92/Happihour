@@ -87,7 +87,7 @@ import FavPopup from './comps/FavPopup';
 function App() {
 
   return (
-    <ForgotPassword />
+    <Route />
   );
 };
 
