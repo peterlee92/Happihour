@@ -5,7 +5,8 @@ import MenuBar from '../comps/MenuBar';
 import FavPopup from '../comps/FavPopup';
 
 function FavPage(){
-    const [fav_restaurnts, Setfav_restaurants] = useState([]);
+    const [fav_restaurants, Setfav_restaurants] = useState([]);
+    const [Refresh, SetRefresh] = useState(false);
   
     async function getInfo(){
       var data = await AsyncStorage.getItem("userinfo");
@@ -15,11 +16,14 @@ function FavPage(){
       console.log("userid",id);
     }
 
+<<<<<<< HEAD
     const [Refresh, SetRefresh] = useState(false);
+=======
+>>>>>>> 0de0a1587e57a6f5f36cd78956ff3e6bf3eae6b5
 
     var getFavRestaurants=async(id)=>{
 //use ip addres
-        let response = await fetch('http://142.232.152.36/Happihour/Favourites.php',{
+        let response = await fetch('http://142.232.158.151/Happihour/Favourites.php',{
 
             method:'POST',
             headers:{
@@ -41,9 +45,13 @@ function FavPage(){
          
                     
     }
+<<<<<<< HEAD
+=======
+               
+>>>>>>> 0de0a1587e57a6f5f36cd78956ff3e6bf3eae6b5
 
     useEffect(()=>{
-        getFavRestaurants()
+        getInfo()
     },[Refresh])
 
     return(

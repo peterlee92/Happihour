@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React, {useState} from 'react';
 import {Text, View, Image, TouchableOpacity, ImageBackground, Linking} from 'react-native';
+=======
+import React, {useState, useEffect} from 'react';
+import {Text, View, Image, TouchableOpacity, ImageBackground, Linking, AsyncStorage} from 'react-native';
+>>>>>>> 0de0a1587e57a6f5f36cd78956ff3e6bf3eae6b5
 import MenuBar from '../comps/MenuBar';
 import style from '../styles/ScreenStyles/GetHomeStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -7,7 +12,21 @@ import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
 
 
+<<<<<<< HEAD
 
+=======
+var CheckUserInfo=async()=>{
+    let response = await fetch('http://192.168.0.12/Happihour/Contact.php',{
+        method:'GET',
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: '1'
+        })
+    })
+>>>>>>> 0de0a1587e57a6f5f36cd78956ff3e6bf3eae6b5
 
 function GetHome(){
 
@@ -16,6 +35,7 @@ function GetHome(){
 
     // for edit account page
 
+<<<<<<< HEAD
     const[ShowPopUp2, setShowPopUp2] = useState(false);
 
 
@@ -47,6 +67,53 @@ function GetHome(){
     } else {
         displayPop = null;
     }
+=======
+
+function GetHome(){
+
+    const [userid, setUserid] = useState();
+    const [userAddress, setUserAddress] = useState();
+    
+    var displayPop = null;
+    
+    async function getInfo(){
+        var data = await AsyncStorage.getItem("userinfo");
+        data = JSON.parse(data);
+        var id = Number(data.info[0]['user_id']);
+        getUserAddress(id);
+        console.log("user id: ", id);
+      }
+    
+    var getUserAddress = async(id)=>{
+        let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
+            method:'POST',
+            headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id : id
+            })
+        })
+                                    
+        let data = await response.json()
+    
+        if(data == 'Your information is incorrect'){
+            Alert.alert(data);
+        }else {
+            var address = data['address'];
+            setUserAddress(address);
+            console.log("address ", address);
+    
+        }   
+    }
+
+    useEffect(()=>{
+        getInfo();
+        getUserAddress();
+    },[]);
+
+>>>>>>> 0de0a1587e57a6f5f36cd78956ff3e6bf3eae6b5
     return(
         <View style={style.container}>
             <ImageBackground 
