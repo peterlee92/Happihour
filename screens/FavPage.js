@@ -7,6 +7,7 @@ import FavPopup from '../comps/FavPopup';
 function FavPage(){
     const [fav_restaurants, Setfav_restaurants] = useState([]);
     const [Refresh, SetRefresh] = useState(false);
+    var Favhead= null;
   
     async function getInfo(){
       var data = await AsyncStorage.getItem("userinfo");
@@ -33,10 +34,15 @@ function FavPage(){
                                     
         // data echoed out in php
         let data = await response.json();
+        console.log(data)
         if(data == "wrong"){
+            console.log('no favourites')
           Setfav_restaurants([])
+          console.log(fav_restaurants)
+          Favhead = <FavPopup />
         }else{
-            Setfav_restaurants(data);   
+            Setfav_restaurants(data); 
+            Favhead= null;  
         }
          
                     
@@ -76,7 +82,7 @@ function FavPage(){
                 fav='#F4B869'
                 profile='#74726C'/>
              </ImageBackground>
-             <FavPopup />
+             {Favhead}
         </View>
     )
 }

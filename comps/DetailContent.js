@@ -20,7 +20,7 @@ function DetailContent(props){
     var GetMenu=async()=>{
     
                                         //use ip address
-        let drinkresponse = await fetch('http://142.232.152.36/Happihour/Drink.php',{
+        let drinkresponse = await fetch('http://142.232.158.151/Happihour/Drink.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -36,7 +36,7 @@ function DetailContent(props){
         Setdrinkmenu(drinkdata);
 
                                         //use ip address
-        let foodresponse = await fetch('http://142.232.152.36/Happihour/Food.php',{
+        let foodresponse = await fetch('http://142.232.158.151/Happihour/Food.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -98,7 +98,7 @@ function DetailContent(props){
 
     //to grab the restaurant url
     var Grabinfo=async()=>{
-        let response = await fetch('http://142.232.152.36/Happihour/Info.php',{
+        let response = await fetch('http://142.232.158.151/Happihour/Info.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

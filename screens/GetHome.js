@@ -8,7 +8,7 @@ import AddContact from '../comps/AddContact-popUp';
 
 
 var CheckUserInfo=async()=>{
-    let response = await fetch('http://192.168.0.12/Happihour/Contact.php',{
+    let response = await fetch('http://142.232.158.151/Happihour/Contact.php',{
         method:'GET',
         headers:{
             'Accept': 'application/json',
@@ -46,7 +46,7 @@ function GetHome(){
       }
     
     var getUserAddress = async(id)=>{
-        let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
+        let response = await fetch('http://142.232.158.151/Happihour/userInfo.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
