@@ -84,7 +84,7 @@ const style = StyleSheet.create({
         borderColor: "grey",
         marginTop:50,
         marginBottom:10,
-        backgroundColor:'#F4B869'
+        backgroundColor:'rgba(0,0,0,0.5)'
     },
     editProfile:{
         color:"white",
