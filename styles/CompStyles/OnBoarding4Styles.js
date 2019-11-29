@@ -21,7 +21,7 @@ var styles = StyleSheet.create({
         fontSize:17,
         textAlign:'center',
         lineHeight:40,
-        marginBottom:40 
+        marginBottom:154 
     },
     letsgoBut:{
         backgroundColor:'#3D7B4E',

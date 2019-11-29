@@ -19,7 +19,7 @@ function OnBoarding3({setNextPage}){
                     imageAssetsFolder={'../connectAnimation.json'}
                     autoPlay
                     loop
-                    style={{width:800, height:800, position:'absolute', top:-80, elevation:3}}
+                    style={{width:900, height:900, position:'absolute', top:-120, elevation:3}}
                 /> 
 
             <View style={styles.content}>
