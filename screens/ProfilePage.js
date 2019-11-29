@@ -88,14 +88,10 @@ const options = {
                 <View style={style.avatar}>
                         <Image source={require('../imgs/profileCurvedImage.png')} resizeMode='cover' style={{width:'100%', height:'100%', position:"absolute", overflow:'hidden'}}/>
                         <View style={{justifyContent:'center', alignItems:'center', marginTop:-50}}>
+                        <TouchableOpacity onPress={ImgPick} >
                           <Image style={style.AvatarImg} source={Imgurl} />
-                          
-                          {/* <Image source={avatarSource} style={style.AvatarImg}/> */}
-                          <TouchableOpacity onPress={ImgPick} style={{position:'absolute', right:45,  top:130}}>
-                              <View style={{width:30, height:30, backgroundColor:'#808080', borderRadius:15, justifyContent:'center', alignItems:'center'}}>
-                                  <FontAwesomeIcon icon='pen' color='#F4B869'/>
-                              </View>
                           </TouchableOpacity>
+                          {/* <Image source={avatarSource} style={style.AvatarImg}/> */}
                           <Text style={style.name}>
                             {username}
                           </Text>

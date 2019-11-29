@@ -2,17 +2,25 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding1Styles';
 import { Actions } from 'react-native-router-flux';
+import LottieView from 'lottie-react-native';
+import { irBlack } from 'react-syntax-highlighter/dist/styles/hljs';
 
 function OnBoarding1({setNextPage}){
     return(
         // <View style={{justifyContent:'center',alignItems:'center'}}>
-        <View style={styles.container}>
-        
+        <View style={styles.container}>    
                 <Image 
                 source={require('../imgs/signUp.png')}
                 style={styles.signUp}
             />
-
+            <LottieView 
+                    // source={require('../animations/thirsty.json')}
+                    source={require('../animations/vectorFoodAnimations.json')}
+                    imageAssetsFolder={'../animations/vectorFoodAnimations.json'}
+                    autoPlay
+                    loop
+                    style={{width:1000, height:1000, position:'absolute', top:-40}}
+                /> 
             <View style={styles.content}>
                 <Text style={styles.contenttxt}>Sign up with Happihour to view all the best deals at your favourite restaurant, pub or bar.</Text>
                 <TouchableOpacity

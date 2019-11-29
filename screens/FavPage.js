@@ -16,6 +16,8 @@ function FavPage(){
       console.log("userid",id);
     }
 
+    const [Refresh, SetRefresh] = useState(false);
+
 
     var getFavRestaurants=async(id)=>{
 //use ip addres
@@ -41,8 +43,7 @@ function FavPage(){
          
                     
     }
-               
-
+    
     useEffect(()=>{
         getInfo()
     },[Refresh])
@@ -80,5 +81,4 @@ function FavPage(){
         </View>
     )
 }
-
 export default FavPage;

@@ -4,18 +4,20 @@ import style from '../styles/CompStyles/AddContact-popUp-style';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import Confirmation from './Confirmation-popUp';
 
-function AddContact({setShowPopUp2}){
+function AddContact({setShowPopUp2, setConfirmPop}){
 
     const [popUp, setPopUp] = useState(false);
     const [popUp2, setPopUp2] = useState(false);
     const [saveName, setSaveName] = useState('');
     const [saveContact, setSaveContact] = useState('');
 
+    // const [setShowPopUp, setShowPopUp] = useState(false);
+
     var changesPop = null;
     var saved = null;
 
     var CheckUserInfo=async()=>{
-        let response = await fetch('http://192.168.0.20/Happihour/Contact.php',{
+        let response = await fetch('http://142.232.52.8:8888/Happihour/backend/Contact.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -25,10 +27,19 @@ function AddContact({setShowPopUp2}){
                 name: saveName,
                 contact: saveContact
             })
-        })
+        })/*.then(response => response.json())
+        .then((responseJson)=>{
+            setPopUp2(true);
+        }).catch((error) => {
+            console.error(error);
+        })*/
 
         // data echoed out in php
         let data = await response.json()
+
+        if(response == 'success'){
+            setPopUp2(true);
+        }
 
     };
 
@@ -45,7 +56,7 @@ function AddContact({setShowPopUp2}){
                                 {/* <TextInput placeholder='Last Name' placeholderTextColor='white' style={style.input}/> */}
                                 <TextInput placeholder='Contact No.' placeholderTextColor='white' style={style.input} onChangeText={(text)=>{setSaveContact(text)}}/>
                                 
-                                <TouchableOpacity style={style.button} onPress={()=>([setPopUp(true), setPopUp2(true), setShowPopUp2(false)])}>
+                                <TouchableOpacity style={style.button} onPress={()=>([setPopUp(true), setShowPopUp2(false), setConfirmPop(false), CheckUserInfo()])}>
                                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>SAVE</Text>
                                 </TouchableOpacity>
                             </View>
@@ -59,7 +70,7 @@ function AddContact({setShowPopUp2}){
         saved = null;
     }else
     if(popUp2 === true){
-        saved = <Confirmation />
+        saved = <Confirmation setShowPopUp={setShowPopUp} />
     }
 
     return(
