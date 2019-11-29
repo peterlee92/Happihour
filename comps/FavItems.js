@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import style from '../styles/CompStyles/FavItemsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import styles from '../styles/AppStyle';
 import {Actions} from 'react-native-router-flux';
 
-function FavItems({name, address}) {
+function FavItems(props) {
     
     async function getInfo(){
         var data = await AsyncStorage.getItem("userinfo");
@@ -16,7 +16,7 @@ function FavItems({name, address}) {
       }
 
     var DeleteFav=async(id)=>{
-        let Favresponse = await fetch('http://192.168.0.12//Happihour/DeleteFav.php',{
+        let Favresponse = await fetch('http://192.168.0.20//Happihour/DeleteFav.php',{
 
             method:'POST',
             headers:{
@@ -25,7 +25,7 @@ function FavItems({name, address}) {
             },
             body: JSON.stringify({
                 user_id : id,
-                restaurantname:{name}
+                restaurantname:props.name
 
             })
         })

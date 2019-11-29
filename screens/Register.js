@@ -9,6 +9,7 @@ import {Actions} from 'react-native-router-flux';
 function Register(props){
 
     var refEmail = props.email;
+    var refAdd = props.address;
     var refPass = props.pass;
     var refConfPass = props.confPass;
 
@@ -31,6 +32,7 @@ function Register(props){
             </View>
                 <RegisterForm 
                 refEmail
+                refAdd
                 refPass
                 refConfPass/>
                 <TouchableOpacity 

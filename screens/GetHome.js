@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
-import {Text, View, Image, TouchableOpacity, ImageBackground, Linking} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {Text, View, Image, TouchableOpacity, ImageBackground, Linking, AsyncStorage} from 'react-native';
 import MenuBar from '../comps/MenuBar';
 import style from '../styles/ScreenStyles/GetHomeStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
-
-
 
 
 function GetHome(){
@@ -15,7 +13,6 @@ function GetHome(){
     const [confirmPop, setConfirmPop] = useState(true);
 
     // for edit account page
-
     const[ShowPopUp2, setShowPopUp2] = useState(false);
 
 
@@ -47,6 +44,47 @@ function GetHome(){
     } else {
         displayPop = null;
     }
+  
+   async function getInfo(){
+        var data = await AsyncStorage.getItem("userinfo");
+        data = JSON.parse(data);
+        var id = Number(data.info[0]['user_id']);
+        getUserAddress(id);
+        console.log("user id: ", id);
+      }
+  
+  var getUserAddress = async(id)=>{
+        let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
+            method:'POST',
+            headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id : id
+            })
+        })
+                                    
+        let data = await response.json()
+    
+        if(data == 'Your information is incorrect'){
+            Alert.alert(data);
+        }else {
+            var address = data['address'];
+            setUserAddress(address);
+            console.log("address ", address);
+    
+        }   
+    }
+   
+    
+    
+
+    useEffect(()=>{
+        getInfo();
+        getUserAddress();
+    },[]);
+
     return(
         <View style={style.container}>
             <ImageBackground 

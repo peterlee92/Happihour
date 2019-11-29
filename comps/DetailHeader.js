@@ -1,23 +1,80 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Image, ImageBackground, TouchableOpacity, Linking} from 'react-native';
+import {View, Text, Image, ImageBackground, TouchableOpacity, Linking, AsyncStorage} from 'react-native';
 import styles from '../styles/CompStyles/DetailheaderStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
+import getDirections from 'react-native-google-maps-directions'
 
 
 function DetailHeader (props){
 
     const [FavStatus, setFavStatus] = useState(false);
+    const [Userid, setUserid] = useState();
+    const [latlng, setlatlng] = useState([]);
+    const [imgurl, setimgurl] = useState();
 
-    var AddFav=async()=>{
-        let Favresponse = await fetch('http://142.232.152.36/Happihour/AddFav.php',{
+    var GrabInfo=async()=>{
+        console.log('work')
+        let locationresponse = await fetch('http://192.168.0.20/Happihour/Info.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                user_id:'1',
+                restaurantname:props.text
+            })
+        })
+
+        let data = await locationresponse.json();
+        setlatlng([data.latitude, data.longtitude]);
+        console.log(latlng)
+        console.log(data.img1)
+        setimgurl({uri:data.img1})
+        
+    } 
+ 
+    var handleGetDirections = async() => {
+
+        var data = {
+          destination: {
+            latitude: Number(latlng[0]),
+            longitude: Number(latlng[1])
+          },
+          params: [
+            {
+              key: "travelmode",
+              value: "transit"        // may be "walking", "bicycling" or "transit" as well
+            },
+            {
+              key: "dir_action",
+              value: "navigate"       // this instantly initializes navigation using the given travel mode
+            }
+          ]
+        }
+     
+        await getDirections(data)
+      }
+
+   
+
+      async function getInfo(){
+        var data = await AsyncStorage.getItem("userinfo");
+        data = JSON.parse(data);
+        const id = data.info[0]['user_id'];
+        CheckFav(id)
+        setUserid(id)
+      }
+
+    var AddFav=async()=>{
+        let Favresponse = await fetch('http://142.232.158.151/Happihour/AddFav.php',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id:Userid,
                 restaurantname:props.text
             })
         })
@@ -30,29 +87,29 @@ function DetailHeader (props){
     }
 
     var DeleteFav=async()=>{
-        let Deleteresponse = await fetch('http://142.232.152.36/Happihour/DeleteFav.php',{
+        let Deleteresponse = await fetch('http://142.232.158.151/Happihour/DeleteFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                user_id:'1',
+                user_id:Userid,
                 restaurantname:props.text
             })
         })
     }
 
     //favourtie icon check function
-    var CheckFav=async()=>{
-        let Checkresponse = await fetch('http://142.232.152.36/Happihour/CheckFav.php',{
+    var CheckFav=async(id)=>{
+        let Checkresponse = await fetch('http://142.232.158.151/Happihour/CheckFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                user_id:'1',
+                user_id:id,
                 restaurantname:props.text
             })
         })
@@ -66,6 +123,8 @@ function DetailHeader (props){
             }
     
     }
+
+    
 
     var FavIcon = null;
     if(FavStatus == false){
@@ -85,7 +144,7 @@ function DetailHeader (props){
                     width:50,
                     height:50,
                     paddingTop:3}}>
-                    <FontAwesomeIcon icon='heart' color={'white'} opacity={.9} size={30} />
+                    <FontAwesomeIcon icon='heart' color={'white'} opacity={.9} size={35} />
                 </View>
             </TouchableOpacity>
         )
@@ -96,34 +155,25 @@ function DetailHeader (props){
                 onPress={()=>{
                     setFavStatus(false)
                     DeleteFav()
-                }}
-            >
-                <View style={{        
-                    justifyContent:"center",
-                    alignItems:"center",
-                    backgroundColor:'#E03A2F',
-                    borderRadius:25,
-                    width:50,
-                    height:50,
-                    paddingTop:3}}>
-                    <FontAwesomeIcon icon='heart' color={'red'} size={40} />
-                </View>
+                }}>
+                    <FontAwesomeIcon icon='heart' color={'red'} size={50} />
             </TouchableOpacity>
         )
     } 
 
     useEffect(()=>{
-        CheckFav();
+        GrabInfo()
+        getInfo()
     },[])
 
     return(
         <ImageBackground 
             style={styles.container}
-            source={require('../imgs/colony.png')}
+            source={imgurl}
         >
             <View style={[styles.container, {backgroundColor:'rgba(0,0,0,0.4)'}]}>
-            <View style={styles.RSContainer}>  
-                <Text style={styles.RSname}>{props.text}</Text>
+            <View style={styles.RSContainer}>
+                <Text style={styles.RSname}>{props.text}</Text>  
                 <TouchableOpacity 
                     style={{position:'absolute', right:10, top:15}}
                     onPress={()=>{Actions.pop()}}
@@ -133,7 +183,7 @@ function DetailHeader (props){
             </View>
 
             <View style={styles.directionContainer}>
-                <TouchableOpacity style={styles.directionBut}>
+                <TouchableOpacity style={styles.directionBut} onPress={()=>{handleGetDirections()}}>
                     <FontAwesomeIcon icon='directions' size={20} color={'black'} style={{marginRight:5}}/>
                     <Text>GET DIRECTIONS</Text>
                 </TouchableOpacity>

@@ -14,7 +14,7 @@ function Map(props) {
     const [longti, setLongti] = useState(-123.0348778);
     const [lalngti, setlalngit] = useState([49.268245,-123.0348778])
     const [Fbutton, setFbutton] = useState(false);
-    const [Searchtxt, setSearchtxt] = useState()
+    const [Searchtxt, setSearchtxt] = useState();
 
     //filter buttons
     var FBut = null,
@@ -27,6 +27,18 @@ function Map(props) {
         Dtxt = 'white',
         Ttxt = 'white',
         Ltxt = 'white';
+
+    var googlemapref = React.createRef();
+
+    // var aniMap=(lat, long):void =>{
+    //     let r ={
+    //         latitude:lat,
+    //         longitude:long,
+    //         latitudeDelta: 0.0992,
+    //         longitudeDelta: 0.0421,
+    //     }
+    //     googlemapref.current.animateToRegion(r, 2000)
+    // }
 
     //button color if statement
     if(props.Timepop == true){
@@ -72,6 +84,12 @@ function Map(props) {
                             props.setDaypop(true);
                             props.setTimepop(false);
                             props.setLocationpop(false);
+                            props.Mapref.current.animateToRegion({
+                                latitude:12,
+                                longitude:-123,
+                                latitudeDelta: 0.0992,
+                                longitudeDelta: 0.0421,
+                              })
                             }}>
                         <Text style={[styles.buttontxt,{color:Dtxt}]}>{props.Daytxt}</Text>
                     </TouchableOpacity>
@@ -104,12 +122,7 @@ function Map(props) {
     }
    
  
-    var initialregion = {
-        latitude: lati,
-        longitude: longti,
-        latitudeDelta: 0.09222,
-        longitudeDelta: 0.0421
-    }
+
 
     //the function that grabs the current location
     async function getLoc(){
@@ -130,9 +143,11 @@ function Map(props) {
                 console.log('You can use the map');
                 Geolocation.getCurrentPosition(
                     position => {
-                        setLati(position.coords.latitude)
-                        setLongti(position.coords.longitude)
-                    }
+                        console.log(position)
+                        setlalngit([position.coords.latitude,position.coords.longitude])
+                    },
+                    error=>{console.log(error)},
+                    {enableHighAccuracy:true, timeout:20000, maximumAge:1000}
                 )
             } else {
                 console.log('geolcation permission denied');
@@ -143,11 +158,11 @@ function Map(props) {
     }
 
     var SearchFilter=async(Svalue)=>{
-
+    
         if(Svalue == "" || Svalue == " " || Svalue == "  "){
             props.setSfilter([]);
         }else{
-            let searchresponse =await fetch('http://142.232.150.227/Happihour/SearchFilter.php',{
+            let searchresponse =await fetch('http://192.168.0.20/Happihour/SearchFilter.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -175,7 +190,8 @@ function Map(props) {
 
     var markers = [];
     if(props.Sfilter.length <=0 && 0 < props.DLTfilter.length){
-        // setlalngit([props.DLTfilter[1].latitude, props.DLTfilter[1].longitude])
+        // aniMap(props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude)
+        // setlalngit([props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude])
         for(var i = 0; i < props.DLTfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var tmarkers = (
@@ -193,7 +209,8 @@ function Map(props) {
                     >
                         <Popup 
                             name={props.DLTfilter[i].name}
-                            address={props.DLTfilter[i].address}
+                            img1={props.DLTfilter[i].img1}
+                            img2={props.DLTfilter[i].img2}
                         />
                     </Callout>
                 </Marker>
@@ -201,7 +218,7 @@ function Map(props) {
             markers.push(tmarkers)
         }
     }else if(props.DLTfilter.length <=0 && 0 < props.Sfilter.length){
-        // setlalngit([propsSfilter[1].latitude, propsSfilter[1].longitude])
+        // setlalngit([propsSfilter[0].latitude, propsSfilter[0].longitude])
         for(var i = 0; i < props.Sfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var smarkers = (
@@ -209,7 +226,7 @@ function Map(props) {
                     key={i}
                     coordinate={{
                         latitude:Number(props.Sfilter[i].latitude),
-                        longitude:Number(props.Sfilter[i].longtitude)
+                        longitude:Number(props.Sfilter[i].longitude)
                     }}
                     image={require('../imgs/pin.png')}
                 >
@@ -219,7 +236,8 @@ function Map(props) {
                     >
                         <Popup 
                             name={props.Sfilter[i].name}
-                            address={props.Sfilter[i].address}
+                            img1={props.DLTfilter[i].img1}
+                            img2={props.DLTfilter[i].img2}
                         />
                     </Callout>
                 </Marker>
@@ -231,23 +249,22 @@ function Map(props) {
     
 
     useEffect(() => {
-        // getLoc();
+        getLoc();
     
     }, []);
 
     return (
         <View style={styles.container}>
-
             <MapView
+                ref={props.Mapref}
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
                 region={{
-                    latitude:lalngti[0],
-                    longitude:lalngti[1],
+                    latitude:lati,
+                    longitude:longti,
                     latitudeDelta: 0.0992,
                     longitudeDelta: 0.0421,
-                  }}
-                
+                  }}    
                 showsUserLocation={true}
                 zoomEnabled={true}
                 followsUserLocation={true}
@@ -259,7 +276,6 @@ function Map(props) {
            {markers}
                
             </MapView>
-
             <View style={styles.searchContainer}>
             <FontAwesomeIcon icon="search" color={"rgba(0,0,0,0.6)"} size={20} style={{position:'absolute',left:30,elevation:20}}/>
                 <TextInput 
