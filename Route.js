@@ -29,7 +29,7 @@ function Route(){
     return(
         <Router>
             <Stack key="root" hideNavBar={true}>
-            <Scene key="login" component={Login} title="Login" initial={true}/>
+            <Scene key="login" component={Login} title="Login" />
             <Scene key="register" component={Register} title="Register" />
             <Scene key="favPage" component={FavPage} title="favPage"  />
             <Scene key="getHome" component={GetHome} title="GetHome" />
@@ -48,7 +48,7 @@ function Route(){
             <Scene key="board3" component={OnBoarding3} title="Board3" />
             <Scene key="board4" component={OnBoarding4} title="Board4" />
             <Scene key="onboarding" component={OnBoardingPage} title="Onboarding" />
-            <Scene key="loading" component={Loading} title="Loading" />
+            <Scene key="loading" component={Loading} title="Loading" initial={true}/>
         </Stack>
         </Router>
     )

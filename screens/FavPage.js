@@ -17,8 +17,6 @@ function FavPage(){
       console.log("userid",id);
     }
 
-    const [Refresh, SetRefresh] = useState(false);
-
 
     var getFavRestaurants=async(id)=>{
 //use ip addres
