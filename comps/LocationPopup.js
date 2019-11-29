@@ -5,10 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 function LocationPopup(props){
 
+    // var moveMap=(lat, long)=>{
+    //     mapref.current.animateToRegion({
+    //         latitude:lat,
+    //         longitude:long,
+    //         latitudeDelta: 0.0992,
+    //         longitudeDelta: 0.0421,
+    //       })
+    // }
+
     var LocationFilter=async(location)=>{
         console.log(location)
         console.log(props.Dayvalue)
-        let locationresponse = await fetch('http://142.232.150.227/Happihour/DLTFilter.php',{
+        let locationresponse = await fetch('http://192.168.0.20/Happihour/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -30,7 +39,7 @@ function LocationPopup(props){
             props.setSfilter([]);
         }
         console.log(locationdata);
-   
+  
     }
 
     return(
@@ -53,10 +62,16 @@ function LocationPopup(props){
                     <View style={{justifyContent:'center',alignItems:'center'}}>
                         <TouchableOpacity
                             onPress={()=>{
+                                LocationFilter('West-End')
                                 props.setLocationpop(false)
                                 props.setLocationvalue('West-End')
                                 props.setLocationtxt('West-End')
-                                LocationFilter('West-End')
+                                props.Mapref.current.animateToRegion({
+                                            latitude:props.DLTfilter[0].latitude,
+                                            longitude:props.DLTfilter[0].longtitude,
+                                            latitudeDelta: 0.0992,
+                                            longitudeDelta: 0.0421,
+                                          })
                              
                             }}
                             style={styles.locationwrap}
