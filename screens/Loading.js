@@ -5,11 +5,11 @@ import LottieView from 'lottie-react-native';
 
 export default class Loading extends Component {
 
-    componentDidMount(){
-        setTimeout(() => {
-        Actions.onboarding();
-        }, 5000);
-    }
+    // componentDidMount(){
+    //     setTimeout(() => {
+    //     Actions.onboarding();
+    //     }, 5000);
+    // }
 
     render(){
     return(
