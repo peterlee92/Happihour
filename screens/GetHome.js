@@ -14,6 +14,10 @@ function GetHome(){
     const [contactPop, setContactPop] = useState(false);
     const [confirmPop, setConfirmPop] = useState(true);
 
+    // for edit account page
+
+    const[ShowPopUp2, setShowPopUp2] = useState(false);
+
 
     var CheckUserInfo=async()=>{
         let response = await fetch('http://142.232.52.8:8888/Happihour/backend/Contact.php',{
@@ -38,7 +42,7 @@ function GetHome(){
     if(contactPop == true){
         displayPop = 
         <View style={{width:'100%', height:'100%', position:'absolute',marginTop:100}}>
-            <AddContact setConfirmPop={setConfirmPop}/>
+            <AddContact setConfirmPop={setConfirmPop} setShowPopUp2={setShowPopUp2}/>
         </View>
     } else {
         displayPop = null;

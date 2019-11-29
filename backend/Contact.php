@@ -21,16 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   } else
   // Adds emergency contact information to database
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+    
     $json = file_get_contents('php://input');
     $obj = json_decode($json,true);
-    
+
     $name = $obj['name'];
     $contact = $obj['contact'];
 
-    $sql = "INSERT INTO contact(name, contact) VALUES ($name, $contact)";
+    console.log($name, $contact);
+    $sql = "INSERT INTO contact(name, contact) VALUES ('$name', '$contact')";
 
     $result = runQuery($sql);
-
-    echo json_encode('success');
+    if($result ->num_rows>0){
+      echo json_encode('success');
+    }
   }
