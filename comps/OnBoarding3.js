@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding3Styles';
 import { Actions } from 'react-native-router-flux';
+import LottieView from 'lottie-react-native';
+
 
 function OnBoarding3({setNextPage}){
     return(
@@ -11,6 +13,14 @@ function OnBoarding3({setNextPage}){
                 source={require('../imgs/connect.png')}
                 style={styles.connect}
             />
+            <LottieView 
+                    // source={require('../animations/thirsty.json')}
+                    source={require('../animations/connectAnimation.json')}
+                    imageAssetsFolder={'../connectAnimation.json'}
+                    autoPlay
+                    loop
+                    style={{width:900, height:900, position:'absolute', top:-120, elevation:3}}
+                /> 
 
             <View style={styles.content}>
                 <Text style={styles.contenttxt}>Connect with friends, family and colleagues over affordable food and drinks. Happihour's are best spent, shared. </Text>
