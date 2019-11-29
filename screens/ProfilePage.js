@@ -18,7 +18,8 @@ import localdata from '../localstorage.json';
 function ProfilePage(){
   const [username, setUsername] = useState();
   const [userid, setUserid] = useState();
-
+  const [Imgurl, setImgurl] = useState();
+  
   async function getInfo(id, name){
     var data = await AsyncStorage.getItem("userinfo");
     data = JSON.parse(data);
@@ -26,7 +27,20 @@ function ProfilePage(){
     setUsername(data.info[0]['user_name']);
   }
 
-  const [Imgurl, setImgurl] = useState();
+  async function getPhoto(){
+    var img = await AsyncStorage.getItem("userphoto");
+    img = JSON.parse(img);
+    setImgurl(img);
+    console.log("get photo",img);
+  }
+
+  async function signOut(){
+    await AsyncStorage.removeItem("userinfo");
+    await AsyncStorage.removeItem("userphoto");
+    var data = await AsyncStorage.getItem("userinfo");
+    console.log("clear storage", data);
+    Actions.login();
+  }
 
 // More info on all the options is below in the API Reference... just some common use cases shown here
 const options = {
@@ -57,14 +71,17 @@ const options = {
   
       // You can also display the image using data:
       // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-      console.log("work",source)
+      console.log("img source", source)
       setImgurl(source);
+      // setProfilePhoto(source);
+      AsyncStorage.setItem("userphoto", JSON.stringify(source));
     }
   });   
   }
 
     useEffect(()=>{
         getInfo();
+        getPhoto();
     },[]);
     return(
         <View style={style.container}>
@@ -104,7 +121,9 @@ const options = {
                   </View>
               </TouchableOpacity>
 
-              <TouchableOpacity style={style.titleIcon}>
+              <TouchableOpacity style={style.titleIcon}
+                 onPress={signOut}
+              >
                   <View style={style.SignOutbox}>
                       <Text style={style.SignOutTitles}>Sign Out</Text>
                   </View>
