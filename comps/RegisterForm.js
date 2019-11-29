@@ -9,6 +9,7 @@ function RegisterForm(){
 
     const [username, Setusername] = useState();
     const [useremail, Setuseremail] = useState();
+    const [useraddress, Setuseraddress] = useState();
     const [userpassword, Setuserpassword] = useState();
     const [confirmpassword, Setconfirmpassword] = useState();
 
@@ -17,7 +18,7 @@ function RegisterForm(){
         // if(username = ""){
             
         // }
-        fetch('http://142.232.156.7/Happihour/Register.php',{
+        fetch('http://192.168.0.12/Happihour/Register.php',{
              method:'POST',
              headers:{
                 'Accept': 'application/json',
@@ -26,6 +27,7 @@ function RegisterForm(){
              body: JSON.stringify({
                  username: username,
                  email: useremail,
+                 address: useraddress,
                  password: userpassword,
                  checkpassword: confirmpassword
              })
@@ -88,9 +90,26 @@ function RegisterForm(){
                                 blurOnSubmit={false}
                                 returnKeyType='next'
                                 ref={(i)=>{refEmail = i}}
-                                onSubmitEditing = {()=> refPass.focus()}
+                                onSubmitEditing = {()=> refAdd.focus()}
                             />
                         </View>
+                        <View style={styles.inputContainer}>
+                            <FontAwesomeIcon icon="home" size={28} color={"white"} style={styles.inputIcon} />
+                            <TextInput 
+                                placeholder="Address, City"
+                                returnKeyType="next"
+                                autoCapitalize ="none"
+                                autoCorrect={false}
+                                style={[styles.input,{borderBottomColor:"rgba(255,255,255,0.4)"}]}
+                                underlineColorAndroid = "transparent"
+                                placeholderTextColor="rgba(255,255,255,0.5)"
+                                onChangeText = {(text)=>{Setuseraddress(text)}}
+                                blurOnSubmit={false}
+                                returnKeyType='next'
+                                ref={(i)=>{refAdd = i}}
+                                onSubmitEditing = {()=> refPass.focus()}
+                            />
+                        </View>                        
                         <View style={styles.inputContainer}>
                             <FontAwesomeIcon icon="lock" size={28} color={"white"} style={styles.inputIcon} />
                             <TextInput 
