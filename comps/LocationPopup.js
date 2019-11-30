@@ -5,15 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 function LocationPopup(props){
 
-    // var moveMap=(lat, long)=>{
-    //     mapref.current.animateToRegion({
-    //         latitude:lat,
-    //         longitude:long,
-    //         latitudeDelta: 0.0992,
-    //         longitudeDelta: 0.0421,
-    //       })
-    // }
-
     var LocationFilter=async(location)=>{
         console.log(location)
         console.log(props.Dayvalue)

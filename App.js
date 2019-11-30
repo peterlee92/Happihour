@@ -88,7 +88,7 @@ function App() {
 
   return (
 
-    <MapPage />
+    <Route />
 
   );
 };

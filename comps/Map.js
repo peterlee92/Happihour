@@ -30,7 +30,6 @@ function Map(props) {
 
     var mapref = React.createRef();
 
-
     //button color if statement
     if(props.Timepop == true){
         Tcolor = "#fed873";
@@ -175,12 +174,7 @@ function Map(props) {
 
     var markers = [];
     if(props.Sfilter.length <=0 && 0 < props.DLTfilter.length){
-        // mapref.current.animateToRegion({
-        //             latitude:props.DLTfilter[0].latitude,
-        //             longitude:props.DLTfilter[0].longtitude,
-        //             latitudeDelta: 0.0992,
-        //             longitudeDelta: 0.0421,
-        //           })
+       
         // setlalngit([props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude])
         for(var i = 0; i < props.DLTfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
@@ -240,8 +234,16 @@ function Map(props) {
 
     useEffect(() => {
         getLoc();
-    
     }, []);
+
+    // useEffect(() => {
+    //     mapref.current.animateToRegion({
+    //         latitude:Number(props.DLTfilter[0].latitude),
+    //         longitude:Number(props.DLTfilter[0].longtitude),
+    //         latitudeDelta: 0.0992,
+    //         longitudeDelta: 0.0421,
+    //       })
+    // }, [props.DLTfilter]);
 
     return (
         <View style={styles.container}>
