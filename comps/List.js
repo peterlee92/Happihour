@@ -34,7 +34,6 @@ export default function List(props) {
             }
             slidingPanelLayout = { () =>
                 <View style={[styles.slidingPanelLayoutStyle, {marginTop:50, bottom:40, elevation:90}]}>
-             <SafeAreaView>
                  <ScrollView>
                     {
                       props.Sfilter.map((obj,i)=>{
@@ -42,6 +41,8 @@ export default function List(props) {
                           key={i}
                           name={obj.name}
                           address={obj.address}
+                          img1={obj.img1}
+                          img2={obj.img2}
                         />
                       })
                     }
@@ -51,12 +52,13 @@ export default function List(props) {
                           key={i}
                           name={obj.name}
                           address={obj.address}
+                          img1={obj.img1}
+                          img2={obj.img2}
                         />
                       })
                     }
                     
                 </ScrollView>
-               </SafeAreaView>
                 </View>
             }
         />

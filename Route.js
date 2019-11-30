@@ -22,6 +22,7 @@ import OnBoarding2 from './comps/OnBoarding2';
 import OnBoarding3 from './comps/OnBoarding3';
 import OnBoarding4 from './comps/OnBoarding4';
 import OnBoardingPage from './screens/OnBoardingPage';
+import Loading from './screens/Loading';
 
 
 function Route(){
@@ -37,9 +38,7 @@ function Route(){
             <Scene key='contactUs' component={ContactUs} title="ContactUs" />
             <Scene key='taxi' component={Taxi} title="Taxi" />
             <Scene key='transit' component={Transit} title="Transit" />
-            <Scene key='map' component={MapPage} title="map" />
-            <Scene key='transit' component={Transit} title="Transit" />
-            <Scene key="mappage" component={MapPage} title="MapPage" />
+            <Scene key="mappage" component={MapPage} title="MapPage" initial={true}/>
             <Scene key="detail" component={Detail} title="Detail" />
             <Scene key="forgotPassword" component={ForgotPassword} title="ForgotPassword" />
             <Scene key="execInfo" component={ExecInfo} title="ExecInfo" />
@@ -48,7 +47,8 @@ function Route(){
             <Scene key="board2" component={OnBoarding2} title="Board2" />
             <Scene key="board3" component={OnBoarding3} title="Board3" />
             <Scene key="board4" component={OnBoarding4} title="Board4" />
-            <Scene key="onboarding" component={OnBoardingPage} title="Onboarding" initial={true}/>
+            <Scene key="onboarding" component={OnBoardingPage} title="Onboarding" />
+            <Scene key="loading" component={Loading} title="Loading" />
         </Stack>
         </Router>
     )

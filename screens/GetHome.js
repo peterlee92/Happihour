@@ -7,45 +7,53 @@ import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
 
 
-var CheckUserInfo=async()=>{
-    let response = await fetch('http://192.168.0.12/Happihour/Contact.php',{
-        method:'GET',
-        headers:{
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            user_id: '1'
-        })
-    })
-
-    let data = await response.json()
-
-    if(data !== 'ok'){
-        displayPop = <AddContact />
-    }else {
-        Linking.openURL(data.contact);
-    }
-};
-
-
-
 function GetHome(){
 
-    const [userid, setUserid] = useState();
-    const [userAddress, setUserAddress] = useState();
+    const [contactPop, setContactPop] = useState(false);
+    const [confirmPop, setConfirmPop] = useState(true);
+
+    // for edit account page
+    const[ShowPopUp2, setShowPopUp2] = useState(false);
+
+
+    var CheckUserInfo=async()=>{
+        let response = await fetch('http://142.232.52.8:8888/Happihour/backend/Contact.php',{
+            method:'GET',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
     
+        let data = await response.json()
+
+        if(data == 'none'){
+            setContactPop(true);
+        }else {
+            Linking.openURL(data);
+        }
+    };
+
     var displayPop = null;
-    
-    async function getInfo(){
+
+    if(contactPop == true){
+        displayPop = 
+        <View style={{width:'100%', height:'100%', position:'absolute',marginTop:100}}>
+            <AddContact setConfirmPop={setConfirmPop} setShowPopUp2={setShowPopUp2}/>
+        </View>
+    } else {
+        displayPop = null;
+    }
+  
+   async function getInfo(){
         var data = await AsyncStorage.getItem("userinfo");
         data = JSON.parse(data);
         var id = Number(data.info[0]['user_id']);
         getUserAddress(id);
         console.log("user id: ", id);
       }
-    
-    var getUserAddress = async(id)=>{
+  
+  var getUserAddress = async(id)=>{
         let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
             method:'POST',
             headers:{
@@ -68,6 +76,9 @@ function GetHome(){
     
         }   
     }
+   
+    
+    
 
     useEffect(()=>{
         getInfo();

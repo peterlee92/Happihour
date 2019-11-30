@@ -23,12 +23,13 @@ function MapPage(){
     const [Timetxt,setTimetxt] = useState('Time');
     const [Locationtxt,setLocationtxt] = useState('Location');
     const [Searchvalue, setSearchvalue] = useState();
+    const [Mapref, setMapref] =useState(React.createRef())
 
-    const DissmissKeyboard = ({children}) => (
-        <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
-            {children}
-        </TouchableWithoutFeedback>
-    )
+    // const DissmissKeyboard = ({children}) => (
+    //     <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
+    //         {children}
+    //     </TouchableWithoutFeedback>
+    // )
   
 
     var showpopup = null;
@@ -50,6 +51,7 @@ function MapPage(){
             <LocationPopup 
                 setLocationpop={setLocationpop}
                 setDLTfilter={setDLTfilter}
+                DLTfilter={DLTfilter}
                 Locationvalue={Locationvalue}
                 Timevalue={Timevalue}
                 Dayvalue={Dayvalue}
@@ -57,6 +59,7 @@ function MapPage(){
                 setSfilter={setSfilter}
                 setLocationtxt={setLocationtxt}
                 setSearchvalue={setSearchvalue}
+                Mapref={Mapref}
             />
         )
     }else if(Daypop == true){
@@ -79,7 +82,6 @@ function MapPage(){
     }
 
     return(
-        <DissmissKeyboard>
         <View style={{flex:1, backgroundColor:'#ECE9E1'}}>       
             <Map 
                 setTimepop={setTimepop}
@@ -97,6 +99,7 @@ function MapPage(){
                 Locationtxt={Locationtxt}
                 setSearchvalue={setSearchvalue}
                 Searchvalue={Searchvalue}
+                Mapref={Mapref}
             />
 
             <List 
@@ -113,7 +116,7 @@ function MapPage(){
             {showpopup}
 
         </View>
-        </DissmissKeyboard>
+
     )
 }
 

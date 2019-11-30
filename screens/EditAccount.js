@@ -27,10 +27,13 @@ function EditAccount(){
 
     const[ShowPopUp2, setShowPopUp2] = useState(false);
 
+    // for get home page
+    const [confirmPop, setConfirmPop] = useState(true);
+
     var emergency = null;
 
     if(ShowPopUp2 == true){
-        emergency = <AddContact setShowPopUp2={setShowPopUp2}/>
+        emergency = <AddContact setShowPopUp2={setShowPopUp2} setConfirmPop={setConfirmPop}/>
     } else{
         emergency = null;
     }
