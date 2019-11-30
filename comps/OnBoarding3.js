@@ -14,7 +14,6 @@ function OnBoarding3({setNextPage}){
                 style={styles.connect}
             />
             <LottieView 
-                    // source={require('../animations/thirsty.json')}
                     source={require('../animations/connectAnimation.json')}
                     imageAssetsFolder={'../connectAnimation.json'}
                     autoPlay

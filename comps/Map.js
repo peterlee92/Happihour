@@ -28,17 +28,8 @@ function Map(props) {
         Ttxt = 'white',
         Ltxt = 'white';
 
-    var googlemapref = React.createRef();
+    var mapref = React.createRef();
 
-    // var aniMap=(lat, long):void =>{
-    //     let r ={
-    //         latitude:lat,
-    //         longitude:long,
-    //         latitudeDelta: 0.0992,
-    //         longitudeDelta: 0.0421,
-    //     }
-    //     googlemapref.current.animateToRegion(r, 2000)
-    // }
 
     //button color if statement
     if(props.Timepop == true){
@@ -84,12 +75,6 @@ function Map(props) {
                             props.setDaypop(true);
                             props.setTimepop(false);
                             props.setLocationpop(false);
-                            props.Mapref.current.animateToRegion({
-                                latitude:12,
-                                longitude:-123,
-                                latitudeDelta: 0.0992,
-                                longitudeDelta: 0.0421,
-                              })
                             }}>
                         <Text style={[styles.buttontxt,{color:Dtxt}]}>{props.Daytxt}</Text>
                     </TouchableOpacity>
@@ -190,7 +175,12 @@ function Map(props) {
 
     var markers = [];
     if(props.Sfilter.length <=0 && 0 < props.DLTfilter.length){
-        // aniMap(props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude)
+        // mapref.current.animateToRegion({
+        //             latitude:props.DLTfilter[0].latitude,
+        //             longitude:props.DLTfilter[0].longtitude,
+        //             latitudeDelta: 0.0992,
+        //             longitudeDelta: 0.0421,
+        //           })
         // setlalngit([props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude])
         for(var i = 0; i < props.DLTfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
@@ -256,7 +246,7 @@ function Map(props) {
     return (
         <View style={styles.container}>
             <MapView
-                ref={props.Mapref}
+                ref={mapref}
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
                 region={{

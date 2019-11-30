@@ -66,12 +66,6 @@ function LocationPopup(props){
                                 props.setLocationpop(false)
                                 props.setLocationvalue('West-End')
                                 props.setLocationtxt('West-End')
-                                props.Mapref.current.animateToRegion({
-                                            latitude:props.DLTfilter[0].latitude,
-                                            longitude:props.DLTfilter[0].longtitude,
-                                            latitudeDelta: 0.0992,
-                                            longitudeDelta: 0.0421,
-                                          })
                              
                             }}
                             style={styles.locationwrap}

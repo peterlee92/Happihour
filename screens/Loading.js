@@ -36,10 +36,10 @@ export default class Loading extends Component {
                         color:'white',
                         fontFamily:'Nunito-Regular',
                         marginBottom:140
-                    }}
-                >FIND YOUR PERFECT</Text>
+                    }}>
+                        FIND YOUR PERFECT
+                </Text>
                 <LottieView 
-                    // source={require('../animations/thirsty.json')}
                     source={require('../animations/logoanimationFriday.json')}
                     imageAssetsFolder={'../animations/logoanimationFriday.json'}
                     autoPlay
