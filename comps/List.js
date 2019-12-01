@@ -13,6 +13,7 @@ import {
 const { width, height } = Dimensions.get('window');
 
 import SlidingPanel from 'react-native-sliding-up-down-panels';
+import FavItems from './FavItems';
 
 
 export default function List(props) {
@@ -33,7 +34,7 @@ export default function List(props) {
                 </View>
             }
             slidingPanelLayout = { () =>
-                <View style={[styles.slidingPanelLayoutStyle, {marginTop:50, bottom:40, elevation:90}]}>
+                <View style={[styles.slidingPanelLayoutStyle, {marginTop:50, bottom:40, elevation:90, paddingBottom:150}]}>
                  <ScrollView>
                     {
                       props.Sfilter.map((obj,i)=>{
