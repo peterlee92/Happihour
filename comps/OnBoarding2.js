@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import LottieView from 'lottie-react-native';
 
 
-function OnBoarding2({setNextPage}){
+function OnBoarding2(){
     return(
         <View style={styles.container}>
 
@@ -14,18 +14,17 @@ function OnBoarding2({setNextPage}){
                 style={styles.discover}
                 />
             <LottieView 
-                    // source={require('../animations/thirsty.json')}
-                    source={require('../animations/planetAnimation.json')}
-                    imageAssetsFolder={'../planetAnimation.json'}
+                    source={require('../animations/Discover.json')}
+                    imageAssetsFolder={'../Discover.json'}
                     autoPlay
                     loop
-                    style={{width:1000, height:1000, position:'absolute', top:-115, elevation:3}}
+                    style={{width:1000, height:1000, position:'absolute', top:-140, elevation:3}}
                 /> 
             <View style={styles.content}>
                 <Text style={styles.contenttxt}>Search by day, time of day or location and discover new food and drinks deals in your neighbourhood and beyond!</Text>
                 <TouchableOpacity
                     style={styles.NextBut}
-                    onPress={()=>(setNextPage(2))}
+                    onPress={()=>(Actions.board3())}
                 >
                     <Text style={styles.NextTxt}>Next</Text>
                 </TouchableOpacity>

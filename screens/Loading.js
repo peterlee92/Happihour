@@ -5,11 +5,11 @@ import LottieView from 'lottie-react-native';
 
 export default class Loading extends Component {
 
-    // componentDidMount(){
-    //     setTimeout(() => {
-    //     Actions.onboarding();
-    //     }, 5000);
-    // }
+    componentDidMount(){
+        setTimeout(() => {
+        Actions.board1();
+        }, 4250);
+    }
 
     render(){
     return(
@@ -36,10 +36,10 @@ export default class Loading extends Component {
                         color:'white',
                         fontFamily:'Nunito-Regular',
                         marginBottom:140
-                    }}
-                >FIND YOUR PERFECT</Text>
+                    }}>
+                        FIND YOUR PERFECT
+                </Text>
                 <LottieView 
-                    // source={require('../animations/thirsty.json')}
                     source={require('../animations/logoanimationFriday.json')}
                     imageAssetsFolder={'../animations/logoanimationFriday.json'}
                     autoPlay

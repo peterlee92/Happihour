@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import LottieView from 'lottie-react-native';
 
 
-function OnBoarding3({setNextPage}){
+function OnBoarding3(){
     return(
         <View style={styles.container}>
 
@@ -14,9 +14,8 @@ function OnBoarding3({setNextPage}){
                 style={styles.connect}
             />
             <LottieView 
-                    // source={require('../animations/thirsty.json')}
                     source={require('../animations/connectAnimation.json')}
-                    imageAssetsFolder={'../connectAnimation.json'}
+                    imageAssetsFolder={'../animations/connectAnimation.json'}
                     autoPlay
                     loop
                     style={{width:900, height:900, position:'absolute', top:-120, elevation:3}}
@@ -26,7 +25,7 @@ function OnBoarding3({setNextPage}){
                 <Text style={styles.contenttxt}>Connect with friends, family and colleagues over affordable food and drinks. Happihour's are best spent, shared. </Text>
                 <TouchableOpacity
                     style={styles.NextBut}
-                    onPress={()=>(setNextPage(3))}
+                    onPress={()=>(Actions.board4())}
                 >
                     <Text style={styles.NextTxt}>Next</Text>
                 </TouchableOpacity>
