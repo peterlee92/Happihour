@@ -5,7 +5,7 @@ import {Actions} from 'react-native-router-flux';
 import LottieView from 'lottie-react-native';
 
 
-function OnBoarding3(){
+function OnBoarding4(){
     return(
         <View style={styles.container}>
                 <Image 
@@ -13,7 +13,6 @@ function OnBoarding3(){
                 style={styles.behappy}
             />
             <LottieView 
-                    // source={require('../animations/thirsty.json')}
                     source={require('../animations/vectorBeHappyAnimations.json')}
                     imageAssetsFolder={'../animations/vectorBeHappyAnimations.json'}
                     autoPlay
@@ -33,4 +32,4 @@ function OnBoarding3(){
     )
 }
 
-export default OnBoarding3;
+export default OnBoarding4;

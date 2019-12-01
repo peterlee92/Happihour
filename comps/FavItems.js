@@ -1,22 +1,27 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, AsyncStorage} from 'react-native';
 import style from '../styles/CompStyles/FavItemsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import styles from '../styles/AppStyle';
 import {Actions} from 'react-native-router-flux';
 
 function FavItems(props) {
+
+    var Image1 = {uri:props.img1}
+    var Image2 = {uri:props.img2}
+
+    const [userid, Setuserid] = useState();
     
     async function getInfo(){
         var data = await AsyncStorage.getItem("userinfo");
         data = JSON.parse(data);
         var id = Number(data.info[0]['user_id'])
-        getFavRestaurants(id)
+        Setuserid(id)
         console.log("userid",id);
       }
 
-    var DeleteFav=async(id)=>{
-        let Favresponse = await fetch('http://192.168.0.20//Happihour/DeleteFav.php',{
+    var DeleteFav=async()=>{
+        let Favresponse = await fetch('http://142.232.158.151//Happihour/DeleteFav.php',{
 
             method:'POST',
             headers:{
@@ -24,7 +29,7 @@ function FavItems(props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                user_id : id,
+                user_id : userid,
                 restaurantname:props.name
 
             })
@@ -42,11 +47,11 @@ function FavItems(props) {
             <View style={style.container}>
                 <View style={style.imgPosition}>
                     <Image 
-                        source={require('../imgs/colony1.png')}
+                        source={Image1}
                         style={style.img}
                     />
                     <Image 
-                        source={require('../imgs/colony2.png')} 
+                        source={Image2} 
                         style={style.img2}
                     />
                     <TouchableOpacity 
