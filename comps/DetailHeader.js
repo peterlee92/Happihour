@@ -15,7 +15,7 @@ function DetailHeader (props){
 
     var GrabInfo=async()=>{
         console.log('work')
-        let locationresponse = await fetch('http://192.168.0.20/Happihour/Info.php',{
+        let locationresponse = await fetch('http://142.232.158.151/Happihour/Info.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

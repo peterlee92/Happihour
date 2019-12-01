@@ -41,7 +41,7 @@ function LoginForm(props){
         }else{ 
 
                                         //use ip address
-            let response = await fetch('http://142.232.63.126/Happihour/Login.php',{
+            let response = await fetch('http://142.232.158.151/Happihour/Login.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',

@@ -3,18 +3,15 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding1Styles';
 import { Actions } from 'react-native-router-flux';
 import LottieView from 'lottie-react-native';
-import { irBlack } from 'react-syntax-highlighter/dist/styles/hljs';
 
 function OnBoarding1({setNextPage}){
     return(
-        // <View style={{justifyContent:'center',alignItems:'center'}}>
         <View style={styles.container}>    
                 <Image 
                 source={require('../imgs/signUp.png')}
                 style={styles.signUp}
             />
             <LottieView 
-                    // source={require('../animations/thirsty.json')}
                     source={require('../animations/vectorFoodAnimations.json')}
                     imageAssetsFolder={'../animations/vectorFoodAnimations.json'}
                     autoPlay
@@ -36,7 +33,6 @@ function OnBoarding1({setNextPage}){
                 </TouchableOpacity>
             </View>
         </View>
-        // </View>
     )
 }
 
