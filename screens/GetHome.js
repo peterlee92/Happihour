@@ -32,7 +32,8 @@ function GetHome(){
         if(data == 'none'){
             setContactPop(true);
         }else {
-            Linking.openURL(data);
+            console.log(data[0].contact);
+            Linking.openURL(data[0].contact);
         }
     };
 

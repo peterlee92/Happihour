@@ -25,7 +25,8 @@ function AddContact({setShowPopUp2, setConfirmPop, setContactPop}){
             },
             body: JSON.stringify({
                 name: saveName,
-                contact: saveContact
+                contact: saveContact,
+                user_id: 1
             })
         })/*.then(response => response.json())
         .then((responseJson)=>{
