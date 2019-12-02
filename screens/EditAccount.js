@@ -6,12 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
 
-function EditAccount(){
+function EditAccount(props){
     const [userid, setUserid] = useState();
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const[address, setUserAddress] = useState();
     const [password, setPassword] = useState();
+    const [confirmPass, setConfirmPass] = useState();
     const [Imgurl, setImgurl] = useState();
   
     const[ShowPopUp, setShowPopUp] = useState(false);
@@ -80,7 +81,7 @@ function EditAccount(){
     }
 
     var updateUserInfo = async(id)=>{
-        let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
+        let response = await fetch('http://192.168.0.12/Happihour/updateUserInfo.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -89,10 +90,10 @@ function EditAccount(){
             body: JSON.stringify({
                 user_id : id,
                 username: username,
-                email: useremail,
-                address: useraddress,
-                password: userpassword,
-                checkpassword: confirmpassword
+                email: email,
+                address: address,
+                password: password,
+                confirmpassword: confirmPass
             })
         })
                                     
@@ -132,7 +133,8 @@ function EditAccount(){
                       placeholder="username"
                       placeholderTextColor="#f4e664"
                       style={style.inputTxt}
-                      onChangeText={(t) => setUsername({t})}
+                      onChangeText={(t) => {
+                          setUsername(t);}}
                       value={username}/>
                 </View>
                 <View style={style.inputLine}></View>
@@ -143,6 +145,8 @@ function EditAccount(){
                       placeholder="email" 
                       placeholderTextColor="#f4e664"
                       style={style.inputTxt} 
+                      onChangeText={(t) => {
+                        setEmail(t);}}                      
                       value={email}
                       />
                 </View>
@@ -154,6 +158,8 @@ function EditAccount(){
                       placeholder="address" 
                       placeholderTextColor="#f4e664"
                       style={style.inputTxt} 
+                      onChangeText={(t) => {
+                        setUserAddress(t);}}                      
                       value={address}
                       />
                 </View>
@@ -164,8 +170,10 @@ function EditAccount(){
                     <TextInput
                       secureTextEntry
                       placeholder="password"
-                      placeholderTextColor="#f4e664"
+                      placeholderTextColor="#f4e664"                   
                       style={style.inputTxt}
+                      onChangeText={(t) => {
+                        setPassword(t);}}   
                       />
                 </View>
                 <View style={style.inputLine}></View>
@@ -173,14 +181,20 @@ function EditAccount(){
                 <View style={style.input}>
                     <FontAwesomeIcon icon='lock' size={22} color='white' />
                     <TextInput
+                        secureTextEntry
                       placeholder="confirm password"
                       placeholderTextColor="#f4e664"
                       style={style.inputTxt}
+                      onChangeText={(t) => {
+                        setConfirmPass(t);}}
                     />
                 </View>
                 <View style={style.inputLine}></View>
 
-                <TouchableOpacity style={[style.button, {marginTop:20}]} onPress={()=>(setShowPopUp(!ShowPopUp))}>
+                <TouchableOpacity style={[style.button, {marginTop:20}]}
+                // onPress={()=>(setShowPopUp(!ShowPopUp))}
+                onPress ={updateUserInfo}
+                >
                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>Save</Text>
                     {/* <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>

@@ -81,7 +81,7 @@ const options = {
 
     useEffect(()=>{
         getInfo();
-        // getPhoto();
+        getPhoto();
     },[]);
     return(
         <View style={style.container}>
