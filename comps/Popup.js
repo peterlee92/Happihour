@@ -4,7 +4,7 @@ import styles from '../styles/CompStyles/PopupStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 
-function Popup({name, img1, img2}){
+function Popup({name, img1, img2, happyhour}){
 
     var Image1 = {uri:img1}
     var Image2 = {uri:img2}
@@ -33,7 +33,7 @@ function Popup({name, img1, img2}){
                 <TouchableOpacity onPress={()=>{Actions.detail()}}>
                     <View style={styles.timeContainer}>
                         <Text style={{color:'orange'}}>Happy hour</Text>
-                        <Text style={{color:'white'}}>Monday - Sunday | 4pm - 6pm</Text>
+                        <Text style={{color:'white'}}>{happyhour}</Text>
                         <FontAwesomeIcon icon='chevron-right' size={12} color={'yellow'} style={{position:'absolute', bottom:5, right:5}}/>
                     </View>
                 </TouchableOpacity>
