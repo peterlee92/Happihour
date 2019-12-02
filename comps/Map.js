@@ -15,6 +15,7 @@ function Map(props) {
     const [lalngti, setlalngit] = useState([49.268245,-123.0348778])
     const [Fbutton, setFbutton] = useState(false);
     const [Searchtxt, setSearchtxt] = useState();
+    const [ready, setReady] = useState(false);
 
     //filter buttons
     var FBut = null,
@@ -146,7 +147,7 @@ function Map(props) {
         if(Svalue == "" || Svalue == " " || Svalue == "  "){
             props.setSfilter([]);
         }else{
-            let searchresponse =await fetch('http://192.168.0.20/Happihour/SearchFilter.php',{
+            let searchresponse =await fetch('http://142.232.144.214/Happihour/SearchFilter.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -193,6 +194,7 @@ function Map(props) {
                     >
                         <Popup 
                             name={props.DLTfilter[i].name}
+                            happyhour={props.DLTfilter[i].happyhours}
                             img1={props.DLTfilter[i].img1}
                             img2={props.DLTfilter[i].img2}
                         />
@@ -220,8 +222,9 @@ function Map(props) {
                     >
                         <Popup 
                             name={props.Sfilter[i].name}
-                            img1={props.DLTfilter[i].img1}
-                            img2={props.DLTfilter[i].img2}
+                            happyhour={props.Sfilter[i].happyhours}
+                            img1={props.Sfilter[i].img1}
+                            img2={props.Sfilter[i].img2}
                         />
                     </Callout>
                 </Marker>
@@ -236,14 +239,20 @@ function Map(props) {
         getLoc();
     }, []);
 
-    // useEffect(() => {
-    //     mapref.current.animateToRegion({
-    //         latitude:Number(props.DLTfilter[0].latitude),
-    //         longitude:Number(props.DLTfilter[0].longtitude),
-    //         latitudeDelta: 0.0992,
-    //         longitudeDelta: 0.0421,
-    //       })
-    // }, [props.DLTfilter]);
+    useEffect(() => {
+        //console.log("change la", props.DLTfilter);
+        if(ready && mapref.current){
+            console.log("region change");
+            var region = {
+                latitude:Number(props.DLTfilter[0].latitude),
+                longitude:Number(props.DLTfilter[0].longtitude),
+                latitudeDelta: 0.0992,
+                longitudeDelta: 0.0421,
+            }
+            console.log(region);
+            mapref.current.animateToRegion(region);
+        }
+    }, [props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude]);
 
     return (
         <View style={styles.container}>
@@ -251,7 +260,7 @@ function Map(props) {
                 ref={mapref}
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
-                region={{
+                initialRegion={{
                     latitude:lati,
                     longitude:longti,
                     latitudeDelta: 0.0992,
@@ -263,6 +272,18 @@ function Map(props) {
                 rotateEnabled={true}
                 toolbarEnabled={true}
                 showsMyLocationButton={true}
+                onMapReady={()=>{
+                    console.log("ready");
+                    setReady(true);
+                    if(mapref.current){
+                        mapref.current.animateToRegion({
+                            latitude:Number(props.DLTfilter[0].latitude),
+                            longitude:Number(props.DLTfilter[0].longtitude),
+                            latitudeDelta: 0.0992,
+                            longitudeDelta: 0.0421,
+                        });
+                    }
+                }}
             >
 
            {markers}

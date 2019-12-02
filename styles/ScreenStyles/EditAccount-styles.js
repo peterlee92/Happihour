@@ -14,15 +14,15 @@ const style = StyleSheet.create({
         alignItems:'center',
         flexDirection:'row',
         borderRadius:10,
-        marginBottom:50,
-        marginTop:50
+        marginBottom:40,
+        // marginTop:40
     },
     janeTxt:{
         fontSize:28,
         color:"white",
         letterSpacing:2,
         fontFamily:"Nunito-Regular",
-        marginBottom:30        
+        marginBottom:15        
     },
     janeSubTxt:{
         fontSize:14,
@@ -48,7 +48,7 @@ const style = StyleSheet.create({
     },
     inputTxt:{
         fontSize:20,
-        color:"grey",
+        color:"white",
         marginLeft:10,
         textAlign:"left",
         fontFamily:"Nunito-Regular",        
@@ -91,7 +91,7 @@ const style = StyleSheet.create({
         borderRadius:10,
         justifyContent:"center",
         alignItems:"center",
-        marginVertical:12,
+        marginVertical:10,
         flexDirection:"row"
     }
 })

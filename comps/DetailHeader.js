@@ -12,10 +12,11 @@ function DetailHeader (props){
     const [Userid, setUserid] = useState();
     const [latlng, setlatlng] = useState([]);
     const [imgurl, setimgurl] = useState();
+    const [Happyhour, setHappyhour] = useState();
 
     var GrabInfo=async()=>{
         console.log('work')
-        let locationresponse = await fetch('http://142.232.158.151/Happihour/Info.php',{
+        let locationresponse = await fetch('http://142.232.144.214/Happihour/Info.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -31,6 +32,7 @@ function DetailHeader (props){
         console.log(latlng)
         console.log(data.img1)
         setimgurl({uri:data.img1})
+        setHappyhour(data.happyhours)
         
     } 
  
@@ -67,7 +69,7 @@ function DetailHeader (props){
       }
 
     var AddFav=async()=>{
-        let Favresponse = await fetch('http://142.232.158.151/Happihour/AddFav.php',{
+        let Favresponse = await fetch('http://142.232.144.214/Happihour/AddFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -87,7 +89,7 @@ function DetailHeader (props){
     }
 
     var DeleteFav=async()=>{
-        let Deleteresponse = await fetch('http://142.232.158.151/Happihour/DeleteFav.php',{
+        let Deleteresponse = await fetch('http://142.232.144.214/Happihour/DeleteFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -102,7 +104,7 @@ function DetailHeader (props){
 
     //favourtie icon check function
     var CheckFav=async(id)=>{
-        let Checkresponse = await fetch('http://142.232.158.151/Happihour/CheckFav.php',{
+        let Checkresponse = await fetch('http://142.232.144.214/Happihour/CheckFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -192,7 +194,7 @@ function DetailHeader (props){
             {FavIcon}    
         
             <View style={styles.HTcontainer}>
-                <Text style={styles.HT}>DAILY FROM 3:00PM - 5:00PM</Text>    
+                <Text style={styles.HT}>{Happyhour}</Text>    
             </View>
             </View>
         </ImageBackground>
