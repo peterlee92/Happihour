@@ -5,7 +5,7 @@ import style from '../styles/ScreenStyles/GetHomeStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
-
+import Confirmation from '../comps/Confirmation-popUp';
 
 var CheckUserInfo=async()=>{
     let response = await fetch('http://192.168.0.12/Happihour/Contact.php',{
@@ -19,14 +19,58 @@ var CheckUserInfo=async()=>{
         })
     })
 
-    let data = await response.json()
 
-    if(data !== 'ok'){
-        displayPop = <AddContact />
-    }else {
-        Linking.openURL(data.contact);
+    // add contact and confirmation pop up use states
+    const [contactPop, setContactPop] = useState(false);
+    const [confirmPop, setConfirmPop] = useState(false);
+
+    // for edit account page
+    const[ShowPopUp2, setShowPopUp2] = useState(false);
+    const [ShowPopUp, setShowPopUp] = useState(false);
+
+     // Check database for emergency contact information else prompt add contact pop up
+    var CheckUserInfo=async()=>{
+        let response = await fetch('http://142.232.49.23:8888/Happihour/backend/Contact.php',{
+            method:'GET',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+    
+        let data = await response.json()
+
+        if(data == 'none'){
+            setContactPop(true);
+        }else {
+            console.log(data[0].contact);
+            Linking.openURL('tel:$' + data[0].contact);
+        }
+    };
+
+    // Add contact pop up
+    var displayPop = null;
+
+    if(contactPop == true){
+        displayPop = 
+        <View style={{width:'100%', height:'100%', position:'absolute',marginTop:100}}>
+            <AddContact setConfirmPop={setConfirmPop} setShowPopUp2={setShowPopUp2} setContactPop={setContactPop}/>
+        </View>
+    } else {
+        displayPop = null;
     }
-};
+
+    // Confirmation pop up
+    var confirm = null;
+    if(confirmPop == true){
+        confirm = 
+        <View style={{width:'100%', height:'100%', position:'absolute',marginTop:30}}>
+            <Confirmation setShowPopUp={setShowPopUp} setConfirmPop={setConfirmPop}/>
+        </View>
+    } else {
+        confirm = null;
+    }
+
 
 
 
@@ -146,6 +190,7 @@ function GetHome(){
             </View>
             </ImageBackground>
             {displayPop}
+            {confirm}
             <MenuBar 
                 map='#74726C'
                 home='#F4B869'

@@ -8,11 +8,11 @@ $conn = mysqli_connect("localhost","root","root","Happihour");
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-    $sql = "SELECT contact FROM contacts WHERE user_id = '1'";
+    $sql = "SELECT contact FROM contacts WHERE user_id = 1";
 
     $result = runQuery($sql);
 
-    if($result ->num_rows==0){
+    if($result == null){
       echo json_encode('none');
     } else{
       echo json_encode($result);
@@ -27,12 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     $name = $obj['name'];
     $contact = $obj['contact'];
+    $user_id = $obj['user_id'];
 
-    console.log($name, $contact);
-    $sql = "INSERT INTO contact(name, contact) VALUES ('$name', '$contact')";
+    $sql = "SELECT contact FROM contacts WHERE user_id = 1";
 
     $result = runQuery($sql);
-    if($result ->num_rows>0){
+
+    if($results == null){
+      $sql = "INSERT INTO Contacts(user_id, name, contact) VALUES (1, '$name', '$contact')";
+
+      $result = runQuery($sql);
+
+      echo json_encode('success');
+    } else {
+      $sql = "UPDATE Contacts SET 'name' = '$name', 'contact' = '$contact' WHERE user_id = 1";
+      $result = runQuery($sql);
       echo json_encode('success');
     }
   }

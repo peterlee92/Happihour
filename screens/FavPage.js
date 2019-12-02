@@ -19,7 +19,6 @@ function FavPage(){
       console.log("userid",id);
     }
 
-
     var getFavRestaurants=async(id)=>{
 //use ip addres
         let response = await fetch('http://142.232.158.151/Happihour/Favourites.php',{
@@ -42,9 +41,9 @@ function FavPage(){
           Setfav_restaurants([]);
             setshowPopup(true);
         }else{
-            Setfav_restaurants(data); 
-            setshowPopup(false)  
-        }            
+            Setfav_restaurants(data);   
+        }
+            
     }
 
     if(showPopup == true){
@@ -55,7 +54,6 @@ function FavPage(){
     }else{
         Favhead = null;
     }
-    
     useEffect(()=>{
         getInfo()
     },[Refresh])

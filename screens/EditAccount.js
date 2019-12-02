@@ -30,14 +30,17 @@ function EditAccount(props){
 
     // for get home page
     const [confirmPop, setConfirmPop] = useState(true);
+    const [contactPop, setContactPop] = useState(false);
 
     var emergency = null;
 
     if(ShowPopUp2 == true){
-        emergency = <AddContact setShowPopUp2={setShowPopUp2} setConfirmPop={setConfirmPop}/>
+        emergency = <AddContact setShowPopUp2={setShowPopUp2} setConfirmPop={setConfirmPop} setContactPop={setContactPop}/>
     } else{
         emergency = null;
     }
+
+    var saved = null;
 
     async function getInfo(){
         var data = await AsyncStorage.getItem("userinfo");
@@ -105,6 +108,7 @@ function EditAccount(props){
             Alert.alert(data);
         }   
     }
+
 
 
       useEffect(()=>{
@@ -191,20 +195,23 @@ function EditAccount(props){
                 </View>
                 <View style={style.inputLine}></View>
 
-                <TouchableOpacity style={[style.button, {marginTop:20}]}
-                // onPress={()=>(setShowPopUp(!ShowPopUp))}
-                onPress ={updateUserInfo}
-                >
+                <TouchableOpacity style={[style.button, {marginTop:30}]} onPress={()=>{
+                                                                                  setShowPopUp(!ShowPopUp)
+                                                                                  updateUserInfo()
+                                                                                  }}>
+                    <Text style={{color:"black", fontFamily:'Nunito-Bold', fontSize:20}}>Save</Text>
+
                     <Text style={{color:"#0E1617", fontWeight:"bold"}}>Save</Text>
                     {/* <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>
 
                 <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp2(!ShowPopUp2))}>
-                    <Text style={{color:"#9B3F3B", fontWeight:"bold"}}>Add Emergency Contact</Text>
+                    <Text style={{color:"#9B3F3B", fontFamily:'Nunito-Bold', fontSize:20}}>Add Emergency Contact</Text>
                 </TouchableOpacity>
 
                 {saveChanges}
                 {emergency}
+                {saved}
                 
             </ImageBackground>
         </View>

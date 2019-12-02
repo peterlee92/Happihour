@@ -13,6 +13,7 @@ import {
 const { width, height } = Dimensions.get('window');
 
 import SlidingPanel from 'react-native-sliding-up-down-panels';
+import FavItems from './FavItems';
 
 
 export default function List(props) {
@@ -24,7 +25,7 @@ export default function List(props) {
             headerLayout = { () =>
                 <View style={[styles.headerLayoutStyle]}>
                     <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:60, marginBottom:0, elevation:98}} />
-                    <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, right:170, elevation:99}}>
+                    <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, right:180, elevation:99}}>
                         <FontAwesomeIcon icon="chevron-up" size={30} color="#ffef86" style={{marginTop:0}}/>
                         {/* <Text style={[styles.commonTextStyle,{marginBottom:3}]}>View List</Text> */}
                         {/* <Text style={[styles.commonTextStyle, {marginTop:10, marginBottom:20}]}>View Map</Text>
@@ -33,7 +34,7 @@ export default function List(props) {
                 </View>
             }
             slidingPanelLayout = { () =>
-                <View style={[styles.slidingPanelLayoutStyle, {marginTop:50, bottom:40, elevation:90}]}>
+                <View style={[styles.slidingPanelLayoutStyle, {marginTop:50, bottom:40, elevation:90, paddingBottom:150}]}>
                  <ScrollView>
                     {
                       props.Sfilter.map((obj,i)=>{

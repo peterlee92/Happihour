@@ -4,7 +4,7 @@ import styles from '../styles/CompStyles/OnBoarding1Styles';
 import { Actions } from 'react-native-router-flux';
 import LottieView from 'lottie-react-native';
 
-function OnBoarding1({setNextPage}){
+function OnBoarding1(){
     return(
         <View style={styles.container}>    
                 <Image 
@@ -12,17 +12,17 @@ function OnBoarding1({setNextPage}){
                 style={styles.signUp}
             />
             <LottieView 
-                    source={require('../animations/vectorFoodAnimations.json')}
-                    imageAssetsFolder={'../animations/vectorFoodAnimations.json'}
+                    source={require('../animations/Signup_Animation.json')}
+                    imageAssetsFolder={'../animations/Signup_Animation.json'}
                     autoPlay
                     loop
-                    style={{width:1000, height:1000, position:'absolute', top:-40}}
+                    style={{width:1000, height:1000, position:'absolute', top:-70}}
                 /> 
             <View style={styles.content}>
                 <Text style={styles.contenttxt}>Sign up with Happihour to view all the best deals at your favourite restaurant, pub or bar.</Text>
                 <TouchableOpacity
                     style={styles.NextBut}
-                    onPress={()=>(setNextPage(1))}
+                    onPress={()=>(Actions.board2())}
                 >
                     <Text style={styles.NextTxt}>Next</Text>
                 </TouchableOpacity>
