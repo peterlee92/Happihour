@@ -38,10 +38,12 @@ var styles = StyleSheet.create({
         backgroundColor:"#F8D97E",
         position:'absolute',
         bottom:0,
-        width:'100%'
+        width:'100%',
+        borderTopRightRadius:10,
+        borderTopLeftRadius:10
     },
     HT:{
-        fontSize:23,
+        fontSize:18,
         textAlign:'center',
         padding:10,
         fontFamily:"Nunito-Bold",        

@@ -17,8 +17,8 @@ function MapPage(){
     const [Locationvalue, setLocationvalue] = useState('');
     const [Timevalue, setTimevalue] = useState('');
     const [Dayvalue, setDayvalue] = useState('');
-    const [DLTfilter, setDLTfilter] = useState([]);
-    const [Sfilter, setSfilter] = useState([]);
+    const [DLTfilter, setDLTfilter] = useState([{"latitude":49.268245,"longtitude":-123.0348778}]);
+    const [Sfilter, setSfilter] = useState([{"latitude":49.268245,"longtitude":-123.0348778}]);
     const [Daytxt,setDaytxt] = useState('Day');
     const [Timetxt,setTimetxt] = useState('Time');
     const [Locationtxt,setLocationtxt] = useState('Location');
@@ -29,7 +29,7 @@ function MapPage(){
     //         {children}
     //     </TouchableWithoutFeedback>
     // )
-  
+   
 
     var showpopup = null;
     if(Timepop == true){
