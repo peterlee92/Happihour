@@ -76,12 +76,11 @@ function EditAccount(){
                 <View style={style.inputLine}></View>
 
                 <TouchableOpacity style={[style.button, {marginTop:30}]} onPress={()=>(setShowPopUp(!ShowPopUp))}>
-                    <Text style={{color:"#0E1617", fontWeight:"bold"}}>Save</Text>
-                    {/* <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} /> */}
+                    <Text style={{color:"black", fontFamily:'Nunito-Bold', fontSize:20}}>Save</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp2(!ShowPopUp2))}>
-                    <Text style={{color:"#9B3F3B", fontWeight:"bold"}}>Add Emergency Contact</Text>
+                    <Text style={{color:"#9B3F3B", fontFamily:'Nunito-Bold', fontSize:20}}>Add Emergency Contact</Text>
                 </TouchableOpacity>
 
                 {saveChanges}

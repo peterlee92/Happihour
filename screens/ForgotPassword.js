@@ -31,7 +31,7 @@ function ForgotPassword(){
             </TouchableOpacity>
             <View style={{width:'75%', marginBottom:50, alignItems:'center'}}>
                 <Image
-                    style={{width:100,height:100}}
+                    style={{width:50,height:50, marginBottom:15}}
                     source={require('../imgs/email.png')}
                 />
                 <Text style={style.txtInfo}>Enter the email address you used to 
@@ -47,7 +47,7 @@ function ForgotPassword(){
                 <View style={style.yellowLine}></View>
 
                 <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(true))}>
-                    <Text style={{color:"#0E1617", fontWeight:"bold", letterSpacing:3, fontSize:16}}>Send Email</Text>
+                    <Text style={{color:"black", fontSize:20}}>Send Email</Text>
                 </TouchableOpacity>
 
                 {saveChanges}
