@@ -18,7 +18,7 @@ import localdata from '../localstorage.json';
 function ProfilePage(){
   const [username, setUsername] = useState();
   const [userid, setUserid] = useState();
-  const [Imgurl, setImgurl] = useState();
+  const [Imgurl, setImgurl] = useState(require("../imgs/profile.png"));
   
   async function getInfo(id, name){
     var data = await AsyncStorage.getItem("userinfo");
@@ -88,10 +88,10 @@ const options = {
                 <View style={style.avatar}>
                         <Image source={require('../imgs/profileCurvedImage.png')} resizeMode='cover' style={{width:'100%', height:'100%', position:"absolute", overflow:'hidden'}}/>
                         <View style={{justifyContent:'center', alignItems:'center', marginTop:-50}}>
-                        <TouchableOpacity onPress={ImgPick} >
-                          <Image style={style.AvatarImg} source={Imgurl} />
+                          <TouchableOpacity onPress={ImgPick} >
+                            <Image style={style.AvatarImg} source={Imgurl} />
                           </TouchableOpacity>
-                          {/* <Image source={avatarSource} style={style.AvatarImg}/> */}
+                            {/* <Image source={avatarSource} style={style.AvatarImg}/> */}
                           <Text style={style.name}>
                             {username}
                           </Text>

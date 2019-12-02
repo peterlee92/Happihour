@@ -30,7 +30,8 @@ function Register(props){
                     source={require('../imgs/Happihour_Logo.png')}
                 />
             </View>
-                <RegisterForm 
+                <RegisterForm
+                style={{flex:2}} 
                 refEmail
                 refAdd
                 refPass
