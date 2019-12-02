@@ -17,7 +17,7 @@ function AddContact({setShowPopUp2, setConfirmPop, setContactPop}){
     var saved = null;
 
     var CheckUserInfo=async()=>{
-        let response = await fetch('http://192.168.1.70:8888/Happihour/backend/Contact.php',{
+        let response = await fetch('http://142.232.49.23:8888/Happihour/backend/Contact.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -28,12 +28,7 @@ function AddContact({setShowPopUp2, setConfirmPop, setContactPop}){
                 contact: saveContact,
                 user_id: 1
             })
-        })/*.then(response => response.json())
-        .then((responseJson)=>{
-            setPopUp2(true);
-        }).catch((error) => {
-            console.error(error);
-        })*/
+        })
 
         // data echoed out in php
         let data = await response.json()

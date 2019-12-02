@@ -19,7 +19,7 @@ function GetHome(){
 
      // Check database for emergency contact information else prompt add contact pop up
     var CheckUserInfo=async()=>{
-        let response = await fetch('http://192.168.1.70:8888/Happihour/backend/Contact.php',{
+        let response = await fetch('http://142.232.49.23:8888/Happihour/backend/Contact.php',{
             method:'GET',
             headers:{
                 'Accept': 'application/json',
@@ -33,7 +33,7 @@ function GetHome(){
             setContactPop(true);
         }else {
             console.log(data[0].contact);
-            Linking.openURL(data[0].contact);
+            Linking.openURL('tel:$' + data[0].contact);
         }
     };
 

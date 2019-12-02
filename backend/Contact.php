@@ -29,10 +29,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $contact = $obj['contact'];
     $user_id = $obj['user_id'];
 
-    $sql = "INSERT INTO Contacts(user_id, name, contact) VALUES (1, '$name', '$contact')";
+    $sql = "SELECT contact FROM contacts WHERE user_id = 1";
 
     $result = runQuery($sql);
-    // if($result ->num_rows>0){
+
+    if($results == null){
+      $sql = "INSERT INTO Contacts(user_id, name, contact) VALUES (1, '$name', '$contact')";
+
+      $result = runQuery($sql);
+
       echo json_encode('success');
-    // }
+    } else {
+      $sql = "UPDATE Contacts SET 'name' = '$name', 'contact' = '$contact' WHERE user_id = 1";
+      $result = runQuery($sql);
+      echo json_encode('success');
+    }
   }
