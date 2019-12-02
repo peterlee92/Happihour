@@ -5,17 +5,21 @@ import style from '../styles/ScreenStyles/GetHomeStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
+import Confirmation from '../comps/Confirmation-popUp';
 
 function GetHome(){
 
+    // add contact and confirmation pop up use states
     const [contactPop, setContactPop] = useState(false);
-    const [confirmPop, setConfirmPop] = useState(true);
+    const [confirmPop, setConfirmPop] = useState(false);
 
     // for edit account page
     const[ShowPopUp2, setShowPopUp2] = useState(false);
+    const [ShowPopUp, setShowPopUp] = useState(false);
 
+     // Check database for emergency contact information else prompt add contact pop up
     var CheckUserInfo=async()=>{
-        let response = await fetch('http://142.232.52.8:8888/Happihour/backend/Contact.php',{
+        let response = await fetch('http://192.168.1.70:8888/Happihour/backend/Contact.php',{
             method:'GET',
             headers:{
                 'Accept': 'application/json',
@@ -32,15 +36,27 @@ function GetHome(){
         }
     };
 
+    // Add contact pop up
     var displayPop = null;
 
     if(contactPop == true){
         displayPop = 
         <View style={{width:'100%', height:'100%', position:'absolute',marginTop:100}}>
-            <AddContact setConfirmPop={setConfirmPop} setShowPopUp2={setShowPopUp2}/>
+            <AddContact setConfirmPop={setConfirmPop} setShowPopUp2={setShowPopUp2} setContactPop={setContactPop}/>
         </View>
     } else {
         displayPop = null;
+    }
+
+    // Confirmation pop up
+    var confirm = null;
+    if(confirmPop == true){
+        confirm = 
+        <View style={{width:'100%', height:'100%', position:'absolute',marginTop:30}}>
+            <Confirmation setShowPopUp={setShowPopUp} setConfirmPop={setConfirmPop}/>
+        </View>
+    } else {
+        confirm = null;
     }
 
    async function getInfo(){
@@ -152,6 +168,7 @@ function GetHome(){
             </View>
             </ImageBackground>
             {displayPop}
+            {confirm}
             <MenuBar 
                 map='#74726C'
                 home='#F4B869'

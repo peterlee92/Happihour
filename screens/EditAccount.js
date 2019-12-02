@@ -23,14 +23,17 @@ function EditAccount(){
 
     // for get home page
     const [confirmPop, setConfirmPop] = useState(true);
+    const [contactPop, setContactPop] = useState(false);
 
     var emergency = null;
 
     if(ShowPopUp2 == true){
-        emergency = <AddContact setShowPopUp2={setShowPopUp2} setConfirmPop={setConfirmPop}/>
+        emergency = <AddContact setShowPopUp2={setShowPopUp2} setConfirmPop={setConfirmPop} setContactPop={setContactPop}/>
     } else{
         emergency = null;
     }
+
+    var saved = null;
 
 
 
@@ -83,6 +86,7 @@ function EditAccount(){
 
                 {saveChanges}
                 {emergency}
+                {saved}
                 
             </ImageBackground>
         </View>
