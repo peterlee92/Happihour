@@ -7,6 +7,7 @@ import TimePopup from '../comps/TimePopup';
 import LocationPopup from '../comps/LocationPopup';
 import DayPopup from '../comps/DayPopup';
 import List from '../comps/List';
+import PSAPopUps from '../comps/PSAPopUps'
 
 
 function MapPage(){
@@ -23,6 +24,7 @@ function MapPage(){
     const [Timetxt,setTimetxt] = useState('Time');
     const [Locationtxt,setLocationtxt] = useState('Location');
     const [Searchvalue, setSearchvalue] = useState();
+    const [Psas, setPsas] = useState(true);
 
     // const DissmissKeyboard = ({children}) => (
     //     <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
@@ -30,6 +32,16 @@ function MapPage(){
     //     </TouchableWithoutFeedback>
     // )
    
+    var psapopup = null;
+
+    if(Psas){
+        psapopup = 
+        <View style={{width:'100%', height:'100%', position:'absolute', backgroundColor:'rgba(0,0,0,0.6)'}}>
+        <PSAPopUps setPsas={setPsas}/>
+        </View>
+    }else{
+        psapopup = null;
+    }
 
     var showpopup = null;
     if(Timepop == true){
@@ -80,7 +92,7 @@ function MapPage(){
     }
 
     return(
-        <View style={{flex:1, backgroundColor:'#ECE9E1'}}>       
+        <View style={{flex:1}}>       
             <Map 
                 setTimepop={setTimepop}
                 setLocationpop={setLocationpop}
@@ -111,6 +123,7 @@ function MapPage(){
             profile='#74726C'/>
 
             {showpopup}
+            {psapopup}
 
         </View>
 

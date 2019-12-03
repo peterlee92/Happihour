@@ -2,7 +2,8 @@ import {StyleSheet} from 'react-native';
 
 var styles = StyleSheet.create({
     container:{
-        flex:10.5
+        flex:10.5,
+        backgroundColor:'black'
     },
     searchContainer:{
         alignItems:'center',

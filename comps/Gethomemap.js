@@ -14,39 +14,7 @@ function Gethomemap(){
     const destination = {latitude:49.268245,longitude:-123.0348778};
     const googleAPI = "AIzaSyDLsWDIFV96c4Btw9ohzcDiZX7MzTDnmMw"
 
-    // async function getLoc(){
-    //     try {
-    //         const granted = await PermissionsAndroid.request(
-    //             PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-    //             {
-    //                 title: 'Geolocation',
-    //                 message:
-    //                     'Get geolocation',
-    //                 buttonNeutral: 'Ask Me Later',
-    //                 buttonNegative: 'Cancel',
-    //                 buttonPositive: 'OK',
-    //             },
-    //         );
-    //         console.log(granted);
-    //         if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-    //             console.log('You can use the map');
-    //             Geolocation.getCurrentPosition(
-    //                 position => {
-    //                     setLati(position.coords.latitude)
-    //                     setLongti(position.coords.longitude)
-    //                 }
-    //             )
-    //         } else {
-    //             console.log('geolcation permission denied');
-    //         }
-    //     } catch (err) {
-    //         console.warn(err);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getLoc();
-    // },[]);
+    
 
     return(
         <View style={styles.container}>

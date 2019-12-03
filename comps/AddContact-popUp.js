@@ -17,7 +17,7 @@ function AddContact({setShowPopUp2, setConfirmPop, setContactPop}){
     var saved = null;
 
     var CheckUserInfo=async()=>{
-        let response = await fetch('http://142.232.49.23:8888/Happihour/backend/Contact.php',{
+        let response = await fetch('http://192.168.0.20/Happihour/Contact.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

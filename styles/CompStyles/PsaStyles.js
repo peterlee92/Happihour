@@ -3,8 +3,9 @@ import {StyleSheet} from 'react-native';
 const style =  StyleSheet.create({
     bg:{
         width:370,
-        height:480,
-        resizeMode: "contain"
+        height:450,
+        resizeMode: "contain",
+        marginBottom:100
     },
     container:{
         justifyContent:"center",

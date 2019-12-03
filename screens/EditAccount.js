@@ -60,7 +60,7 @@ function EditAccount(props){
       }
 
       var getUserInfo = async(id)=>{
-        let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
+        let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/userInfo.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -84,7 +84,7 @@ function EditAccount(props){
     }
 
     var updateUserInfo = async(id)=>{
-        let response = await fetch('http://192.168.0.12/Happihour/updateUserInfo.php',{
+        let response = await fetch('http://192.168.0.20/Happihour/updateUserInfo.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',

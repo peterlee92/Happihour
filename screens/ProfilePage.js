@@ -118,7 +118,7 @@ const options = {
               </TouchableOpacity>
 
               <TouchableOpacity style={style.titleIcon}
-                 onPress={signOut}
+                 onPress={()=>{Actions.thankyou()}}
               >
                   <View style={style.SignOutbox}>
                       <Text style={style.SignOutTitles}>Sign Out</Text>

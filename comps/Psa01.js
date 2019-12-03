@@ -10,13 +10,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import style from '../styles/CompStyles/PsaStyles';
 import styles from '../styles/ScreenStyles/ExecStyles';
 
-function Psa01(){
+function Psa01(props){
     return(
         <ImageBackground
         style={style.bg}
         source={require('../imgs/PsaBg.png')}>
             <View style={style.container}>
-                <FontAwesomeIcon icon='times-circle' color='#F1E578' size={30} style={{position:'absolute', top:-40, right:10 }}/>
+                <TouchableOpacity 
+                    style={{position:'absolute', top:-40, right:10 }}
+                    onPress={()=>{props.setPsas(false)}}
+                >
+                <FontAwesomeIcon icon='times-circle' color='#F1E578' size={30} />
+                </TouchableOpacity>
                 <View style={style.logoRow}>
                     <Image 
                         style={{width:200, height:50, marginBottom:0}}

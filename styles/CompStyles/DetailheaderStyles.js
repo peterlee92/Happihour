@@ -43,7 +43,7 @@ var styles = StyleSheet.create({
         borderTopLeftRadius:10
     },
     HT:{
-        fontSize:18,
+        fontSize:25,
         textAlign:'center',
         padding:10,
         fontFamily:"Nunito-Bold",        
