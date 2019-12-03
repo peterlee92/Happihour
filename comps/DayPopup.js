@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 function DayPopup(props){
 
     var DayFilter=async(day)=>{
-        let dayresponse = await fetch('http://142.232.158.151/Happihour/DLTFilter.php',{
+        let dayresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -22,6 +22,7 @@ function DayPopup(props){
         })
   
         let daydata = await dayresponse.json()
+        console.log(daydata)
 
         if(daydata == "wrong"){
             props.setDLTfilter([]);

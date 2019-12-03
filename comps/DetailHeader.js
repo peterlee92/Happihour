@@ -16,7 +16,7 @@ function DetailHeader (props){
 
     var GrabInfo=async()=>{
         console.log('work')
-        let locationresponse = await fetch('http://142.232.144.214/Happihour/Info.php',{
+        let locationresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/Info.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -66,10 +66,11 @@ function DetailHeader (props){
         const id = data.info[0]['user_id'];
         CheckFav(id)
         setUserid(id)
+        console.log('userid', Userid)
       }
 
     var AddFav=async()=>{
-        let Favresponse = await fetch('http://142.232.144.214/Happihour/AddFav.php',{
+        let Favresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/AddFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -89,7 +90,7 @@ function DetailHeader (props){
     }
 
     var DeleteFav=async()=>{
-        let Deleteresponse = await fetch('http://142.232.144.214/Happihour/DeleteFav.php',{
+        let Deleteresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/DeleteFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -104,7 +105,7 @@ function DetailHeader (props){
 
     //favourtie icon check function
     var CheckFav=async(id)=>{
-        let Checkresponse = await fetch('http://142.232.144.214/Happihour/CheckFav.php',{
+        let Checkresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/CheckFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

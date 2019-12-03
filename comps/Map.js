@@ -16,7 +16,7 @@ function Map(props) {
     const [Fbutton, setFbutton] = useState(false);
     const [Searchtxt, setSearchtxt] = useState();
     const [ready, setReady] = useState(false);
-
+ 
     //filter buttons
     var FBut = null,
         Buttons = null;
@@ -147,7 +147,7 @@ function Map(props) {
         if(Svalue == "" || Svalue == " " || Svalue == "  "){
             props.setSfilter([]);
         }else{
-            let searchresponse =await fetch('http://142.232.144.214/Happihour/SearchFilter.php',{
+            let searchresponse =await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/SearchFilter.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -233,7 +233,7 @@ function Map(props) {
         }
     }
     
-    
+     
 
     useEffect(() => {
         getLoc();
@@ -261,8 +261,8 @@ function Map(props) {
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
                 initialRegion={{
-                    latitude:lati,
-                    longitude:longti,
+                    latitude:lalngti[0],
+                    longitude:lalngti[1],
                     latitudeDelta: 0.0992,
                     longitudeDelta: 0.0421,
                   }}    

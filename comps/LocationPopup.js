@@ -8,7 +8,7 @@ function LocationPopup(props){
     var LocationFilter=async(location)=>{
         console.log(location)
         console.log(props.Dayvalue)
-        let locationresponse = await fetch('http://142.232.158.151/Happihour/DLTFilter.php',{
+        let locationresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -22,14 +22,16 @@ function LocationPopup(props){
         })
  
         let locationdata = await locationresponse.json()
+        console.log(locationdata);
 
         if(locationdata == "wrong"){
             props.setDLTfilter([]);
         }else{
+            console.log('work')
             props.setDLTfilter(locationdata);
             props.setSfilter([]);
         }
-        console.log(locationdata);
+        
   
     }
 
