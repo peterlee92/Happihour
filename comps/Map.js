@@ -15,6 +15,7 @@ function Map(props) {
     const [lalngti, setlalngit] = useState([49.268245,-123.0348778])
     const [Fbutton, setFbutton] = useState(false);
     const [Searchtxt, setSearchtxt] = useState();
+    const [ready, setReady] = useState(false);
 
     //filter buttons
     var FBut = null,
@@ -28,17 +29,7 @@ function Map(props) {
         Ttxt = 'white',
         Ltxt = 'white';
 
-    var googlemapref = React.createRef();
-
-    // var aniMap=(lat, long):void =>{
-    //     let r ={
-    //         latitude:lat,
-    //         longitude:long,
-    //         latitudeDelta: 0.0992,
-    //         longitudeDelta: 0.0421,
-    //     }
-    //     googlemapref.current.animateToRegion(r, 2000)
-    // }
+    var mapref = React.createRef();
 
     //button color if statement
     if(props.Timepop == true){
@@ -84,12 +75,6 @@ function Map(props) {
                             props.setDaypop(true);
                             props.setTimepop(false);
                             props.setLocationpop(false);
-                            props.Mapref.current.animateToRegion({
-                                latitude:12,
-                                longitude:-123,
-                                latitudeDelta: 0.0992,
-                                longitudeDelta: 0.0421,
-                              })
                             }}>
                         <Text style={[styles.buttontxt,{color:Dtxt}]}>{props.Daytxt}</Text>
                     </TouchableOpacity>
@@ -162,7 +147,7 @@ function Map(props) {
         if(Svalue == "" || Svalue == " " || Svalue == "  "){
             props.setSfilter([]);
         }else{
-            let searchresponse =await fetch('http://192.168.0.20/Happihour/SearchFilter.php',{
+            let searchresponse =await fetch('http://142.232.144.214/Happihour/SearchFilter.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -190,7 +175,7 @@ function Map(props) {
 
     var markers = [];
     if(props.Sfilter.length <=0 && 0 < props.DLTfilter.length){
-        // aniMap(props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude)
+       
         // setlalngit([props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude])
         for(var i = 0; i < props.DLTfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
@@ -209,6 +194,7 @@ function Map(props) {
                     >
                         <Popup 
                             name={props.DLTfilter[i].name}
+                            happyhour={props.DLTfilter[i].happyhours}
                             img1={props.DLTfilter[i].img1}
                             img2={props.DLTfilter[i].img2}
                         />
@@ -236,8 +222,9 @@ function Map(props) {
                     >
                         <Popup 
                             name={props.Sfilter[i].name}
-                            img1={props.DLTfilter[i].img1}
-                            img2={props.DLTfilter[i].img2}
+                            happyhour={props.Sfilter[i].happyhours}
+                            img1={props.Sfilter[i].img1}
+                            img2={props.Sfilter[i].img2}
                         />
                     </Callout>
                 </Marker>
@@ -250,16 +237,30 @@ function Map(props) {
 
     useEffect(() => {
         getLoc();
-    
     }, []);
+
+    useEffect(() => {
+        //console.log("change la", props.DLTfilter);
+        if(ready && mapref.current){
+            console.log("region change");
+            var region = {
+                latitude:Number(props.DLTfilter[0].latitude),
+                longitude:Number(props.DLTfilter[0].longtitude),
+                latitudeDelta: 0.0992,
+                longitudeDelta: 0.0421,
+            }
+            console.log(region);
+            mapref.current.animateToRegion(region);
+        }
+    }, [props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude]);
 
     return (
         <View style={styles.container}>
             <MapView
-                ref={props.Mapref}
+                ref={mapref}
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
-                region={{
+                initialRegion={{
                     latitude:lati,
                     longitude:longti,
                     latitudeDelta: 0.0992,
@@ -271,6 +272,18 @@ function Map(props) {
                 rotateEnabled={true}
                 toolbarEnabled={true}
                 showsMyLocationButton={true}
+                onMapReady={()=>{
+                    console.log("ready");
+                    setReady(true);
+                    if(mapref.current){
+                        mapref.current.animateToRegion({
+                            latitude:Number(props.DLTfilter[0].latitude),
+                            longitude:Number(props.DLTfilter[0].longtitude),
+                            latitudeDelta: 0.0992,
+                            longitudeDelta: 0.0421,
+                        });
+                    }
+                }}
             >
 
            {markers}

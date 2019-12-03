@@ -13,9 +13,11 @@ var styles = StyleSheet.create({
         width:'100%'
     },
     logoContainer:{
+        flex:.2,
         alignItems:'center',
     },
     logo:{
+        flex:1,
         width:300,
         height:100,
         resizeMode:'contain',

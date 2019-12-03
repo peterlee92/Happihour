@@ -6,7 +6,6 @@ import Login from './screens/Login';
 import Register from './screens/Register';
 import ProfilePage from './screens/ProfilePage';
 import FavPage from './screens/FavPage';
-import GetHome from './screens/GetHome';
 import EditAccount from './screens/EditAccount';
 import ContactUs from './screens/ContactUs';
 import Taxi from './screens/Taxi';
@@ -23,6 +22,7 @@ import OnBoarding3 from './comps/OnBoarding3';
 import OnBoarding4 from './comps/OnBoarding4';
 import OnBoardingPage from './screens/OnBoardingPage';
 import Loading from './screens/Loading';
+import GetHome from './screens/GetHome';
 
 
 function Route(){
@@ -32,13 +32,10 @@ function Route(){
             <Scene key="login" component={Login} title="Login" />
             <Scene key="register" component={Register} title="Register" />
             <Scene key="favPage" component={FavPage} title="favPage"  />
-            <Scene key="getHome" component={GetHome} title="GetHome" />
             <Scene key="profile" component={ProfilePage} title='Profile' />
             <Scene key='editAccount' component={EditAccount} title="EditAccount" />
             <Scene key='contactUs' component={ContactUs} title="ContactUs" />
             <Scene key='taxi' component={Taxi} title="Taxi" />
-            <Scene key='transit' component={Transit} title="Transit" />
-            <Scene key='map' component={MapPage} title="map" />
             <Scene key='transit' component={Transit} title="Transit" />
             <Scene key="mappage" component={MapPage} title="MapPage" />
             <Scene key="detail" component={Detail} title="Detail" />
@@ -50,8 +47,9 @@ function Route(){
             <Scene key="board3" component={OnBoarding3} title="Board3" />
             <Scene key="board4" component={OnBoarding4} title="Board4" />
             <Scene key="onboarding" component={OnBoardingPage} title="Onboarding" />
-            <Scene key="loading" component={Loading} title="Loading" initial={true}/>
-        </Stack>
+            <Scene key="loading" component={Loading} title="Loading" initial={true} />
+            <Scene key="getHome" component={GetHome} title="GetHome" />
+            </Stack>
         </Router>
     )
 }

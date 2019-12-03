@@ -16,7 +16,6 @@ import FavPage from './screens/FavPage';
 import Register from './screens/Register';
 import Detail from './screens/Detail';
 import MenuBar from './comps/MenuBar';
-import GetHome from './screens/GetHome';
 import Taxi from './screens/Taxi';
 import ProfilePage from './screens/ProfilePage';
 import FavItems from './comps/FavItems';
@@ -45,7 +44,7 @@ library.add(faArrowRight, faArrowLeft, faArrowDown, faArrowUp, faChevronDown, fa
             faDirections, faPhoneAlt, faTv, faTimesCircle, faDesktop,
             faPlus, faCalendarAlt,faImage, faMinus,
             faMapSigns, faHamburger, faCocktail, faWineGlassAlt, faDice, faCar, faCheck, faCheckSquare, faSquare, faCalendarDay,
-            faGlassCheers, faCaretDown, faHandsHelping, faEnvelopeOpenText, faHome)
+            faGlassCheers, faCaretDown, faHandsHelping, faEnvelopeOpenText, faGlobe, faHome)
 
 
 
@@ -83,6 +82,7 @@ import Psa07 from './comps/Psa07';
 import PSAPopUps from './comps/PSAPopUps';
 import Exec from './screens/Exec';
 import FavPopup from './comps/FavPopup';
+import Thankyou from './screens/Thankyou';
 
 
 function App() {

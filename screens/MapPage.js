@@ -17,20 +17,19 @@ function MapPage(){
     const [Locationvalue, setLocationvalue] = useState('');
     const [Timevalue, setTimevalue] = useState('');
     const [Dayvalue, setDayvalue] = useState('');
-    const [DLTfilter, setDLTfilter] = useState([]);
-    const [Sfilter, setSfilter] = useState([]);
+    const [DLTfilter, setDLTfilter] = useState([{"latitude":49.268245,"longtitude":-123.0348778}]);
+    const [Sfilter, setSfilter] = useState([{"latitude":49.268245,"longtitude":-123.0348778}]);
     const [Daytxt,setDaytxt] = useState('Day');
     const [Timetxt,setTimetxt] = useState('Time');
     const [Locationtxt,setLocationtxt] = useState('Location');
     const [Searchvalue, setSearchvalue] = useState();
-    const [Mapref, setMapref] =useState(React.createRef())
 
     // const DissmissKeyboard = ({children}) => (
     //     <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
     //         {children}
     //     </TouchableWithoutFeedback>
     // )
-  
+   
 
     var showpopup = null;
     if(Timepop == true){
@@ -59,7 +58,6 @@ function MapPage(){
                 setSfilter={setSfilter}
                 setLocationtxt={setLocationtxt}
                 setSearchvalue={setSearchvalue}
-                Mapref={Mapref}
             />
         )
     }else if(Daypop == true){
@@ -99,7 +97,6 @@ function MapPage(){
                 Locationtxt={Locationtxt}
                 setSearchvalue={setSearchvalue}
                 Searchvalue={Searchvalue}
-                Mapref={Mapref}
             />
 
             <List 

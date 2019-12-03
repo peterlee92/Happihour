@@ -7,7 +7,18 @@ import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
 import Confirmation from '../comps/Confirmation-popUp';
 
-function GetHome(){
+var CheckUserInfo=async()=>{
+    let response = await fetch('http://192.168.0.12/Happihour/Contact.php',{
+        method:'GET',
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: '1'
+        })
+    })
+
 
     // add contact and confirmation pop up use states
     const [contactPop, setContactPop] = useState(false);
@@ -60,15 +71,25 @@ function GetHome(){
         confirm = null;
     }
 
-   async function getInfo(){
+
+
+
+function GetHome(){
+
+    const [userid, setUserid] = useState();
+    const [userAddress, setUserAddress] = useState();
+    
+    var displayPop = null;
+    
+    async function getInfo(){
         var data = await AsyncStorage.getItem("userinfo");
         data = JSON.parse(data);
         var id = Number(data.info[0]['user_id']);
         getUserAddress(id);
         console.log("user id: ", id);
       }
-  
-  var getUserAddress = async(id)=>{
+    
+    var getUserAddress = async(id)=>{
         let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
             method:'POST',
             headers:{
@@ -91,7 +112,7 @@ function GetHome(){
     
         }   
     }
-   
+
     useEffect(()=>{
         getInfo();
         getUserAddress();
