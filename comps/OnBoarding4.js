@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../styles/CompStyles/OnBoarding4Styles';
 import {Actions} from 'react-native-router-flux';
@@ -6,6 +6,13 @@ import LottieView from 'lottie-react-native';
 
 
 function OnBoarding4(){
+
+    const[loaded, setLoaded] = useState(false);
+
+    if(loaded){
+        return null;
+    }
+
     return(
         <View style={styles.container}>
                 <Image 
@@ -16,7 +23,6 @@ function OnBoarding4(){
                     source={require('../animations/vectorBeHappyAnimations.json')}
                     imageAssetsFolder={'../animations/vectorBeHappyAnimations.json'}
                     autoPlay
-                    loop
                     style={{width:800, height:800, position:'absolute', top:-40, elevation:3}}
                 /> 
             <View style={styles.content}>
@@ -24,7 +30,7 @@ function OnBoarding4(){
             </View>
             <TouchableOpacity
                     style={styles.letsgoBut}
-                    onPress={()=>{Actions.login()}}
+                    onPress={()=>{Actions.login();setLoaded(true);}}
                 >
                     <Text style={styles.letsgoTxt}>LET'S GO!</Text>
             </TouchableOpacity>

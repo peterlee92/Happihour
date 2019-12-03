@@ -200,9 +200,6 @@ function EditAccount(props){
                                                                                   updateUserInfo()
                                                                                   }}>
                     <Text style={{color:"black", fontFamily:'Nunito-Bold', fontSize:20}}>Save</Text>
-
-                    <Text style={{color:"#0E1617", fontWeight:"bold"}}>Save</Text>
-                    {/* <FontAwesomeIcon icon="chevron-right" size={21} color="#929688" style={{position:'absolute', right:10}} /> */}
                 </TouchableOpacity>
 
                 <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp2(!ShowPopUp2))}>

@@ -7,18 +7,7 @@ import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
 import Confirmation from '../comps/Confirmation-popUp';
 
-var CheckUserInfo=async()=>{
-    let response = await fetch('http://192.168.0.12/Happihour/Contact.php',{
-        method:'GET',
-        headers:{
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            user_id: '1'
-        })
-    })
-
+function GetHome(){
 
     // add contact and confirmation pop up use states
     const [contactPop, setContactPop] = useState(false);
@@ -27,6 +16,10 @@ var CheckUserInfo=async()=>{
     // for edit account page
     const[ShowPopUp2, setShowPopUp2] = useState(false);
     const [ShowPopUp, setShowPopUp] = useState(false);
+
+    // local storage user info
+    const [userid, setUserid] = useState();
+    const [userAddress, setUserAddress] = useState();
 
      // Check database for emergency contact information else prompt add contact pop up
     var CheckUserInfo=async()=>{
@@ -71,25 +64,15 @@ var CheckUserInfo=async()=>{
         confirm = null;
     }
 
-
-
-
-function GetHome(){
-
-    const [userid, setUserid] = useState();
-    const [userAddress, setUserAddress] = useState();
-    
-    var displayPop = null;
-    
-    async function getInfo(){
+   async function getInfo(){
         var data = await AsyncStorage.getItem("userinfo");
         data = JSON.parse(data);
         var id = Number(data.info[0]['user_id']);
         getUserAddress(id);
         console.log("user id: ", id);
       }
-    
-    var getUserAddress = async(id)=>{
+  
+  var getUserAddress = async(id)=>{
         let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
             method:'POST',
             headers:{
@@ -112,7 +95,7 @@ function GetHome(){
     
         }   
     }
-
+   
     useEffect(()=>{
         getInfo();
         getUserAddress();
