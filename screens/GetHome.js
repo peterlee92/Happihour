@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
 import Confirmation from '../comps/Confirmation-popUp';
-import getDirections from 'react-native-google-maps-directions'
 
 function GetHome(){
 
@@ -65,45 +64,13 @@ function GetHome(){
         confirm = null;
     }
 
-    
-    var displayPop = null;
-    
-
-    const [lati, setlati] = useState();
-    const [lngti, setlngti] = useState();
-
-    async function getInfo(){
-
+   async function getInfo(){
         var data = await AsyncStorage.getItem("userinfo");
         data = JSON.parse(data);
-        setlati(Number(data.info[0]['latitude']));
-        setlngti(Number(data.info[0]['longitude']));
+        var id = Number(data.info[0]['user_id']);
+        getUserAddress(id);
+        console.log("user id: ", id);
       }
-
-
-    var handleGetDirections = async() => {
-
-        var data = {
-          destination: {
-            latitude:lati,
-            longitude:lngti 
-          },
-          params: [
-            {
-              key: "travelmode",
-              value: "transit"        // may be "walking", "bicycling" or "transit" as well
-            },
-            {
-              key: "dir_action",
-              value: "navigate"       // this instantly initializes navigation using the given travel mode
-            }
-          ]
-        }
-     
-        await getDirections(data)
-      }
-
-
   
   var getUserAddress = async(id)=>{
         let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/userInfo.php',{
@@ -128,9 +95,10 @@ function GetHome(){
     
         }   
     }
-
+   
     useEffect(()=>{
         getInfo();
+        getUserAddress();
     },[]);
 
     return(
@@ -172,13 +140,20 @@ function GetHome(){
                         style.position, 
                         {backgroundColor:'#0C519F'
                     }]} 
-                    onPress={()=>{handleGetDirections()}}
+                    onPress={()=>(Actions.transit())}
                 >
                     <View style={style.img}>
                         <Image style={{width:100, height:100}} source={require('../imgs/home-icon-silhouette.png')} />
                     </View>
                 </TouchableOpacity>
                 <Text style={style.subGHS}>Get Home</Text>
+{/* 
+                <TouchableOpacity style={[style.position, {backgroundColor:'#D1C74B'}]} onPress={()=>(Actions.taxi())}>
+                    <View style={style.img2}>
+                        <FontAwesomeIcon icon="taxi" size={100} color="white" style={style.Img2}/>
+                    </View>
+                    <Text style={style.GHS}>TAXI</Text>
+                </TouchableOpacity> */}
             </View>
             <View style={style.rows}>
                 <TouchableOpacity 
@@ -208,6 +183,5 @@ function GetHome(){
         </View>
     )
 }
-
 
 export default GetHome;
