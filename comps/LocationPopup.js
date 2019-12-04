@@ -137,6 +137,18 @@ function LocationPopup(props){
                         >
                         <Text style={styles.location}>Chinatown</Text>
                         </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={()=>{
+                                props.setLocationpop(false)
+                                props.setLocationvalue('Burnaby')
+                                props.setLocationtxt('Burnaby')
+                                LocationFilter('Burnaby')
+                            
+                            }}
+                            style={styles.locationwrap}
+                        >
+                        <Text style={styles.location}>Nearby</Text>
+                        </TouchableOpacity>
                     </View>
                 </ScrollView>
                 <View style={styles.arrowwrap}>

@@ -22,7 +22,7 @@ function OnBoarding1(){
                     source={require('../animations/Signup_Animation.json')}
                     imageAssetsFolder={'../animations/Signup_Animation.json'}
                     autoPlay
-                    style={{width:1000, height:1000, position:'absolute', top:-70}}
+                    style={{width:1000, height:1000, position:'absolute', top:-50}}
                 /> 
             <View style={styles.content}>
                 <Text style={styles.contenttxt}>Sign up with Happihour to view all the best deals at your favourite restaurant, pub or bar.</Text>

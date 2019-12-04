@@ -34,7 +34,7 @@ function RegisterForm(){
         }).then((response) => response.json())
         .then((responseJson)=>{
              // Showing response message coming from server after inserting records.
-            Alert.alert(responseJson);
+            // Alert.alert(responseJson);
             Actions.login();
         }).catch((error) => {
             console.error(error);

@@ -18,7 +18,7 @@ var styles = StyleSheet.create({
        flex:0.6
     },
     contenttxt:{
-        fontSize:17,
+        fontSize:20,
         textAlign:'center',
         lineHeight:40,
         marginBottom:154 

@@ -21,7 +21,7 @@ var styles = StyleSheet.create({
         width:'80%',
         height:40,
         paddingLeft:60,
-        fontSize:20,
+        fontSize:18,
         borderBottomWidth:2,
         color:'white',
         fontFamily:"Nunito-Regular",        
