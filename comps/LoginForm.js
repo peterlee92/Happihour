@@ -16,13 +16,15 @@ function LoginForm(props){
         console.log(localdata);
     }
 
-    async function StoreInfo(id, name){
+    async function StoreInfo(id, name, lat, lng){
         var data = await AsyncStorage.getItem("userinfo");
         console.log("get Item",data)
         data = JSON.parse(data)
         data.info.push({
             user_id:id,
-            user_name:name
+            user_name:name,
+            latitude:lat,
+            longitude:lng
         })
         AsyncStorage.setItem("userinfo", JSON.stringify(data))
         console.log("async set item",data);
@@ -41,7 +43,7 @@ function LoginForm(props){
         }else{ 
 
                                         //use ip address
-            let response = await fetch('http://142.232.158.151/Happihour/Login.php',{
+            let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/Login.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -59,7 +61,7 @@ function LoginForm(props){
             if(data == 'Your information is incorrect'){
                 Alert.alert(data);
             }else {
-                StoreInfo(data['Id'], data['username'])
+                StoreInfo(data['Id'], data['username'], data['latitude'], data['longtitude'])
                 Alert.alert('welcome!');
                 Actions.mappage();
 

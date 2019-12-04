@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
 import Confirmation from '../comps/Confirmation-popUp';
+import getDirections from 'react-native-google-maps-directions'
 
 function GetHome(){
 
@@ -23,7 +24,7 @@ function GetHome(){
 
      // Check database for emergency contact information else prompt add contact pop up
     var CheckUserInfo=async()=>{
-        let response = await fetch('http://142.232.49.23:8888/Happihour/backend/Contact.php',{
+        let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/Contact.php',{
             method:'GET',
             headers:{
                 'Accept': 'application/json',
@@ -64,13 +65,49 @@ function GetHome(){
         confirm = null;
     }
 
-   async function getInfo(){
+
+
+    const [userid, setUserid] = useState();
+    const [userAddress, setUserAddress] = useState();
+    
+    var displayPop = null;
+    
+
+    const [lati, setlati] = useState();
+    const [lngti, setlngti] = useState();
+
+    async function getInfo(){
+
         var data = await AsyncStorage.getItem("userinfo");
         data = JSON.parse(data);
-        var id = Number(data.info[0]['user_id']);
-        getUserAddress(id);
-        console.log("user id: ", id);
+        setlati(Number(data.info[0]['latitude']));
+        setlngti(Number(data.info[0]['longitude']));
       }
+
+
+    var handleGetDirections = async() => {
+
+        var data = {
+          destination: {
+            latitude:lati,
+            longitude:lngti 
+          },
+          params: [
+            {
+              key: "travelmode",
+              value: "transit"        // may be "walking", "bicycling" or "transit" as well
+            },
+            {
+              key: "dir_action",
+              value: "navigate"       // this instantly initializes navigation using the given travel mode
+            }
+          ]
+        }
+     
+        await getDirections(data)
+      }
+
+
   
   var getUserAddress = async(id)=>{
         let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
@@ -95,10 +132,9 @@ function GetHome(){
     
         }   
     }
-   
+
     useEffect(()=>{
         getInfo();
-        getUserAddress();
     },[]);
 
     return(
@@ -140,7 +176,7 @@ function GetHome(){
                         style.position, 
                         {backgroundColor:'#0C519F'
                     }]} 
-                    onPress={()=>(Actions.transit())}
+                    onPress={()=>{handleGetDirections()}}
                 >
                     <View style={style.img}>
                         <Image style={{width:100, height:100}} source={require('../imgs/home-icon-silhouette.png')} />
@@ -183,5 +219,6 @@ function GetHome(){
         </View>
     )
 }
+
 
 export default GetHome;

@@ -21,7 +21,7 @@ function FavItems(props) {
       }
 
     var DeleteFav=async()=>{
-        let Favresponse = await fetch('http://142.232.158.151//Happihour/DeleteFav.php',{
+        let Favresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/DeleteFav.php',{
 
             method:'POST',
             headers:{

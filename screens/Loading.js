@@ -5,22 +5,6 @@ import LottieView from 'lottie-react-native';
 
 export default class Loading extends Component {
 
-    constructor(props){
-        super(props);
-
-        this.state = {
-            loaded:false
-        }
-    }
-
-    componentDidMount(){
-        setTimeout(() => {
-        this.setState({
-            loaded:true
-        })
-        Actions.board1();
-        }, 4250);
-    }
 
     render(){
 

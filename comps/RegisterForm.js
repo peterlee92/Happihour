@@ -18,7 +18,7 @@ function RegisterForm(){
         // if(username = ""){
             
         // }
-        fetch('http://192.168.0.12/Happihour/Register.php',{
+        fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/Register.php',{
              method:'POST',
              headers:{
                 'Accept': 'application/json',
