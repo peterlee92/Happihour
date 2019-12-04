@@ -48,7 +48,7 @@ function ContactUs(){
                 <View style={style.inputLine}></View>
 
                 <TouchableOpacity style={style.button} onPress={()=>(setShowPopUp(!ShowPopUp))}>
-                    <Text style={{color:"#0E1617", fontWeight:"bold", letterSpacing:2}}>SEND</Text>
+                    <Text style={{color:"black", fontFamily:'Nunito-Bold', fontSize:20}}>SEND</Text>
                 </TouchableOpacity>
 
                 {sendMsg}

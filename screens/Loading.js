@@ -5,13 +5,12 @@ import LottieView from 'lottie-react-native';
 
 export default class Loading extends Component {
 
-    // componentDidMount(){
-    //     setTimeout(() => {
-    //     Actions.board1();
-    //     }, 4250);
-    // }
 
     render(){
+
+        if(this.state.loaded){
+            return null;
+        }
     return(
         <View 
             style={{
@@ -21,7 +20,7 @@ export default class Loading extends Component {
         > 
             <TouchableOpacity
             onPress={()=>{
-                Actions.board1()
+                Actions.board1();
             }}
             >
                 <ImageBackground 

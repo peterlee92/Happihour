@@ -8,7 +8,6 @@ import AddContact from '../comps/AddContact-popUp';
 import Confirmation from '../comps/Confirmation-popUp';
 import getDirections from 'react-native-google-maps-directions'
 
-
 function GetHome(){
 
     // add contact and confirmation pop up use states
@@ -18,6 +17,10 @@ function GetHome(){
     // for edit account page
     const[ShowPopUp2, setShowPopUp2] = useState(false);
     const [ShowPopUp, setShowPopUp] = useState(false);
+
+    // local storage user info
+    const [userid, setUserid] = useState();
+    const [userAddress, setUserAddress] = useState();
 
      // Check database for emergency contact information else prompt add contact pop up
     var CheckUserInfo=async()=>{
@@ -63,6 +66,7 @@ function GetHome(){
     }
 
 
+
     const [userid, setUserid] = useState();
     const [userAddress, setUserAddress] = useState();
     
@@ -73,11 +77,13 @@ function GetHome(){
     const [lngti, setlngti] = useState();
 
     async function getInfo(){
+
         var data = await AsyncStorage.getItem("userinfo");
         data = JSON.parse(data);
         setlati(Number(data.info[0]['latitude']));
         setlngti(Number(data.info[0]['longitude']));
       }
+
 
     var handleGetDirections = async() => {
 
@@ -101,7 +107,31 @@ function GetHome(){
         await getDirections(data)
       }
 
-      
+
+  
+  var getUserAddress = async(id)=>{
+        let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
+            method:'POST',
+            headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id : id
+            })
+        })
+                                    
+        let data = await response.json()
+    
+        if(data == 'Your information is incorrect'){
+            Alert.alert(data);
+        }else {
+            var address = data['address'];
+            setUserAddress(address);
+            console.log("address ", address);
+    
+        }   
+    }
 
     useEffect(()=>{
         getInfo();

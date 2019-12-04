@@ -69,7 +69,6 @@ import OnBoarding1 from './comps/OnBoarding1';
 import OnBoarding2 from './comps/OnBoarding2';
 import OnBoarding3 from './comps/OnBoarding3';
 import OnBoarding4 from './comps/OnBoarding4';
-import OnBoardingPage from './screens/OnBoardingPage';
 
 //Psa
 import Psa01 from './comps/Psa01';
