@@ -62,7 +62,7 @@ function LoginForm(props){
                 Alert.alert(data);
             }else {
                 StoreInfo(data['Id'], data['username'], data['latitude'], data['longtitude'])
-                Alert.alert('welcome!');
+                // Alert.alert('welcome!');
                 Actions.mappage();
 
             }
@@ -92,7 +92,7 @@ function LoginForm(props){
                       placeholder="Username"
                       onChangeText={(text)=>{Setusername(text)}}
                       underlineColorAndroid = "transparent"
-                      placeholderTextColor="#f4e664"
+                      placeholderTextColor="rgba(255,255,255,0.5)"
                       blurOnSubmit={false}                        
                       returnKeyType={"next"}                    
                       onSubmitEditing = {()=> refPass.focus()}
@@ -107,7 +107,7 @@ function LoginForm(props){
                     secureTextEntry={true}
                     onChangeText={(text)=>{Setuserpassword(text)}}
                     underlineColorAndroid = "transparent"
-                    placeholderTextColor="#f4e664"
+                    placeholderTextColor="rgba(255,255,255,0.5)"
                     blurOnSubmit={false}
                     returnKeyType={"done"} 
                     ref={(i)=>{refPass = i}}

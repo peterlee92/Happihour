@@ -23,7 +23,7 @@ function OnBoarding4(){
                     source={require('../animations/vectorBeHappyAnimations.json')}
                     imageAssetsFolder={'../animations/vectorBeHappyAnimations.json'}
                     autoPlay
-                    style={{width:800, height:800, position:'absolute', top:-40, elevation:3}}
+                    style={{width:800, height:800, position:'absolute', top:-20, elevation:3}}
                 /> 
             <View style={styles.content}>
                 <Text style={styles.contenttxt}>Be happy together and make your happy last longer than just an hour!</Text>

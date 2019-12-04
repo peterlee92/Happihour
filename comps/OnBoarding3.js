@@ -24,7 +24,7 @@ function OnBoarding3(){
                     source={require('../animations/connectAnimation.json')}
                     imageAssetsFolder={'../animations/connectAnimation.json'}
                     autoPlay
-                    style={{width:900, height:900, position:'absolute', top:-120, elevation:3}}
+                    style={{width:900, height:900, position:'absolute', top:-100, elevation:3}}
                 /> 
 
             <View style={styles.content}>

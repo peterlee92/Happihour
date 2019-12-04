@@ -23,6 +23,7 @@ var styles = StyleSheet.create({
         height:35,
         borderRadius:7,
         paddingHorizontal:40,
+        paddingVertical:3,
         borderWidth:0.5
     },
     FGcontainer:{
@@ -51,7 +52,7 @@ var styles = StyleSheet.create({
         left:0,
         right:0,
         elevation:5,
-        marginTop:80
+        marginTop:90
     },
     button:{
         flexDirection:'row',
@@ -63,8 +64,7 @@ var styles = StyleSheet.create({
 
     },
     buttontxt:{
-        fontSize:15,
-        letterSpacing:1,
+        fontSize:20,
         fontFamily:"Nunito-Regular",        
     },
     map:{

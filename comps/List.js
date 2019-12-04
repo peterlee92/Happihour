@@ -25,7 +25,7 @@ export default function List(props) {
             headerLayout = { () =>
                 <View style={[styles.headerLayoutStyle]}>
                     <Image source={require('../imgs/FlowTab.png')} style={{width:'100%', height:60, marginBottom:0, elevation:98}} />
-                    <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, right:180, elevation:99}}>
+                    <View style={{height:75, justifyContent:'center', alignItems:'center', position:'absolute', bottom:30, elevation:99}}>
                         <FontAwesomeIcon icon="chevron-up" size={30} color="#ffef86" style={{marginTop:0}}/>
                         {/* <Text style={[styles.commonTextStyle,{marginBottom:3}]}>View List</Text> */}
                         {/* <Text style={[styles.commonTextStyle, {marginTop:10, marginBottom:20}]}>View Map</Text>
