@@ -65,10 +65,6 @@ function GetHome(){
         confirm = null;
     }
 
-
-
-    const [userid, setUserid] = useState();
-    const [userAddress, setUserAddress] = useState();
     
     var displayPop = null;
     
@@ -110,7 +106,7 @@ function GetHome(){
 
   
   var getUserAddress = async(id)=>{
-        let response = await fetch('http://192.168.0.12/Happihour/userInfo.php',{
+        let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/userInfo.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -183,13 +179,6 @@ function GetHome(){
                     </View>
                 </TouchableOpacity>
                 <Text style={style.subGHS}>Get Home</Text>
-{/* 
-                <TouchableOpacity style={[style.position, {backgroundColor:'#D1C74B'}]} onPress={()=>(Actions.taxi())}>
-                    <View style={style.img2}>
-                        <FontAwesomeIcon icon="taxi" size={100} color="white" style={style.Img2}/>
-                    </View>
-                    <Text style={style.GHS}>TAXI</Text>
-                </TouchableOpacity> */}
             </View>
             <View style={style.rows}>
                 <TouchableOpacity 

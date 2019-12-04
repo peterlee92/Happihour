@@ -34,9 +34,6 @@ export default Thankyou;
 
 const styles = StyleSheet.create({
     container:{
-        width:'100%',
-        height:'100%',
-        backgroundColor:'black',
         flex:1,
         justifyContent:'center',
         resizeMode:'contain'
