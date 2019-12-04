@@ -8,9 +8,6 @@ export default class Loading extends Component {
 
     render(){
 
-        if(this.state.loaded){
-            return null;
-        }
     return(
         <View 
             style={{
