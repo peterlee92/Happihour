@@ -8,7 +8,7 @@ var styles = StyleSheet.create({
     },
     behappy:{
         width:'100%',
-        flex:1,
+        flex:1.3,
         elevation:2
     },
     content:{
