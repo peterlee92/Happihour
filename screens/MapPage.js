@@ -25,6 +25,7 @@ function MapPage(){
     const [Locationtxt,setLocationtxt] = useState('Location');
     const [Searchvalue, setSearchvalue] = useState();
     const [Psas, setPsas] = useState(true);
+    const [Foption, setFoption] = useState();
 
     // const DissmissKeyboard = ({children}) => (
     //     <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
@@ -49,12 +50,14 @@ function MapPage(){
             <TimePopup 
                 setTimepop={setTimepop}
                 setDLTfilter={setDLTfilter}
+                DLTfilter={DLTfilter}
                 Locationvalue={Locationvalue}
                 Dayvalue={Dayvalue}
                 setTimevalue={setTimevalue}
                 setSfilter={setSfilter}
                 setTimetxt={setTimetxt}
                 setSearchvalue={setSearchvalue}
+                setFoption={setFoption}
             />
         )
     }else if(Locationpop == true){
@@ -70,6 +73,7 @@ function MapPage(){
                 setSfilter={setSfilter}
                 setLocationtxt={setLocationtxt}
                 setSearchvalue={setSearchvalue}
+                setFoption={setFoption}
             />
         )
     }else if(Daypop == true){
@@ -85,6 +89,7 @@ function MapPage(){
                 setSfilter={setSfilter}
                 setDaytxt={setDaytxt}
                 setSearchvalue={setSearchvalue}
+                setFoption={setFoption}
             />
         )
     }else {
@@ -109,6 +114,8 @@ function MapPage(){
                 Locationtxt={Locationtxt}
                 setSearchvalue={setSearchvalue}
                 Searchvalue={Searchvalue}
+                Foption={Foption}
+                setFoption={setFoption}
             />
 
             <List 
