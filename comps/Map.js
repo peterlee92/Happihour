@@ -15,7 +15,7 @@ function Map(props) {
     const [lalngti, setlalngit] = useState([49.268245,-123.0348778])
     const [Fbutton, setFbutton] = useState(false);
     const [Searchtxt, setSearchtxt] = useState();
-    const [ready, setReady] = useState(false);
+    const [ready, setReady] = useState("D");
  
     //filter buttons
     var FBut = null,
@@ -110,7 +110,7 @@ function Map(props) {
 
 
     //the function that grabs the current location
-    async function getLoc(){
+    async function getLoc(which){
         try {
             const granted = await PermissionsAndroid.request(
                 PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
@@ -128,8 +128,13 @@ function Map(props) {
                 console.log('You can use the map');
                 Geolocation.getCurrentPosition(
                     position => {
-                        console.log(position)
-                        setlalngit([position.coords.latitude,position.coords.longitude])
+                        if(which == 'D'){
+                            console.log(position)
+                            props.setDLTfilter([{"latitude":position.coords.latitude, "longtitude":position.coords.longitude}])
+                        }else if(wichi == 'S'){
+                            props.setSfilter([{"latitude":position.coords.latitude, "longtitude":position.coords.longitude}])
+                        }
+                        
                     },
                     error=>{console.log(error)},
                     {enableHighAccuracy:true, timeout:20000, maximumAge:1000}
@@ -161,10 +166,11 @@ function Map(props) {
             let searchdata = await searchresponse.json();
             console.log(searchdata)
             if(searchdata == "wrong"){
-                return props.setSfilter([]);
+                getLoc('S')
+                props.setFoption('S');
             }else{ 
                 props.setSfilter(searchdata)
-                props.setDLTfilter([]);
+                props.setFoption('S');
                 console.log(Svalue)
             }
         }
@@ -174,9 +180,7 @@ function Map(props) {
     }   
 
     var markers = [];
-    if(props.Sfilter.length <=0 && 0 < props.DLTfilter.length){
-       
-        // setlalngit([props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude])
+    if(props.Foption == 'D'){
         for(var i = 0; i < props.DLTfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var tmarkers = (
@@ -203,8 +207,10 @@ function Map(props) {
             )
             markers.push(tmarkers)
         }
-    }else if(props.DLTfilter.length <=0 && 0 < props.Sfilter.length){
-        // setlalngit([propsSfilter[0].latitude, propsSfilter[0].longitude])
+    }
+    
+    if(props.Foption == 'S'){
+        console.log('Swork')
         for(var i = 0; i < props.Sfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var smarkers = (
@@ -212,7 +218,7 @@ function Map(props) {
                     key={i}
                     coordinate={{
                         latitude:Number(props.Sfilter[i].latitude),
-                        longitude:Number(props.Sfilter[i].longitude)
+                        longitude:Number(props.Sfilter[i].longtitude)
                     }}
                     image={require('../imgs/pin.png')}
                 >
@@ -236,16 +242,26 @@ function Map(props) {
      
 
     useEffect(() => {
-        getLoc();
+        getLoc('D');
     }, []);
 
     useEffect(() => {
         //console.log("change la", props.DLTfilter);
-        if(ready && mapref.current){
+        if(ready && mapref.current && props.Foption == 'D'){
             console.log("region change");
             var region = {
                 latitude:Number(props.DLTfilter[0].latitude),
                 longitude:Number(props.DLTfilter[0].longtitude),
+                latitudeDelta: 0.0992,
+                longitudeDelta: 0.0421,
+            }
+            console.log(region);
+            mapref.current.animateToRegion(region);
+        }else if(ready && mapref.current && props.Foption == 'S'){
+            console.log("region change");
+            var region = {
+                latitude:Number(props.Sfilter[0].latitude),
+                longitude:Number(props.Sfilter[0].longtitude),
                 latitudeDelta: 0.0992,
                 longitudeDelta: 0.0421,
             }

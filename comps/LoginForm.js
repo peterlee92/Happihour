@@ -62,7 +62,6 @@ function LoginForm(props){
                 Alert.alert(data);
             }else {
                 StoreInfo(data['Id'], data['username'], data['latitude'], data['longtitude'])
-                // Alert.alert('welcome!');
                 Actions.mappage();
 
             }

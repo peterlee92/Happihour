@@ -1,9 +1,43 @@
 import React from 'react';
-import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity, PermissionsAndroid, Alert} from 'react-native';
 import styles from '../styles/CompStyles/LocationPopupStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import Geolocation from '@react-native-community/geolocation';
+
 
 function LocationPopup(props){
+
+    async function getLoc(){
+        try {
+            const granted = await PermissionsAndroid.request(
+                PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+                {
+                    title: 'Geolocation',
+                    message:
+                        'Get geolocation',
+                    buttonNeutral: 'Ask Me Later',
+                    buttonNegative: 'Cancel',
+                    buttonPositive: 'OK',
+                },
+            );
+            console.log(granted);
+            if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+                console.log('You can use the map');
+                Geolocation.getCurrentPosition(
+                    position => {
+                        props.setDLTfilter([{"latitude":position.coords.latitude, "longtitude":position.coords.longitude}]);
+                        Alert.alert('no happihours founded')
+                    },
+                    error=>{console.log(error)},
+                    {enableHighAccuracy:true, timeout:20000, maximumAge:1000}
+                )
+            } else {
+                console.log('geolcation permission denied');
+            }
+        } catch (err) {
+            console.warn(err);
+        }
+    }
 
     var LocationFilter=async(location)=>{
         console.log(location)
@@ -25,11 +59,12 @@ function LocationPopup(props){
         console.log(locationdata);
 
         if(locationdata == "wrong"){
-            props.setDLTfilter([]);
+            getLoc()
+            props.setFoption('D')
         }else{
             console.log('work')
             props.setDLTfilter(locationdata);
-            props.setSfilter([]);
+            props.setFoption('D')
         }
         
   
