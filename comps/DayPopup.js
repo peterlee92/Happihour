@@ -41,7 +41,7 @@ function DayPopup(props){
     }
 
     var DayFilter=async(day)=>{
-        let dayresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/DLTFilter.php',{
+        let dayresponse = await fetch('https://DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

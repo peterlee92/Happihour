@@ -60,7 +60,7 @@ function EditAccount(props){
       }
 
       var getUserInfo = async(id)=>{
-        let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/userInfo.php',{
+        let response = await fetch('https://userInfo.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',

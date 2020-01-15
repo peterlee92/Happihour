@@ -8,7 +8,7 @@ import LocationPopup from '../comps/LocationPopup';
 import DayPopup from '../comps/DayPopup';
 import List from '../comps/List';
 import PSAPopUps from '../comps/PSAPopUps'
-
+ 
 
 function MapPage(){
 
@@ -25,7 +25,7 @@ function MapPage(){
     const [Locationtxt,setLocationtxt] = useState('Location');
     const [Searchvalue, setSearchvalue] = useState();
     const [Psas, setPsas] = useState(true);
-    const [Foption, setFoption] = useState();
+    const [Foption, setFoption] = useState('D');
 
     // const DissmissKeyboard = ({children}) => (
     //     <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>

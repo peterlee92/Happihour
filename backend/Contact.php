@@ -2,8 +2,6 @@
 
 require_once('./Database.php');
 
-$conn = mysqli_connect("localhost","root","root","Happihour");
-
 // Checks if emergency contact exists
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -34,13 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $result = runQuery($sql);
 
     if($results == null){
-      $sql = "INSERT INTO Contacts(user_id, name, contact) VALUES (1, '$name', '$contact')";
+      $sql = "INSERT INTO contacts(user_id, name, contact) VALUES (1, '$name', '$contact')";
 
       $result = runQuery($sql);
 
       echo json_encode('success');
     } else {
-      $sql = "UPDATE Contacts SET 'name' = '$name', 'contact' = '$contact' WHERE user_id = 1";
+      $sql = "UPDATE contacts SET 'name' = '$name', 'contact' = '$contact' WHERE user_id = 1";
       $result = runQuery($sql);
       echo json_encode('success');
     }

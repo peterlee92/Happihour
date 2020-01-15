@@ -1,13 +1,13 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","Happihour");
+require_once('./Data.php');
 
 $json = file_get_contents('php://input');
 $obj = json_decode($json,true);
 
-$rest_name = $obj['rest_name'];
+$rest_name = mysqli_real_escape_string($conn,$obj['rest_name']);
 
-$food_result = mysqli_query($conn,"SELECT restaurants.address, Food.name, Food.price FROM restaurants JOIN Food ON restaurants.id = restaurant_id WHERE restaurants.name = '$rest_name'");
+$food_result = mysqli_query($conn,"SELECT food.name, food.price FROM restaurants JOIN food ON restaurants.id = restaurant_id WHERE restaurants.name = '$rest_name'");
 
 
 if(mysqli_num_rows($food_result)){
@@ -17,5 +17,5 @@ if(mysqli_num_rows($food_result)){
     }
     echo json_encode($food_rows);
 }else {
-    echo json_encode("wrong");
-}
+    echo json_encode("no");
+} 

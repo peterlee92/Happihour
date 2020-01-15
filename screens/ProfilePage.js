@@ -101,7 +101,7 @@ const options = {
                 </View>
 
                 <Image source={require('../imgs/Flow_Header.png')} style={{width:'100%', height:50, position:'absolute', top:0}} />
-            <Image source={require('../imgs/profile_flowBG.png')} style={{width:'100%', flex:6, height:500, position:'absolute', bottom:-50}} />
+            <Image source={require('../imgs/profile_flowBG.png')} style={{width:'100%', flex:6, height:460, position:'absolute', bottom:-50}} />
             <View style={{justifyContent:'center', alignItems:'center', flex:4}}>
               <TouchableOpacity style={style.titleIcon} onPress={()=>(Actions.editAccount())}>
                   <View style={style.editBox}>

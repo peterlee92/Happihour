@@ -16,7 +16,7 @@ function ExecMenu(){
     const [foodPrice, setFoodPrice] = useState();
 
     var addDrinkItem = () =>{
-        fetch ('http://192.168.0.12/Happihour/exec/addDrink.php',{
+        fetch ('http://addDrink.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -35,7 +35,7 @@ function ExecMenu(){
     };
 
     var addFoodItem = () =>{
-        fetch ('http://192.168.0.12/Happihour/exec/addFood.php',{
+        fetch ('http://addFood.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -54,7 +54,7 @@ function ExecMenu(){
     };
 
     var GetMenu = async()=>{
-        let drinkItems = await fetch('http://192.168.0.12/Happihour/exec/execDrinks.php',{
+        let drinkItems = await fetch('http://execDrinks.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -69,7 +69,7 @@ function ExecMenu(){
         let drinkData = await drinkItems.json();
         SetDrinkMenu(drinkData);
 
-        let foodItems = await fetch('http://192.168.0.12/Happihour/exec/execFood.php',{
+        let foodItems = await fetch('http://execFood.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -88,7 +88,7 @@ function ExecMenu(){
     },[]);
 
     var delDrinkItem = () =>{
-        fetch ('http://192.168.0.12/Happihour/exec/delDrink.php',{
+        fetch ('http://delDrink.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

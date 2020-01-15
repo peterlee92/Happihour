@@ -18,7 +18,7 @@ function RegisterForm(){
         // if(username = ""){
             
         // }
-        fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/Register.php',{
+        fetch('https://Register.php',{
              method:'POST',
              headers:{
                 'Accept': 'application/json',
@@ -33,9 +33,16 @@ function RegisterForm(){
              })
         }).then((response) => response.json())
         .then((responseJson)=>{
+            if(responseJson == 'Check internet connection'){
+                Alert.alert(responseJson);
+            }else if(responseJson == 'Password not matched'){
+                Alert.alert(responseJson);
+            }else{
+                Actions.login();
+            }
              // Showing response message coming from server after inserting records.
             // Alert.alert(responseJson);
-            Actions.login();
+            
         }).catch((error) => {
             console.error(error);
         })

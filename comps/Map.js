@@ -15,7 +15,7 @@ function Map(props) {
     const [lalngti, setlalngit] = useState([49.268245,-123.0348778])
     const [Fbutton, setFbutton] = useState(false);
     const [Searchtxt, setSearchtxt] = useState();
-    const [ready, setReady] = useState("D");
+    const [ready, setReady] = useState(false);
  
     //filter buttons
     var FBut = null,
@@ -110,7 +110,7 @@ function Map(props) {
 
 
     //the function that grabs the current location
-    async function getLoc(which){
+    async function getLoc(){
         try {
             const granted = await PermissionsAndroid.request(
                 PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
@@ -128,13 +128,8 @@ function Map(props) {
                 console.log('You can use the map');
                 Geolocation.getCurrentPosition(
                     position => {
-                        if(which == 'D'){
-                            console.log(position)
-                            props.setDLTfilter([{"latitude":position.coords.latitude, "longtitude":position.coords.longitude}])
-                        }else if(wichi == 'S'){
-                            props.setSfilter([{"latitude":position.coords.latitude, "longtitude":position.coords.longitude}])
-                        }
-                        
+                        console.log(position)
+                        setlalngit([position.coords.latitude,position.coords.longitude])
                     },
                     error=>{console.log(error)},
                     {enableHighAccuracy:true, timeout:20000, maximumAge:1000}
@@ -152,7 +147,7 @@ function Map(props) {
         if(Svalue == "" || Svalue == " " || Svalue == "  "){
             props.setSfilter([]);
         }else{
-            let searchresponse =await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/SearchFilter.php',{
+            let searchresponse =await fetch('https://SearchFilter.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',
@@ -166,11 +161,10 @@ function Map(props) {
             let searchdata = await searchresponse.json();
             console.log(searchdata)
             if(searchdata == "wrong"){
-                getLoc('S')
-                props.setFoption('S');
+                return props.setSfilter([]);
             }else{ 
                 props.setSfilter(searchdata)
-                props.setFoption('S');
+                props.setDLTfilter([]);
                 console.log(Svalue)
             }
         }
@@ -181,6 +175,8 @@ function Map(props) {
 
     var markers = [];
     if(props.Foption == 'D'){
+       
+        // setlalngit([props.DLTfilter[0].latitude, props.DLTfilter[0].longtitude])
         for(var i = 0; i < props.DLTfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var tmarkers = (
@@ -207,10 +203,8 @@ function Map(props) {
             )
             markers.push(tmarkers)
         }
-    }
-    
-    if(props.Foption == 'S'){
-        console.log('Swork')
+    }else if(props.Foption == 'S'){
+        // setlalngit([propsSfilter[0].latitude, propsSfilter[0].longitude])
         for(var i = 0; i < props.Sfilter.length; i++){
             var nav=(n)=> Actions.detail({text:n})
             var smarkers = (
@@ -218,7 +212,7 @@ function Map(props) {
                     key={i}
                     coordinate={{
                         latitude:Number(props.Sfilter[i].latitude),
-                        longitude:Number(props.Sfilter[i].longtitude)
+                        longitude:Number(props.Sfilter[i].longitude)
                     }}
                     image={require('../imgs/pin.png')}
                 >
@@ -242,26 +236,16 @@ function Map(props) {
      
 
     useEffect(() => {
-        getLoc('D');
+        getLoc();
     }, []);
 
     useEffect(() => {
         //console.log("change la", props.DLTfilter);
-        if(ready && mapref.current && props.Foption == 'D'){
+        if(ready && mapref.current){
             console.log("region change");
             var region = {
                 latitude:Number(props.DLTfilter[0].latitude),
                 longitude:Number(props.DLTfilter[0].longtitude),
-                latitudeDelta: 0.0992,
-                longitudeDelta: 0.0421,
-            }
-            console.log(region);
-            mapref.current.animateToRegion(region);
-        }else if(ready && mapref.current && props.Foption == 'S'){
-            console.log("region change");
-            var region = {
-                latitude:Number(props.Sfilter[0].latitude),
-                longitude:Number(props.Sfilter[0].longtitude),
                 latitudeDelta: 0.0992,
                 longitudeDelta: 0.0421,
             }

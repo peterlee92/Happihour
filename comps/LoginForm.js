@@ -43,7 +43,7 @@ function LoginForm(props){
         }else{ 
 
                                         //use ip address
-            let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/Login.php',{
+            let response = await fetch('https://Login.php',{
                 method:'POST',
                 headers:{
                     'Accept': 'application/json',

@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View, Image, TouchableOpacity, ImageBackground, Linking, AsyncStorage} from 'react-native';
+import {Text, View, Image, TouchableOpacity, ImageBackground, Linking, AsyncStorage, Alert} from 'react-native';
 import MenuBar from '../comps/MenuBar';
 import style from '../styles/ScreenStyles/GetHomeStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {Actions} from 'react-native-router-flux';
 import AddContact from '../comps/AddContact-popUp';
 import Confirmation from '../comps/Confirmation-popUp';
+import getDirections from 'react-native-google-maps-directions'
+
 
 function GetHome(){
 
@@ -23,7 +25,7 @@ function GetHome(){
 
      // Check database for emergency contact information else prompt add contact pop up
     var CheckUserInfo=async()=>{
-        let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/Contact.php',{
+        let response = await fetch('https://Contact.php',{
             method:'GET',
             headers:{
                 'Accept': 'application/json',
@@ -71,9 +73,31 @@ function GetHome(){
         getUserAddress(id);
         console.log("user id: ", id);
       }
+
+      var handleGetDirections = async() => {
+
+        var data = {
+          destination: {
+            latitude: Number(userAddress[0]),
+            longitude: Number(userAddress[1])
+          },
+          params: [
+            {
+              key: "travelmode",
+              value: "transit"        // may be "walking", "bicycling" or "transit" as well
+            },
+            {
+              key: "dir_action",
+              value: "navigate"       // this instantly initializes navigation using the given travel mode
+            }
+          ]
+        }
+     
+        await getDirections(data)
+      }
   
   var getUserAddress = async(id)=>{
-        let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/userInfo.php',{
+        let response = await fetch('https://userInfo.php',{
             method:'POST',
             headers:{
             'Accept': 'application/json',
@@ -85,15 +109,11 @@ function GetHome(){
         })
                                     
         let data = await response.json()
-    
-        if(data == 'Your information is incorrect'){
-            Alert.alert(data);
-        }else {
+
             var address = data['address'];
-            setUserAddress(address);
+            setUserAddress([Number(data['latitude']), Number(data['longitude'])]);
             console.log("address ", address);
-    
-        }   
+
     }
    
     useEffect(()=>{
@@ -140,7 +160,7 @@ function GetHome(){
                         style.position, 
                         {backgroundColor:'#0C519F'
                     }]} 
-                    onPress={()=>(Actions.transit())}
+                    onPress={()=>{handleGetDirections()}}
                 >
                     <View style={style.img}>
                         <Image style={{width:100, height:100}} source={require('../imgs/home-icon-silhouette.png')} />
