@@ -16,7 +16,7 @@ function DetailHeader (props){
 
     var GrabInfo=async()=>{
         console.log('work')
-        let locationresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/Info.php',{
+        let locationresponse = await fetch('https://Info.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -70,7 +70,7 @@ function DetailHeader (props){
       }
 
     var AddFav=async()=>{
-        let Favresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/AddFav.php',{
+        let Favresponse = await fetch('https://AddFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -90,7 +90,7 @@ function DetailHeader (props){
     }
 
     var DeleteFav=async()=>{
-        let Deleteresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/DeleteFav.php',{
+        let Deleteresponse = await fetch('https://DeleteFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
@@ -105,7 +105,7 @@ function DetailHeader (props){
 
     //favourtie icon check function
     var CheckFav=async(id)=>{
-        let Checkresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/CheckFav.php',{
+        let Checkresponse = await fetch('https://CheckFav.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

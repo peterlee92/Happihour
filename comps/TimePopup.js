@@ -41,7 +41,7 @@ function TimePopup(props){
     }
 
     var TimeFilter=async(time)=>{
-        let timeresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/DLTFilter.php',{
+        let timeresponse = await fetch('https://DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

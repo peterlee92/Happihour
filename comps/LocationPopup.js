@@ -42,7 +42,7 @@ function LocationPopup(props){
     var LocationFilter=async(location)=>{
         console.log(location)
         console.log(props.Dayvalue)
-        let locationresponse = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/DLTFilter.php',{
+        let locationresponse = await fetch('https://DLTFilter.php',{
             method:'POST',
             headers:{
                 'Accept': 'application/json',

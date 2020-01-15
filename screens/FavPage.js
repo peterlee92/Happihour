@@ -21,7 +21,7 @@ function FavPage(){
 
     var getFavRestaurants=async(id)=>{
 //use ip addres
-        let response = await fetch('http://Happihour-env.punbp2gfmb.us-east-2.elasticbeanstalk.com/Favourites.php',{
+        let response = await fetch('https:///Favourites.php',{
 
             method:'POST',
             headers:{
@@ -41,7 +41,8 @@ function FavPage(){
           Setfav_restaurants([]);
             setshowPopup(true);
         }else{
-            Setfav_restaurants(data);   
+            Setfav_restaurants(data);
+            console.log(fav_restaurants);   
         }
             
     }

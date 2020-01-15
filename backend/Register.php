@@ -1,13 +1,14 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","Happihour");
+require_once('./Data.php');
 
 $json = file_get_contents('php://input');
 
 $obj = json_decode($json,true);
-
+ 
 $username = $obj['username'];
 $email = $obj['email'];
+$address = $obj['address'];
 $password = $obj['password'];
 $checkpassword = $obj['checkpassword'];
 
@@ -20,8 +21,8 @@ if($username !== ''){
             if($password == $checkpassword){
                 $add = $conn->query("
                 INSERT INTO users
-                (username, email, password)
-                VALUES ('$username', '$email', '$password')
+                (username, email, address, password)
+                VALUES ('$username', '$email', '$address', '$password')
                 ");
 
                 if($add){

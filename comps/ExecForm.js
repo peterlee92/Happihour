@@ -17,7 +17,7 @@ function ExecForm(name,address,contact,url,location){
 
    var GetInfo = async()=>{
     //    let infoResponse = await fetch('http://karencumlat.ca/Happihour/execInfo.php',{
-        let infoResponse = await fetch('http:/192.168.0.12/Happihour/exec/execInfo.php',{
+        let infoResponse = await fetch('http://execInfo.php',{
         method:'POST',
         headers:{
             'Accept': 'application/json',
