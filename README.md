@@ -2,4 +2,4 @@
 
 App that helps Vancouverites connect with each other in affordable and fun environment
 
-![Happihour_Video](Video/Sample.gif width="250)
+![Happihour_Video](Video/Sample.gif)
